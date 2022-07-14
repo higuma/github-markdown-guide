@@ -5,6 +5,8 @@ Table of Contents →
 
 ------------------------------------------------------------------------
 
+学習ノート + 補足解説
+
 ## Table of contents
 
 * [1 Introduction](introduction.md)

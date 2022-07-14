@@ -5,6 +5,8 @@
 
 ------------------------------------------------------------------------
 
+学習ノート + 補足解説
+
 * [1 Introduction](introduction.md)
 * [2 Preliminaries](preliminaries.md)
 * [3 Blocks and inlines](blocks-and-inlines.md)
