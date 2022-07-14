@@ -1,4 +1,4 @@
-# [5 Container blocks](gfm.html#container-blocks)
+# [5 Container blocks](https://higuma.github.io/github-flabored-markdown/#container-blocks)
 
 [4 Leaf blocks](leaf-blocks.md)
 ← [Table of Contents](index.md) →
@@ -6,13 +6,13 @@
 
 ------------------------------------------------------------------------
 
-## [5.1 Block quotes](gfm.html#block-quotes)
+## [5.1 Block quotes](https://higuma.github.io/github-flabored-markdown/#block-quotes)
 
-## [5.2 List items](gfm.html#list-items)
+## [5.2 List items](https://higuma.github.io/github-flabored-markdown/#list-items)
 
-## [5.3 Task list items (extension)](gfm.html#task-list-items-extension-)
+## [5.3 Task list items (extension)](https://higuma.github.io/github-flabored-markdown/#task-list-items-extension-)
 
-## [5.4 Lists](gfm.html#lists)
+## [5.4 Lists](https://higuma.github.io/github-flabored-markdown/#lists)
 
 ------------------------------------------------------------------------
 

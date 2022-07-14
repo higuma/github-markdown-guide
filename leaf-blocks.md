@@ -1,4 +1,4 @@
-# [4 Leaf blocks](gfm.html#leaf-blocks)
+# [4 Leaf blocks](https://higuma.github.io/github-flabored-markdown/#leaf-blocks)
 
 [3 Blocks and inlines](blocks-and-inlines.md)
 ← [Table of Contents](index.md) →
@@ -6,25 +6,25 @@
 
 ------------------------------------------------------------------------
 
-## [4.1 Thematic breaks](gfm.html#thematic-breaks)
+## [4.1 Thematic breaks](https://higuma.github.io/github-flabored-markdown/#thematic-breaks)
 
-## [4.2 ATX headings](gfm.html#atx-headings)
+## [4.2 ATX headings](https://higuma.github.io/github-flabored-markdown/#atx-headings)
 
-## [4.3 Setext headings](gfm.html#setext-headings)
+## [4.3 Setext headings](https://higuma.github.io/github-flabored-markdown/#setext-headings)
 
-## [4.4 Indented code blocks](gfm.html#indented-code-blocks)
+## [4.4 Indented code blocks](https://higuma.github.io/github-flabored-markdown/#indented-code-blocks)
 
-## [4.5 Fenced code blocks](gfm.html#fenced-code-blocks)
+## [4.5 Fenced code blocks](https://higuma.github.io/github-flabored-markdown/#fenced-code-blocks)
 
-## [4.6 HTML blocks](gfm.html#html-blocks)
+## [4.6 HTML blocks](https://higuma.github.io/github-flabored-markdown/#html-blocks)
 
-## [4.7 Link reference definitions](gfm.html#link-reference-definitions)
+## [4.7 Link reference definitions](https://higuma.github.io/github-flabored-markdown/#link-reference-definitions)
 
-## [4.8 Paragraphs](gfm.html#paragraphs)
+## [4.8 Paragraphs](https://higuma.github.io/github-flabored-markdown/#paragraphs)
 
-## [4.9 Blank lines](gfm.html#blank-lines)
+## [4.9 Blank lines](https://higuma.github.io/github-flabored-markdown/#blank-lines)
 
-## [4.10 Tables (extension)](gfm.html#tables-extension-)
+## [4.10 Tables (extension)](https://higuma.github.io/github-flabored-markdown/#tables-extension-)
 
 ------------------------------------------------------------------------
 

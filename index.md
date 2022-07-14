@@ -1,4 +1,4 @@
-# [GitHub Flavored Markdown Spec](gfm.html)
+# GitHub Flavored Markdown Spec ([Official](https://github.github.com/gfm/)|[Mirror](https://higuma.github.io/github-flabored-markdown/))
 
 Table of Contents →
 [1. Introduction](introduction.md)
