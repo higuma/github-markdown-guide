@@ -16,7 +16,7 @@
 
 ## [2.2 Tabs](https://higuma.github.io/github-flabored-markdown/#tabs)
 
-> __重要__: 以降のExampleでは左側のコード欄内部のスペースに対してドットが見えるように書式設定を行っていることに注意(CSSを読むと`span.space::after { content: "."; ... }`としているのが分かる)。
+> __重要__: 仕様書本文中のExampleでは左右のコード欄内部のスペースに対してドットが見えるように書式設定を行っていることに注意(CSSを読むと`span.space::after { content: "."; ... }`としているのが分かる)。また[前章で説明](introduction.md#14-about-this-document)した通りTabは`→`で表す。
 
 文書中のTAB文字(U+0009)はスペースに置換されずそのままHTMLへ出力される。ただし`<pre>`や`<code>`のようにタブストップが適用される状況では空白4つ分とみなされる。
 
