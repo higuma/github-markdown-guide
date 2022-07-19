@@ -10,6 +10,9 @@
 
 ### [Example 12](https://higuma.github.io/github-flabored-markdown/#example-12)
 
+- `one
+- two`
+
 ## [3.2 Container blocks and leaf blocks](https://higuma.github.io/github-flabored-markdown/#container-blocks-and-leaf-blocks)
 
 ------------------------------------------------------------------------
