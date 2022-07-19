@@ -4,6 +4,18 @@ Table of Contents →
 [1. Introduction](introduction.md)
 
 ------------------------------------------------------------------------
+## About this document
+
+本文書はGFM仕様書の全examplesを実際のMarkdown処理系に掛け、対象となる処理系がGFMにどれだけ準拠しているかを実際に確認する目的で作成されている。
+
+仕様書中のExamples 1-673までを全てコピーペーストし、仕様書の章立てと同じ順序でMarkdown文書中に埋め込んでいる。ただし仕様書のExamplesではTabを`→`で表現しているため、これらは全て本物のTab(U+0009)に置換してある。
+
+なお次のケースは文書の他の部分に影響を与える可能性を考慮し、個別のMarkdown文書にしてある。
+
+* [HTMLブロック](../leaf-blocks.md#46-html-blocks)の文例
+* (意図的に)閉じていないブロックを含む例
+* [リンク参照定義](../leaf-blocks.md#47-link-reference-definitions)を含む例
+* その他の理由で文法的に他の部分に影響を及ぼす可能性があると判断した場合
 
 ## Table of contents
 

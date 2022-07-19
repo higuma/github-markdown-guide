@@ -15,6 +15,8 @@
 
 ## [3.2 Container blocks and leaf blocks](https://higuma.github.io/github-flabored-markdown/#container-blocks-and-leaf-blocks)
 
+(No example)
+
 ------------------------------------------------------------------------
 
 [2 Preliminaries](preliminaries.md)

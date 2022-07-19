@@ -1,7 +1,7 @@
 # GFM Examples implementation checker - [4 Leaf blocks](https://higuma.github.io/github-flabored-markdown/#leaf-blocks)
 
 [3 Blocks and inlines](blocks-and-inlines.md)
-← [Table of Contents](index.md) 	
+← [Table of Contents](index.md) →
 [5 Container blocks](container-blocks.md)
 
 ------------------------------------------------------------------------
@@ -641,25 +641,11 @@ foo
 
 ### [Example 118](https://higuma.github.io/github-flabored-markdown/#example-118)
 
-<table><tr><td>
-<pre>
-**Hello**,
-
-_world_.
-</pre>
-</td></tr></table>
+→ [Example 118](examples/118.md)
 
 ### [Example 119](https://higuma.github.io/github-flabored-markdown/#example-119)
 
-<table>
-  <tr>
-    <td>
-           hi
-    </td>
-  </tr>
-</table>
-
-okay.
+→ [Example 119](examples/119.md)
 
 ### [Example 120](https://higuma.github.io/github-flabored-markdown/#example-120)
 
@@ -671,23 +657,15 @@ okay.
 
 ### [Example 122](https://higuma.github.io/github-flabored-markdown/#example-122)
 
-<DIV CLASS="foo">
-
-*Markdown*
-
-</DIV>
+→ [Example 122](examples/122.md)
 
 ### [Example 123](https://higuma.github.io/github-flabored-markdown/#example-123)
 
-<div id="foo"
-  class="bar">
-</div>
+→ [Example 123](examples/123.md)
 
 ### [Example 124](https://higuma.github.io/github-flabored-markdown/#example-124)
 
-<div id="foo" class="bar
-  baz">
-</div>
+→ [Example 124](examples/124.md)
 
 ### [Example 125](https://higuma.github.io/github-flabored-markdown/#example-125)
 
@@ -707,38 +685,27 @@ okay.
 
 ### [Example 129](https://higuma.github.io/github-flabored-markdown/#example-129)
 
-<div><a href="bar">*foo*</a></div>
+→ [Example 129](examples/129.md)
 
 ### [Example 130](https://higuma.github.io/github-flabored-markdown/#example-130)
 
-<table><tr><td>
-foo
-</td></tr></table>
+→ [Example 130](examples/130.md)
 
 ### [Example 131](https://higuma.github.io/github-flabored-markdown/#example-131)
 
-<div></div>
-``` c
-int x = 33;
-```
+→ [Example 131](examples/131.md)
 
 ### [Example 132](https://higuma.github.io/github-flabored-markdown/#example-132)
 
-<a href="foo">
-*bar*
-</a>
+→ [Example 132](examples/132.md)
 
 ### [Example 133](https://higuma.github.io/github-flabored-markdown/#example-133)
 
-<Warning>
-*bar*
-</Warning>
+→ [Example 133](examples/133.md)
 
 ### [Example 134](https://higuma.github.io/github-flabored-markdown/#example-134)
 
-<i class="foo">
-*bar*
-</i>
+→ [Example 134](examples/134.md)
 
 ### [Example 135](https://higuma.github.io/github-flabored-markdown/#example-135)
 
@@ -746,40 +713,23 @@ int x = 33;
 
 ### [Example 136](https://higuma.github.io/github-flabored-markdown/#example-136)
 
-<del>
-*foo*
-</del>
+→ [Example 136](examples/136.md)
 
 ### [Example 137](https://higuma.github.io/github-flabored-markdown/#example-137)
 
-<del>
-
-*foo*
-
-</del>
+→ [Example 137](examples/137.md)
 
 ### [Example 138](https://higuma.github.io/github-flabored-markdown/#example-138)
 
-<del>*foo*</del>
+→ [Example 138](examples/138.md)
 
 ### [Example 139](https://higuma.github.io/github-flabored-markdown/#example-139)
 
-<pre language="haskell"><code>
-import Text.HTML.TagSoup
-
-main :: IO ()
-main = print $ parseTags tags
-</code></pre>
-okay
+→ [Example 139](examples/139.md)
 
 ### [Example 140](https://higuma.github.io/github-flabored-markdown/#example-140)
 
-<script type="text/javascript">
-// JavaScript example
-
-document.getElementById("demo").innerHTML = "Hello JavaScript!";
-</script>
-okay
+→ [Example 140](examples/140.md)
 
 ### [Example 141](https://higuma.github.io/github-flabored-markdown/#example-141)
 
@@ -803,22 +753,15 @@ okay
 
 ### [Example 146](https://higuma.github.io/github-flabored-markdown/#example-146)
 
-<!-- foo -->*bar*
-*baz*
+→ [Example 146](examples/146.md)
 
 ### [Example 147](https://higuma.github.io/github-flabored-markdown/#example-147)
 
-<script>
-foo
-</script>1. *bar*
+→ [Example 147](examples/147.md)
 
 ### [Example 148](https://higuma.github.io/github-flabored-markdown/#example-148)
 
-<!-- Foo
-
-bar
-   baz -->
-okay
+→ [Example 148](examples/148.md)
 
 ### [Example 149](https://higuma.github.io/github-flabored-markdown/#example-149)
 
@@ -834,9 +777,7 @@ okay
 
 ### [Example 152](https://higuma.github.io/github-flabored-markdown/#example-152)
 
-  <!-- foo -->
-
-    <!-- foo -->
+→ [Example 152](examples/152.md)
 
 ### [Example 153](https://higuma.github.io/github-flabored-markdown/#example-153)
 
@@ -844,17 +785,11 @@ okay
 
 ### [Example 154](https://higuma.github.io/github-flabored-markdown/#example-154)
 
-Foo
-<div>
-bar
-</div>
+→ [Example 154](examples/154.md)
 
 ### [Example 155](https://higuma.github.io/github-flabored-markdown/#example-155)
 
-<div>
-bar
-</div>
-*foo*
+→ [Example 155](examples/155.md)
 
 ### [Example 156](https://higuma.github.io/github-flabored-markdown/#example-156)
 
@@ -862,45 +797,19 @@ bar
 
 ### [Example 157](https://higuma.github.io/github-flabored-markdown/#example-157)
 
-<div>
-
-*Emphasized* text.
-
-</div>
+→ [Example 157](examples/157.md)
 
 ### [Example 158](https://higuma.github.io/github-flabored-markdown/#example-158)
 
-<div>
-*Emphasized* text.
-</div>
+→ [Example 158](examples/158.md)
 
 ### [Example 159](https://higuma.github.io/github-flabored-markdown/#example-159)
 
-<table>
-
-<tr>
-
-<td>
-Hi
-</td>
-
-</tr>
-
-</table>
+→ [Example 159](examples/159.md)
 
 ### [Example 160](https://higuma.github.io/github-flabored-markdown/#example-160)
 
-<table>
-
-  <tr>
-
-    <td>
-      Hi
-    </td>
-
-  </tr>
-
-</table>
+→ [Example 160](examples/160.md)
 
 ## [4.7 Link reference definitions](https://higuma.github.io/github-flabored-markdown/#link-reference-definitions)
 
@@ -1136,5 +1045,5 @@ bar
 ------------------------------------------------------------------------
 
 [3 Blocks and inlines](blocks-and-inlines.md)
-← [Table of Contents](index.md) 	
+← [Table of Contents](index.md) →
 [5 Container blocks](container-blocks.md)
