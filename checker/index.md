@@ -5,7 +5,7 @@ Table of Contents →
 
 ------------------------------------------------------------------------
 
-学習ノート + 補足解説
+## GFM examples implementation checker
 
 ## Table of contents
 
@@ -16,7 +16,6 @@ Table of Contents →
 * [5 Container blocks](container-blocks.md)
 * [6 Inlines](inlines.md)
 * [Appendix: A parsing strategy](appendix-a-parsing-strategy.md)
-* [Examples implementation checker](checker/index.md)
 
 ## Full table of contents
 
@@ -29,7 +28,6 @@ Table of Contents →
     * [2.1 Characters and lines](preliminaries.md#21-characters-and-lines)
     * [2.2 Tabs](preliminaries.md#22-tabs)
     * [2.3 Insecure characters](preliminaries.md#23-insecure-characters)
-    * [How to read this tutorial](preliminaries.md#how-to-read-this-tutorial)
 * [3 Blocks and inlines](blocks-and-inlines.md)
     * [3.1 Precedence](blocks-and-inlines.md#31-precedence)
     * [3.2 Container blocks and leaf blocks](blocks-and-inlines.md#32-container-blocks-and-leaf-blocks)
@@ -68,7 +66,6 @@ Table of Contents →
     * [Overview](appendix-a-parsing-strategy.md#overview)
     * [Phase 1: block structure](appendix-a-parsing-strategy.md#phase-1-block-structure)
     * [Phase 2: inline structure](appendix-a-parsing-strategy.md#phase-2-inline-structure)
-* [Examples implementation checker](checker/index.md)
 
 ------------------------------------------------------------------------
 
