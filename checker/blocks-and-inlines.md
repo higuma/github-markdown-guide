@@ -1,4 +1,4 @@
-# [3 Blocks and inlines](https://higuma.github.io/github-flabored-markdown/#blocks-and-inlines)
+# GFM examples implementation checker - [3 Blocks and inlines](https://higuma.github.io/github-flabored-markdown/#blocks-and-inlines)
 
 [2 Preliminaries](preliminaries.md)
 ← [Table of Contents](index.md) →

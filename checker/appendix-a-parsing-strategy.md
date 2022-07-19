@@ -1,4 +1,4 @@
-# [Appendix: A parsing strategy](https://higuma.github.io/github-flabored-markdown/#appendix-a-parsing-strategy)
+# GFM examples implementation checker - [Appendix: A parsing strategy](https://higuma.github.io/github-flabored-markdown/#appendix-a-parsing-strategy)
 
 [6 Inlines](inlines.md)
 ← [Table of Contents](index.md)

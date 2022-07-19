@@ -1,4 +1,4 @@
-# [2 Preliminaries](https://higuma.github.io/github-flabored-markdown/#preliminaries)
+# GFM Examples implementation checker - [2 Preliminaries](https://higuma.github.io/github-flabored-markdown/#preliminaries)
 
 [1 Introduction](introduction.md)
 ← [Table of Contents](index.md) →

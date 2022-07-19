@@ -1,4 +1,4 @@
-# [5 Container blocks](https://higuma.github.io/github-flabored-markdown/#container-blocks)
+# GFM examples implementation checker - [5 Container blocks](https://higuma.github.io/github-flabored-markdown/#container-blocks)
 
 [4 Leaf blocks](leaf-blocks.md)
 ← [Table of Contents](index.md) →

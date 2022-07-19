@@ -1,11 +1,9 @@
-# GitHub Flavored Markdown Spec ([Official](https://github.github.com/gfm/)|[Mirror](https://higuma.github.io/github-flabored-markdown/))
+# [GFM](https://higuma.github.io/github-flabored-markdown/) examples implementation checker
 
 Table of Contents →
 [1. Introduction](introduction.md)
 
 ------------------------------------------------------------------------
-
-## GFM examples implementation checker
 
 ## Table of contents
 

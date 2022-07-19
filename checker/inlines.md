@@ -1,4 +1,4 @@
-# [6 Inlines](https://higuma.github.io/github-flabored-markdown/#inlines)
+# GFM Examples implementation checker - [6 Inlines](https://higuma.github.io/github-flabored-markdown/#inlines)
 
 [5 Container blocks](container-blocks.md)
 ← [Table of Contents](index.md) →
