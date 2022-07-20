@@ -294,7 +294,7 @@ Markdownビューアを併用して記述作業を行う場合は次のような
 >         printf("Hello world!\n");
 >     }
 
-ただし前の行が[リストアイテム](container-blocks.md#52-list-items)の場合はリストアイテムの続きと認識される。[空行]を挿入してもリストのインデントとして扱われる。
+ただし前の行が[リストアイテム](container-blocks.md/#52-list-items)の場合はリストアイテムの続きと認識される。[空行]を挿入してもリストのインデントとして扱われる。
 
 > ```markdown
 > * List
@@ -425,7 +425,7 @@ Markdownビューアを併用して記述作業を行う場合は次のような
 
 入力をHTML文書として認識させる機能。GFMでは全部で7通りの仕様を用意しているが、どの処理系もサポートが不十分で異なる出力になることが多いため説明は省略する。
 
-> サポート状況は本ドキュメントの[GFM implementation checker - 4.6 HTML blocks](checker/leaf-blocks.md#46-html-blocks)を利用すれば実際に確認できる。GitHubでもこれら全てを仕様書通りには処理しておらず、異なる出力結果がたくさんある。
+> サポート状況は本ドキュメントの[GFM implementation checker - 4.6 HTML blocks](checker/leaf-blocks.md/#46-html-blocks)を利用すれば実際に確認できる。GitHubでもこれら全てを仕様書通りには処理しておらず、異なる出力結果がたくさんある。
 
 > またネット上には膨大な数のMarkdown文書があるが、使われているのをほとんど見たことがない。
 
@@ -449,7 +449,7 @@ Markdownビューアを併用して記述作業を行う場合は次のような
 
 > [Setext]
 
-> これは[リンク]作成の省略記法のひとつ([Example 565](https://higuma.github.io/github-flabored-markdown/#example-565))。[リンク]の作成方法は[6.6 Links](inlines.md#66-links)で詳しく説明する。
+> これは[リンク]作成の省略記法のひとつ([Example 565](https://higuma.github.io/github-flabored-markdown/#example-565))。[リンク]の作成方法は[6.6 Links](inlines.md/#66-links)で詳しく説明する。
 
 またhover時にポップアップするリンクタイトルを表示する場合はその後に`"リンクタイトル"`または`'リンクタイトル'`で記述する。これはリンク作成時に`title`属性として設定され、`[リンクラベル]`は``<a href="リンク先" title="リンクタイトル">リンクラベル</a>``と出力する。
 
@@ -476,11 +476,11 @@ Markdownビューアを併用して記述作業を行う場合は次のような
 * `:`
 * 0個以上の空白(なくてもよいが通常1つ入れる)
 * [リンク先] - 記法が2通りある(次のいずれか)
-    * `<文字列>` - [オートリンク](inlines.md#68-autolinks)記法
+    * `<文字列>` - [オートリンク](inlines.md/#68-autolinks)記法
         * 文字列を`<...>`(angle bracket)で囲む
         * 文字列に空白が含まれていてもよい
         * 文字列中に`<`や`>`が含まれる場合はエスケープして`\<`,`\>`とする
-    * `空白を含まない文字列` - [オートリンク拡張](inlines.md#69-autolinks-extension)記法
+    * `空白を含まない文字列` - [オートリンク拡張](inlines.md/#69-autolinks-extension)記法
         * `<...>`不要
         * 空白は[パーセントエンコーディング](https://ja.wikipedia.org/wiki/パーセントエンコーディング)を用いて`%20`(他の特殊文字も同様)
         * URLスキーム(`https://`など)は原則省略可能(自動判別する)
@@ -512,7 +512,7 @@ Markdownビューアを併用して記述作業を行う場合は次のような
 リンク先(URL)が空白文字や特殊文字を含む場合はいくつか方法がある。以下はリンク先`'my url'`(シングルクォートと空白を含む)に対する記述例。
 
 * [パーセントエンコーディング](https://ja.wikipedia.org/wiki/パーセントエンコーディング)記法: `%27my%20url%27`
-* [オートリンク](inlines.md#68-autolinks)(angle bracket)記法: `<'my url'>`
+* [オートリンク](inlines.md/#68-autolinks)(angle bracket)記法: `<'my url'>`
 
 > 興味のある人はExamples [161](https://higuma.github.io/github-flabored-markdown/#example-161)-[188](https://higuma.github.io/github-flabored-markdown/#example-188)を解読するとよい勉強になる。
 
@@ -527,7 +527,7 @@ Markdownビューアを用いる場合は余計なものは付けない方が作
 
 ## [4.8 Paragraphs](https://higuma.github.io/github-flabored-markdown/#paragraphs)
 
-[パラグラフ]は上下を[空行](leaf-blocks.md#49-blank-lines)(または文書の開始/終了)で区切った空でないテキスト行で表現する。
+[パラグラフ]は上下を[空行](leaf-blocks.md/#49-blank-lines)(または文書の開始/終了)で区切った空でないテキスト行で表現する。
 
 * 前後を[空行]または文書の開始・終了で区切る
 * 単語間に複数の連続した空白文字がある場合はHTML側で縮約して空白1個に変換
