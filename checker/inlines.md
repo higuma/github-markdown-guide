@@ -1,4 +1,4 @@
-# GFM Examples implementation checker - [6 Inlines](https://higuma.github.io/github-flabored-markdown/#inlines)
+# GFM implementation checker - [6 Inlines](https://higuma.github.io/github-flabored-markdown/#inlines)
 
 [5 Container blocks](container-blocks.md)
 ← [Table of Contents](index.md) →
@@ -69,7 +69,7 @@ bar
 
 ### [Example 319](https://higuma.github.io/github-flabored-markdown/#example-319)
 
-→ [Example 319](examples/319.md)
+→ [Output](examples/319.md)
 
 ### [Example 320](https://higuma.github.io/github-flabored-markdown/#example-320)
 
@@ -110,7 +110,7 @@ foo
 
 ### [Example 327](https://higuma.github.io/github-flabored-markdown/#example-327)
 
-→ [Example 327](examples/327.md)
+→ [Output](examples/327.md)
 
 ### [Example 328](https://higuma.github.io/github-flabored-markdown/#example-328)
 
@@ -118,7 +118,7 @@ foo
 
 ### [Example 329](https://higuma.github.io/github-flabored-markdown/#example-329)
 
-→ [Example 329](examples/329.md)
+→ [Output](examples/329.md)
 
 ### [Example 330](https://higuma.github.io/github-flabored-markdown/#example-330)
 
@@ -233,7 +233,7 @@ baz`
 
 ### [Example 354](https://higuma.github.io/github-flabored-markdown/#example-354)
 
-→ [Example 354](examples/354.md)
+→ [Output](examples/354.md)
 
 ### [Example 355](https://higuma.github.io/github-flabored-markdown/#example-355)
 
@@ -982,183 +982,183 @@ bar>)
 
 ### [Example 535](https://higuma.github.io/github-flabored-markdown/#example-535)
 
-→ [Example 535](examples/535.md)
+→ [Output](examples/535.md)
 
 ### [Example 536](https://higuma.github.io/github-flabored-markdown/#example-536)
 
-→ [Example 536](examples/536.md)
+→ [Output](examples/536.md)
 
 ### [Example 537](https://higuma.github.io/github-flabored-markdown/#example-537)
 
-→ [Example 537](examples/537.md)
+→ [Output](examples/537.md)
 
 ### [Example 538](https://higuma.github.io/github-flabored-markdown/#example-538)
 
-→ [Example 538](examples/538.md)
+→ [Output](examples/538.md)
 
 ### [Example 539](https://higuma.github.io/github-flabored-markdown/#example-539)
 
-→ [Example 539](examples/539.md)
+→ [Output](examples/539.md)
 
 ### [Example 540](https://higuma.github.io/github-flabored-markdown/#example-540)
 
-→ [Example 540](examples/540.md)
+→ [Output](examples/540.md)
 
 ### [Example 541](https://higuma.github.io/github-flabored-markdown/#example-541)
 
-→ [Example 541](examples/541.md)
+→ [Output](examples/541.md)
 
 ### [Example 542](https://higuma.github.io/github-flabored-markdown/#example-542)
 
-→ [Example 542](examples/542.md)
+→ [Output](examples/542.md)
 
 ### [Example 543](https://higuma.github.io/github-flabored-markdown/#example-543)
 
-→ [Example 543](examples/543.md)
+→ [Output](examples/543.md)
 
 ### [Example 544](https://higuma.github.io/github-flabored-markdown/#example-544)
 
-→ [Example 544](examples/544.md)
+→ [Output](examples/544.md)
 
 ### [Example 545](https://higuma.github.io/github-flabored-markdown/#example-545)
 
-→ [Example 545](examples/545.md)
+→ [Output](examples/545.md)
 
 ### [Example 546](https://higuma.github.io/github-flabored-markdown/#example-546)
 
-→ [Example 546](examples/546.md)
+→ [Output](examples/546.md)
 
 ### [Example 547](https://higuma.github.io/github-flabored-markdown/#example-547)
 
-→ [Example 547](examples/547.md)
+→ [Output](examples/547.md)
 
 ### [Example 548](https://higuma.github.io/github-flabored-markdown/#example-548)
 
-→ [Example 548](examples/548.md)
+→ [Output](examples/548.md)
 
 ### [Example 549](https://higuma.github.io/github-flabored-markdown/#example-549)
 
-→ [Example 549](examples/549.md)
+→ [Output](examples/549.md)
 
 ### [Example 550](https://higuma.github.io/github-flabored-markdown/#example-550)
 
-→ [Example 550](examples/550.md)
+→ [Output](examples/550.md)
 
 ### [Example 551](https://higuma.github.io/github-flabored-markdown/#example-551)
 
-→ [Example 551](examples/551.md)
+→ [Output](examples/551.md)
 
 ### [Example 552](https://higuma.github.io/github-flabored-markdown/#example-552)
 
-→ [Example 552](examples/552.md)
+→ [Output](examples/552.md)
 
 ### [Example 553](https://higuma.github.io/github-flabored-markdown/#example-553)
 
-→ [Example 553](examples/553.md)
+→ [Output](examples/553.md)
 
 ### [Example 554](https://higuma.github.io/github-flabored-markdown/#example-554)
 
-→ [Example 554](examples/554.md)
+→ [Output](examples/554.md)
 
 ### [Example 555](https://higuma.github.io/github-flabored-markdown/#example-555)
 
-→ [Example 555](examples/555.md)
+→ [Output](examples/555.md)
 
 ### [Example 556](https://higuma.github.io/github-flabored-markdown/#example-556)
 
-→ [Example 556](examples/556.md)
+→ [Output](examples/556.md)
 
 ### [Example 557](https://higuma.github.io/github-flabored-markdown/#example-557)
 
-→ [Example 557](examples/557.md)
+→ [Output](examples/557.md)
 
 ### [Example 558](https://higuma.github.io/github-flabored-markdown/#example-558)
 
-→ [Example 558](examples/558.md)
+→ [Output](examples/558.md)
 
 ### [Example 559](https://higuma.github.io/github-flabored-markdown/#example-559)
 
-→ [Example 559](examples/559.md)
+→ [Output](examples/559.md)
 
 ### [Example 560](https://higuma.github.io/github-flabored-markdown/#example-560)
 
-→ [Example 560](examples/560.md)
+→ [Output](examples/560.md)
 
 ### [Example 561](https://higuma.github.io/github-flabored-markdown/#example-561)
 
-→ [Example 561](examples/561.md)
+→ [Output](examples/561.md)
 
 ### [Example 562](https://higuma.github.io/github-flabored-markdown/#example-562)
 
-→ [Example 562](examples/562.md)
+→ [Output](examples/562.md)
 
 ### [Example 563](https://higuma.github.io/github-flabored-markdown/#example-563)
 
-→ [Example 563](examples/563.md)
+→ [Output](examples/563.md)
 
 ### [Example 564](https://higuma.github.io/github-flabored-markdown/#example-564)
 
-→ [Example 564](examples/564.md)
+→ [Output](examples/564.md)
 
 ### [Example 565](https://higuma.github.io/github-flabored-markdown/#example-565)
 
-→ [Example 565](examples/565.md)
+→ [Output](examples/565.md)
 
 ### [Example 566](https://higuma.github.io/github-flabored-markdown/#example-566)
 
-→ [Example 566](examples/566.md)
+→ [Output](examples/566.md)
 
 ### [Example 567](https://higuma.github.io/github-flabored-markdown/#example-567)
 
-→ [Example 567](examples/567.md)
+→ [Output](examples/567.md)
 
 ### [Example 568](https://higuma.github.io/github-flabored-markdown/#example-568)
 
-→ [Example 568](examples/568.md)
+→ [Output](examples/568.md)
 
 ### [Example 569](https://higuma.github.io/github-flabored-markdown/#example-569)
 
-→ [Example 569](examples/569.md)
+→ [Output](examples/569.md)
 
 ### [Example 570](https://higuma.github.io/github-flabored-markdown/#example-570)
 
-→ [Example 570](examples/570.md)
+→ [Output](examples/570.md)
 
 ### [Example 571](https://higuma.github.io/github-flabored-markdown/#example-571)
 
-→ [Example 571](examples/571.md)
+→ [Output](examples/571.md)
 
 ### [Example 572](https://higuma.github.io/github-flabored-markdown/#example-572)
 
-→ [Example 572](examples/572.md)
+→ [Output](examples/572.md)
 
 ### [Example 573](https://higuma.github.io/github-flabored-markdown/#example-573)
 
-→ [Example 573](examples/573.md)
+→ [Output](examples/573.md)
 
 ### [Example 574](https://higuma.github.io/github-flabored-markdown/#example-574)
 
-→ [Example 574](examples/574.md)
+→ [Output](examples/574.md)
 
 ### [Example 575](https://higuma.github.io/github-flabored-markdown/#example-575)
 
-→ [Example 575](examples/575.md)
+→ [Output](examples/575.md)
 
 ### [Example 576](https://higuma.github.io/github-flabored-markdown/#example-576)
 
-→ [Example 576](examples/576.md)
+→ [Output](examples/576.md)
 
 ### [Example 577](https://higuma.github.io/github-flabored-markdown/#example-577)
 
-→ [Example 577](examples/577.md)
+→ [Output](examples/577.md)
 
 ### [Example 578](https://higuma.github.io/github-flabored-markdown/#example-578)
 
-→ [Example 578](examples/578.md)
+→ [Output](examples/578.md)
 
 ### [Example 579](https://higuma.github.io/github-flabored-markdown/#example-579)
 
-→ [Example 579](examples/579.md)
+→ [Output](examples/579.md)
 
 ## [6.7 Images](https://higuma.github.io/github-flabored-markdown/#images)
 
@@ -1168,7 +1168,7 @@ bar>)
 
 ### [Example 581](https://higuma.github.io/github-flabored-markdown/#example-581)
 
-→ [Example 581](examples/581.md)
+→ [Output](examples/581.md)
 
 ### [Example 582](https://higuma.github.io/github-flabored-markdown/#example-582)
 
@@ -1180,11 +1180,11 @@ bar>)
 
 ### [Example 584](https://higuma.github.io/github-flabored-markdown/#example-584)
 
-→ [Example 584](examples/584.md)
+→ [Output](examples/584.md)
 
 ### [Example 585](https://higuma.github.io/github-flabored-markdown/#example-585)
 
-→ [Example 585](examples/585.md)
+→ [Output](examples/585.md)
 
 ### [Example 586](https://higuma.github.io/github-flabored-markdown/#example-586)
 
@@ -1204,51 +1204,51 @@ My ![foo bar](/path/to/train.jpg  "title"   )
 
 ### [Example 590](https://higuma.github.io/github-flabored-markdown/#example-590)
 
-→ [Example 590](examples/590.md)
+→ [Output](examples/590.md)
 
 ### [Example 591](https://higuma.github.io/github-flabored-markdown/#example-591)
 
-→ [Example 591](examples/591.md)
+→ [Output](examples/591.md)
 
 ### [Example 592](https://higuma.github.io/github-flabored-markdown/#example-592)
 
-→ [Example 592](examples/592.md)
+→ [Output](examples/592.md)
 
 ### [Example 593](https://higuma.github.io/github-flabored-markdown/#example-593)
 
-→ [Example 593](examples/593.md)
+→ [Output](examples/593.md)
 
 ### [Example 594](https://higuma.github.io/github-flabored-markdown/#example-594)
 
-→ [Example 594](examples/594.md)
+→ [Output](examples/594.md)
 
 ### [Example 595](https://higuma.github.io/github-flabored-markdown/#example-595)
 
-→ [Example 595](examples/595.md)
+→ [Output](examples/595.md)
 
 ### [Example 596](https://higuma.github.io/github-flabored-markdown/#example-596)
 
-→ [Example 596](examples/596.md)
+→ [Output](examples/596.md)
 
 ### [Example 597](https://higuma.github.io/github-flabored-markdown/#example-597)
 
-→ [Example 597](examples/597.md)
+→ [Output](examples/597.md)
 
 ### [Example 598](https://higuma.github.io/github-flabored-markdown/#example-598)
 
-→ [Example 598](examples/598.md)
+→ [Output](examples/598.md)
 
 ### [Example 599](https://higuma.github.io/github-flabored-markdown/#example-599)
 
-→ [Example 599](examples/599.md)
+→ [Output](examples/599.md)
 
 ### [Example 600](https://higuma.github.io/github-flabored-markdown/#example-600)
 
-→ [Example 600](examples/600.md)
+→ [Output](examples/600.md)
 
 ### [Example 601](https://higuma.github.io/github-flabored-markdown/#example-601)
 
-→ [Example 601](examples/601.md)
+→ [Output](examples/601.md)
 
 ## [6.8 Autolinks](https://higuma.github.io/github-flabored-markdown/#autolinks)
 
@@ -1396,93 +1396,93 @@ a.b-c_d@a.b_
 
 ### [Example 632](https://higuma.github.io/github-flabored-markdown/#example-632)
 
-→ [Example 632](examples/632.md)
+→ [Output](examples/632.md)
 
 ### [Example 633](https://higuma.github.io/github-flabored-markdown/#example-633)
 
-→ [Example 633](examples/633.md)
+→ [Output](examples/633.md)
 
 ### [Example 634](https://higuma.github.io/github-flabored-markdown/#example-634)
 
-→ [Example 634](examples/634.md)
+→ [Output](examples/634.md)
 
 ### [Example 635](https://higuma.github.io/github-flabored-markdown/#example-635)
 
-→ [Example 635](examples/635.md)
+→ [Output](examples/635.md)
 
 ### [Example 636](https://higuma.github.io/github-flabored-markdown/#example-636)
 
-→ [Example 636](examples/636.md)
+→ [Output](examples/636.md)
 
 ### [Example 637](https://higuma.github.io/github-flabored-markdown/#example-637)
 
-→ [Example 637](examples/637.md)
+→ [Output](examples/637.md)
 
 ### [Example 638](https://higuma.github.io/github-flabored-markdown/#example-638)
 
-→ [Example 638](examples/638.md)
+→ [Output](examples/638.md)
 
 ### [Example 639](https://higuma.github.io/github-flabored-markdown/#example-639)
 
-→ [Example 639](examples/639.md)
+→ [Output](examples/639.md)
 
 ### [Example 640](https://higuma.github.io/github-flabored-markdown/#example-640)
 
-→ [Example 640](examples/640.md)
+→ [Output](examples/640.md)
 
 ### [Example 641](https://higuma.github.io/github-flabored-markdown/#example-641)
 
-→ [Example 641](examples/641.md)
+→ [Output](examples/641.md)
 
 ### [Example 642](https://higuma.github.io/github-flabored-markdown/#example-642)
 
-→ [Example 642](examples/642.md)
+→ [Output](examples/642.md)
 
 ### [Example 643](https://higuma.github.io/github-flabored-markdown/#example-643)
 
-→ [Example 643](examples/643.md)
+→ [Output](examples/643.md)
 
 ### [Example 644](https://higuma.github.io/github-flabored-markdown/#example-644)
 
-→ [Example 644](examples/644.md)
+→ [Output](examples/644.md)
 
 ### [Example 645](https://higuma.github.io/github-flabored-markdown/#example-645)
 
-→ [Example 645](examples/645.md)
+→ [Output](examples/645.md)
 
 ### [Example 646](https://higuma.github.io/github-flabored-markdown/#example-646)
 
-→ [Example 646](examples/646.md)
+→ [Output](examples/646.md)
 
 ### [Example 647](https://higuma.github.io/github-flabored-markdown/#example-647)
 
-→ [Example 647](examples/647.md)
+→ [Output](examples/647.md)
 
 ### [Example 648](https://higuma.github.io/github-flabored-markdown/#example-648)
 
-→ [Example 648](examples/648.md)
+→ [Output](examples/648.md)
 
 ### [Example 649](https://higuma.github.io/github-flabored-markdown/#example-649)
 
-→ [Example 649](examples/649.md)
+→ [Output](examples/649.md)
 
 ### [Example 650](https://higuma.github.io/github-flabored-markdown/#example-650)
 
-→ [Example 650](examples/650.md)
+→ [Output](examples/650.md)
 
 ### [Example 651](https://higuma.github.io/github-flabored-markdown/#example-651)
 
-→ [Example 651](examples/651.md)
+→ [Output](examples/651.md)
 
 ### [Example 652](https://higuma.github.io/github-flabored-markdown/#example-652)
 
-→ [Example 652](examples/652.md)
+→ [Output](examples/652.md)
 
 ## [6.11 Disallowed Raw HTML (extension)](https://higuma.github.io/github-flabored-markdown/#disallowed-raw-html-extension-)
 
 ### [Example 653](https://higuma.github.io/github-flabored-markdown/#example-653)
 
-→ [Example 653](examples/653.md)
+→ [Output](examples/653.md)
 
 ## [6.12 Hard line breaks](https://higuma.github.io/github-flabored-markdown/#hard-line-breaks)
 
@@ -1533,11 +1533,11 @@ span`
 
 ### [Example 663](https://higuma.github.io/github-flabored-markdown/#example-663)
 
-→ [Example 663](examples/663.md)
+→ [Output](examples/663.md)
 
 ### [Example 664](https://higuma.github.io/github-flabored-markdown/#example-664)
 
-→ [Example 664](examples/664.md)
+→ [Output](examples/664.md)
 
 ### [Example 665](https://higuma.github.io/github-flabored-markdown/#example-665)
 

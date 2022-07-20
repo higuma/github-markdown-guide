@@ -11,13 +11,13 @@ GitHub Flavored Markdown (以下GFM)はGitHub及びGitHub Enterproseで用いら
 
 GFMは厳密な[CommonMark]のsupersetであり、オリジナルにない機能は __extensions__ と呼んで区別する。
 
-> [目次](https://higuma.github.io/github-flabored-markdown/)の中で、色付き背景で末尾に"(extension)"と明記されている項目が該当部。
+> [仕様書目次](https://higuma.github.io/github-flabored-markdown/)の中で、色付き背景で末尾に"(extension)"と明記されている項目が該当部。
 
 GitHubサイトにHTMLレンダリングする際にはセキュリティと一貫性のためのサニタライズ処理が行われる。
 
 ## [1.2 What is Markdown?](https://higuma.github.io/github-flabored-markdown/#what-is-markdown-)
 
-[Markdown]は(2019年現在)最もポピュラーな[軽量マークアップ言語]で、多種多様な分野に利用されている。その起源は2004年に遡り、John Gruberによる[最初の仕様](https://daringfireball.net/projects/markdown/syntax)とその[Perl実装](https://daringfireball.net/projects/downloads/Markdown_1.0.1.zip)が発表されている。
+[Markdown]は(本仕様書執筆時の2019年現在)最もポピュラーな[軽量マークアップ言語]で、多種多様な分野に利用されている。その起源は2004年に遡り、John Gruberによる[最初の仕様](https://daringfireball.net/projects/markdown/syntax)とその[Perl実装](https://daringfireball.net/projects/downloads/Markdown_1.0.1.zip)が発表されている。
 
 > [Markdown]以前にも[軽量マークアップ言語]は多数存在していた。[Markdown]仕様は[AsciiDoc]、[ATX]、[Setext]など当時の既存[軽量マークアップ言語]の影響を受けており、仕様を借用している。
 

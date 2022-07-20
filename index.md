@@ -16,7 +16,7 @@ Table of Contents →
 * [5 Container blocks](container-blocks.md)
 * [6 Inlines](inlines.md)
 * [Appendix: A parsing strategy](appendix-a-parsing-strategy.md)
-* [Examples implementation checker](checker/index.md)
+* [GFM implementation checker](checker/index.md)
 
 ## Full table of contents
 
@@ -68,7 +68,7 @@ Table of Contents →
     * [Overview](appendix-a-parsing-strategy.md#overview)
     * [Phase 1: block structure](appendix-a-parsing-strategy.md#phase-1-block-structure)
     * [Phase 2: inline structure](appendix-a-parsing-strategy.md#phase-2-inline-structure)
-* [Examples implementation checker](checker/index.md)
+* [GFM implementation checker](checker/index.md)
 
 ------------------------------------------------------------------------
 
