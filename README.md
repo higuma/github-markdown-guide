@@ -14,7 +14,6 @@
 * [5 Container blocks](Container-blocks.md)
 * [6 Inlines](inlines.md)
 * [Appendix: A parsing strategy](appendix-a-parsing-strategy.md)
-* [GFM implementation checker](checker/index.md)
 
 ------------------------------------------------------------------------
 
