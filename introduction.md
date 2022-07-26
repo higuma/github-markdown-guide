@@ -72,7 +72,7 @@ GitHubサイトにHTMLレンダリングする際、セキュリティと一貫�
 
 GFMは[Markdown]の成立から現在までの経緯を踏まえ、標準として耐えうる仕様と安定した動作を目指して作られている(→ [README](https://github.com/github/cmark-gfm/blob/master/README.md))。先に述べた通り今では単に[Markdown]といえば[CommonMark]以降、特にGFM仕様を指す場合が多い。
 
-> GFM仕様書本文ではオリジナルMarkdownの文法の曖昧さを14項目も指摘して解説しているが、今はもう読む必要なし。これも[CommonMark]仕様書からの丸写しで、Bruber版[Markdown]に対する[CommonMark]の優位性を主張する目的の文章。
+> GFM仕様書本文ではオリジナルMarkdownの文法の曖昧さを14項目も指摘して解説しているが、今はもう読む必要なし。これも[CommonMark]仕様書からの丸写しで、Gruber版[Markdown]に対する[CommonMark]の優位性を主張する目的の文章。
 
 最後の __... nothing in Markdown counts as a “syntax error, ...”__ という一節は重要なので補足説明する。[Markdown]の世界では文法エラーというものは存在しない。どのような文書入力もエラーにはせず、できる限り文書作成者の意図に沿った結果になるよう寛容に処理して出力する
 
