@@ -1,7 +1,7 @@
 # [5 Container blocks](https://higuma.github.io/github-flabored-markdown/#container-blocks)
 
 [4 Leaf blocks](leaf-blocks.md)
-← [Table of Contents](index.md) →
+← [Table of contents](index.md) →
 [6 Inlines](inlines.md)
 
 ------------------------------------------------------------------------
@@ -17,5 +17,5 @@
 ------------------------------------------------------------------------
 
 [4 Leaf blocks](leaf-blocks.md)
-← [Table of Contents](index.md) →
+← [Table of contents](index.md) →
 [6 Inlines](inlines.md)

@@ -1,7 +1,7 @@
 # [3 Blocks and inlines](https://higuma.github.io/github-flabored-markdown/#blocks-and-inlines)
 
 [2 Preliminaries](preliminaries.md)
-← [Table of Contents](index.md) →
+← [Table of contents](index.md) →
 [4 Leaf blocks](leaf-blocks.md)
 
 ------------------------------------------------------------------------
@@ -30,13 +30,13 @@ Markdownのブロックとインラインがごちゃまぜになった場合は
 
 ブロックには2種類ある。
 
-* __container blocks__: 内部に別のブロックを持つことができる(ネスト可) - `<ul>`, `<li>`, etc.
-* __leaf blocks__: 内部に別のブロックを持てない(ネスト不可) - `<h1>`, `<hr>`, etc.
+* __container blocks__: 内部に別のブロックを持つことができる(ネスト可) - [引用文](container-blocks.md#51-block-quotes), [リスト](container-blocks.md#54-lists), [リストアイテム](container-blocks.md#52-list-items), etc.
+* __leaf blocks__: 内部に別のブロックを持てない(ネスト不可) - [見出し](leaf-blocks.md#42-atx-headings), [コードブロック](leaf-blocks.md#45-fenced-code-blocks), [パラグラフ](leaf-blocks.md#48-paragraphs), etc.
 
-> [表組み](leaf-blocks.md#410-tables-extension)(`<table>`)はHTMLではネスト可能だが、GFMでは(少なくとも今のところ)ネストできない(leafとして扱われる)。どうしても必要な場合は[HTMLブロック](leaf-blocks.md#46-html-blocks)を使えば一応可能。ただしネストした表が必要になることは稀で、筆者は今まで使ったことはない。
+> [表組み](leaf-blocks.md#410-tables-extension)(`<table>`)はHTMLではネスト可能だが、GFMでは(少なくとも今のところ)ネストできない(leafとして扱われる)。どうしても必要な場合は[HTMLブロック](leaf-blocks.md#46-html-blocks)を使えば一応可能。ただしネストした表を用いるケースは稀で、筆者は今まで必要になったことはない。
 
 ------------------------------------------------------------------------
 
 [2 Preliminaries](preliminaries.md)
-← [Table of Contents](index.md) →
+← [Table of contents](index.md) →
 [4 Leaf blocks](leaf-blocks.md)

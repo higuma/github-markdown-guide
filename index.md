@@ -1,13 +1,13 @@
 # GitHub Flavored Markdown 実践ガイド
 
-Table of Contents →
+Table of contents →
 [About this document](README.md)
 
 ------------------------------------------------------------------------
 
-## Table of contents
+## 目次
 
-* [About this document](README.md)
+* [本ガイドについて](README.md)
 * [1 Introduction](introduction.md)
 * [2 Preliminaries](preliminaries.md)
 * [3 Blocks and inlines](blocks-and-inlines.md)
@@ -16,9 +16,9 @@ Table of Contents →
 * [6 Inlines](inlines.md)
 * [Appendix: A parsing strategy](appendix-a-parsing-strategy.md)
 
-## Full table of contents
+## 総目次
 
-* [About this document](README.md)
+* [本ガイドについて](README.md)
 * [1 Introduction](introduction.md)
     * [1.1 What is GitHub Flavored Markdown?](introduction.md#11-what-is-github-flavored-markdown-)
     * [1.2 What is Markdown?](introduction.md#12-what-is-markdown-)
@@ -28,7 +28,7 @@ Table of Contents →
     * [2.1 Characters and lines](preliminaries.md#21-characters-and-lines)
     * [2.2 Tabs](preliminaries.md#22-tabs)
     * [2.3 Insecure characters](preliminaries.md#23-insecure-characters)
-    * [How to read this tutorial](preliminaries.md#how-to-read-this-tutorial)
+    * [本ガイドの構成](preliminaries.md#本ガイドの構成)
 * [3 Blocks and inlines](blocks-and-inlines.md)
     * [3.1 Precedence](blocks-and-inlines.md#31-precedence)
     * [3.2 Container blocks and leaf blocks](blocks-and-inlines.md#32-container-blocks-and-leaf-blocks)
@@ -70,5 +70,5 @@ Table of Contents →
 
 ------------------------------------------------------------------------
 
-Table of Contents →
+Table of contents →
 [About this document](README.md)

@@ -1,7 +1,7 @@
 # [6 Inlines](https://higuma.github.io/github-flabored-markdown/#inlines)
 
 [5 Container blocks](container-blocks.md)
-← [Table of Contents](index.md) →
+← [Table of contents](index.md) →
 [Appendix: A parsing strategy](appendix-a-parsing-strategy.md)
 
 ------------------------------------------------------------------------
@@ -15,6 +15,8 @@
 ## [6.4 Emphasis and strong emphasis](https://higuma.github.io/github-flabored-markdown/#emphasis-and-strong-emphasis)
 
 ## [6.5 Strikethrough (extension)](https://higuma.github.io/github-flabored-markdown/#strikethrough-extension-)
+
+> 初期実装のGruber版Markdownにあった機能だが、CommonMarkでは(おそらく`~~~`をFenced code blockに用いた副作用で)機能が削除された。GFMではこれを復活させた。
 
 ## [6.6 Links](https://higuma.github.io/github-flabored-markdown/#links)
 
@@ -37,5 +39,5 @@
 ------------------------------------------------------------------------
 
 [5 Container blocks](container-blocks.md)
-← [Table of Contents](index.md) →
+← [Table of contents](index.md) →
 [Appendix: A parsing strategy](appendix-a-parsing-strategy.md)
