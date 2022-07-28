@@ -15,6 +15,7 @@ Table of contents →
 * [5 Container blocks](container-blocks.md)
 * [6 Inlines](inlines.md)
 * [Appendix: A parsing strategy](appendix-a-parsing-strategy.md)
+* [補足 - GitHubのMarkdown実装](github-markdown -implementation.md)
 
 ## 総目次
 
@@ -67,6 +68,7 @@ Table of contents →
     * [Overview](appendix-a-parsing-strategy.md#overview)
     * [Phase 1: block structure](appendix-a-parsing-strategy.md#phase-1-block-structure)
     * [Phase 2: inline structure](appendix-a-parsing-strategy.md#phase-2-inline-structure)
+* [補足 - GitHubのMarkdown実装](github-markdown -implementation.md)
 
 ------------------------------------------------------------------------
 

@@ -6,25 +6,32 @@
 
 ------------------------------------------------------------------------
 
-ブロック(要素)とインライン(要素)の違いの解説。HTMLと基本的に同じなので補足事項なし。
+Markdownのブロック構文とインライン構文はそれぞれHTMLのブロック要素とインライン要素に対応する。
 
-> ただしHTMLのようにCSS(`display`属性)でブロック/インラインの種別を変更するような高度な機能は今のところない。
+> 本ガイドはHTMLの中級程度の知識を前提としている。ブロック要素とインライン要素の違いが分からない人は次のMDN解説を読むとよい。
+> 
+> * [MDN - インライン要素](https://developer.mozilla.org/ja/docs/Web/HTML/Inline_elements)
+> * [MDN - ブロックレベル要素](https://developer.mozilla.org/ja/docs/Web/HTML/Block-level-elements)
+> 
+> なおMarkdownにはCSS([`display`](https://developer.mozilla.org/ja/docs/Web/CSS/display)属性)でブロック/インラインの種別を変更するような高度な機能は今のところない。
 
 ## [3.1 Precedence](https://higuma.github.io/github-flabored-markdown/#precedence)
 
-Markdownのブロックとインラインがごちゃまぜになった場合はブロックが優先する。次の例ではブロック(`- ...` → `<li>`)とインライン(`` `one ... two` `` → `<code>`)が互いに境界をオーバーラップしていることに注目。
+構文解析はHTMLと同様の木構造に基いて行われる。そのため構文要素間では一方がもう一方を含む(子孫関係)ことはあっても、両者が部分的にオーバーラップすることはない。
 
-> ```markdown
+特にMarkdownのブロックとインラインの記述がオーバーラップした場合はブロックを優先して構文解析する。次の例ではブロック構文の[リストアイテム](`- ...` → `<li>`)とインライン構文の[コードスパン](`` `one ... two` `` → `<code>`)の記法が互いに境界をオーバーラップしていることに注目。
+
+```markdown
+- `one
+- two`
+```
+
+結果は次の通り。ブロックの`- ...`が優先して(外側に`<ul>`を配してその内部の)2個の`<li>`に変換され、分断されたそれぞれの`` ` ``は([コードスパン]とは認識せず)そのまま文字として出力する。
+
 > - `one
 > - two`
-> ```
 
-結果は次の通り。ブロックの`- ...`が優先して(外側に`<ul>`を配し、その内部の)`<li>`に変換され、分断されたそれぞれの`` ` ``は単にそのまま文字として出力する。
-
-> - `one
-> - two`
-
-これからも分かる通り文法解析はまずブロックを先に行い、その後にインラインを処理する。
+この通り文法解析はまずブロックを先に行い、その後にインラインを処理する。
 
 ## [3.2 Container blocks and leaf blocks](https://higuma.github.io/github-flabored-markdown/#container-blocks-and-leaf-blocks)
 
@@ -40,3 +47,6 @@ Markdownのブロックとインラインがごちゃまぜになった場合は
 [2 Preliminaries](preliminaries.md)
 ← [Table of contents](index.md) →
 [4 Leaf blocks](leaf-blocks.md)
+
+[コードスパン]: inlines.md#63-code-spans
+[リストアイテム]: container-blocks.md#52-list-items

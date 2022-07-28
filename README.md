@@ -7,9 +7,9 @@
 
 ## 本ガイドについて
 
-GitHub Flabored Markdown仕様書 ([最新 (公式)](https://github.github.com/gfm/) | [Version 0.29-gfm (ミラー)](https://higuma.github.io/github-flabored-markdown/)) を題材とし、GitHub Flabored Markdown (以下 __GFM__)の仕様とその実践的な記述方法について解説する。
+GitHub Flabored Markdown仕様書 ( [最新 (公式)](https://github.github.com/gfm/) | [Version 0.29-gfm (ミラー)](https://higuma.github.io/github-flabored-markdown/) ) を題材とし、GitHub Flabored Markdown (以下 __GFM__)の仕様とその実践的な記述方法について解説する。
 
-[Markdown] → [CommonMark] → GFM の流れの歴史的経緯は [1 Introduction](introduction.md) を参照。また本ガイドの方針と構成に関しては [2 Preliminaries](preliminaries.md) の後半部 [本ガイドの構成](preliminaries.md#本ガイドの構成) を参照。
+読者は中級以上のHTMLの知識があるものとする。[Markdown] → [CommonMark] → GFM の流れの歴史的経緯は [1 Introduction](introduction.md) を参照。また本ガイドの方針と構成に関しては [2 Preliminaries](preliminaries.md) の後半部 [本ガイドの構成](preliminaries.md#本ガイドの構成) を参照。
 
 ## 目次
 
@@ -21,6 +21,7 @@ GitHub Flabored Markdown仕様書 ([最新 (公式)](https://github.github.com/g
 * [5 Container blocks](Container-blocks.md)
 * [6 Inlines](inlines.md)
 * [Appendix: A parsing strategy](appendix-a-parsing-strategy.md)
+* [補足 - GitHubのMarkdown実装](github-markdown-implementation.md)
 
 ## [総目次](index.md#総目次)
 
@@ -28,7 +29,6 @@ GitHub Flabored Markdown仕様書 ([最新 (公式)](https://github.github.com/g
 
 [Table of contents](index.md) →
 [1. Introduction](introduction.md)
-
 
 [CommonMark]: https://commonmark.org/
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
