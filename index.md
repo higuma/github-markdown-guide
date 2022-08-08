@@ -15,14 +15,15 @@ Table of contents →
 * [5 Container blocks](container-blocks.md)
 * [6 Inlines](inlines.md)
 * [Appendix: A parsing strategy](appendix-a-parsing-strategy.md)
-* [補足 - GitHubのMarkdown実装](github-markdown -implementation.md)
+* [補足 - GitHubのMarkdown実装](github-markdown-implementation.md)
 
 ## 総目次
 
 * [本ガイドについて](README.md)
 * [1 Introduction](introduction.md)
-    * [1.1 What is GitHub Flavored Markdown?](introduction.md#11-what-is-github-flavored-markdown-)
+    * [Markdownの成立まで](introduction.md#Markdownの成立まで)
     * [1.2 What is Markdown?](introduction.md#12-what-is-markdown-)
+    * [1.1 What is GitHub Flavored Markdown?](introduction.md#11-what-is-github-flavored-markdown-)
     * [1.3 Why is a spec needed?](introduction.md#13-why-is-a-spec-needed-)
     * [1.4 About this document](introduction.md#14-about-this-document)
 * [2 Preliminaries](preliminaries.md)
@@ -30,6 +31,11 @@ Table of contents →
     * [2.2 Tabs](preliminaries.md#22-tabs)
     * [2.3 Insecure characters](preliminaries.md#23-insecure-characters)
     * [本ガイドの構成](preliminaries.md#本ガイドの構成)
+        * [背景](preliminaries.md#背景)
+        * [各セクションの構成](preliminaries.md#各セクションの構成)
+        * [タブ文字の扱い](preliminaries.md#タブ文字の扱い)
+        * [コード例の表現方法](preliminaries.md#コード例の表現方法)
+        * [公開方法](preliminaries.md#公開方法)
 * [3 Blocks and inlines](blocks-and-inlines.md)
     * [3.1 Precedence](blocks-and-inlines.md#31-precedence)
     * [3.2 Container blocks and leaf blocks](blocks-and-inlines.md#32-container-blocks-and-leaf-blocks)
@@ -68,7 +74,7 @@ Table of contents →
     * [Overview](appendix-a-parsing-strategy.md#overview)
     * [Phase 1: block structure](appendix-a-parsing-strategy.md#phase-1-block-structure)
     * [Phase 2: inline structure](appendix-a-parsing-strategy.md#phase-2-inline-structure)
-* [補足 - GitHubのMarkdown実装](github-markdown -implementation.md)
+* [補足 - GitHubのMarkdown実装](github-markdown-implementation.md)
 
 ------------------------------------------------------------------------
 

@@ -6,6 +6,8 @@
 
 ------------------------------------------------------------------------
 
+> [CommonMark仕様書](https://spec.commonmark.org/0.29/)からの引用(丸写し)。
+
 ## [Overview](https://higuma.github.io/github-flabored-markdown/#overview)
 
 ## [Phase 1: block structure](https://higuma.github.io/github-flabored-markdown/#phase-1-block-structure)

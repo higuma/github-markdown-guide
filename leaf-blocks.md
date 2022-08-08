@@ -16,45 +16,44 @@
 
 GFM仕様は表現方法に幅がありすぎて、人によってまるで違う書き方になることが多い。そこで何でもいいから自分流の書き方を決めるとよい。以下はその一例で、余計なものを一切入れず、さらに誤認識への対策として前後に[空行]を入れる。
 
+```markdown
+パラグラフ(1)
+
+------------------------------------------------------------------------
+
+パラグラフ(2)
+```
+
+> パラグラフ(1)
+> 
+> ------------------------------------------------------------------------
+> 
+> パラグラフ(2)
+
 * `---------`のように明確に判別できる十分な長さのハイフンを用いる(3文字以上、スペースなし)
 * 前後に[空行]を入れる(誤認識対策)
 
-> ```markdown
-> Foo
-> 
-> ------------------------------------------------------------------------
-> 
-> bar
-> ```
+### Details
 
-出力は次の通り。
-
-> Foo
-> 
-> ------------------------------------------------------------------------
-> 
-> bar
-
-### Specification
+<details>
+<summary><strong>Summary</strong></summary>
 
 次の行は区切り(`<hr>`)に変換される。
 
 * `-`が3文字以上、または``_``が3文字以上、または``*``が3文字以上
 * 全て同じ文字で、行中にスペース以外の別の文字があってはならない
-* 先頭に3文字までインデント用スペース可(4文字以上は[Indented code block]と認識される)
+* 先頭に3文字までインデント用スペース可(4文字以上は[インデント方式コードブロック]と認識される)
 * 中間と行末に任意個のスペースが挿入されていてもよい
 
-> ```markdown
-> ---
-> 
-> ____
-> 
-> * * * * *
-> 
->    ---
-> ```
+```markdown
+---
 
-全て次の通り`<hr>`に変換される。
+____
+
+* * * * *
+
+   ---
+```
 
 > ---
 > 
@@ -63,14 +62,19 @@ GFM仕様は表現方法に幅がありすぎて、人によってまるで違�
 > * * * * *
 > 
 >    ---
+
+</details>
+
+<details>
+<summary><strong>Examples</strong></summary>
 
 GFM仕様では前後に[空行]は不要。次は[パラグラフ]を上下に区切る。
 
-> ```markdown
-> Foo
-> ***
-> bar
-> ```
+```markdown
+Foo
+***
+bar
+```
 
 > Foo
 > ***
@@ -78,11 +82,11 @@ GFM仕様では前後に[空行]は不要。次は[パラグラフ]を上下に�
 
 ただし区切り文字に`-`を使う場合は注意。
 
-> ```markdown
-> Foo
-> ---
-> bar
-> ```
+```markdown
+Foo
+---
+bar
+```
 
 これは`Foo`が[Setext heading]と認識され``<h2>``に変換される。
 
@@ -92,9 +96,9 @@ GFM仕様では前後に[空行]は不要。次は[パラグラフ]を上下に�
 
 このような誤認識への対策のため前後に[空行]を挿入する方が間違いない。また(経験上)GFM以外のMarkdown実装で[空行]が必要なものもある。不要な[空行]は単に無視される(無害でより安全)。
 
-## [4.2 ATX headings](https://higuma.github.io/github-flabored-markdown/#atx-headings)
+</details>
 
-> [ATX]から取り入れた仕様。
+## [4.2 ATX headings](https://higuma.github.io/github-flabored-markdown/#atx-headings)
 
 見出し(``<h1>``, ``<h2>``, ``<h3>``, ``<h4>``, ``<h5>``, ``<h6>``)を表現する。
 
@@ -102,104 +106,141 @@ GFM仕様では前後に[空行]は不要。次は[パラグラフ]を上下に�
 
 Markdownビューアを併用して記述作業を行う場合は次のようなミニマル仕様がお勧め。余計なものは一切付けないが、誤認識対策として前後の[空行]は入れる。
 
-* 先頭にヘッダレベルと同じ個数の`#`
-* その後にスペース1つ置いてからコンテンツ(任意の[インライン]を記述可能)
-* コンテンツの末尾が`/ #+$/`の場合は`\`でエスケープ
-* 行頭インデントなし、また行末に余分なスペースや`#`は入れない
-* 前後に[空行]を入れる(誤認識対策)
-* 逆に`#`で始まる通常テキストは`\`でエスケープする
+* 先頭にヘッダレベル(1..6)と同じ個数の`#`
+* その後にスペース1つ置いてからコンテンツ(タイトル)
+* 前後に[空行]を入れる(通常不要だが誤認識対策のため推奨)
 
-> ```markdown
-> # h1
+```markdown
+# 文書タイトル
+
+## 大項目
+
+### 中項目
+
+#### 小項目
+
+##### 補足事項
+
+###### (あまり用いられない)
+```
+
+> # 文書タイトル
 > 
-> ## h2
+> ## 大項目
 > 
-> ### h3
+> ### 中項目
 > 
-> #### h4
+> #### 小項目
 > 
-> ##### h5
+> ##### 補足事項
 > 
-> ###### h6
+> ###### (あまり用いられない)
+
+コンテンツ(タイトル本文)には任意の[インライン]構文を記述可能。ただし強調(`<strong>`)は元々設定されているため効果がない場合が多い(CSS設定により異なる)。
+
+```markdown
+### 斜体 | 強調 | 取り消し線 → _Italic_ | **(たぶん)効果なし** | ~~取消~~
+
+### リンク | オートリンク → [CommonMark](https://commonmark.org/) | https://github.com/
+
+### 画像 → ![Bear](https://github.githubassets.com/images/icons/emoji/unicode/1f43b.png?v8)
+
+### 文字参照 | コードスパン → → _&nabla;&CenterDot;D = &rho;_ | `document.getElementById('main');`
+```
+
+> ### 斜体 | 強調 | 取り消し線 → _Italic_ | **(たぶん)効果なし** | ~~取消~~
 > 
-> ### h3 with _emphasis_ **strong** ~~strikethrough~~
+> ### リンク | オートリンク → [CommonMark](https://commonmark.org/) | https://github.com/
 > 
+> ### 画像 → ![Bear](https://github.githubassets.com/images/icons/emoji/unicode/1f43b.png?v8)
+> 
+> ### 文字参照 | コードスパン → → _&nabla;&CenterDot;D = &rho;_ | `document.getElementById('main');`
+
+特殊ケースの記述方法は次の通り。
+
+* コンテンツの末尾が`/ #+$/`の場合は`\`でエスケープ
+* 逆に`#`で始まる通常テキストは先頭を`\`でエスケープ
+
+```markdown
+### h3 with ending \###
+
+\### plain text
+```
+
 > ### h3 with ending \###
 > 
 > \### plain text
-> ```
 
-> # h1
-> 
-> ## h2
-> 
-> ### h3
-> 
-> #### h4
-> 
-> ##### h5
-> 
-> ###### h6
-> 
-> ### h3 with _emphasis_ **strong** ~~strikethrough~~
-> 
-> ### h3 with ending \###j
-> 
-> \### plain text
+### Details
 
-### Specification
+<details>
+<summary><strong>Summary</strong></summary>
+
+> [ATX]から取り入れた仕様。
 
 * 行の先頭文字は`#`(→``<h1>``), `##`(→``<h2>``), ... , `######`(→``<h6>``)
     * 手前に3文字までインデント用スペースを挿入可能
 * 直後に1個以上のスペースの後にコンテンツ(見出し文)
     * コンテンツ中に任意の[インライン]を挿入できる
 * コンテンツの後に1個以上のスペースを隔てて任意個の`#`、任意個のスペースがあってよい(除去される)
+* GFM仕様では前後の[空行]は不要
+    * ただし前後に別のマークアップがあると誤認識の元になりやすい(付けるべき)
+    * 無駄な[空行]は単に無視されるため無害
 
-> ```markdown
+</details>
+
+<details>
+<summary><strong>Examples</strong></summary>
+
+GFM仕様では前後の[空行]は不要。
+
+```markdown
+# h1
+## h2
+### h3
+#### h4
+##### h5
+###### h6
+```
+
 > # h1
 > ## h2
 > ### h3
 > #### h4
 > ##### h5
 > ###### h6
-> ```
 
-> # h1
-> ## h2
-> ### h3
-> #### h4
-> ##### h5
-> ###### h6
+> ただし優先度がより高いマークアップが前後にないことが条件。
 
-HTMLの[見出し]要素は``<h6>``までしかないので、7つ以上はテキストとして扱われる。
+HTMLの[見出し]要素は``<h6>``までのため、7つ以上はテキストとして扱われる。
 
-> ```markdown
-> ####### foo
-> ```
+```markdown
+####### foo
+```
 
 > ####### foo
 
 `#`, `##`, `###`, ...とコンテンツの間にはスペースが必要(ないとテキストとして扱われる)。なお2つ以上スペースを挿入しても縮約されて同じ出力になる。
 
-> ```markdown
-> ###text
+```markdown
+### h3
+###     h3
+###text
+```
+
 > ### h3
 > ###     h3
-> ```
-
 > ###text
-> ### h3
-> ###     h3
 
-> 昔はスペースなしの文法(例: `###Heading`)を使える実装があったと推測される(→ [Stack Overflow文例](https://stackoverflow.com/questions/27981247/github-markdown-same-page-link))。今はスペースが必須なので注意。
+> 昔はスペースなしの文法(例: `##Title`)を使える実装もあったと推測される(→ [Stack Overflow文例](https://stackoverflow.com/questions/27981247/github-markdown-same-page-link))。今はスペースが必須なので注意。
 
 ATX headingの形式に一致する行を通常テキスト([パラグラフ])として扱う場合は`\`でエスケープする。
 
-> ```markdown
-> \## escaped text
-> 
-> #\# another escaped text
-> ```
+```markdown
+\## escaped text
+
+#\# another escaped text
+```
 
 > \## escaped text
 > 
@@ -207,23 +248,23 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 
 コンテンツには任意の[インライン]を挿入できる。
 
-> ```markdown
-> # foo *bar* \*baz\*
-> ## Example Domain - <https://www.example.com/>
-> ```
+```markdown
+# foo *bar* \*baz\*
+## Example Domain - <https://www.example.com/>
+```
 
 > # foo *bar* \*baz\*
 > ## Example Domain - <https://www.example.com/>
 
-先頭に3つまでスペースを挿入できる。4つ以上は[Indented code block]と認識される。
+先頭に3つまでスペースを挿入できる。4つ以上は[インデント方式コードブロック]と認識される。
 
-> ```markdown
-> #### h4
->  ### h3
->   ## h2
->    # h1
->     # Indented code block
-> ```
+```markdown
+#### h4
+ ### h3
+  ## h2
+   # h1
+    # Indented code block
+```
 
 > #### h4
 >  ### h3
@@ -233,12 +274,12 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 
 行末に1個以上の空白文字、1個以上の`#`、任意個の空白文字の順([正規表現]では``/\s+#+\s*$/``)があってよい(処理時に除去)。またスペースを挟まずに`#`で終了している場合はテキストとしてそのまま出力する。
 
-> ```markdown
-> ### h3 ###
-> ### h3   ###   
-> ### h3 ### ###
-> ### h3###
-> ```
+```markdown
+### h3 ###
+### h3   ###   
+### h3 ### ###
+### h3###
+```
 
 > ### h3 ###
 > ### h3   ###   
@@ -247,11 +288,11 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 
 逆に末尾の`#`を文字として表示する場合は`\`でエスケープする。
 
-> ```markdown
-> # h1 \#
-> ## h2 #\##
-> ### h3 \###
-> ```
+```markdown
+# h1 \#
+## h2 #\##
+### h3 \###
+```
 
 > # h1 \#
 > ## h2 #\##
@@ -262,9 +303,14 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 * 前後に[空行]は不要、ただし他の処理系も考慮すると付けた方が安全(見やすさの効果もある)
 * コンテンツは空でもよい
 
-## [4.3 Setext headings](https://higuma.github.io/github-flabored-markdown/#setext-headings)
+> CommonMark/GFM仕様では前後の[空行]は不要だが、他のMarkdown方言では逆に
 
-> [Setext]から取り入れた仕様。
+
+
+
+</details>
+
+## [4.3 Setext headings](https://higuma.github.io/github-flabored-markdown/#setext-headings)
 
 見出し(``<h1>``, ``<h2>``)を表現する。
 
@@ -272,18 +318,22 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 
 ``<h3>``以上のレベルを表現できないので、見出しは[ATX headings]に統一するとよい。
 
-### Specification
+### Details
+
+<details>
+<summary><strong>Summary</strong></summary>
+
+> [Setext]から取り入れた仕様。なおBest practiceで「非推奨」としたため説明は最小限に留める。
 
 コンテンツテキストの次行に1つ以上の`=`(→ ``<h1>``)または1つ以上の`-`(→ ``<h2>``)を用いて[見出し]を表現できる。
 
+```markdown
+h1
+==
 
-> ```markdown
-> h1
-> ==
-> 
-> h2
-> --
-> ```
+h2
+--
+```
 
 > h1
 > ==
@@ -301,6 +351,9 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
     * 行末に任意個のスペースがあってもよい
     * [正規表現]を用いると ``/^ {0,3}(?:=+|-+) *$/``
 * 前後に[空行]は不要(だが経験上入れないとよく誤認識する)
+* ``<h3>``以上のレベルには対応していない
+
+</details>
 
 ## [4.4 Indented code blocks](https://higuma.github.io/github-flabored-markdown/#indented-code-blocks)
 
@@ -308,18 +361,23 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 
 ### Best practice
 
-文法上問題が多く、何かと誤認識の元になりやすい。代わりに[Fenced code block]を用いるとよい。
+文法上の問題が多く、何かと誤認識の元になりやすい。代わりに[フェンスドコードブロック]を用いるとよい。
 
-### Specification
+### Details
+
+<details>
+<summary><strong>Summary</strong></summary>
+
+> Best practiceで「非推奨」としたため説明は最小限に留める。
 
 行頭に4つ以上の連続したスペースがある行はコードブロックとして扱われ、行頭のスペース4つを除去した後、テキスト文書として見た通りに出力する。これは特に次のようなコードリスティングに用いられる。
 
-> ```markdown
->     #include <stdio.h>
->     void main() {
->         printf("Hello world!\n");
->     }
-> ```
+```markdown
+    #include <stdio.h>
+    void main() {
+        printf("Hello world!\n");
+    }
+```
 
 >     #include <stdio.h>
 >     void main() {
@@ -328,14 +386,14 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 
 ただし前の行が[リストアイテム](container-blocks.md#52-list-items)の場合はリストアイテムの続きと認識される。[空行]を挿入してもリストのインデントとして扱われる。
 
-> ```markdown
-> * List
->     item
-> 
-> * List
-> 
->     indent
-> ```
+```markdown
+* List
+    item
+
+* List
+
+    indent
+```
 
 > * List
 >     item
@@ -344,11 +402,13 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 > 
 >     indent
 
-以下説明は省略する。これ以外にも文法解釈上の問題がとても多く、後に次の[Fenced code block]が作られた。
+以下説明は省略する。これ以外にも文法解釈上の問題がとても多く、後に次の[フェンスドコードブロック]が作られた。
+
+</details>
 
 ## [4.5 Fenced code blocks](https://higuma.github.io/github-flabored-markdown/#fenced-code-blocks)
 
-ソースリスティングなどのコードブロックを開始フェンス行・終了フェンス行で囲って表現する。
+[フェンスドコードブロック]はソースリスティングなどのコードブロックを開始フェンス行・終了フェンス行で囲って表現する。
 
 ### Best practice
 
@@ -360,26 +420,26 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 * 内部に`` ``` ``で始まる行がある場合は外側に文字数がより多いコードフェンスを用いる
 * 逆に`` ``` ``から始まる通常テキストは先頭を`\`でエスケープ
 
-> `````````markdown
-> ```
-> $ echo 'fenced code block with ```'
-> ```
-> 
-> ```javascript
-> for (let word of ["eeny", "meeny", "miny", "moe"]) {
->     console.log(word);
-> }
-> ```
-> 
-> ``````
-> ```markdown
-> * Item 1
-> * Item 2
-> ```
-> ``````
-> 
-> \```で始まるテキスト
-> `````````
+`````````markdown
+```
+$ echo 'fenced code block with ```'
+```
+
+```javascript
+for (let word of ["eeny", "meeny", "miny", "moe"]) {
+    console.log(word);
+}
+```
+
+``````
+```markdown
+* Item 1
+* Item 2
+```
+``````
+
+\```で始まるテキスト
+`````````
 
 > ```
 > $ echo 'fenced code block with ```'
@@ -400,19 +460,22 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 > 
 > \```で始まるテキスト
 
-### Specification
+### Details
 
-コードブロックの直前と直後の行に`` ``` ``または`~~~`を配置して表現する。`` ``` ``や`~~~`を[code fence]と呼ぶ。
+<details>
+<summary><strong>Summary</strong></summary>
 
-> ``````markdown
-> ```
-> $ find . -name ".gitignore" | less
-> ```
-> 
-> ~~~
-> $ grep -i 'fenced code block' * > output
-> ~~~
-> ``````
+コードブロックの直前と直後の行に`` ``` ``または`~~~`を配置して表現する。`` ``` ``や`~~~`を[コードフェンス]と呼ぶ。
+
+``````markdown
+```
+$ find . -name ".gitignore" | less
+```
+
+~~~
+$ grep -i 'fenced code block' * > output
+~~~
+``````
 
 > ```
 > $ find . -name ".gitignore" | less
@@ -426,7 +489,7 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 
 * コードフェンスは`` ` ``または`~`の同じ文字を3つ以上連続(混在不可)
 * コードフェンスは開始・終了とも手前に3つまでスペースを挿入可能、また末尾のスペースは無視
-* 開始コードフェンスの後に[info string]を設定可能([シンタックスハイライト]用)
+* 開始フェンスに[シンタックスハイライト]用の[info string]を設定可能
     * 言語名を小文字で記述(`java`, `python`, `ruby`, etc.)
     * 前後にスペースがあってもよい(処理時に除去)
 * 開始コードフェンス行と終了コードフェンス行の間にコードブロックを記述
@@ -437,15 +500,15 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 
 [info string]はコードブロックの書式設定用で、言語名を小文字で設定する。間と行末にスペースがあってもよい。
 
-> ``````markdown
-> ```javascript
-> console.log(navigator.userAgent);
-> ```
-> 
-> ~~~   ruby
-> puts ENV['OS']
-> ~~~ 
-> ``````
+``````markdown
+```javascript
+console.log(navigator.userAgent);
+```
+
+~~~   ruby
+puts ENV['OS']
+~~~ 
+``````
 
 > ```javascript
 > console.log(navigator.userAgent);
@@ -457,33 +520,33 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 
 内部`` ``` ``や`~~~`で始まる行がある場合は別の種類のコードフェンスを用いる。
 
-> ``````markdown
-> ~~~markdown
-> ```
-> Fenced code block code example
-> ```
-> ~~~
-> ``````
+``````markdown
+~~~markdown
+```
+Fenced code block
+```
+~~~
+``````
 
 > ~~~markdown
 > ```
-> Fenced code block code example
+> Fenced code block
 > ```
 > ~~~
 
 あるいは文字数がより多いコードフェンスを外側に用いる。
 
-> `````````markdown
-> ``````markdown
-> ```
-> Fenced by ```
-> ```
-> 
-> ~~~
-> Fenced by ~~~
-> ~~~
-> ``````
-> `````````
+`````````markdown
+``````markdown
+```
+Fenced by ```
+```
+
+~~~
+Fenced by ~~~
+~~~
+``````
+`````````
 
 > ``````markdown
 > ```
@@ -495,27 +558,28 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 > ~~~
 > ``````
 
-(補足)`~~~`は[CommonMark]から取り入れられた仕様で、これを用いて内部に`` ``` ``から始まる行がある場合に対応できる。
+(補足) `~~~`は[CommonMark]で採用された仕様で、これを用いて内部に`` ``` ``から始まる行がある場合に対応できる。ただし同種で文字数がより多いコードフェンス(例: `` `````` ``)で代用でき、この方が汎用性が高いため`~~~`はBest practiceから除外した。
 
-
+</details>
 
 ## [4.6 HTML blocks](https://higuma.github.io/github-flabored-markdown/#html-blocks)
+
+> ここから先全てTODO。
 
 入力を部分的なHTMLブロック要素として直接認識させる機能。
 
 ### Best practice
 
-思い通りの出力結果は期待できないので使わない方がよい。
+TODO
 
-### Specification
+### Details
 
-GFMでは全部で7通りの仕様を用意しているが、どの処理系もサポートが不十分で異なる出力になることが多いため説明は省略する。
+GFMでは全部で7通りの仕様を用意しているが、処理実装により扱いがかなり異なる。
 
 > 以下TODO
 
 > サポート状況を実際に確認するため[GFM implementation checker](https://github.com/higuma/gfm-implementation-checker)を作成した。
 
-> サポート状況を実際に確認するため、[GFM implementation checker - 4.6 HTML blocks](https://github.com/higuma/gfm-implementation-checker)を作成した。
 checker/leaf-blocks.md#46-html-blocks)を利用すれば実際に確認できる。
 
 GitHubでもこれら全てを仕様書通りには処理しておらず、異なる出力結果がたくさんある。
@@ -524,17 +588,19 @@ GitHubでもこれら全てを仕様書通りには処理しておらず、異�
 
 ## [4.7 Link reference definitions](https://higuma.github.io/github-flabored-markdown/#link-reference-definitions)
 
+> TODO: 記法はこの後のLinksとかなりかぶるので、Linksを先に仕上げてからこちらに戻る方がいいかも。
+
 [リンク参照定義]は文書に[リンクラベル]とその[リンク先]の対応情報を設定する。まず本ページで実際に用いられている例を示す。`[リンクラベル]: リンク先`の形式で記述する。
 
-> ```markdown
-> [Setext]: https://en.wikipedia.org/wiki/Setext
-> ```
+```markdown
+[Setext]: https://en.wikipedia.org/wiki/Setext
+```
 
 これはMarkdown文書中のどこに配置してもよい(本ページではMarkupソースファイルの末尾に記述してある)。これ自体はHTMLとして出力されないが、次のように[リンクラベル]を`[...]`で囲うと``<a href="リンク先">リンクラベル</a>``を作成する。
 
-> ```markdown
-> [Setext]
-> ```
+```markdown
+[Setext]
+```
 
 > [Setext]
 
@@ -542,11 +608,11 @@ GitHubでもこれら全てを仕様書通りには処理しておらず、異�
 
 またhover時にポップアップするリンクタイトルを表示する場合はその後に`"リンクタイトル"`または`'リンクタイトル'`で記述する。これはリンク作成時に`title`属性として設定され、`[リンクラベル]`は``<a href="リンク先" title="リンクタイトル">リンクラベル</a>``と出力する。
 
-> ```markdown
-> [example.com]: https://www.example.com/ "Example Domain"
-> 
-> [example.com]
-> ```
+```markdown
+[example.com]: https://www.example.com/ "Example Domain"
+
+[example.com]
+```
 
 次の出力のリンク上にマウスポインタをかざすとリンクタイトルがポップアップするのを確認できる。
 
@@ -586,12 +652,12 @@ GitHubでもこれら全てを仕様書通りには処理しておらず、異�
 
 後は記法のバリエーションについて補足説明する。まず[リンクラベル]の手前には3文字までのインデントスペースが可能。[リンク先]の前には任意個のスペースが可能(なくてもよい)。タイトルを設定する場合は手前に1個以上のスペースが必要。また行末にスペースがあれば除去して処理する。
 
-> ```markdown
-> [GitHub]:   https://www.github.com/    "GitHub"   
-> [Wikipedia]:https://www.wikipedia.org/ "Wikipedia"
-> 
-> [GitHub] [Wikipedia]
-> ```
+```markdown
+[GitHub]:   https://www.github.com/    "GitHub"   
+[Wikipedia]:https://www.wikipedia.org/ "Wikipedia"
+
+[GitHub] [Wikipedia]
+```
 
 > [GitHub]:   https://www.github.com/    "GitHub"   
 > [Wikipedia]:https://www.wikipedia.org/ "Wikipedia"
@@ -619,34 +685,34 @@ Markdownビューアを用いる場合は余計なものは付けない方が作
 [パラグラフ]は上下を[空行](leaf-blocks.md#49-blank-lines)(または文書の開始/終了)で区切った空でないテキスト行で表現する。
 
 * 前後を[空行]または文書の開始・終了で区切る
-* 単語間に複数の連続した空白文字がある場合はHTML側で縮約してスペース1個に変換
+* 単語間に複数の連続した空白文字がある場合はHTML側で縮約(スペース1個に変換)
 * 複数行に分けてよい(間の改行はそのままHTMLに出力し、HTML側で連結)
-* [空行]にならないように...
+* [空行]にならないように注意
     * 先頭行は行頭から3文字以内に非空白文字が必要(4文字以上は[Indented code block]と認識)
     * 2行目以降は最低一つの非空白文字が必要
 	* どちらも行頭空白文字は処理時に除去
 
 最も簡単な例。間は[空行]1個。
 
-> ```markdown
-> aaa
-> 
-> bbb
-> ```
+```markdown
+aaa
+
+bbb
+```
 
 > aaa
 > 
 > bbb
 
-複数行に分割した例。行間の改行はスペース1個に変換される。
+複数行に分割した例。行間の改行はそのままHTMLに出力され、HTMLはスペース1個に変換して出力する。
 
-> ```markdown
-> aaa
-> bbb
-> 
-> ccc
-> ddd
-> ```
+```markdown
+aaa
+bbb
+
+ccc
+ddd
+```
 
 > aaa
 > bbb
@@ -662,11 +728,26 @@ Markdownビューアを用いる場合は余計なものは付けない方が作
 
 [空行]は上下のブロック要素の区切りを表現する。
 
-* 改行のみ、または一行の中に空白文字のみを含む
-* 複数の[空行]はまとめられて一つのブロック区切りと認識する
+### Best practice
+
+改行のみがお勧め。スペースやタブが入っていると行儀が悪いし、Markdownのインデントを使う文法([リスト]や[インデント方式コードブロック]など)の誤認識の元になりやすい。なお通常は改行一つだが、[パラグラフ]間は改行1個、[見出し]の前は改行2個というように使い分けるのは作業用として有効な方法。
+
+### Details
+
+<details>
+<summary><strong>Summary</strong></summary>
+
+* 上下のブロック間を区切るのに用いられる
+* 改行のみ、または一行の中に[空白文字] (スペースやタブなど)のみを含み改行で終わる
+* 複数の連続する[空行]はまとめられて一つのブロック区切りと認識する
 * 文書開始直後、文書終了直前の[空行]は除去
 
-次は文書開始前、[パラグラフ]間、文書終了前に複数の空白文字が入った[空行]を含む例。見た目では分からないが、GitHubのコードブロック表示の右上Copyアイコンをクリックするとクリップボードにコピーしてテキストエディタなどで確認できる。
+</details>
+
+<details>
+<summary><strong>Examples</strong></summary>
+
+次は文書開始前、[パラグラフ]間、文書終了前に複数の空白文字(スペースやタブ)が入った[空行]を含む例。見た目では分からないが、GitHubのコードブロック表示の右上Copyアイコンをクリックするとクリップボードにコピーしてテキストエディタなどで確認できる。
 
 > ```markdown
 >   
@@ -691,11 +772,100 @@ Markdownビューアを用いる場合は余計なものは付けない方が作
 > 
 >   
 
-### Blank lines: Best practice
-
-改行1個がセオリー(スペースやタブが入っているのは行儀が悪い)。ただし状況に応じて[パラグラフ]間は改行1個、[見出し]の前は改行2個というように使い分けるのもよい。
+</details>
 
 ## [4.10 Tables (extension)](https://higuma.github.io/github-flabored-markdown/#tables-extension-)
+
+GFMでは[表組み]を表現できる。
+
+### Best practice
+
+見かけではなく、Markdown処理実装に誤認識させない書き方を徹底するのが間違いない。
+
+```markdown
+| foo | bar |
+| --- | --- |
+| baz | bim |
+
+| 標準 | 左寄せ | 中央寄せ | 右寄せ |
+| ---- | :----- | :------: | -----: |
+| あいうえお | あいうえお | あいうえお | あいうえお |
+| abc | *abc* **abc** | ~~abc~~ | [abc](#) |
+| | https://example.com/ | `(1..10).each {\|x\| puts x }` | |
+```
+
+> | foo | bar |
+> | --- | --- |
+> | baz | bim |
+> 
+> | 標準 | 左寄せ | 中央寄せ | 右寄せ |
+> | ---- | :----- | :------: | -----: |
+> | あいうえお | あいうえお | あいうえお | あいうえお |
+> | abc | *abc* **abc** | ~~abc~~ [abc](#) | https://example.com/ |
+> | | _y = \|x\|_ | `(1..10).each {\|x\| puts x }` | |
+
+* 1行目はヘッダ行、2行目は区切り行、3行目以降がデータ行
+* セル間の区切りは`|`、コンテンツとの間にスペース1個以上(誤認識防止用に推奨)
+* 行頭と行末に`|`を入れる(必須ではないが空セルの誤認識防止になる)
+* ヘッダセルはなるべく通常テキスト(書式設定しても効かない場合がある)
+* データセル内にはコンテンツとして任意のインライン構文を挿入可能
+    * コンテンツが`|`を含む場合は`\`でエスケープ
+* 各行のセル数は揃える
+    * ヘッダ行と区切り行のセル数が一致しないと表組みと認識されない
+    * データ行はセル数が不足していてもよい(後ろに空セルが挿入される)
+    * 逆にデータ行のセル数が多すぎると後ろが切り捨てられるので注意
+* アラインメントは2行目のセルを次の通り設定(`-`は1個以上任意)
+    * `-----` - 標準(ヘッダは中央、コンテンツは左寄せ)
+    * `:----` - 左寄せ
+    * `:---:` - 中央寄せ
+    * `----:` - 右寄せ
+* テキスト表現は横幅を揃える必要なし
+* 表組みの前後のブロック構文との間に[空行]を入れる(誤認識対策)
+
+### Details
+
+<details>
+<summary><strong>Summary</strong></summary>
+
+より詳しい仕様は次の通り。
+
+* 1行目はヘッダ行(header row)
+* 2行目は区切り行(delimiter row)
+* 3行目以降がデータ行(data rows)
+* セル間の区切りは`|`
+    * コンテンツとの間に1個以上スペースを挿入(必須ではないが誤認識防止用に推奨)
+* ヘッダセルとデータセル内にはコンテンツとして任意のインライン構文を挿入可能
+    * ただしヘッダセルは最初から強調表示してあるので設定が効かない場合があるので注意
+    * コンテンツが`|`を含む場合は`\`でエスケープ
+* 行頭と行末の`|`は基本的に不要、ただしあった方がよい(空セルの誤認識防止になる)
+* ヘッダ行と区切り行のセル数は一致していなければならない
+    * 一致しない場合は表組みではないとして文法解析し直す(多くの場合[パラグラフ]と認識)
+    * データ行のセル数が不足する場合は後ろに空セルを追加
+    * データ行のセル数の方が多い場合は切り捨て
+* アラインメントは区切り行のセルを次の通り設定(`-`は1個以上任意)
+    * `-----` - 標準(ヘッダは中央、コンテンツは左寄せ)
+    * `:----` - 左寄せ
+    * `:---:` - 中央寄せ
+    * `----:` - 右寄せ
+* テキスト表現は横幅を揃える必要なし
+* 表組みの前後にあるブロック構文は、正しく判別できれば[空行]不要(ただし入れた方が確実)
+
+> 最後の「正しく判別できれば...」という部分が厄介で、GitHubのMarkdown実装はGFM仕様からさらに日常的に手を加えて調整している。そのため「仕様書通り」であっても意図通りに出力する保証はない。我々利用者側としては、誤認識させないような書き方を徹底するしかない。
+
+</details>
+
+<details>
+<summary><strong>Examples</strong></summary>
+
+
+
+
+
+
+
+
+
+</details>
 
 ------------------------------------------------------------------------
 
@@ -705,16 +875,18 @@ Markdownビューアを用いる場合は余計なものは付けない方が作
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings
-[code fence]: https://higuma.github.io/github-flabored-markdown/#code-fence
+[コードフェンス]: https://higuma.github.io/github-flabored-markdown/#code-fence
 [CommonMark]: https://commonmark.org/
-[Fenced code block]: #45-fenced-code-blocks
-[Indented code block]: #44-indented-code-blocks
 [info string]: https://higuma.github.io/github-flabored-markdown/#info-string
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
 [Setext]: https://en.wikipedia.org/wiki/Setext
 [Setext heading]: #43-setext-headings
+[インデント方式コードブロック]: #44-indented-code-blocks
 [インライン]: inlines.md
+[コードフェンス]: https://higuma.github.io/github-flabored-markdown/#code-fence
 [シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
+[フェンスドコードブロック]: #45-fenced-code-blocks
+[リスト]: container-blocks.md#54-lists
 [リンク]: https://higuma.github.io/github-flabored-markdown/#links
 [リンク参照定義]: https://higuma.github.io/github-flabored-markdown/#link-reference-definition
 [リンクラベル]: https://higuma.github.io/github-flabored-markdown/#link-label
@@ -722,5 +894,6 @@ Markdownビューアを用いる場合は余計なものは付けない方が作
 [リンクタイトル]: https://higuma.github.io/github-flabored-markdown/#link-title
 [パラグラフ]: #48-paragraphs
 [空行]: #49-blank-lines
+[空白文字]: https://higuma.github.io/github-flabored-markdown/#whitespace-character
 [正規表現]: https://deeloper.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
 [見出し]: #42-atx-headings
