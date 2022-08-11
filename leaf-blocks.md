@@ -303,10 +303,7 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 * 前後に[空行]は不要、ただし他の処理系も考慮すると付けた方が安全(見やすさの効果もある)
 * コンテンツは空でもよい
 
-> CommonMark/GFM仕様では前後の[空行]は不要だが、他のMarkdown方言では逆に
-
-
-
+> CommonMark/GFM仕様では前後の[空行]は不要だが、他のMarkdown方言で必要なものもある。また先頭にインデント(空白3文字まで)がある場合、その手前の構文が[リストアイテム]だとそのインデントと認識される。リストの内部に見出しを使うことは通常ないので紛らわしいことはしない方が確実。
 
 </details>
 
@@ -415,49 +412,61 @@ h2
 * 開始・終了フェンスとも基本は`` ``` ``
     * 開始フェンスは3文字以上連続
     * 終了フェンスは開始フェンスと文字数が同じまたはそれ以上
+
+``````markdown
+```
+$ sudo apt update
+$ sudo apt upgrade -y
+$ sudo apt autoremove
+```
+``````
+
+> ```
+> $ sudo apt update
+> $ sudo apt upgrade -y
+> $ sudo apt autoremove
+> ```
+
 * 開始フェンスに[シンタックスハイライト]用の[info string]を設定可能
     * `` ```java ``のように言語名を小文字で記述(今は間にスペースを入れない方が主流)
-* 内部に`` ``` ``で始まる行がある場合は外側に文字数がより多いコードフェンスを用いる
-* 逆に`` ``` ``から始まる通常テキストは先頭を`\`でエスケープ
 
-`````````markdown
-```
-$ echo 'fenced code block with ```'
-```
-
+``````markdown
 ```javascript
 for (let word of ["eeny", "meeny", "miny", "moe"]) {
     console.log(word);
 }
 ```
+``````
 
+> ```javascript
+> for (let word of ["eeny", "meeny", "miny", "moe"]) {
+>     console.log(word);
+> }
+> ```
+
+* 内部に`` ``` ``で始まる行がある場合は外側に文字数がより多いコードフェンスを用いる
+
+`````````markdown
 ``````
 ```markdown
 * Item 1
 * Item 2
 ```
 ``````
-
-\```で始まるテキスト
 `````````
 
-> ```
-> $ echo 'fenced code block with ```'
-> ```
-> 
-> ```javascript
-> for (let word of ["eeny", "meeny", "miny", "moe"]) {
->     console.log(word);
-> }
-> ```
-> 
 > ``````
 > ```markdown
 > * Item 1
 > * Item 2
 > ```
 > ``````
-> 
+
+* 逆に`` ``` ``から始まる通常テキストは先頭を`\`でエスケープ
+
+
+\```で始まるテキスト
+
 > \```で始まるテキスト
 
 ### Details
@@ -497,6 +506,11 @@ $ grep -i 'fenced code block' * > output
     * ``<pre><code>...コードブロック...</code></pre>``と出力
     * 内部の`<`,`>`,`"`,`'`などの文字は文字参照に変換して適切に処理される
 * 終了コードフェンスは開始コードフェンスと同じ文字種で、文字数が同じまたはそれ以上
+
+</details>
+
+<details>
+<summary><strong>Examples</strong></summary>
 
 [info string]はコードブロックの書式設定用で、言語名を小文字で設定する。間と行末にスペースがあってもよい。
 
@@ -574,6 +588,8 @@ TODO
 
 ### Details
 
+<details>
+<summary>Summary</summary>
 GFMでは全部で7通りの仕様を用意しているが、処理実装により扱いがかなり異なる。
 
 > 以下TODO
@@ -584,11 +600,22 @@ checker/leaf-blocks.md#46-html-blocks)を利用すれば実際に確認できる
 
 GitHubでもこれら全てを仕様書通りには処理しておらず、異なる出力結果がたくさんある。
 
-> またネット上には膨大な数のMarkdown文書があるが、使われているのをほとんど見たことがない。
+</details>
 
 ## [4.7 Link reference definitions](https://higuma.github.io/github-flabored-markdown/#link-reference-definitions)
 
 > TODO: 記法はこの後のLinksとかなりかぶるので、Linksを先に仕上げてからこちらに戻る方がいいかも。
+
+### Link reference definitions: Best practice
+
+> TODO: 書きかけ
+
+Markdownビューアを用いる場合は余計なものは付けない方が作業効率がよい。
+
+* リンクタイトルなしの場合 - `[リンクラベル]: リンク先`
+* リンクタイトルを設定する場合 - `[リンクラベル]: リンク先 "リンクタイトル"`
+
+## Best practice
 
 [リンク参照定義]は文書に[リンクラベル]とその[リンク先]の対応情報を設定する。まず本ページで実際に用いられている例を示す。`[リンクラベル]: リンク先`の形式で記述する。
 
@@ -620,7 +647,14 @@ GitHubでもこれら全てを仕様書通りには処理しておらず、異�
 > 
 > [example.com]
 
-基本は以上。仕様書に基いた文法仕様は次の通り。
+基本は以上。
+
+## Details
+
+<details>
+<summary>Summary</summary>
+
+仕様書に基いた文法仕様は次の通り。
 
 * 行頭に3個までインデント用スペースを挿入可能(処理時に除去)
 * [リンクラベル]
@@ -643,6 +677,11 @@ GitHubでもこれら全てを仕様書通りには処理しておらず、異�
     * 1個以上の空白文字(必要)
     * [リンクタイトル]
 * 行末に0個以上の空白文字(処理時に除去)
+
+</details>
+
+<details>
+<summary>Examples</summary>
 
 以下はテスト。GutHubも完全に対応できてはいないように思える。
 
@@ -673,12 +712,7 @@ GitHubでもこれら全てを仕様書通りには処理しておらず、異�
 
 以下TODO - Linkの方を先に書き、書式は「Linkの文法と同じ」とした方がすっきりすると思う。
 
-### Link reference definitions: Best practice
-
-Markdownビューアを用いる場合は余計なものは付けない方が作業効率がよい。
-
-* リンクタイトルなしの場合 - `[リンクラベル]: リンク先`
-* リンクタイトルを設定する場合 - `[リンクラベル]: リンク先 "リンクタイトル"`
+</details>
 
 ## [4.8 Paragraphs](https://higuma.github.io/github-flabored-markdown/#paragraphs)
 
