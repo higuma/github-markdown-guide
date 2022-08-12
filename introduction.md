@@ -1,6 +1,5 @@
 # [1.Introduction](https://higuma.github.io/github-flabored-markdown/#introduction)
 
-
 [About this document](README.md)
 ← [Table of contents](index.md) →
 [2 Preliminaries](preliminaries.md)
@@ -15,7 +14,7 @@
 
 [HTML]以前のユーザーインターフェースはテキスト形式が主流で、Unix系OSの[manページ]をはじめとする電子文書の多くはテキスト形式で作成・閲覧していた。
 
-その後[HTML]と[ウェブブラウザ]の普及に伴い、電子文書にも徐々に[HTML]が普及していった。[HTML]文書は従来のテキスト文書にはない豊富な表現力を持つ。しかしタグを用いる独特の文法が複雑で、ソース(生)の[HTML]文書は簡単に言えば人間に取って「読みにくい」「書きにくい」という問題がある。
+その後[HTML]と[ウェブブラウザ]の普及に伴い、電子文書にも徐々に[HTML]が普及していった。[HTML]文書は従来のテキスト文書にはない豊富な表現力を持つ。しかしタグを用いる独特の文法が複雑で、ソース(生)の[HTML]文書は簡単に言えば人間には「読みにくい」「書きにくい」という問題がある。
 
 現在でも[HTML]文書の作成は(直接あるいは間接的に)[テキストエディタ]を使う場合が多く、[テキストエディタ]上での認識性と入力の容易さが作業効率に大きな影響を与える。そこで文書入力は人間が扱いやすい形式で行い、それを[HTML]に変換するツールが考えられるようになった。
 
@@ -57,13 +56,13 @@ GitHub Flavored Markdown (GFM)はGitHub及びGitHub Enterpriseで用いられて
 
 現在のGFM仕様は厳密な[CommonMark]のsuperset(全仕様を受け継いだ拡張版)であり、オリジナルにない機能は __extensions__ と呼んで区別する。(2022年)現在のGFM仕様書([Version 0.29-gfm](https://higuma.github.io/github-flabored-markdown/))は[CommonMark仕様書 (Version 0.29)](https://spec.commonmark.org/0.29/)を原本とし、そこから部分的に追加・変更した体裁を取っている。
 
-> [GFM仕様書目次](https://higuma.github.io/github-flabored-markdown/)の中で、色付き背景で末尾に"(extension)"と明記されている項目が該当部。ただし今ではこれらも事実上の標準扱いで、例えば投稿サイトの [Qiita](https://qiita.com/) や [はてなブログ](https://hatenablog.com/) では[表組み](leaf-blocks.md#410-tables-extension-)や[オートリンク拡張](inlines.md#69-autolinks-extension-)などの機能を利用できる。
+> [GFM仕様書目次](https://higuma.github.io/github-flabored-markdown/)の中で、色付き背景で末尾に"(extension)"と明記されている項目が該当部。ただし今ではこれらも事実上の標準扱いで、例えば投稿サイトの [Qiita](https://qiita.com/) や [はてなブログ](https://hatenablog.com/) では[表組み]や[オートリンク拡張]などの機能を利用できる。
 > 
-> なおextensions仕様により元の[CommonMark]と仕様が異なる箇所が生じている。詳しくは本ガイド最後の [補足 - GitHubのMarkdown実装](github-markdown-implementation.md) で説明する。
+> なおextensions仕様が追加されたことにより元の[CommonMark]と仕様が異なる箇所が多数生じている。詳しくは本ガイド最後の [補足 - GitHubのMarkdown実装](github-markdown-implementation.md) で説明する。
 
 GitHubサイトにHTMLレンダリングする際、セキュリティと一貫性のためのプリプロセスとサニタライズ処理が行われる。
 
-> それだけでなく、実はGitHubのMarkdown実装はGFMとは異なる点が多数ある。GitHubのサイト運用に際して日常的に手が加えられており多くの独自拡張機能がある。一方GFMとは動作が異なったり、あるいは未実装の部分もある。これも[補足 - GitHubのMarkdown実装](github-markdown-implementation.md) で説明する。
+> それだけでなく、GitHubのMarkdown 処理実装はGitHubのサイト運用に際して日常的に手が加えられており多くの独自拡張機能がある。またGFMとは動作が異なる点も多数ある。これも [補足 - GitHubのMarkdown実装](github-markdown-implementation.md) で説明する。
 
 ## [1.3 Why is a spec needed?](https://higuma.github.io/github-flabored-markdown/#why-is-a-spec-needed-)
 
@@ -103,7 +102,6 @@ GFMはできる限り曖昧さを排除した[Markdown]文法を目指して作�
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [CommonMark]: https://commonmark.org/
 [epub]: https://ja.wikipedia.org/wiki/EPUB
-[Haskell]: https://ja.wikipedia.org/wiki/Haskell
 [HTML]: https://ja.wikipedia.org/wiki/HyperText_Markup_Language
 [HTML Living Standard]: https://html.spec.whatwg.org/multipage/
 [IETF]: https://datatracker.ietf.org/doc/html/rfc1945
@@ -118,7 +116,8 @@ GFMはできる限り曖昧さを排除した[Markdown]文法を目指して作�
 [WHATWG]: https://whatwg.org/
 [XHTML]: https://ja.wikipedia.org/wiki/Extensible_HyperText_Markup_Language
 [ウェブブラウザ]: https://ja.wikipedia.org/wiki/ウェブブラウザ
+[オートリンク拡張]: autolinks-extension.md
 [テキストエディタ]: https://ja.wikipedia.org/wiki/テキストエディタ
 [軽量マークアップ言語]: https://ja.wikipedia.org/wiki/軽量マークアップ言語
 [正規表現]: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
-[表組み]: leaf-blocks.md#410-tables-extension-
+[表組み]: tables-extension.md

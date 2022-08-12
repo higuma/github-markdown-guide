@@ -9,7 +9,7 @@
 Markdownではバックスラッシュ(`\`)は特別な意味を持つ。
 
 * [ASCII区切り文字]をMarkdown構文の一部ではなく通常テキストとして認識させる
-* 行末に用いて[ハード改行]を表現する
+* 行末に用いて[ハード改行]を出力する
 
 ## Best practice
 
@@ -181,22 +181,22 @@ _emphasis_, **strong**, ~~strikethrough~~
 > 
 > \*\*normal text**
 
-なお文法上どの区切り文字をどのようにエスケープすれば認識するかは構文の種類だけでなく実装によっても異なる場合が多いため詳しいルールはここには書かない。それよりもターゲット環境のMarkdown実装で実際に確認しながら作業するとよい(プレビュー機能があると便利)。
+なお文法上どの区切り文字をどのようにエスケープすれば認識するかは構文の種類だけでなく実装によっても異なる場合が多いため詳しいルールはここには書かない。それよりもターゲット環境のMarkdown実装で実際に確認しながら作業するとよい(多くの場合プレビュー機能を利用できる)。
 
-> 現実のMarkdown実装はそれぞれの目的別にカスタマイズされており、GitHub実装でさえGFM仕様書通りではない動作が多数ある。そのため詳細動作をここにいちいち記載してもあまり役に立たない。それよりターゲット環境に処理させて実際に確認すべき。筆者はGitHubに公開するMarkdown文書は[GitHub Gist]で確認している。
+> 現実のMarkdown実装はそれぞれの目的別にカスタマイズされており、GitHub実装でさえGFM仕様書通りではない動作が多数ある。そのため詳細動作をここにいちいち記載してもあまり役に立たない。それよりターゲット環境で直接チェックすべき。筆者はGitHubに公開するMarkdown文書は[GitHub Gist]で確認している。
 
 > <details>
-> <summary>[GitHub Gist]のPreviewと最終出力の違い</summary>
+> <summary>(補足) GitHub GistのPreviewと最終出力の違い</summary>
 > 
-> (2022-08-11現在) さらに[GitHub Gist]のMarkdown処理では編集時のPreview表示と最終出力が異なる場合がある(注意)。例えば[次のMarkdowns文](https://gist.github.com/higuma/9fb12dd67597367d15be8bbac1c00c11)を処理させると`https\://...`の部分をプレビューでは通常テキストと判定するが、本処理は[オートリンク拡張]と判定する。
+> (2022-08-11現在) [GitHub Gist]のMarkdown処理では編集時のPreview表示と最終出力が異なる場合がある(注意)。例えば[次のMarkdowns文](https://gist.github.com/higuma/9fb12dd67597367d15be8bbac1c00c11)を処理させると`https\://...`の部分をプレビューでは通常テキストと判定するが、本処理は[オートリンク拡張]と判定する。
 > 
 > ```markdown
 > \[これはリンクではない、しかしリンク先に注意](https\://www\.example\.com)
 > ```
 > 
-> 本現象は一時的な動作である可能性が高いが記録として残しておく(将来的には修正されるはず)。このように多くのMarkdown処理実装は(各Webサービスの)目的別に微調整されており、特殊ケースでどうなるかは実際に処理させてみないと分からない。
+> 本現象は一時的な振る舞いの可能性が高いが記録として残しておく(将来的には修正されるはず)。本例に限らず多くのMarkdown処理実装は(各Webサービスの)目的別に微調整されており、特殊ケースでどうなるかは実際に処理させてみないと分からない。
 >
-> また実環境チェックも大切だが、それよりもこのような実装依存の可能性が高い記述は最初から回避する等の自衛策を講じ、注意して記述するのも重要。幸いなことに実用上はこのような例に出くわすことは稀だし、回避方法は色々とあるもの。
+> また実環境チェックも大切だが、それよりもこのような実装依存の可能性が高い記述は最初から回避する自衛策を講じることも重要。幸いにも実用上はこのような例に出くわすことは稀だし、回避方法は考えれば色々とある。
 > 
 > </details>
 
@@ -233,10 +233,9 @@ _emphasis_, **strong**, ~~strikethrough~~
 
 [オートリンク拡張]: autolinks-extension.md
 [ハード改行]: hard-line-breaks.md
-[見出し]: leaf-blocks.md#42-atx-headings
-[強調]: #64-emphasic-and-strong-emphasis
-[打ち消し線]: #65-strikethrough-extension
-[区切り]: leaf-blocks.md#41-thematic-breaks
+[見出し]: atx-headings.md
+[強調]: emphasis-and-strong-emphasis.md
+[打ち消し線]: strikethrough-extension.md
+[区切り]: thematic-breaks.md
 [ASCII区切り文字]: #ASCII区切り文字
-[GitHub Gist]: https://gist.github.com/
 [GitHub Gist]: https://gist.github.com/
