@@ -75,17 +75,18 @@ _emphasis_, **strong**, ~~strikethrough~~
 > 一行目\
 > 二行目
 
-## Details
+## Summary
 
-<details>
-<summary>Summary</summary>
+### ASCII区切り文字
 
-[ASCII区切り文字]とは[ASCII印字可能文字](https://ja.wikipedia.org/wiki/ASCII印字可能文字)(U+0020..U+007F)からスペースと英数字を除外した文字を指す。
+[ASCII区切り文字(ASCII puctuation characters)](https://higuma.github.io/github-flabored-markdown/#ascii-punctuation-character)とは[ASCII印字可能文字](https://ja.wikipedia.org/wiki/ASCII印字可能文字)(U+0020..U+007F)からスペースと英数字を除外した文字を指す。
 
 * U+0021..U+002F: `!`, `"`, `#`, `$`, `%`, `&`, `'`, `(`, `)`, `*`, `+`, `,`, `-`, `.`, `/`
 * U+003A..U+0040: `:`, `;`, `<`, `=`, `>`, `?`, `@`
 * U+005B..U+0060: `[`, `\`, `]`, `^`, `_`, `` ` ``
 * U+007B..U+007E: `{`, `|`, `}`, `~`
+
+### バックスラッシュエスケープ
 
 [ASCII区切り文字]の手前に`\`を付けるとMarkdown書式ではなく`\`でエスケープした文字と認識し、`\`を除去した文字を出力する。それ以外の印字可能文字の手前の`\`は文字としてそのまま出力する。[全ASCII印字可能文字のバックスラッシュエスケープ効果一覧](https://gist.github.com/higuma/8bab3e3f79105907797cdfe243f19033)は次の通り。
 
@@ -98,12 +99,11 @@ _emphasis_, **strong**, ~~strikethrough~~
 | 0060 | `` \` ``<br>\` | `` \a ``<br>\a | `` \b ``<br>\b | `` \c ``<br>\c | `` \d ``<br>\d | `` \e ``<br>\e | `` \f ``<br>\f | `` \g ``<br>\g | `` \h ``<br>\h | `` \i ``<br>\i | `` \j ``<br>\j | `` \k ``<br>\k | `` \l ``<br>\l | `` \m ``<br>\m | `` \n ``<br>\n | `` \o ``<br>\o |
 | 0070 | `` \p ``<br>\p | `` \q ``<br>\q | `` \r ``<br>\r | `` \s ``<br>\s | `` \t ``<br>\t | `` \u ``<br>\u | `` \v ``<br>\v | `` \w ``<br>\w | `` \x ``<br>\x | `` \y ``<br>\y | `` \z ``<br>\z | `` \{ ``<br>\{ | `` \| ``<br>\| | `` \} ``<br>\} | `` \~ ``<br>\~ |
 
+### ハード改行
+
 また行末に`\`を用いると[ハード改行]として機能する。行末が`\`で終わる行には出力に``<br>``が挿入され、HTMLでは改行されて出力する。
 
-</details>
-
-<details>
-<summary>Examples</summary>
+## Examples
 
 区切り文字の多くはMarkdownの書式設定記号として用いられる。これらを書式ではなく文字そのものとして認識させる場合に`\`を付けてエスケープする。必ずしも全ての区切り文字に付ける必要はなく、目安として構文の起点となる区切り文字の手前にバックスラッシュを付けることで認識する。
 
@@ -128,7 +128,7 @@ _emphasis_, **strong**, ~~strikethrough~~
 
 1\) 順序リストのアイテムではない
 
-[リンク](https://www.example.com), \[リンクではない]\(https\://www\.example.com)
+[リンク](https://www.example.com), \[リンクではない](not a link)
 
 \<span>タグではない\</span>
 
@@ -157,9 +157,7 @@ _emphasis_, **strong**, ~~strikethrough~~
 > 
 > 1\) 順序リストのアイテムではない
 > 
-> [リンク](https://www.example.com), \[リンクではない]\(https\://www\.example.com)
-> 
-> \[リンク参照定義ではない]\: https\://www\.example.com
+> [リンク](https://www.example.com), \[リンクではない](not a link)
 > 
 > \<span>タグではない\</span>
 > 
@@ -183,9 +181,24 @@ _emphasis_, **strong**, ~~strikethrough~~
 > 
 > \*\*normal text**
 
-なお文法上どの区切り文字をどのようにエスケープすれば認識するかは構文の種類だけでなく実装によっても異なる場合があるため、詳しいルールはここには書かない。それよりもターゲット環境のMarkdown実装のプレビュー機能を用いて実際に確認しながら作業するとよい。
+なお文法上どの区切り文字をどのようにエスケープすれば認識するかは構文の種類だけでなく実装によっても異なる場合が多いため詳しいルールはここには書かない。それよりもターゲット環境のMarkdown実装で実際に確認しながら作業するとよい(プレビュー機能があると便利)。
 
-> GitHub実装でさえGFM仕様書通りではない動作が多数あるため、詳細動作をいちいち記載してもあまり役に立たない。それよりもターゲット環境用のMarkdownプレビュー機能を利用して実際に確認すべき。筆者はGitHubに公開するMarkdown文書は[gist](https://gist.github.com/)を利用して確認している。
+> 現実のMarkdown実装はそれぞれの目的別にカスタマイズされており、GitHub実装でさえGFM仕様書通りではない動作が多数ある。そのため詳細動作をここにいちいち記載してもあまり役に立たない。それよりターゲット環境に処理させて実際に確認すべき。筆者はGitHubに公開するMarkdown文書は[GitHub Gist]で確認している。
+
+> <details>
+> <summary>[GitHub Gist]のPreviewと最終出力の違い</summary>
+> 
+> (2022-08-11現在) さらに[GitHub Gist]のMarkdown処理では編集時のPreview表示と最終出力が異なる場合がある(注意)。例えば[次のMarkdowns文](https://gist.github.com/higuma/9fb12dd67597367d15be8bbac1c00c11)を処理させると`https\://...`の部分をプレビューでは通常テキストと判定するが、本処理は[オートリンク拡張]と判定する。
+> 
+> ```markdown
+> \[これはリンクではない、しかしリンク先に注意](https\://www\.example\.com)
+> ```
+> 
+> 本現象は一時的な動作である可能性が高いが記録として残しておく(将来的には修正されるはず)。このように多くのMarkdown処理実装は(各Webサービスの)目的別に微調整されており、特殊ケースでどうなるかは実際に処理させてみないと分からない。
+>
+> また実環境チェックも大切だが、それよりもこのような実装依存の可能性が高い記述は最初から回避する等の自衛策を講じ、注意して記述するのも重要。幸いなことに実用上はこのような例に出くわすことは稀だし、回避方法は色々とあるもの。
+> 
+> </details>
 
 区切り文字の手前に(エスケープではない)バックスラッシュがある場合は`\\`を用いる。
 
@@ -202,7 +215,7 @@ _emphasis_, **strong**, ~~strikethrough~~
 * `\\\=` → \\\= (3つ目の`\`は次の`=`のエスケープと認識して除去)
 * `\\\\=` → \\\\= (以下同様)
 
-もうひとつの用途として、行末に用いると[ハード改行]として認識される。その位置に``<br>``が挿入され、HTMLでは改行されて出力する。
+もうひとつの用途として、行末に用いると[ハード改行]として認識される。その位置に``<br>``が挿入され、HTMLでは改行して出力する。
 
 ```markdown
 行末で改行(``<br>``を挿入)\
@@ -212,19 +225,18 @@ _emphasis_, **strong**, ~~strikethrough~~
 > 行末で改行(``<br>``を挿入)\
 > 次の行
 
-</details>
-
 ------------------------------------------------------------------------
 
 [6 Inlines](inlines.md)
 ← [Table of contents](index.md) →
 [6.2 Entity and numeric character references](entity-and-numeric-character-references.md)
 
-[インライン]: #
-[コードスパン]: #63-code-spans
-[ハード改行]: #612-hard-line-breaks
+[オートリンク拡張]: autolinks-extension.md
+[ハード改行]: hard-line-breaks.md
 [見出し]: leaf-blocks.md#42-atx-headings
 [強調]: #64-emphasic-and-strong-emphasis
 [打ち消し線]: #65-strikethrough-extension
 [区切り]: leaf-blocks.md#41-thematic-breaks
-[ASCII区切り文字]: https://higuma.github.io/github-flabored-markdown/#ascii-punctuation-character
+[ASCII区切り文字]: #ASCII区切り文字
+[GitHub Gist]: https://gist.github.com/
+[GitHub Gist]: https://gist.github.com/
