@@ -28,7 +28,7 @@ x > 0 && x < 100
 
 > \<sub>これは下付き文字ではない\</sub>
 
-ただし[ノーブレークスペース]\(`&nbsp;`)はスペース1つ分より多い文字間隔調整用に利用できる。
+ただし[ノーブレークスペース]\(`&nbsp;`)は文字間隔調整用に利用できる。
 
 ```markdown
 Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
@@ -123,26 +123,26 @@ Markdownの書式設定と判別される可能性がある記号は[バック�
 ```markdown
 cr&eacute;me br&ucirc;l&egrave;e
 
-&ContourIntegral;ₛ _**D**_ &CenterDot; d _**S**_ = _Q_
+&Integral;ₛ _**D**_ &CenterDot; d _**S**_ = _Q_
 ```
 
 > cr&eacute;me br&ucirc;l&egrave;e
 > 
-> &ContourIntegral;ₛ _**D**_ &CenterDot; d _**S**_ = _Q_
+> &Integral;ₛ _**D**_ &CenterDot; d _**S**_ = _Q_
 
 これらも直接入力した方が明解で分かりやすい。
 
 ```markdown
 créme brûlèe
 
-∲ₛ _**D**_ · d _**S**_ = _Q_
+∫ₛ _**D**_ · d _**S**_ = _Q_
 ```
 
 > créme brûlèe
 > 
-> ∲ₛ _**D**_ · d _**S**_ = _Q_
+> ∫ₛ _**D**_ · d _**S**_ = _Q_
 
-ただし[ノーブレークスペース]\(`&nbsp;` \[U+00A0])はスペース1つ分より多く文字間隔を調整する目的に利用できる。スペースはいくら多く付けてもHTML側で1個分に縮約されるが、`&nbsp;`は個数分だけ間隔を確保する。
+ただし[ノーブレークスペース]\(`&nbsp;` \[U+00A0])は文字間隔を調整する目的に利用できる。スペースはいくら多く付けてもHTML側で1個分に縮約されるが、`&nbsp;`は個数分だけ間隔を確保する。
 ```markdown
 Foo                    bar
 
@@ -157,11 +157,28 @@ Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 > 
 > Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 
-その他まとめ。
+文字参照は[コードブロック]と[コードスパン]の中には適用されず、そのまま出力される。
 
+``````markdown
+```
+&lt; &gt; &copy;
+```
 
+`&lt; &gt; &copy;`
+``````
 
+> ```
+> &lt; &gt; &copy;
+> ```
+> 
+> `&lt; &gt; &copy;`
 
+それ以外の次の構文では有効(全て特殊ケースで通常使うことはないため一覧のみ)。
+
+* URL → [Example 327](https://higuma.github.io/github-flabored-markdown/#example-327)
+* [リンク]タイトル → [Example 328](https://higuma.github.io/github-flabored-markdown/#example-328)
+* [リンク参照定義] → [Example 329](https://higuma.github.io/github-flabored-markdown/#example-329)
+* [コードブロック]のinfo文字列 → [Example 330](https://higuma.github.io/github-flabored-markdown/#example-330)
 
 ------------------------------------------------------------------------
 
@@ -169,6 +186,9 @@ Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 ← [Table of contents](index.md) →
 [6.3 Code spans](code-spans.md)
 
+[コードブロック]: fenced-code-blocks.md
+[コードスパン]: code-spans.md
 [ノーブレークスペース]: https://ja.wikipedia.org/wiki/ノーブレークスペース
 [バックスラッシュエスケープ]: backslash-escapes.md
-
+[リンク]: links.md
+[リンク参照定義]: link-reference-definitions.md
