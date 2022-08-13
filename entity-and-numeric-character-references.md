@@ -10,7 +10,7 @@ HTMLの[文字参照](https://html.spec.whatwg.org/multipage/syntax.html#charact
 
 ## Best practice
 
-Markdownでは使う必要はほとんどない。
+Markdownでは文字参照を使う必要はあまりない。
 
 HTMLでは特にマークアップに用いられる記号(特に`<`, `>`, `&`)を文字として出力する場合に文字参照が必須だが、Markdownではこれらをそのまま出力できる。
 
@@ -27,6 +27,14 @@ x > 0 && x < 100
 ```
 
 > \<sub>これは下付き文字ではない\</sub>
+
+ただし[ノーブレークスペース]\(`&nbsp;`)はスペース1つ分より多い文字間隔調整用に利用できる。
+
+```markdown
+Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
+```
+
+> Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 
 ## Summary
 
@@ -46,7 +54,7 @@ Markdownでは次の3種類すべて`&`で始まり`;`で終わる書式を用�
 
 > &lt; &gt; &amp; &copy;
 
-ただしHTMLでは(後方互換対応のため)`;`を省略した表現も許可されているが、Markdownでは(文法明確化のため)必ず末尾の`;`が必要なことに注意。次はHTMLでは文字実体参照と認識されるが、Markdownでは認識されず文字通り出力する。
+ただしHTMLでは(後方互換対応のため)`;`を省略した表現も許可されているが、Markdownでは(文法明確化のため)必ず末尾の`;`が必要なことに注意。次はHTMLでは文字参照と認識されるが、Markdownでは認識されず文字通り出力する。
 
 ```markdown
 &lt &gt &amp &copy
@@ -82,7 +90,7 @@ Markdownでは次の3種類すべて`&`で始まり`;`で終わる書式を用�
 
 ## Examples
 
-MarkdownではHTMLのマークアップ文字(特に`<`, `>`, `&`)は自動的に文字参照に変換されるため使う必要がない。次はHTMLで文字参照が必要になる典型例。
+MarkdownではHTMLのマークアップ文字(特に`<`, `>`, `&`)は自動的に文字参照に変換されるため文字参照を書く必要はあまりない。次はHTMLで文字参照が必要になる典型例。
 
 ```markdown
 0 &lt; x &lt; 100
@@ -98,39 +106,62 @@ Markdownでは`<`は自動的に変換されるためそのまま書けばよい
 
 > 0 < x < 100
 
-ただしMarkdownの書式設定と判別される可能性がある文脈では[バックスラッシュエスケープ]を用いて処理する([\*shels](https://en.wikipedia.org/wiki/*shels)は米国のロックグループ)。
+Markdownの書式設定と判別される可能性がある記号は[バックスラッシュエスケープ]を用いて処理すればよい。次の例はどちらも同じ結果になるが、文字参照より`\_`の方が楽に書けるし読みやすい。
 
 ```markdown
-\*shels
+&UnderBar;not emphasis&UnderBar;
+
+\_not emphasis_
 ```
 
-> \*shels
+> &UnderBar;not emphasis&UnderBar;
+> 
+> \_not emphasis_
 
 また今ではほぼ全ての環境がUnicode文字の直接入力に対応しているため、特殊記号も文字参照を使わず直接入力すればよい。次は文字参照を用いた場合。
-
-
 
 ```markdown
 cr&eacute;me br&ucirc;l&egrave;e
 
-&ClockwiseContourIntegral; D&CenterDot;dS = Q
+&ContourIntegral;ₛ _**D**_ &CenterDot; d _**S**_ = _Q_
 ```
 
 > cr&eacute;me br&ucirc;l&egrave;e
 > 
-> &ClockwiseContourIntegral; D&CenterDot;dS = Q
+> &ContourIntegral;ₛ _**D**_ &CenterDot; d _**S**_ = _Q_
 
 これらも直接入力した方が明解で分かりやすい。
 
 ```markdown
 créme brûlèe
 
-∲ D·dS = Q
+∲ₛ _**D**_ · d _**S**_ = _Q_
 ```
 
 > créme brûlèe
 > 
-> ∲ D·dS = Q
+> ∲ₛ _**D**_ · d _**S**_ = _Q_
+
+ただし[ノーブレークスペース]\(`&nbsp;` \[U+00A0])はスペース1つ分より多く文字間隔を調整する目的に利用できる。スペースはいくら多く付けてもHTML側で1個分に縮約されるが、`&nbsp;`は個数分だけ間隔を確保する。
+```markdown
+Foo                    bar
+
+Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
+
+Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
+```
+
+> Foo                    bar
+> 
+> Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
+> 
+> Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
+
+その他まとめ。
+
+
+
+
 
 ------------------------------------------------------------------------
 
@@ -138,4 +169,6 @@ créme brûlèe
 ← [Table of contents](index.md) →
 [6.3 Code spans](code-spans.md)
 
+[ノーブレークスペース]: https://ja.wikipedia.org/wiki/ノーブレークスペース
 [バックスラッシュエスケープ]: backslash-escapes.md
+
