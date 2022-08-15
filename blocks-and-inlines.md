@@ -6,14 +6,14 @@
 
 ------------------------------------------------------------------------
 
-Markdownの文法はブロック構文とインライン構文の2種類に分類され、これらはそれぞれHTMLのブロック要素とインライン要素に対応する。
-
 > 本ガイドはHTMLの中級程度の知識を前提としている。ブロック要素とインライン要素の違いが分からない人は次のMDN解説を読むとよい。
 > 
 > * [MDN - インライン要素](https://developer.mozilla.org/ja/docs/Web/HTML/Inline_elements)
 > * [MDN - ブロックレベル要素](https://developer.mozilla.org/ja/docs/Web/HTML/Block-level-elements)
 > 
 > なおMarkdownにはCSS([`display`](https://developer.mozilla.org/ja/docs/Web/CSS/display)属性)でブロック/インラインの種別を変更するような高度な機能は今のところない。
+
+Markdownの文法はブロック構文とインライン構文の2種類に分類され、これらはそれぞれHTMLのブロック要素とインライン要素に対応する。
 
 ## [3.1 Precedence](https://higuma.github.io/github-flabored-markdown/#precedence)
 
@@ -37,10 +37,12 @@ Markdownの文法はブロック構文とインライン構文の2種類に分�
 
 ブロックには2種類ある。
 
-* __container blocks__: 内部に別のブロックを持つことができる(ネスト可) - [引用文](container-blocks.md#51-block-quotes), [リスト](container-blocks.md#54-lists), [リストアイテム](container-blocks.md#52-list-items), etc.
-* __leaf blocks__: 内部に別のブロックを持てない(ネスト不可) - [見出し](leaf-blocks.md#42-atx-headings), [コードブロック](leaf-blocks.md#45-fenced-code-blocks), [パラグラフ](leaf-blocks.md#48-paragraphs), etc.
+* [コンテナブロック(container blocks)](container-blocks.md): 内部に別のブロックを持つことができる(ネスト可)
+    * [引用](block-quotes.md), [リスト](lists.md), [リストアイテム](list-items.md), etc.
+* [葉ブロック(leaf blocks)](leaf-blocks.md): 内部に別のブロックを持てない(ネスト不可)
+    * [見出し](atx-headings.md), [コードブロック](fenced-code-blocks.md), [パラグラフ](paragraphs.md), etc.
 
-> [表組み](leaf-blocks.md#410-tables-extension)(`<table>`)はHTMLではネスト可能だが、GFMでは(少なくとも今のところ)ネストできない(leafとして扱われる)。どうしても必要な場合は[HTMLブロック](leaf-blocks.md#46-html-blocks)を使えば一応可能。ただしネストした表を用いるケースは稀で、筆者は今まで必要になったことはない。
+> [表組み](leaf-blocks.md#410-tables-extension)(`<table>`)はHTMLではネスト可能だが、GFMの表組み機能ではネストできない(葉ブロックとして扱われる)。どうしても必要な場合は[HTMLブロック](leaf-blocks.md#46-html-blocks)を使えば一応可能。ただしネストした表を用いるケースは稀で、筆者は今まで必要になったことはない。
 
 ------------------------------------------------------------------------
 

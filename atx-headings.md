@@ -49,7 +49,8 @@ Markdownビューアを併用して記述作業を行う場合は次のような
 
 ### リンク | オートリンク → [CommonMark](https://commonmark.org/) | https://github.com/
 
-### 画像 → ![Bear](https://github.githubassets.com/images/icons/emoji/unicode/1f43b.png?v8)
+### 画像 → ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
+
 
 ### 文字参照 | コードスパン → → _&nabla;&CenterDot;D = &rho;_ | `document.getElementById('main');`
 ```
@@ -58,7 +59,7 @@ Markdownビューアを併用して記述作業を行う場合は次のような
 > 
 > ### リンク | オートリンク → [CommonMark](https://commonmark.org/) | https://github.com/
 > 
-> ### 画像 → ![Bear](https://github.githubassets.com/images/icons/emoji/unicode/1f43b.png?v8)
+> ### 画像 → ![Bear](https://github.githubassets.com/images/icons/emoji/octocat.png?v8)
 > 
 > ### 文字参照 | コードスパン → → _&nabla;&CenterDot;D = &rho;_ | `document.getElementById('main');`
 

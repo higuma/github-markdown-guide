@@ -8,7 +8,7 @@
 
 本章は [HTML] → [軽量マークアップ言語] → [Markdown] → [CommonMark] → GitHub Flavored Markdown (__GFM__)へと続く歴史的経緯の解説。はじめに[HTML]から[Markdown]までの簡単な序論、その後はGFM仕様書と順番を入れ替えて1.2 → 1.1 → 1.3 → 1.4 の順に解説する。
 
-> 読者は[HTML]に関する中級程度の知識があるものとする。
+> 歴史的経緯に興味がなければ読まずに[次章](preliminaries.md)へ進んでもよい。なお読者は[HTML]に関する中級程度の知識があるものとする。
 
 ## Markdownの成立まで
 
@@ -28,7 +28,7 @@
 
 > ここから先は基本的にGFM仕様書の章立てに従って説明するが、1.1と1.2は順序を逆にして成立時期の時間軸順に説明する。
 
-[軽量マークアップ言語]としては後発の[Markdown]は2004年に[John Gruber](https://en.wikipedia.org/wiki/John_Gruber)による[最初の仕様](https://daringfireball.net/projects/markdown/syntax)とその[Perl実装](https://daringfireball.net/projects/downloads/Markdown_1.0.1.zip)が発表された。[Markdown]は独自仕様だけでなく[ATX]や[Setext]など当時の既存言語の仕様も借用して組み合わせ、人間に対する認識性とHTMLが持つ豊富な表現力の両立を目指した。
+[軽量マークアップ言語]としては後発の[Markdown]は2004年に[John Gruber](https://en.wikipedia.org/wiki/John_Gruber)による[最初の仕様](https://daringfireball.net/projects/markdown/syntax)とその[Perl実装](https://daringfireball.net/projects/downloads/Markdown_1.0.1.zip)が発表された。[Markdown]は独自仕様だけでなく[ATX]や[Setext]など当時の既存言語の仕様も借用して組み合わせ、人間に対する認識性及び作業効率とHTMLが持つ豊富な表現力の両立を目指した。
 
 > Gruber版[Markdown]の詳しい解説は以前まとめているので興味のある人は次を参照。
 > 
@@ -36,7 +36,9 @@
 > 
 > > なお後半部にGFMの解説もあるが内容が古い(GFMが[CommonMark]を取り入れるようになる前)。今はもう役に立たないので本解説を読むこと。
 
-その後は徐々に支持を得て普及し、それとともに[表組み]などの機能が追加されるようになった。さらにはHTML以外の目的(Webアプリ, [PDF], [epub], etc.)にも応用されるようになり、現在では最もよく用いられる[軽量マークアップ言語]としての地位を獲得している。
+その後は徐々に支持を得て普及し、それとともに[脚注]や[表組み]などの機能が追加されるようになった。さらにはHTML以外の目的(Webアプリ, [PDF], [epub], etc.)にも応用されるようになり、現在では最もよく用いられる[軽量マークアップ言語]としての地位を獲得している。
+
+> 本文はCommonMark仕様書の引用(丸写し)で、機能拡張の例として[脚注]と[表組み]が書かれている。しかしCommonMarkではどちらも仕様に含まれていない。[表組み]はCommonMarkの拡張であるGFM、[脚注]はそのさらに拡張であるGitHub Markdown実装に組み込まれている。
 
 なお長年に渡り色々な開発グループにより仕様や実装の改良が行われており、その結果今では多くの方言が生まれ、仕様が異なる実装が多数存在する(→ [Wikipedia: Markdown - Variants](https://en.wikipedia.org/wiki/Markdown#Variants))。
 
@@ -62,7 +64,7 @@ GitHub Flavored Markdown (GFM)はGitHub及びGitHub Enterpriseで用いられて
 
 GitHubサイトにHTMLレンダリングする際、セキュリティと一貫性のためのプリプロセスとサニタライズ処理が行われる。
 
-> それだけでなく、GitHubのMarkdown 処理実装はGitHubのサイト運用に際して日常的に手が加えられており多くの独自拡張機能がある。またGFMとは動作が異なる点も多数ある。これも [補足 - GitHubのMarkdown実装](github-markdown-implementation.md) で説明する。
+> それだけでなくGitHubのMarkdown処理実装には多くの独自拡張機能がある。さらにGitHubのサイト運用に際して日常的に改良が加えられており、その結果GFM仕様書と動作が異なる点も多数ある。これも [補足 - GitHubのMarkdown実装](github-markdown-implementation.md) で説明する。
 
 ## [1.3 Why is a spec needed?](https://higuma.github.io/github-flabored-markdown/#why-is-a-spec-needed-)
 
@@ -76,21 +78,23 @@ GFMは[Markdown]の成立から現在までの経緯を踏まえ、標準とし�
 > 
 > 結局権力を濫用した形の[W3C]はその地位を失い、現在は[WHATWG]が仕様策定を引き継いでいる。現行の[HTML Living Standard]は寛容な仕様に戻り、昔の不完全なHTML文書も受け付ける(現行ブラウザがどんな昔のHTMLでも表示できるのはこのおかげ)。
 > 
-> 新しく作られる仕様は上からの強制ではなく、むしろ人間社会という生態系の中での合意形成プロセスにより進められる。[Markdown]も例外ではなく、時代の要求に応えられる仕様を提示し、それが多くの支持を得たことが成功の理由といえるだろう。
+> 新しく作られる仕様は上からの強制ではなく、むしろ人間社会という生態系の中での合意形成プロセスの中で形成される。[Markdown]も例外ではなく、時代の要求に応えられる仕様を提示し、それが多くの支持を得たことが成功の理由といえるだろう。
 > 
 > > [HTML]の成立から現在までの歴史の流れに興味のある人は [とほほのWWW入門 - HTML Living StandardとHTMLの歴史](https://www.tohoho-web.com/html/memo/htmlls.htm) を読むとよい。[HTML]の仕様策定は [IETF] \(1990-1996) → [W3C] \(1996-2019) → [WHATWG] \(2019-) と移り変わっている。
 
 ## [1.4 About this document](https://higuma.github.io/github-flabored-markdown/#about-this-document)
 
-GFMはできる限り曖昧さを排除した[Markdown]文法を目指して作られているが完璧という訳ではない。元々が色々な人達によって作られた記法の寄せ集めであり、これにより生じる矛盾を可能な限り吸収して寛容でリーズナブルな出力を行うように仕様を調整している。
+> (参考) 学習用には全く役に立たない内容なので読む必要なし。
 
-> GFM仕様書本文のテストや文書生成用のPythonスクリプトに関する文章は読む必要なし。ちなみにこれらは次のrepoの中身のことを言っているものと思われる([CommonMark]からforkしており、READMEには本仕様書へのリンクも貼られているのでまず間違いない)。
-> 
-> https://github.com/github/cmark-gfm/
-> 
-> ただし現在は[`spec_tests.py`](https://github.com/github/cmark-gfm/blob/master/test/spec_tests.py)というファイルはあるが、`spec.txt`や`tools/makespec.py`は見当たらない。また[Makefile](https://github.com/github/cmark-gfm/blob/master/Makefile)に`test/spec.txt`という記述はあるものの本文の内容と異なる。今はもう処理方法は変更され、仕様書の文章だけが未修正のまま残っているものと推測される。
+この部分もCommonMark仕様書の丸写しであることに注意。内容は次のGitHub repoに関する説明。
 
-最後にGFM仕様書内の記法に関して一つ注意。コード例内部のタブ文字(U+0009)は`→`で表す。
+https://github.com/commonmark/commonmark-spec
+
+ただし記述は現在の内容と食い違う点がある。特に`tools/makespec.py`というファイルはもう存在せず、代わりに`tools/make_spec.lua`というファイルがある。これは単にrepo側の変更が仕様書に反映されていないだけだと思われる。
+
+> これも仕様書の不備だが、まあMacFarlane氏はご多忙なのであろう。
+
+最後に仕様書内の記法に関して一つ注意。コード例内部のタブ文字(U+0009)は`→`で表す。
 
 ------------------------------------------------------------------------
 
@@ -121,3 +125,4 @@ GFMはできる限り曖昧さを排除した[Markdown]文法を目指して作�
 [軽量マークアップ言語]: https://ja.wikipedia.org/wiki/軽量マークアップ言語
 [正規表現]: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
 [表組み]: tables-extension.md
+[脚注]: github-markdown-implementation.md#footnotes
