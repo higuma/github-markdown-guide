@@ -33,35 +33,33 @@ Markdownではバックスラッシュ(`\`)は特別な意味を持つ。
 
 > \\/\\/\\/\\/\\/\\/\\/\\/
 
-[ASCII区切り文字]はMarkdownの書式設定に用いられるが、これを書式ではなく文字として認識させる場合にバックスラッシュエスケープを用いる。まず次は[強調]と[打ち消し線]、[区切り]、[見出し]の例。
+[ASCII区切り文字]の多くはMarkdownの書式設定に用いられるが、これらを書式ではなく文字として認識させる場合にバックスラッシュエスケープを用いる。
+
+次は[強調]と[打ち消し線]、[区切り]、[見出し]とそのエスケープ例。通常の解釈では書式設定と判定される[ASCII区切り文字]の先頭部分にバックスラッシュを付けてエスケープすることにより通常文字として認識させる。
 
 ```markdown
-_emphasis_, **strong**, ~~strikethrough~~
+_italic_, **bold**, ***bold italic*** ~~strikethrough~~
+
+\_not italic_, \*\*not bold**, \*\*\*not bold italic*** \~~not strikethrough~~
 
 --------------------
 
-### 見出し
-```
-
-> _emphasis_, **strong**, ~~strikethrough~~
-> 
-> --------------------
-> 
-> ### 見出し
-
-これらを書式設定ではなく文字そのものとして出力させる場合にバックスラッシュエスケープを用いる。通常の解釈では書式設定と判定される[ASCII区切り文字]の先頭部分にバックスラッシュを付けてエスケープすることにより通常文字として認識させる。
-
-```markdown
-\_not emphasis_, \*\*not strong**, \~~not strikethrough~~
-
 \--------------------
+
+### 見出し
 
 \### 見出しではない
 ```
 
-> \_not emphasis_, \*\*not strong**, \~~not strikethrough~~
+> _italic_, **bold**, ***bold italic*** ~~strikethrough~~
+> 
+> \_not italic_, \*\*not bold**, \*\*\*not bold italic*** \~~not strikethrough~~
+> 
+> --------------------
 > 
 > \--------------------
+> 
+> ### 見出し
 > 
 > \### 見出しではない
 
@@ -92,12 +90,12 @@ _emphasis_, **strong**, ~~strikethrough~~
 
 | U+ | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | A | B | C | D | E | F |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| 0020 | `` \  ``<br>\  | `` \! ``<br>\! | `` \" ``<br>\" | `` \# ``<br>\# | `` \$ ``<br>\$ | `` \% ``<br>\% | `` \& ``<br>\& | `` \' ``<br>\' | `` \( ``<br>\( | `` \) ``<br>\) | `` \* ``<br>\* | `` \+ ``<br>\+ | `` \, ``<br>\, | `` \- ``<br>\- | `` \. ``<br>\. | `` \/ ``<br>\/ |
-| 0030 | `` \0 ``<br>\0 | `` \1 ``<br>\1 | `` \2 ``<br>\2 | `` \3 ``<br>\3 | `` \4 ``<br>\4 | `` \5 ``<br>\5 | `` \6 ``<br>\6 | `` \7 ``<br>\7 | `` \8 ``<br>\8 | `` \9 ``<br>\9 | `` \: ``<br>\: | `` \; ``<br>\; | `` \< ``<br>\< | `` \= ``<br>\= | `` \> ``<br>\> | `` \? ``<br>\? |
-| 0040 | `` \@ ``<br>\@ | `` \A ``<br>\A | `` \B ``<br>\B | `` \C ``<br>\C | `` \D ``<br>\D | `` \E ``<br>\E | `` \F ``<br>\F | `` \G ``<br>\G | `` \H ``<br>\H | `` \I ``<br>\I | `` \J ``<br>\J | `` \K ``<br>\K | `` \L ``<br>\L | `` \M ``<br>\M | `` \N ``<br>\N | `` \O ``<br>\O |
-| 0050 | `` \P ``<br>\P | `` \Q ``<br>\Q | `` \R ``<br>\R | `` \S ``<br>\S | `` \T ``<br>\T | `` \U ``<br>\U | `` \V ``<br>\V | `` \W ``<br>\W | `` \X ``<br>\X | `` \Y ``<br>\Y | `` \Z ``<br>\Z | `` \[ ``<br>\[ | `` \\ ``<br>\\ | `` \] ``<br>\] | `` \^ ``<br>\^ | `` \_ ``<br>\_ |
-| 0060 | `` \` ``<br>\` | `` \a ``<br>\a | `` \b ``<br>\b | `` \c ``<br>\c | `` \d ``<br>\d | `` \e ``<br>\e | `` \f ``<br>\f | `` \g ``<br>\g | `` \h ``<br>\h | `` \i ``<br>\i | `` \j ``<br>\j | `` \k ``<br>\k | `` \l ``<br>\l | `` \m ``<br>\m | `` \n ``<br>\n | `` \o ``<br>\o |
-| 0070 | `` \p ``<br>\p | `` \q ``<br>\q | `` \r ``<br>\r | `` \s ``<br>\s | `` \t ``<br>\t | `` \u ``<br>\u | `` \v ``<br>\v | `` \w ``<br>\w | `` \x ``<br>\x | `` \y ``<br>\y | `` \z ``<br>\z | `` \{ ``<br>\{ | `` \| ``<br>\| | `` \} ``<br>\} | `` \~ ``<br>\~ |
+| 0020 |&nbsp;`` \  ``&nbsp;<br>\  |&nbsp;`` \! ``&nbsp;<br>\! |&nbsp;`` \" ``&nbsp;<br>\" |&nbsp;`` \# ``&nbsp;<br>\# |&nbsp;`` \$ ``&nbsp;<br>\$ |&nbsp;`` \% ``&nbsp;<br>\% |&nbsp;`` \& ``&nbsp;<br>\& |&nbsp;`` \' ``&nbsp;<br>\' |&nbsp;`` \( ``&nbsp;<br>\( |&nbsp;`` \) ``&nbsp;<br>\) |&nbsp;`` \* ``&nbsp;<br>\* |&nbsp;`` \+ ``&nbsp;<br>\+ |&nbsp;`` \, ``&nbsp;<br>\, |&nbsp;`` \- ``&nbsp;<br>\- |&nbsp;`` \. ``&nbsp;<br>\. |&nbsp;`` \/ ``&nbsp;<br>\/ |
+| 0030 |&nbsp;`` \0 ``&nbsp;<br>\0 |&nbsp;`` \1 ``&nbsp;<br>\1 |&nbsp;`` \2 ``&nbsp;<br>\2 |&nbsp;`` \3 ``&nbsp;<br>\3 |&nbsp;`` \4 ``&nbsp;<br>\4 |&nbsp;`` \5 ``&nbsp;<br>\5 |&nbsp;`` \6 ``&nbsp;<br>\6 |&nbsp;`` \7 ``&nbsp;<br>\7 |&nbsp;`` \8 ``&nbsp;<br>\8 |&nbsp;`` \9 ``&nbsp;<br>\9 |&nbsp;`` \: ``&nbsp;<br>\: |&nbsp;`` \; ``&nbsp;<br>\; |&nbsp;`` \< ``&nbsp;<br>\< |&nbsp;`` \= ``&nbsp;<br>\= |&nbsp;`` \> ``&nbsp;<br>\> |&nbsp;`` \? ``&nbsp;<br>\? |
+| 0040 |&nbsp;`` \@ ``&nbsp;<br>\@ |&nbsp;`` \A ``&nbsp;<br>\A |&nbsp;`` \B ``&nbsp;<br>\B |&nbsp;`` \C ``&nbsp;<br>\C |&nbsp;`` \D ``&nbsp;<br>\D |&nbsp;`` \E ``&nbsp;<br>\E |&nbsp;`` \F ``&nbsp;<br>\F |&nbsp;`` \G ``&nbsp;<br>\G |&nbsp;`` \H ``&nbsp;<br>\H |&nbsp;`` \I ``&nbsp;<br>\I |&nbsp;`` \J ``&nbsp;<br>\J |&nbsp;`` \K ``&nbsp;<br>\K |&nbsp;`` \L ``&nbsp;<br>\L |&nbsp;`` \M ``&nbsp;<br>\M |&nbsp;`` \N ``&nbsp;<br>\N |&nbsp;`` \O ``&nbsp;<br>\O |
+| 0050 |&nbsp;`` \P ``&nbsp;<br>\P |&nbsp;`` \Q ``&nbsp;<br>\Q |&nbsp;`` \R ``&nbsp;<br>\R |&nbsp;`` \S ``&nbsp;<br>\S |&nbsp;`` \T ``&nbsp;<br>\T |&nbsp;`` \U ``&nbsp;<br>\U |&nbsp;`` \V ``&nbsp;<br>\V |&nbsp;`` \W ``&nbsp;<br>\W |&nbsp;`` \X ``&nbsp;<br>\X |&nbsp;`` \Y ``&nbsp;<br>\Y |&nbsp;`` \Z ``&nbsp;<br>\Z |&nbsp;`` \[ ``&nbsp;<br>\[ |&nbsp;`` \\ ``&nbsp;<br>\\ |&nbsp;`` \] ``&nbsp;<br>\] |&nbsp;`` \^ ``&nbsp;<br>\^ |&nbsp;`` \_ ``&nbsp;<br>\_ |
+| 0060 |&nbsp;`` \` ``&nbsp;<br>\` |&nbsp;`` \a ``&nbsp;<br>\a |&nbsp;`` \b ``&nbsp;<br>\b |&nbsp;`` \c ``&nbsp;<br>\c |&nbsp;`` \d ``&nbsp;<br>\d |&nbsp;`` \e ``&nbsp;<br>\e |&nbsp;`` \f ``&nbsp;<br>\f |&nbsp;`` \g ``&nbsp;<br>\g |&nbsp;`` \h ``&nbsp;<br>\h |&nbsp;`` \i ``&nbsp;<br>\i |&nbsp;`` \j ``&nbsp;<br>\j |&nbsp;`` \k ``&nbsp;<br>\k |&nbsp;`` \l ``&nbsp;<br>\l |&nbsp;`` \m ``&nbsp;<br>\m |&nbsp;`` \n ``&nbsp;<br>\n |&nbsp;`` \o ``&nbsp;<br>\o |
+| 0070 |&nbsp;`` \p ``&nbsp;<br>\p |&nbsp;`` \q ``&nbsp;<br>\q |&nbsp;`` \r ``&nbsp;<br>\r |&nbsp;`` \s ``&nbsp;<br>\s |&nbsp;`` \t ``&nbsp;<br>\t |&nbsp;`` \u ``&nbsp;<br>\u |&nbsp;`` \v ``&nbsp;<br>\v |&nbsp;`` \w ``&nbsp;<br>\w |&nbsp;`` \x ``&nbsp;<br>\x |&nbsp;`` \y ``&nbsp;<br>\y |&nbsp;`` \z ``&nbsp;<br>\z |&nbsp;`` \{ ``&nbsp;<br>\{ |&nbsp;`` \| ``&nbsp;<br>\| |&nbsp;`` \} ``&nbsp;<br>\} |&nbsp;`` \~ ``&nbsp;<br>\~ |
 
 なおバックスラッシュエスケープは次の文法要素に対しては作用せず、そのまま出力される。
 
@@ -192,18 +190,38 @@ _emphasis_, **strong**, ~~strikethrough~~
 強調書式(`**strong**`)をエスケープする場合は2つ必要になることに注意。1つだけだと斜体と認識される。
 
 ```markdown
-**strong**
+**bold**
 
-\**emphasis surrounded by asterisks**
+\**italic surrounded by asterisks**
 
 \*\*normal text**
 ```
 
-> **strong**
+> **bold**
 > 
-> \**emphasis surrounded by asterisks**
+> \**italic surrounded by asterisks**
 > 
 > \*\*normal text**
+
+3つの場合も同様。
+
+```markdown
+***bold italic***
+
+\***bold surrounded by asterisks***
+
+\*\**italic surrounded by double asterisks***
+
+\*\*\*normal text***
+```
+
+> ***bold italic***
+> 
+> \***bold surrounded by asterisks***
+> 
+> \*\**italic surrounded by double asterisks***
+> 
+> \*\*\*normal text***
 
 なお文法上どの区切り文字をどのようにエスケープすれば認識するかは構文の種類だけでなく実装によっても異なる場合があるため詳しいルールはここには書かない。それよりもターゲット環境のMarkdown実装で実際に確認しながら作業するとよい(多くの場合プレビュー機能を利用できる)。
 
@@ -245,7 +263,7 @@ http://www.example.com?\-\+\=
 
 > <a href="http://www.example.com" title="\=\=example domain=/=/">Example domain</a>
 
-その他のケースではバックスラッシュエスケープが効く。以下は仕様書の要約だが、どれも特殊ケースで通常使うものではないので一覧表示のみとする。
+その他のケースではバックスラッシュエスケープが効く。以下は仕様書からの要約だが、どれも特殊ケースで通常使うものではないので一覧表示のみとする。
 
 * URL → [Example 318](https://higuma.github.io/github-flabored-markdown/#example-318)
 * [リンク]タイトルと[リンク参照定義] → [Example 319](https://higuma.github.io/github-flabored-markdown/#example-319)
@@ -254,15 +272,19 @@ http://www.example.com?\-\+\=
 > <details>
 > <summary>GitHubのMarkdown実装におけるURLの扱い</summary>
 > 
-> URLに関してはGitHubのMarkdown実装はGFM仕様書通りではない。例えばURLを純粋にテキストとしてのみ出力しようとして次のように書いたとする。
+> 拡張機能の追加によりURLに関してはGFMやGitHubのMarkdown実装はCommonMark準拠ではなくなっている。例えばURLを純粋にテキストとしてのみ出力しようとして次のように書いたとする。
 > 
 > ```markdown
 > https\:\/\/www\.example\.com
 > ```
 > 
-> しかしGitHubのMarkdown実装はこれでもバックスラッシュを無視して[オートリンク拡張]として出力する。
+> これで通常のMarkdown処理実装はテキストとして出力する。しかしGFM仕様ではこれでもバックスラッシュを無視して[オートリンク拡張]として出力する。
 > 
 > > https\:\/\/www\.example\.com
+> 
+> Babelmarkでの比較結果は次の通り。大部分の処理実装は通常テキストとして出力するが、GFMなど一部の実装は[オートリンク拡張]として扱う。
+> 
+> https://babelmark.github.io/?text=https%5C%3A%5C%2F%5C%2Fwww%5C.example%5C.com
 > 
 > (2022-08-11現在) また[GitHub Gist]のMarkdown処理では編集時のPreview表示と最終出力が異なる場合がある(注意)。例えば[次のMarkdowns文](https://gist.github.com/higuma/9fb12dd67597367d15be8bbac1c00c11)を処理させると`https\://...`の部分をプレビューでは通常テキストと判定するが、本処理は[オートリンク拡張]と判定する。
 > 
@@ -270,7 +292,7 @@ http://www.example.com?\-\+\=
 > \[これはリンクではない、しかしリンク先に注意](https\://www\.example\.com)
 > ```
 > 
-> 本現象は一時的な振る舞いの可能性が高いが記録として残しておく(将来的には修正されるはず)。本例に限らず多くのMarkdown処理実装は(各Webサービスの)目的別に微調整されており、特殊ケースでどうなるかは実際に処理させてみないと分からない。
+> 本現象は一時的な振る舞いの可能性が高いが記録として残しておく(将来的には修正されるはず)。本例に限らず多くのMarkdown処理実装は(各Webサービスの)目的別にカスタマイズされており、特殊ケースでどうなるかは実際に処理させてみないと分からない。
 >
 > また実環境チェックも大切だが、それよりもこのような実装依存の可能性が高い記述は最初から回避する自衛策を講じることも重要。幸いにも実用上はこのような例に出くわすことは稀で(上記の例はもちろん意図的に作ったもの)、回避方法は考えれば色々とある。
 > 

@@ -109,40 +109,40 @@ Markdownでは`<`は自動的に変換されるためそのまま書けばよい
 Markdownの書式設定と判別される可能性がある記号は[バックスラッシュエスケープ]を用いて処理すればよい。次の例はどちらも同じ結果になるが、文字参照より`\_`の方が楽に書けるし読みやすい。
 
 ```markdown
-&UnderBar;not emphasis&UnderBar;
+&UnderBar;not italic&UnderBar;
 
-\_not emphasis_
+\_not italic_
 ```
 
-> &UnderBar;not emphasis&UnderBar;
+> &UnderBar;not italic&UnderBar;
 > 
-> \_not emphasis_
+> \_not italic_
 
 また今ではほぼ全ての環境がUnicode文字の直接入力に対応しているため、特殊記号も文字参照を使わず直接入力すればよい。次は文字参照を用いた場合。
 
 ```markdown
 cr&eacute;me br&ucirc;l&egrave;e
 
-&Integral;ₛ _**D**_ &CenterDot; d _**S**_ = _Q_
+&Integral;<sub>_S_</sub> _**D**_ &CenterDot; d _**S**_ = _Q_
 ```
 
 > cr&eacute;me br&ucirc;l&egrave;e
 > 
-> &Integral;ₛ _**D**_ &CenterDot; d _**S**_ = _Q_
+> &Integral;<sub>_S_</sub> _**D**_ &CenterDot; d _**S**_ = _Q_
 
 これらも直接入力した方が明解で分かりやすい。
 
 ```markdown
 créme brûlèe
 
-∫ₛ _**D**_ · d _**S**_ = _Q_
+∫<sub>_S_</sub> _**D**_ · d _**S**_ = _Q_
 ```
 
 > créme brûlèe
 > 
 > ∫<sub>_S_</sub> _**D**_ · d _**S**_ = _Q_
 
-ただし[ノーブレークスペース]\(`&nbsp;` \[U+00A0])は文字間隔を調整する目的に利用できる。スペースはいくら多く付けてもHTML側で1個分に縮約されるが、`&nbsp;`は個数分だけ間隔を確保する。
+ただし[ノーブレークスペース]\(`&nbsp;` \[U+00A0])は文字間隔を調整する目的に利用できる。スペースはいくら連続してもHTML側で1個分に縮約されるが、`&nbsp;`は個数分だけ間隔を確保する。`
 ```markdown
 Foo                    bar
 
@@ -156,6 +156,32 @@ Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 > Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 > 
 > Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
+
+> 正直言ってエレガントな使い方ではない。しかしMarkdownではこのような用途でこれに代わる有効な方法がない。
+
+`&#160;`または`&#xA0`でもよい(どれも文字数は同じ)。
+
+```markdown
+Foo&#160;&#160;&#160;&#160;&#160;bar
+
+Foo&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;bar
+```
+
+> Foo&#160;&#160;&#160;&#160;&#160;bar
+> 
+> Foo&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;bar
+
+> (参考) 文字コードを直接入力しても機能はする。次のコード例はRubyを使い`Foo`と`bar`の間にコードポイント値U+00A0を挿入したもの(→ [source](https://gist.github.com/higuma/e5835a29e87a1e2703a333d5beb3aa1d))。しかしこれではスペースと区別困難になるため推奨しない。
+> 
+> ```markdown
+> Foo     bar
+> 
+> Foo          bar
+> ```
+> 
+> > Foo     bar
+> > 
+> > Foo          bar
 
 文字参照は[コードブロック]と[コードスパン]の中には適用されず、そのまま出力される。
 
@@ -173,7 +199,7 @@ Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 > 
 > `&lt; &gt; &copy;`
 
-それ以外の次の構文では有効(全て特殊ケースで通常使うことはないため一覧のみ)。
+(参考) それ以外の次の構文では機能する(仕様書より: どれも特殊ケースで通常使うことはないため一覧のみ)。
 
 * URL → [Example 327](https://higuma.github.io/github-flabored-markdown/#example-327)
 * [リンク]タイトル → [Example 328](https://higuma.github.io/github-flabored-markdown/#example-328)
