@@ -31,10 +31,14 @@ x > 0 && x < 100
 ただし[ノーブレークスペース]\(`&nbsp;`)は文字間隔調整用に利用できる。
 
 ```markdown
-Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
+Foo&nbsp;&nbsp;&nbsp;&nbsp;bar
+
+Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 ```
 
-> Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
+> Foo&nbsp;&nbsp;&nbsp;&nbsp;bar
+> 
+> Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 
 ## Summary
 
@@ -118,60 +122,76 @@ Markdownの書式設定と判別される可能性がある記号は[バック�
 > 
 > \_not italic_
 
-また今ではほぼ全ての環境がUnicode文字の直接入力に対応しているため、特殊記号も文字参照を使わず直接入力すればよい。次は文字参照を用いた場合。
+Unicode仕様が作られた頃はまだ直接入力できる環境が少なく、ASCII文字を用いた入力手段として文字参照がよく用いられた。しかし今ではあらゆる作業環境がUnicodeに完全対応しており、特殊な文字も文字参照を使わず直接入力できる。次は文字参照を用いた場合の例。
 
 ```markdown
 cr&eacute;me br&ucirc;l&egrave;e
 
-&Integral;<sub>_S_</sub> _**D**_ &CenterDot; d _**S**_ = _Q_
+&Integral;<sub>_S_</sub> ***D*** &CenterDot; d ***S*** = _Q_
 ```
 
 > cr&eacute;me br&ucirc;l&egrave;e
 > 
-> &Integral;<sub>_S_</sub> _**D**_ &CenterDot; d _**S**_ = _Q_
+> &Integral;<sub>_S_</sub> ***D*** &CenterDot; d ***S*** = _Q_
 
 これらも直接入力した方が明解で分かりやすい。
 
 ```markdown
 créme brûlèe
 
-∫<sub>_S_</sub> _**D**_ · d _**S**_ = _Q_
+∫<sub>_S_</sub> ***D*** · d ***S*** = _Q_
 ```
 
 > créme brûlèe
 > 
-> ∫<sub>_S_</sub> _**D**_ · d _**S**_ = _Q_
+> ∫<sub>_S_</sub> ***D*** · d ***S*** = _Q_
 
 ただし[ノーブレークスペース]\(`&nbsp;` \[U+00A0])は文字間隔を調整する目的に利用できる。スペースはいくら連続してもHTML側で1個分に縮約されるが、`&nbsp;`は個数分だけ間隔を確保する。`
 ```markdown
 Foo                    bar
 
-Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
+Foo&nbsp;&nbsp;&nbsp;&nbsp;bar
 
-Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
+Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 ```
 
 > Foo                    bar
 > 
-> Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
+> Foo&nbsp;&nbsp;&nbsp;&nbsp;bar
 > 
-> Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
+> Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 
 > 正直言ってエレガントな使い方ではない。しかしMarkdownではこのような用途でこれに代わる有効な方法がない。
 
 `&#160;`または`&#xA0`でもよい(どれも文字数は同じ)。
 
 ```markdown
-Foo&#160;&#160;&#160;&#160;&#160;bar
+Foo&#160;&#160;&#160;&#160;bar
 
-Foo&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;bar
+Foo&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;bar
 ```
 
-> Foo&#160;&#160;&#160;&#160;&#160;bar
+> Foo&#160;&#160;&#160;&#160;bar
 > 
-> Foo&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;bar
+> Foo&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;bar
 
-> (参考) 文字コードを直接入力しても機能はする。次のコード例はRubyを使い`Foo`と`bar`の間にコードポイント値U+00A0を挿入したもの(→ [source](https://gist.github.com/higuma/e5835a29e87a1e2703a333d5beb3aa1d))。しかしこれではスペースと区別困難になるため推奨しない。
+またUnicodeには`&nbsp;`以外にも様々な幅や用途を持つ空白文字が多数ある。一覧は次を参照。
+
+https://en.wikipedia.org/wiki/Whitespace_character#Unicode
+
+次の例は最も幅広のEM SPACE [U+2003]を用いたもの。文字参照`&emsp;`を使える。
+
+```markdown
+Foo&emsp;&emsp;bar
+
+Foo&emsp;&emsp;&emsp;&emsp;bar
+```
+
+> Foo&emsp;&emsp;bar
+> 
+> Foo&emsp;&emsp;&emsp;&emsp;bar
+
+> (参考) 文字コードを直接入力しても機能はする。次のコード例は`Foo`と`bar`の間にコードポイント値U+00A0を挿入したもの(→ [source](https://gist.github.com/higuma/e5835a29e87a1e2703a333d5beb3aa1d))。しかしこれではスペースと区別困難になるため推奨しない(文字参照を使わないと確認困難)。
 > 
 > ```markdown
 > Foo     bar

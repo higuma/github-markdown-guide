@@ -86,16 +86,16 @@ _italic_, **bold**, ***bold italic*** ~~strikethrough~~
 
 ### バックスラッシュエスケープ
 
-[ASCII区切り文字]の手前に`\`を付けるとMarkdown書式ではなく`\`でエスケープした文字と認識し、`\`を除去した文字を出力する。それ以外の印字可能文字の手前の`\`は文字としてそのまま出力する。[全てのASCII印字可能文字のバックスラッシュエスケープ効果一覧](https://gist.github.com/higuma/8bab3e3f79105907797cdfe243f19033)は次の通り。
+[ASCII区切り文字]の手前に`\`を付けるとMarkdown書式ではなく`\`でエスケープした文字と認識し、`\`を除去した文字を出力する。それ以外の印字可能文字の手前の`\`は文字としてそのまま出力する。[全ASCII印字可能文字のバックスラッシュエスケープ効果一覧](https://gist.github.com/higuma/8bab3e3f79105907797cdfe243f19033)は次の通り。
 
 | U+ | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | A | B | C | D | E | F |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| 0020 |&nbsp;`` \  ``&nbsp;<br>\  |&nbsp;`` \! ``&nbsp;<br>\! |&nbsp;`` \" ``&nbsp;<br>\" |&nbsp;`` \# ``&nbsp;<br>\# |&nbsp;`` \$ ``&nbsp;<br>\$ |&nbsp;`` \% ``&nbsp;<br>\% |&nbsp;`` \& ``&nbsp;<br>\& |&nbsp;`` \' ``&nbsp;<br>\' |&nbsp;`` \( ``&nbsp;<br>\( |&nbsp;`` \) ``&nbsp;<br>\) |&nbsp;`` \* ``&nbsp;<br>\* |&nbsp;`` \+ ``&nbsp;<br>\+ |&nbsp;`` \, ``&nbsp;<br>\, |&nbsp;`` \- ``&nbsp;<br>\- |&nbsp;`` \. ``&nbsp;<br>\. |&nbsp;`` \/ ``&nbsp;<br>\/ |
-| 0030 |&nbsp;`` \0 ``&nbsp;<br>\0 |&nbsp;`` \1 ``&nbsp;<br>\1 |&nbsp;`` \2 ``&nbsp;<br>\2 |&nbsp;`` \3 ``&nbsp;<br>\3 |&nbsp;`` \4 ``&nbsp;<br>\4 |&nbsp;`` \5 ``&nbsp;<br>\5 |&nbsp;`` \6 ``&nbsp;<br>\6 |&nbsp;`` \7 ``&nbsp;<br>\7 |&nbsp;`` \8 ``&nbsp;<br>\8 |&nbsp;`` \9 ``&nbsp;<br>\9 |&nbsp;`` \: ``&nbsp;<br>\: |&nbsp;`` \; ``&nbsp;<br>\; |&nbsp;`` \< ``&nbsp;<br>\< |&nbsp;`` \= ``&nbsp;<br>\= |&nbsp;`` \> ``&nbsp;<br>\> |&nbsp;`` \? ``&nbsp;<br>\? |
-| 0040 |&nbsp;`` \@ ``&nbsp;<br>\@ |&nbsp;`` \A ``&nbsp;<br>\A |&nbsp;`` \B ``&nbsp;<br>\B |&nbsp;`` \C ``&nbsp;<br>\C |&nbsp;`` \D ``&nbsp;<br>\D |&nbsp;`` \E ``&nbsp;<br>\E |&nbsp;`` \F ``&nbsp;<br>\F |&nbsp;`` \G ``&nbsp;<br>\G |&nbsp;`` \H ``&nbsp;<br>\H |&nbsp;`` \I ``&nbsp;<br>\I |&nbsp;`` \J ``&nbsp;<br>\J |&nbsp;`` \K ``&nbsp;<br>\K |&nbsp;`` \L ``&nbsp;<br>\L |&nbsp;`` \M ``&nbsp;<br>\M |&nbsp;`` \N ``&nbsp;<br>\N |&nbsp;`` \O ``&nbsp;<br>\O |
-| 0050 |&nbsp;`` \P ``&nbsp;<br>\P |&nbsp;`` \Q ``&nbsp;<br>\Q |&nbsp;`` \R ``&nbsp;<br>\R |&nbsp;`` \S ``&nbsp;<br>\S |&nbsp;`` \T ``&nbsp;<br>\T |&nbsp;`` \U ``&nbsp;<br>\U |&nbsp;`` \V ``&nbsp;<br>\V |&nbsp;`` \W ``&nbsp;<br>\W |&nbsp;`` \X ``&nbsp;<br>\X |&nbsp;`` \Y ``&nbsp;<br>\Y |&nbsp;`` \Z ``&nbsp;<br>\Z |&nbsp;`` \[ ``&nbsp;<br>\[ |&nbsp;`` \\ ``&nbsp;<br>\\ |&nbsp;`` \] ``&nbsp;<br>\] |&nbsp;`` \^ ``&nbsp;<br>\^ |&nbsp;`` \_ ``&nbsp;<br>\_ |
-| 0060 |&nbsp;`` \` ``&nbsp;<br>\` |&nbsp;`` \a ``&nbsp;<br>\a |&nbsp;`` \b ``&nbsp;<br>\b |&nbsp;`` \c ``&nbsp;<br>\c |&nbsp;`` \d ``&nbsp;<br>\d |&nbsp;`` \e ``&nbsp;<br>\e |&nbsp;`` \f ``&nbsp;<br>\f |&nbsp;`` \g ``&nbsp;<br>\g |&nbsp;`` \h ``&nbsp;<br>\h |&nbsp;`` \i ``&nbsp;<br>\i |&nbsp;`` \j ``&nbsp;<br>\j |&nbsp;`` \k ``&nbsp;<br>\k |&nbsp;`` \l ``&nbsp;<br>\l |&nbsp;`` \m ``&nbsp;<br>\m |&nbsp;`` \n ``&nbsp;<br>\n |&nbsp;`` \o ``&nbsp;<br>\o |
-| 0070 |&nbsp;`` \p ``&nbsp;<br>\p |&nbsp;`` \q ``&nbsp;<br>\q |&nbsp;`` \r ``&nbsp;<br>\r |&nbsp;`` \s ``&nbsp;<br>\s |&nbsp;`` \t ``&nbsp;<br>\t |&nbsp;`` \u ``&nbsp;<br>\u |&nbsp;`` \v ``&nbsp;<br>\v |&nbsp;`` \w ``&nbsp;<br>\w |&nbsp;`` \x ``&nbsp;<br>\x |&nbsp;`` \y ``&nbsp;<br>\y |&nbsp;`` \z ``&nbsp;<br>\z |&nbsp;`` \{ ``&nbsp;<br>\{ |&nbsp;`` \| ``&nbsp;<br>\| |&nbsp;`` \} ``&nbsp;<br>\} |&nbsp;`` \~ ``&nbsp;<br>\~ |
+| 0020 | `` \  ``&NoBreak;<br>\  | `` \! ``&NoBreak;<br>\! | `` \" ``&NoBreak;<br>\" | `` \# ``&NoBreak;<br>\# | `` \$ ``&NoBreak;<br>\$ | `` \% ``&NoBreak;<br>\% | `` \& ``&NoBreak;<br>\& | `` \' ``&NoBreak;<br>\' | `` \( ``&NoBreak;<br>\( | `` \) ``&NoBreak;<br>\) | `` \* ``&NoBreak;<br>\* | `` \+ ``&NoBreak;<br>\+ | `` \, ``&NoBreak;<br>\, | `` \- ``&NoBreak;<br>\- | `` \. ``&NoBreak;<br>\. | `` \/ ``&NoBreak;<br>\/ |
+| 0030 | `` \0 ``&NoBreak;<br>\0 | `` \1 ``&NoBreak;<br>\1 | `` \2 ``&NoBreak;<br>\2 | `` \3 ``&NoBreak;<br>\3 | `` \4 ``&NoBreak;<br>\4 | `` \5 ``&NoBreak;<br>\5 | `` \6 ``&NoBreak;<br>\6 | `` \7 ``&NoBreak;<br>\7 | `` \8 ``&NoBreak;<br>\8 | `` \9 ``&NoBreak;<br>\9 | `` \: ``&NoBreak;<br>\: | `` \; ``&NoBreak;<br>\; | `` \< ``&NoBreak;<br>\< | `` \= ``&NoBreak;<br>\= | `` \> ``&NoBreak;<br>\> | `` \? ``&NoBreak;<br>\? |
+| 0040 | `` \@ ``&NoBreak;<br>\@ | `` \A ``&NoBreak;<br>\A | `` \B ``&NoBreak;<br>\B | `` \C ``&NoBreak;<br>\C | `` \D ``&NoBreak;<br>\D | `` \E ``&NoBreak;<br>\E | `` \F ``&NoBreak;<br>\F | `` \G ``&NoBreak;<br>\G | `` \H ``&NoBreak;<br>\H | `` \I ``&NoBreak;<br>\I | `` \J ``&NoBreak;<br>\J | `` \K ``&NoBreak;<br>\K | `` \L ``&NoBreak;<br>\L | `` \M ``&NoBreak;<br>\M | `` \N ``&NoBreak;<br>\N | `` \O ``&NoBreak;<br>\O |
+| 0050 | `` \P ``&NoBreak;<br>\P | `` \Q ``&NoBreak;<br>\Q | `` \R ``&NoBreak;<br>\R | `` \S ``&NoBreak;<br>\S | `` \T ``&NoBreak;<br>\T | `` \U ``&NoBreak;<br>\U | `` \V ``&NoBreak;<br>\V | `` \W ``&NoBreak;<br>\W | `` \X ``&NoBreak;<br>\X | `` \Y ``&NoBreak;<br>\Y | `` \Z ``&NoBreak;<br>\Z | `` \[ ``&NoBreak;<br>\[ | `` \\ ``&NoBreak;<br>\\ | `` \] ``&NoBreak;<br>\] | `` \^ ``&NoBreak;<br>\^ | `` \_ ``&NoBreak;<br>\_ |
+| 0060 | `` \` ``&NoBreak;<br>\` | `` \a ``&NoBreak;<br>\a | `` \b ``&NoBreak;<br>\b | `` \c ``&NoBreak;<br>\c | `` \d ``&NoBreak;<br>\d | `` \e ``&NoBreak;<br>\e | `` \f ``&NoBreak;<br>\f | `` \g ``&NoBreak;<br>\g | `` \h ``&NoBreak;<br>\h | `` \i ``&NoBreak;<br>\i | `` \j ``&NoBreak;<br>\j | `` \k ``&NoBreak;<br>\k | `` \l ``&NoBreak;<br>\l | `` \m ``&NoBreak;<br>\m | `` \n ``&NoBreak;<br>\n | `` \o ``&NoBreak;<br>\o |
+| 0070 | `` \p ``&NoBreak;<br>\p | `` \q ``&NoBreak;<br>\q | `` \r ``&NoBreak;<br>\r | `` \s ``&NoBreak;<br>\s | `` \t ``&NoBreak;<br>\t | `` \u ``&NoBreak;<br>\u | `` \v ``&NoBreak;<br>\v | `` \w ``&NoBreak;<br>\w | `` \x ``&NoBreak;<br>\x | `` \y ``&NoBreak;<br>\y | `` \z ``&NoBreak;<br>\z | `` \{ ``&NoBreak;<br>\{ | `` \| ``&NoBreak;<br>\| | `` \} ``&NoBreak;<br>\} | `` \~ ``&NoBreak;<br>\~ |
 
 なおバックスラッシュエスケープは次の文法要素に対しては作用せず、そのまま出力される。
 
@@ -223,7 +223,7 @@ _italic_, **bold**, ***bold italic*** ~~strikethrough~~
 > 
 > \*\*\*normal text***
 
-なお文法上どの区切り文字をどのようにエスケープすれば認識するかは構文の種類だけでなく実装によっても異なる場合があるため詳しいルールはここには書かない。それよりもターゲット環境のMarkdown実装で実際に確認しながら作業するとよい(多くの場合プレビュー機能を利用できる)。
+なお文法上どの文字をどうエスケープすれば認識するかは構文の種類だけでなく実装によっても異なる場合があるため詳しいルールはここには書かない。それよりもターゲット環境のMarkdown実装で実際に確認しながら作業するとよい(多くの場合プレビュー機能を利用できる)。
 
 > 現実のMarkdown実装はそれぞれの目的別にカスタマイズされており、GitHub実装でさえGFM仕様書通りではない動作が多数ある。そのため詳細動作をここにいちいち記載してもあまり役に立たない。それよりターゲット環境で直接チェックすべき。筆者はGitHubに公開するMarkdown文書は[GitHub Gist]で確認している。
 
