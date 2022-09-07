@@ -146,7 +146,7 @@ créme brûlèe
 > 
 > ∫<sub>_S_</sub> ***D*** · d ***S*** = _Q_
 
-ただし[ノーブレークスペース]\(`&nbsp;` \[U+00A0])は文字間隔を調整する目的に利用できる。スペースはいくら連続してもHTML側で1個分に縮約されるが、`&nbsp;`は個数分だけ間隔を確保する。`
+ただし[ノーブレークスペース]\(`&nbsp;` \[U+00A0])は文字間隔を調整する目的に利用できる。スペースはいくら連続してもHTML側で1個分に縮約されるが、`&nbsp;`は個数分だけ間隔を確保する。
 ```markdown
 Foo                    bar
 
@@ -161,8 +161,6 @@ Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 > 
 > Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 
-> 正直言ってエレガントな使い方ではない。しかしMarkdownではこのような用途でこれに代わる有効な方法がない。
-
 `&#160;`または`&#xA0`でもよい(どれも文字数は同じ)。
 
 ```markdown
@@ -175,11 +173,23 @@ Foo&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;bar
 > 
 > Foo&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;bar
 
-またUnicodeには`&nbsp;`以外にも様々な幅や用途を持つ空白文字が多数ある。一覧は次を参照。
+また「幅0のノーブレークスペース」としてWORD JOINER [U+2060]があり、文字参照`&NoBreak;`で記述できる。これは次のようにコードスパン先頭の空白除去防止に用いる事ができる。
+
+```markdown
+` EFG`
+
+&NoBreak;` EFG`
+```
+
+> ` EFG`
+> 
+> &NoBreak;` EFG`
+
+さらにUnicodeにはこれら以外にも様々な幅や用途を持つ空白文字が多数ある。一覧は次を参照。
 
 https://en.wikipedia.org/wiki/Whitespace_character#Unicode
 
-次の例は最も幅広のEM SPACE [U+2003]を用いたもの。文字参照`&emsp;`を使える。
+次の例は最も幅広のEM SPACE [U+2003]を用いたもの。文字参照`&emsp;`で記述できる。
 
 ```markdown
 Foo&emsp;&emsp;bar
@@ -191,19 +201,19 @@ Foo&emsp;&emsp;&emsp;&emsp;bar
 > 
 > Foo&emsp;&emsp;&emsp;&emsp;bar
 
-> (参考) 文字コードを直接入力しても機能はする。次のコード例は`Foo`と`bar`の間にコードポイント値U+00A0を挿入したもの(→ [source](https://gist.github.com/higuma/e5835a29e87a1e2703a333d5beb3aa1d))。しかしこれではスペースと区別困難になるため推奨しない(文字参照を使わないと確認困難)。
-> 
-> ```markdown
+(参考) なお文字コードを直接入力しても機能はする。次のコード例は`Foo`と`bar`の間にコードポイント値U+00A0を直接挿入したもの(→ [source](https://gist.github.com/higuma/e5835a29e87a1e2703a333d5beb3aa1d))。しかしこれではスペースと区別困難になるため推奨しない(文字参照を使わないと確認困難)。
+
+```markdown
+Foo     bar
+
+Foo          bar
+```
+
 > Foo     bar
 > 
 > Foo          bar
-> ```
-> 
-> > Foo     bar
-> > 
-> > Foo          bar
 
-文字参照は[コードブロック]と[コードスパン]の中には適用されず、そのまま出力される。
+最後に文字参照は[コードブロック]と[コードスパン]の中には適用されず、そのまま出力される。
 
 ``````markdown
 ```

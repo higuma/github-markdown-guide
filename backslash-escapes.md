@@ -112,6 +112,8 @@ _italic_, **bold**, ***bold italic*** ~~strikethrough~~
 
 ## Examples
 
+### ASCII区切り文字のエスケープ
+
 区切り文字の手前に(エスケープではない)バックスラッシュを文字として記述するには`\\`を用いる。
 
 ```markdown
@@ -269,36 +271,38 @@ http://www.example.com?\-\+\=
 * [リンク]タイトルと[リンク参照定義] → [Example 319](https://higuma.github.io/github-flabored-markdown/#example-319)
 * [コードブロック]のinfo文字列 → [Example 320](https://higuma.github.io/github-flabored-markdown/#example-320)
 
-> <details>
-> <summary>GitHubのMarkdown実装におけるURLの扱い</summary>
-> 
-> 拡張機能の追加によりURLに関してはGFMやGitHubのMarkdown実装はCommonMark準拠ではなくなっている。例えばURLを純粋にテキストとしてのみ出力しようとして次のように書いたとする。
-> 
-> ```markdown
+<details>
+<summary>上級編: GitHubのMarkdown実装におけるURLの扱い</summary>
+
+拡張機能の追加によりURLに関してはGFMやGitHubのMarkdown実装はCommonMark準拠ではなくなっている。例えばURLを純粋にテキストとしてのみ出力しようとして次のように書いたとする。
+
+```markdown
+https\:\/\/www\.example\.com
+```
+
+これで通常のMarkdown処理実装はテキストとして出力する。しかしGFM仕様ではこれでもバックスラッシュを無視して[オートリンク拡張]として出力する。
+
 > https\:\/\/www\.example\.com
-> ```
-> 
-> これで通常のMarkdown処理実装はテキストとして出力する。しかしGFM仕様ではこれでもバックスラッシュを無視して[オートリンク拡張]として出力する。
-> 
-> > https\:\/\/www\.example\.com
-> 
-> Babelmarkでの比較結果は次の通り。大部分の処理実装は通常テキストとして出力するが、GFMなど一部の実装は[オートリンク拡張]として扱う。
-> 
-> https://babelmark.github.io/?text=https%5C%3A%5C%2F%5C%2Fwww%5C.example%5C.com
-> 
-> (2022-08-11現在) また[GitHub Gist]のMarkdown処理では編集時のPreview表示と最終出力が異なる場合がある(注意)。例えば[次のMarkdowns文](https://gist.github.com/higuma/9fb12dd67597367d15be8bbac1c00c11)を処理させると`https\://...`の部分をプレビューでは通常テキストと判定するが、本処理は[オートリンク拡張]と判定する。
+
+Babelmarkでの比較結果は次の通り。大部分の処理実装は通常テキストとして出力するが、GFMなど一部の実装は[オートリンク拡張]として扱う。
+
+https://babelmark.github.io/?text=https%5C%3A%5C%2F%5C%2Fwww%5C.example%5C.com
+
+> (2022-08-11現在) さらに[GitHub Gist]のMarkdown処理では編集時のPreview表示と最終出力が異なる場合がある(注意)。例えば[次のMarkdowns文](https://gist.github.com/higuma/9fb12dd67597367d15be8bbac1c00c11)を処理させると`https\://...`の部分をプレビューでは通常テキストと判定するが、本処理は[オートリンク拡張]と判定する。
 > 
 > ```markdown
 > \[これはリンクではない、しかしリンク先に注意](https\://www\.example\.com)
 > ```
 > 
 > 本現象は一時的な振る舞いの可能性が高いが記録として残しておく(将来的には修正されるはず)。本例に限らず多くのMarkdown処理実装は(各Webサービスの)目的別にカスタマイズされており、特殊ケースでどうなるかは実際に処理させてみないと分からない。
->
-> また実環境チェックも大切だが、それよりもこのような実装依存の可能性が高い記述は最初から回避する自衛策を講じることも重要。幸いにも実用上はこのような例に出くわすことは稀で(上記の例はもちろん意図的に作ったもの)、回避方法は考えれば色々とある。
-> 
-> </details>
 
-もうひとつの用途として、行末に用いると[ハード改行]として認識される。その位置に``<br>``が挿入され、HTMLでは改行して出力する。
+また実環境チェックも大切だが、それよりもこのような実装依存の可能性が高い記述は最初から回避する自衛策を講じることも重要。幸いにも実用上はこのような例に出くわすことは稀で(上記の例はもちろん意図的に作ったもの)、回避方法は考えれば色々と見つけることができる。
+
+</details>
+
+### ハード改行
+
+もうひとつの用途として行末に用いると[ハード改行]として認識される。その位置に``<br>``が挿入され、HTMLでは改行して出力する。
 
 ```markdown
 行末で改行(``<br>``を挿入)\
