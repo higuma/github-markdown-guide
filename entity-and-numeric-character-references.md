@@ -94,7 +94,34 @@ Markdownでは次の3種類すべて`&`で始まり`;`で終わる書式を用�
 
 ## Examples
 
-MarkdownではHTMLのマークアップ文字(特に`<`, `>`, `&`)は自動的に文字参照に変換されるため文字参照を書く必要はあまりない。次はHTMLで文字参照が必要になる典型例。
+### 文字参照の適用範囲
+
+文字参照はほとんどのMarkdown構文中で有効だが、[コードブロック]と[コードスパン]の中には適用されずそのまま出力される。
+
+``````markdown
+```
+&lt; &gt; &copy;
+```
+
+`&lt; &gt; &copy;`
+``````
+
+> ```
+> &lt; &gt; &copy;
+> ```
+> 
+> `&lt; &gt; &copy;`
+
+(参考) それ以外の次の構文では機能する(仕様書より: どれも特殊ケースで通常使うことはないため一覧のみ)。
+
+* URL → [Example 327](https://higuma.github.io/github-flabored-markdown/#example-327)
+* [リンク]タイトル → [Example 328](https://higuma.github.io/github-flabored-markdown/#example-328)
+* [リンク参照定義] → [Example 329](https://higuma.github.io/github-flabored-markdown/#example-329)
+* [コードブロック]のinfo文字列 → [Example 330](https://higuma.github.io/github-flabored-markdown/#example-330)
+
+### 文字参照の必要性
+
+MarkdownではHTMLのマークアップ文字(特に`<`, `>`, `&`)は自動的に文字参照に変換されるため文字参照が必要になる状況は少ない。次はHTMLで文字参照が必要になる典型例で、タグに用いる`<`,`>`は文字参照で表現する必要がある。Markdownでもこの機能は使える。
 
 ```markdown
 0 &lt; x &lt; 100
@@ -102,7 +129,7 @@ MarkdownではHTMLのマークアップ文字(特に`<`, `>`, `&`)は自動的�
 
 > 0 &lt; x &lt; 100
 
-Markdownでは`<`は自動的に変換されるためそのまま書けばよい。
+だがMarkdownでは`<`は自動的に変換されるためそのまま書けばよい。
 
 ```markdown
 0 < x < 100
@@ -110,7 +137,7 @@ Markdownでは`<`は自動的に変換されるためそのまま書けばよい
 
 > 0 < x < 100
 
-Markdownの書式設定と判別される可能性がある記号は[バックスラッシュエスケープ]を用いて処理すればよい。次の例はどちらも同じ結果になるが、文字参照より`\_`の方が楽に書けるし読みやすい。
+またMarkdownの書式設定と判別される可能性がある記号は[バックスラッシュエスケープ]を用いて処理すればよい。次の例はどちらも同じ結果になるが、文字参照より`\_`の方が楽に書けるし読みやすい。
 
 ```markdown
 &UnderBar;not italic&UnderBar;
@@ -146,7 +173,12 @@ créme brûlèe
 > 
 > ∫<sub>_S_</sub> ***D*** · d ***S*** = _Q_
 
-ただし[ノーブレークスペース]\(`&nbsp;` \[U+00A0])は文字間隔を調整する目的に利用できる。スペースはいくら連続してもHTML側で1個分に縮約されるが、`&nbsp;`は個数分だけ間隔を確保する。
+### ノーブレークスペース
+
+ただし[ノーブレークスペース]\(`&nbsp;` \[U+00A0])は文字間隔を調整する目的に利用できる。ノーブレークスペースは通常のスペースと異なり、その位置での改行抑制及び複数空白の縮約抑制の効果を持つ。
+
+スペースはいくら連続してもHTML側で1個分に縮約されるが、`&nbsp;`は個数分だけ間隔を確保する。
+
 ```markdown
 Foo                    bar
 
@@ -212,29 +244,6 @@ Foo          bar
 > Foo     bar
 > 
 > Foo          bar
-
-最後に文字参照は[コードブロック]と[コードスパン]の中には適用されず、そのまま出力される。
-
-``````markdown
-```
-&lt; &gt; &copy;
-```
-
-`&lt; &gt; &copy;`
-``````
-
-> ```
-> &lt; &gt; &copy;
-> ```
-> 
-> `&lt; &gt; &copy;`
-
-(参考) それ以外の次の構文では機能する(仕様書より: どれも特殊ケースで通常使うことはないため一覧のみ)。
-
-* URL → [Example 327](https://higuma.github.io/github-flabored-markdown/#example-327)
-* [リンク]タイトル → [Example 328](https://higuma.github.io/github-flabored-markdown/#example-328)
-* [リンク参照定義] → [Example 329](https://higuma.github.io/github-flabored-markdown/#example-329)
-* [コードブロック]のinfo文字列 → [Example 330](https://higuma.github.io/github-flabored-markdown/#example-330)
 
 ------------------------------------------------------------------------
 
