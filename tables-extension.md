@@ -1,8 +1,8 @@
-# [4.10 Tables (extension)](https://higuma.github.io/github-flabored-markdown/#tables-extension-)
+# [4.10 表組み](https://higuma.github.io/github-flabored-markdown/#tables-extension-)
 
-[4.9 Blank lines](blank-lines.md)
-← [Table of contents](index.md) →
-[5 Container blocks](container-blocks.md)
+[4.9 空行](blank-lines.md)
+← [目次](index.md) →
+[5 コンテナブロック](container-blocks.md)
 
 ------------------------------------------------------------------------
 
@@ -93,9 +93,9 @@ TODO
 
 ------------------------------------------------------------------------
 
-[4.9 Blank lines](blank-lines.md)
-← [Table of contents](index.md) →
-[5 Container blocks](container-blocks.md)
+[4.9 空行](blank-lines.md)
+← [目次](index.md) →
+[5 コンテナブロック](container-blocks.md)
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings

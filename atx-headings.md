@@ -1,8 +1,8 @@
-# [4.2 ATX headings](https://higuma.github.io/github-flabored-markdown/#atx-headings)
+# [4.2 見出し](https://higuma.github.io/github-flabored-markdown/#atx-headings)
 
-[4.1 Thematic breaks](thematic-breaks.md)
-← [Table of contents](index.md) →
-[4.3 Setext headings](setext-headings.md)
+[4.1 横線](thematic-breaks.md)
+← [目次](index.md) →
+[4.3 Setext見出し](setext-headings.md)
 
 ------------------------------------------------------------------------
 
@@ -211,9 +211,9 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 
 ------------------------------------------------------------------------
 
-[4.1 Thematic breaks](thematic-breaks.md)
-← [Table of contents](index.md) →
-[4.3 Setext headings](setext-headings.md)
+[4.1 横線](thematic-breaks.md)
+← [目次](index.md) →
+[4.3 Setext見出し](setext-headings.md)
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings

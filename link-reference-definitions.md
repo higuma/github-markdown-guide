@@ -1,8 +1,8 @@
-# [4.7 Link reference definitions](https://higuma.github.io/github-flabored-markdown/#link-reference-definitions)
+# [4.7 リンク参照定義](https://higuma.github.io/github-flabored-markdown/#link-reference-definitions)
 
-[4.6 HTML blocks](html-blocks.md)
-← [Table of contents](index.md) →
-[4.8 Paragraphs](paragraphs.md)
+[4.6 HTMLブロック](html-blocks.md)
+← [目次](index.md) →
+[4.8 パラグラフ](paragraphs.md)
 
 ------------------------------------------------------------------------
 
@@ -118,9 +118,9 @@ Markdownビューアを用いる場合は余計なものは付けない方が作
 
 ------------------------------------------------------------------------
 
-[4.6 HTML blocks](html-blocks.md)
-← [Table of contents](index.md) →
-[4.8 Paragraphs](paragraphs.md)
+[4.6 HTMLブロック](html-blocks.md)
+← [目次](index.md) →
+[4.8 パラグラフ](paragraphs.md)
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings

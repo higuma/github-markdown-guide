@@ -1,12 +1,12 @@
-# [4.3 Setext headings](https://higuma.github.io/github-flabored-markdown/#setext-headings)
+# [4.3 Setext見出し](https://higuma.github.io/github-flabored-markdown/#setext-headings)
 
-[4.2 ATX headings](atx-headings.md)
-← [Table of contents](index.md) →
-[4.4 Indented code blocks](indented-code-blocks.md)
+[4.2 見出し](atx-headings.md)
+← [目次](index.md) →
+[4.4 インデント式コードブロック](indented-code-blocks.md)
 
 ------------------------------------------------------------------------
 
-見出し(``<h1>``, ``<h2>``)を表現する。
+> 古い仕様のため非推奨。
 
 ### Best practice
 
@@ -51,9 +51,9 @@ h2
 
 ------------------------------------------------------------------------
 
-[4.2 ATX headings](atx-headings.md)
-← [Table of contents](index.md) →
-[4.4 Indented code blocks](indented-code-blocks.md)
+[4.2 見出し](atx-headings.md)
+← [目次](index.md) →
+[4.4 インデント式コードブロック](indented-code-blocks.md)
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings

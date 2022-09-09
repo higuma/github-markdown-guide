@@ -1,14 +1,14 @@
-# [2 Preliminaries](https://higuma.github.io/github-flabored-markdown/#preliminaries)
+# [2 予備知識](https://higuma.github.io/github-flabored-markdown/#preliminaries)
 
-[1 Introduction](introduction.md)
-← [Table of contents](index.md) →
-[3 Blocks and inlines](blocks-and-inlines.md)
+[1 はじめに](introduction.md)
+← [目次](index.md) →
+[3 ブロックとインライン](blocks-and-inlines.md)
 
 ------------------------------------------------------------------------
 
 > 前半はGFM仕様書の記述に沿って解説するが、Markdown習得に必要な知識ではないのでスキップしてよい。後半の [本ガイドの構成](#本ガイドの構成)、特に [各セクションの構成](#各セクションの構成) 以降の内容は重要なので必ず読むこと。
 
-## [2.1 Characters and lines](https://higuma.github.io/github-flabored-markdown/#characters-and-lines)
+## [2.1 文字と行](https://higuma.github.io/github-flabored-markdown/#characters-and-lines)
 
 本節の仕様書原文は文字や行などの用語の定義だが、どれもごく一般的な用法で常識の範囲で理解できる(説明略)。もし分からなければ[GFM仕様書本文](https://higuma.github.io/github-flabored-markdown/#characters-and-lines)を読むこと(平易な英文で、何も難しい点はない)。
 
@@ -16,17 +16,17 @@
 
 __補足(重要)__: GFM仕様書本文中のコード例(Examples [1](https://higuma.github.io/github-flabored-markdown/#example-1)-[673](https://higuma.github.io/github-flabored-markdown/#example-673))の記述ではタブ(+U0009)は`→`で表す。またコード欄内部のスペース(+U0020)に対してドットが見えるように書式設定を行っていることに注意(HTMLソースのCSS部分を読むと`span.space::after { content: "."; ... }`としているのが分かる)。
 
-## [2.2 Tabs](https://higuma.github.io/github-flabored-markdown/#tabs)
+## [2.2 タブ](https://higuma.github.io/github-flabored-markdown/#tabs)
 
 文書中のタブ(U+0009)はスペースに置換されずそのままHTMLへ出力される。ただし[コードブロック](fenced-code-blocks.md)中や、[リスト](lists.md)のようにインデントを認識する文脈ではスペース4つ分として扱われる。
 
 > 以下Examples 1-11まであるが略。本ガイドではタブの使用を非推奨としているためこれ以上説明しない。
 
-## [2.3 Insecure characters](https://higuma.github.io/github-flabored-markdown/#insecure-characters)
+## [2.3 安全ではない文字](https://higuma.github.io/github-flabored-markdown/#insecure-characters)
 
-文書中にNUL文字(U+0000)がある場合、セキュリティ上の理由から置換文字(U+FFED)に置き換えられる。
+Markdown文書中にNUL文字(U+0000)がある場合、Markdown処理実装はセキュリティ上の理由から置換文字(U+FFED)に置き換えから処理する。
 
-> これはMarkdown実装開発者用の記述なので、Markdown文書作成者は特に知る必要なし。詳細不明だがこれを悪用した攻撃方法があり、その対策と推測される。
+> これはMarkdown実装開発者用の記述なので、Markdown文書作成者は特に知る必要なし。これを悪用した攻撃方法を想定した対策と推測される。
 
 ## 本ガイドの構成
 
@@ -130,9 +130,9 @@ GFMにおけるタブ文字(U+0009)の扱いは [2.2 Tabs](#22-tabs) で説明�
 
 ------------------------------------------------------------------------
 
-[1 Introduction](introduction.md)
-← [Table of contents](index.md) →
-[3 Blocks and inlines](blocks-and-inlines.md)
+[1 はじめに](introduction.md)
+← [目次](index.md) →
+[3 ブロックとインライン](blocks-and-inlines.md)
 
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
 [正規表現]: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions

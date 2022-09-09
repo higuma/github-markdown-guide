@@ -1,8 +1,8 @@
-# [4.6 HTML blocks](https://higuma.github.io/github-flabored-markdown/#html-blocks)
+# [4.6 HTMLブロック](https://higuma.github.io/github-flabored-markdown/#html-blocks)
 
-[4.5 Fenced code blocks](fenced-code-blocks.md)
-← [Table of contents](index.md) →
-[4.7 Link reference definitions](link-reference-definitions.md)
+[4.5 コードブロック](fenced-code-blocks.md)
+← [目次](index.md) →
+[4.7 リンク参照定義](link-reference-definitions.md)
 
 ------------------------------------------------------------------------
 
@@ -32,9 +32,9 @@ GitHubでもこれら全てを仕様書通りには処理しておらず、異�
 
 ------------------------------------------------------------------------
 
-[4.5 Fenced code blocks](fenced-code-blocks.md)
-← [Table of contents](index.md) →
-[4.7 Link reference definitions](link-reference-definitions.md)
+[4.5 コードブロック](fenced-code-blocks.md)
+← [目次](index.md) →
+[4.7 リンク参照定義](link-reference-definitions.md)
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings

@@ -1,8 +1,8 @@
-# [6.1 Backslash escapes](https://higuma.github.io/github-flabored-markdown/#backslash-escapes)
+# [6.1 バックスラッシュエスケープ](https://higuma.github.io/github-flabored-markdown/#backslash-escapes)
 
-[6 Inlines](inlines.md)
-← [Table of contents](index.md) →
-[6.2 Entity and numeric character references](entity-and-numeric-character-references.md)
+[6 インライン](inlines.md)
+← [目次](index.md) →
+[6.2 文字参照](entity-and-numeric-character-references.md)
 
 ------------------------------------------------------------------------
 
@@ -314,9 +314,9 @@ https://babelmark.github.io/?text=https%5C%3A%5C%2F%5C%2Fwww%5C.example%5C.com
 
 ------------------------------------------------------------------------
 
-[6 Inlines](inlines.md)
-← [Table of contents](index.md) →
-[6.2 Entity and numeric character references](entity-and-numeric-character-references.md)
+[6 インライン](inlines.md)
+← [目次](index.md) →
+[6.2 文字参照](entity-and-numeric-character-references.md)
 
 [ASCII区切り文字]: #ASCII区切り文字
 [GitHub Gist]: https://gist.github.com/

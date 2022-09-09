@@ -1,8 +1,8 @@
-# [6.2 Entity and numeric character references](https://higuma.github.io/github-flabored-markdown/#entity-and-numeric-character-references)
+# [6.2 文字参照](https://higuma.github.io/github-flabored-markdown/#entity-and-numeric-character-references)
 
-[6.1 Backslash escapes](backslash-escapes.md)
-← [Table of contents](index.md) →
-[6.3 Code spans](code-spans.md)
+[6.1 バックスラッシュエスケープ](backslash-escapes.md)
+← [目次](index.md) →
+[6.3 コードスパン](code-spans.md)
 
 ------------------------------------------------------------------------
 
@@ -247,9 +247,9 @@ Foo          bar
 
 ------------------------------------------------------------------------
 
-[6.1 Backslash escapes](backslash-escapes.md)
-← [Table of contents](index.md) →
-[6.3 Code spans](code-spans.md)
+[6.1 バックスラッシュエスケープ](backslash-escapes.md)
+← [目次](index.md) →
+[6.3 コードスパン](code-spans.md)
 
 [コードブロック]: fenced-code-blocks.md
 [コードスパン]: code-spans.md

@@ -1,8 +1,8 @@
-# [4.4 Indented code blocks](https://higuma.github.io/github-flabored-markdown/#indented-code-blocks)
+# [4.4 インデント式コードブロック](https://higuma.github.io/github-flabored-markdown/#indented-code-blocks)
 
-[4.3 Setext headings](setext-headings.md)
-← [Table of contents](index.md) →
-[4.5 Fenced code blocks](fenced-code-blocks.md)
+[4.3 Setext見出し](setext-headings.md)
+← [目次](index.md) →
+[4.5 コードブロック](fenced-code-blocks.md)
 
 ------------------------------------------------------------------------
 
@@ -57,9 +57,9 @@
 
 ------------------------------------------------------------------------
 
-[4.3 Setext headings](setext-headings.md)
-← [Table of contents](index.md) →
-[4.5 Fenced code blocks](fenced-code-blocks.md)
+[4.3 Setext見出し](setext-headings.md)
+← [目次](index.md) →
+[4.5 コードブロック](fenced-code-blocks.md)
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings

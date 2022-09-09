@@ -1,8 +1,8 @@
-# [4.5 Fenced code blocks](https://higuma.github.io/github-flabored-markdown/#fenced-code-blocks)
+# [4.5 コードブロック](https://higuma.github.io/github-flabored-markdown/#fenced-code-blocks)
 
-[4.4 Indented code blocks](indented-code-blocks.md)
-← [Table of contents](index.md) →
-[4.6 HTML blocks](html-blocks.md)
+[4.4 インデント式コードブロック](indented-code-blocks.md)
+← [目次](index.md) →
+[4.6 HTMLブロック](html-blocks.md)
 
 ------------------------------------------------------------------------
 
@@ -179,9 +179,9 @@ Fenced by ~~~
 
 ------------------------------------------------------------------------
 
-[4.4 Indented code blocks](indented-code-blocks.md)
-← [Table of contents](index.md) →
-[4.6 HTML blocks](html-blocks.md)
+[4.4 インデント式コードブロック](indented-code-blocks.md)
+← [目次](index.md) →
+[4.6 HTMLブロック](html-blocks.md)
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings

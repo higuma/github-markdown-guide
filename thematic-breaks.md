@@ -1,8 +1,8 @@
-# [4.1 Thematic breaks](https://higuma.github.io/github-flabored-markdown/#thematic-breaks)
+# [4.1 横線](https://higuma.github.io/github-flabored-markdown/#thematic-breaks)
 
-[4 Leaf blocks](leaf-blocks.md)
-← [Table of contents](index.md) →
-[4.2 ATX headings](atx-headings.md)
+[4 葉ブロック](leaf-blocks.md)
+← [目次](index.md) →
+[4.2 見出し](atx-headings.md)
 
 ------------------------------------------------------------------------
 
@@ -103,9 +103,9 @@ bar
 
 ------------------------------------------------------------------------
 
-[4 Leaf blocks](leaf-blocks.md)
-← [Table of contents](index.md) →
-[4.2 ATX headings](atx-headings.md)
+[4 葉ブロック](leaf-blocks.md)
+← [目次](index.md) →
+[4.2 見出し](atx-headings.md)
 
 [Example 28]: https://higuma.github.io/github-flabored-markdown/#example-28
 [Jupyter Notebook]: https://jupyter.org/

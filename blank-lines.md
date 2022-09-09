@@ -1,8 +1,8 @@
-# [4.9 Blank lines](https://higuma.github.io/github-flabored-markdown/#blank-lines)
+# [4.9 空行](https://higuma.github.io/github-flabored-markdown/#blank-lines)
 
-[4.8 Paragraphs](paragraphs.md)
-← [Table of contents](index.md) →
-[4.10 Tables (extension)](tables-extension.md)
+[4.8 パラグラフ](paragraphs.md)
+← [目次](index.md) →
+[4.10 表組み](tables-extension.md)
 
 ------------------------------------------------------------------------
 
@@ -56,9 +56,9 @@
 
 ------------------------------------------------------------------------
 
-[4.8 Paragraphs](paragraphs.md)
-← [Table of contents](index.md) →
-[4.10 Tables (extension)](tables-extension.md)
+[4.8 パラグラフ](paragraphs.md)
+← [目次](index.md) →
+[4.10 表組み](tables-extension.md)
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings

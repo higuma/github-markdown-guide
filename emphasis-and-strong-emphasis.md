@@ -1,8 +1,8 @@
-# [6.4 Emphasis and strong emphasis](https://higuma.github.io/github-flabored-markdown/#emphasis-and-strong-emphasis)
+# [6.4 斜体と太字](https://higuma.github.io/github-flabored-markdown/#emphasis-and-strong-emphasis)
 
-[6.3 Code spans](code-spans.md)
-← [Table of contents](index.md) →
-[6.5 Strikethrough (extension)](strikethrough-extension.md)
+[6.3 コードスパン](code-spans.md)
+← [目次](index.md) →
+[6.5 打ち消し線](strikethrough-extension.md)
 
 ------------------------------------------------------------------------
 
@@ -156,6 +156,6 @@ https://web-365.biz/made_in_wordpress/webfont-how-to-italic
 
 ------------------------------------------------------------------------
 
-[6.3 Code spans](code-spans.md)
-← [Table of contents](index.md) →
-[6.5 Strikethrough (extension)](strikethrough-extension.md)
+[6.3 コードスパン](code-spans.md)
+← [目次](index.md) →
+[6.5 打ち消し線](strikethrough-extension.md)

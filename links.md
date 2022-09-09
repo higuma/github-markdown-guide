@@ -1,8 +1,8 @@
-# [6.6 Links](https://higuma.github.io/github-flabored-markdown/#links)
+# [6.6 リンク](https://higuma.github.io/github-flabored-markdown/#links)
 
-[6.5 Strikethrough (extension)](strikethrough-extension.md)
-← [Table of contents](index.md) →
-[6.7 Images](images.md)
+[6.5 打ち消し線](strikethrough-extension.md)
+← [目次](index.md) →
+[6.7 画像](images.md)
 
 ------------------------------------------------------------------------
 
@@ -10,6 +10,6 @@ TODO
 
 ------------------------------------------------------------------------
 
-[6.5 Strikethrough (extension)](strikethrough-extension.md)
-← [Table of contents](index.md) →
-[6.7 Images](images.md)
+[6.5 打ち消し線](strikethrough-extension.md)
+← [目次](index.md) →
+[6.7 画像](images.md)

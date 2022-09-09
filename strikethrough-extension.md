@@ -1,8 +1,8 @@
-# [6.5 Strikethrough (extension)](https://higuma.github.io/github-flabored-markdown/#strikethrough-extension-)
+# [6.5 打ち消し線](https://higuma.github.io/github-flabored-markdown/#strikethrough-extension-)
 
-[6.4 Emphasis and strong emphasis](emphasis-and-strong-emphasis.md)
-← [Table of contents](index.md) →
-[6.6 Links](links.md)
+[6.4 斜体と太字](emphasis-and-strong-emphasis.md)
+← [目次](index.md) →
+[6.6 リンク](links.md)
 
 ------------------------------------------------------------------------
 
@@ -10,6 +10,6 @@
 
 ------------------------------------------------------------------------
 
-[6.4 Emphasis and strong emphasis](emphasis-and-strong-emphasis.md)
-← [Table of contents](index.md) →
-[6.6 Links](links.md)
+[6.4 斜体と太字](emphasis-and-strong-emphasis.md)
+← [目次](index.md) →
+[6.6 リンク](links.md)

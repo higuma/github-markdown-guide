@@ -1,8 +1,8 @@
-# [6.3 Code spans](https://higuma.github.io/github-flabored-markdown/#code-spans)
+# [6.3 コードスパン](https://higuma.github.io/github-flabored-markdown/#code-spans)
 
-[6.2 Entity and numeric character references](entity-and-numeric-character-references.md)
-← [Table of contents](index.md) →
-[6.4 Emphasis and strong emphasis](emphasis-and-strong-emphasis.md)
+[6.2 文字参照](entity-and-numeric-character-references.md)
+← [目次](index.md) →
+[6.4 斜体と太字](emphasis-and-strong-emphasis.md)
 
 ------------------------------------------------------------------------
 
@@ -266,9 +266,9 @@ KLM&nbsp;` code`
 
 ------------------------------------------------------------------------
 
-[6.2 Entity and numeric character references](entity-and-numeric-character-references.md)
-← [Table of contents](index.md) →
-[6.4 Emphasis and strong emphasis](emphasis-and-strong-emphasis.md)
+[6.2 文字参照](entity-and-numeric-character-references.md)
+← [目次](index.md) →
+[6.4 斜体と太字](emphasis-and-strong-emphasis.md)
 
 [インライン]: inlines.md
 [ノーブレークスペース]: https://ja.wikipedia.org/wiki/ノーブレークスペース

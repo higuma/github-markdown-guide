@@ -1,8 +1,8 @@
-# [1.Introduction](https://higuma.github.io/github-flabored-markdown/#introduction)
+# [1 はじめに](https://higuma.github.io/github-flabored-markdown/#introduction)
 
-[About this document](README.md)
-← [Table of contents](index.md) →
-[2 Preliminaries](preliminaries.md)
+[本ガイドについて](README.md)
+← [目次](index.md) →
+[2 予備知識](preliminaries.md)
 
 ------------------------------------------------------------------------
 
@@ -24,7 +24,7 @@
 > 
 > <https://en.wikipedia.org/wiki/Lightweight_markup_language#Comparison_of_language_features>
 
-## [1.2 What is Markdown?](https://higuma.github.io/github-flabored-markdown/#what-is-markdown-)
+## [1.2 Markdownとは?](https://higuma.github.io/github-flabored-markdown/#what-is-markdown-)
 
 > ここから先は基本的にGFM仕様書の章立てに従って説明するが、1.1と1.2は順序を逆にして成立時期の時間軸順に説明する。
 
@@ -52,7 +52,7 @@
 >
 > > また仕様書本文中のAsciiDocサイトへのリンクはすでに消滅しており、危険そうなポップアップが出る別サイトへ誘導されるので注意すること。
 
-## [1.1 What is GitHub Flavored Markdown?](https://higuma.github.io/github-flabored-markdown/#what-is-github-flavored-markdown-)
+## [1.1 GitHub Flavored Markdownとは](https://higuma.github.io/github-flabored-markdown/#what-is-github-flavored-markdown-)
 
 GitHub Flavored Markdown (GFM)はGitHub及びGitHub Enterpriseで用いられている[Markdown]方言。[CommonMark]をベースとして独自拡張を行ったもので、現在ではむしろ[CommonMark]よりもGFMが事実上の[Markdown]標準仕様という扱いを受けている。
 
@@ -66,7 +66,7 @@ GitHubサイトにHTMLレンダリングする際、セキュリティと一貫�
 
 > それだけでなくGitHubのMarkdown処理実装には多くの独自拡張機能がある。さらにGitHubのサイト運用に際して日常的に改良が加えられており、その結果GFM仕様書と動作が異なる点も多数ある。これも [補足 - GitHubのMarkdown実装](github-markdown-implementation.md) で説明する。
 
-## [1.3 Why is a spec needed?](https://higuma.github.io/github-flabored-markdown/#why-is-a-spec-needed-)
+## [1.3 仕様書の必要性](https://higuma.github.io/github-flabored-markdown/#why-is-a-spec-needed-)
 
 GFMは[Markdown]の成立から現在までの経緯を踏まえ、標準として耐えうる仕様と安定した動作を目指して作られている(→ [README](https://github.com/github/cmark-gfm/blob/master/README.md))。先に述べた通り今では単に[Markdown]といえば[CommonMark]以降、特にGFM仕様を指す場合が多い。
 
@@ -82,7 +82,7 @@ GFMは[Markdown]の成立から現在までの経緯を踏まえ、標準とし�
 > 
 > > [HTML]の成立から現在までの歴史の流れに興味のある人は [とほほのWWW入門 - HTML Living StandardとHTMLの歴史](https://www.tohoho-web.com/html/memo/htmlls.htm) を読むとよい。[HTML]の仕様策定は [IETF] \(1990-1996) → [W3C] \(1996-2019) → [WHATWG] \(2019-) と移り変わっている。
 
-## [1.4 About this document](https://higuma.github.io/github-flabored-markdown/#about-this-document)
+## [1.4 GFM仕様書について](https://higuma.github.io/github-flabored-markdown/#about-this-document)
 
 > (参考) 学習用には全く役に立たない内容なので読む必要なし。
 
@@ -98,9 +98,9 @@ https://github.com/commonmark/commonmark-spec
 
 ------------------------------------------------------------------------
 
-[About this document](README.md)
-← [Table of contents](index.md) →
-[2 Preliminaries](preliminaries.md)
+[本ガイドについて](README.md)
+← [目次](index.md) →
+[2 予備知識](preliminaries.md)
 
 [AsciiDoc]: https://en.wikipedia.org/wiki/AsciiDoc
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx

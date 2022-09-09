@@ -1,8 +1,8 @@
-# [6.13 Soft line breaks](https://higuma.github.io/github-flabored-markdown/#soft-line-breaks)
+# [6.13 ソフト改行](https://higuma.github.io/github-flabored-markdown/#soft-line-breaks)
 
-[6.12 Hard line breaks](hard-line-breaks.md)
-← [Table of contents](index.md) →
-[6.14 Textual content](textual-content.md)
+[6.12 ハード改行](hard-line-breaks.md)
+← [目次](index.md) →
+[6.14 テキストコンテント](textual-content.md)
 
 ------------------------------------------------------------------------
 
@@ -10,6 +10,6 @@ TODO
 
 ------------------------------------------------------------------------
 
-[6.12 Hard line breaks](hard-line-breaks.md)
-← [Table of contents](index.md) →
-[6.14 Textual content](textual-content.md)
+[6.12 ハード改行](hard-line-breaks.md)
+← [目次](index.md) →
+[6.14 テキストコンテント](textual-content.md)

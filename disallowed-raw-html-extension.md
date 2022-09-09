@@ -1,8 +1,8 @@
-# [6.11 Disallowed Raw HTML (extension)](https://higuma.github.io/github-flabored-markdown/#disallowed-raw-html-extension-)
+# [6.11 許可されない生HTML (GFM拡張)](https://higuma.github.io/github-flabored-markdown/#disallowed-raw-html-extension-)
 
-[6.10 Raw HTML](raw-html.md)
-← [Table of contents](index.md) →
-[6.12 Hard line breaks](hard-line-breaks.md)
+[6.10 生HTML](raw-html.md)
+← [目次](index.md) →
+[6.12 ハード改行](hard-line-breaks.md)
 
 ------------------------------------------------------------------------
 
@@ -10,6 +10,6 @@ TODO
 
 ------------------------------------------------------------------------
 
-[6.10 Raw HTML](raw-html.md)
-← [Table of contents](index.md) →
-[6.12 Hard line breaks](hard-line-breaks.md)
+[6.10 生HTML](raw-html.md)
+← [目次](index.md) →
+[6.12 ハード改行](hard-line-breaks.md)

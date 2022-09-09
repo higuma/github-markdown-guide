@@ -1,7 +1,7 @@
 # 補足 - GitHubのMarkdown実装
 
-[Appendix: A parsing strategy](appendix-a-parsing-strategy.md)
-← [Table of contents](index.md)
+[付録: A parsing strategy](appendix-a-parsing-strategy.md)
+← [目次](index.md)
 
 ------------------------------------------------------------------------
 
@@ -30,5 +30,5 @@ GitHubのMarkdown実装はGitHubサイト運用で継続的に手が加えられ
 
 ------------------------------------------------------------------------
 
-[Appendix: A parsing strategy](appendix-a-parsing-strategy.md)
-← [Table of contents](index.md)
+[付録: A parsing strategy](appendix-a-parsing-strategy.md)
+← [目次](index.md)

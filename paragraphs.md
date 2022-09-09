@@ -1,8 +1,8 @@
-# [4.8 Paragraphs](https://higuma.github.io/github-flabored-markdown/#paragraphs)
+# [4.8 パラグラフ](https://higuma.github.io/github-flabored-markdown/#paragraphs)
 
-[4.7 Link reference definitions](link-reference-definitions.md)
-← [Table of contents](index.md) →
-[4.9 Blank lines](blank-lines.md)
+[4.7 リンク参照定義](link-reference-definitions.md)
+← [目次](index.md) →
+[4.9 空行](blank-lines.md)
 
 ------------------------------------------------------------------------
 
@@ -51,9 +51,9 @@ ddd
 
 ------------------------------------------------------------------------
 
-[4.7 Link reference definitions](link-reference-definitions.md)
-← [Table of contents](index.md) →
-[4.9 Blank lines](blank-lines.md)
+[4.7 リンク参照定義](link-reference-definitions.md)
+← [目次](index.md) →
+[4.9 空行](blank-lines.md)
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings

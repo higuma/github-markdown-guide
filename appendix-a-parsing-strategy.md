@@ -1,8 +1,8 @@
-# [Appendix: A parsing strategy](https://higuma.github.io/github-flabored-markdown/#appendix-a-parsing-strategy)
+# [付録: A parsing strategy](https://higuma.github.io/github-flabored-markdown/#appendix-a-parsing-strategy)
 
-[6 Inlines](inlines.md)
-← [Table of contents](index.md) →
-[GitHubのMarkdown実装](github-markdown-implementation.md)
+[6.14 テキストコンテント](textual-content.md)
+← [目次](index.md) →
+[補足: GitHubのMarkdown実装](github-markdown-implementation.md)
 
 ------------------------------------------------------------------------
 
@@ -16,6 +16,6 @@
 
 ------------------------------------------------------------------------
 
-[6 Inlines](inlines.md)
-← [Table of contents](index.md) →
-[GitHubのMarkdown実装](github-markdown-implementation.md)
+[6.14 テキストコンテント](textual-content.md)
+← [目次](index.md) →
+[補足: GitHubのMarkdown実装](github-markdown-implementation.md)

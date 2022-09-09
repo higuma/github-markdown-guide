@@ -1,8 +1,8 @@
-# [3 Blocks and inlines](https://higuma.github.io/github-flabored-markdown/#blocks-and-inlines)
+# [3 ブロックとインライン](https://higuma.github.io/github-flabored-markdown/#blocks-and-inlines)
 
-[2 Preliminaries](preliminaries.md)
-← [Table of contents](index.md) →
-[4 Leaf blocks](leaf-blocks.md)
+[2 予備知識](preliminaries.md)
+← [目次](index.md) →
+[4 葉ブロック](leaf-blocks.md)
 
 ------------------------------------------------------------------------
 
@@ -15,7 +15,7 @@
 
 Markdownの文法はブロック構文とインライン構文の2種類に分類され、これらはそれぞれHTMLのブロック要素とインライン要素に対応する。
 
-## [3.1 Precedence](https://higuma.github.io/github-flabored-markdown/#precedence)
+## [3.1 優先度](https://higuma.github.io/github-flabored-markdown/#precedence)
 
 構文解析はHTMLと同様の木構造に基いて行われる。そのため構文要素間では一方がもう一方を含む(子孫関係)ことはあっても、両者が部分的にオーバーラップすることはない。
 
@@ -31,9 +31,9 @@ Markdownの文法はブロック構文とインライン構文の2種類に分�
 > - `one
 > - two`
 
-この通り文法解析はまずブロックを先に行い、その後にインラインを処理する。
+この通り構文解析はまずブロックを先に行い、その後にインラインを処理する。
 
-## [3.2 Container blocks and leaf blocks](https://higuma.github.io/github-flabored-markdown/#container-blocks-and-leaf-blocks)
+## [3.2 コンテナブロックと葉ブロック](https://higuma.github.io/github-flabored-markdown/#container-blocks-and-leaf-blocks)
 
 ブロックには2種類ある。
 
@@ -46,9 +46,9 @@ Markdownの文法はブロック構文とインライン構文の2種類に分�
 
 ------------------------------------------------------------------------
 
-[2 Preliminaries](preliminaries.md)
-← [Table of contents](index.md) →
-[4 Leaf blocks](leaf-blocks.md)
+[2 予備知識](preliminaries.md)
+← [目次](index.md) →
+[4 葉ブロック](leaf-blocks.md)
 
 [コードスパン]: inlines.md#63-code-spans
 [リストアイテム]: container-blocks.md#52-list-items
