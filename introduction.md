@@ -46,7 +46,7 @@
 
 ### [CommonMark]
 
-[CommonMark] (→ [Wiki](https://en.wikipedia.org/wiki/Markdown#Standardization))はそのような状況の中で[John MacFarlane](John_MacFarlane_(philosopher))を中心に進められている[Markdown]の標準化プロジェクト(→ [仕様書一覧](https://spec.commonmark.org/))。また同氏が推める汎用ドキュメント変換プロジェクトが[Pandoc](https://pandoc.org/) (→ [Wiki](https://en.wikipedia.org/wiki/Pandoc))で、[Jupyter Notebook](https://jupyter.org/)などに用いられている。
+[CommonMark] (→ [Wiki](https://en.wikipedia.org/wiki/Markdown#Standardization))はそのような状況の中で[John MacFarlane](John_MacFarlane_(philosopher))を中心に進められている[Markdown]の標準化プロジェクト(→ [仕様書一覧](https://spec.commonmark.org/))。また同氏が推める汎用ドキュメント変換プロジェクトが[Pandoc] (→ [Wiki](https://en.wikipedia.org/wiki/Pandoc))で、[Jupyter Notebook]などに用いられている。
 
 > GFM仕様書本文後半の[AsciiDoc]との比較は学習用には不要(読まなくていい)。これは[CommonMark]仕様書からの引用(丸写し)で、[AsciiDoc]に対する[Markdown]の優位性を主張するのが目的の記述。
 >
@@ -109,9 +109,11 @@ https://github.com/commonmark/commonmark-spec
 [HTML]: https://ja.wikipedia.org/wiki/HyperText_Markup_Language
 [HTML Living Standard]: https://html.spec.whatwg.org/multipage/
 [IETF]: https://datatracker.ietf.org/doc/html/rfc1945
+[Jupyter Notebook]: https://jupyter.org/
 [manページ]: https://ja.wikipedia.org/wiki/Manページ
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
 [MediaWiki]: https://ja.wikipedia.org/wiki/MediaWiki
+[Pandoc]: https://pandoc.org/
 [PDF]: https://ja.wikipedia.org/wiki/Portable_Document_Format
 [POD]: https://ja.wikipedia.org/wiki/Plain_Old_Documentation
 [RFC]: https://ja.wikipedia.org/wiki/Request_for_Comments
