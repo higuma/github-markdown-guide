@@ -27,7 +27,7 @@
     * [1.2 Markdownとは](introduction.md#12-markdownとは)
     * [1.1 GitHub Flavored Markdownとは](introduction.md#11-github-flavored-markdownとは)
     * [1.3 仕様書の必要性](introduction.md#13-仕様書の必要性)
-    * [1.4 GFM仕様書について](introduction.md#14-GFM仕様書について)
+    * [1.4 GFM仕様書について](introduction.md#14-gfm仕様書について)
 * [2 予備知識](preliminaries.md)
     * [2.1 文字と行](preliminaries.md#21-文字と行)
     * [2.2 タブ](preliminaries.md#22-タブ)

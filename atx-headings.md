@@ -228,7 +228,7 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 [コードフェンス]: https://higuma.github.io/github-flabored-markdown/#code-fence
 [シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
 [フェンスドコードブロック]: #45-fenced-code-blocks
-[リスト]: container-blocks.md#54-lists
+[リスト]: lists.md
 [リンク]: https://higuma.github.io/github-flabored-markdown/#links
 [リンク参照定義]: https://higuma.github.io/github-flabored-markdown/#link-reference-definition
 [リンクラベル]: https://higuma.github.io/github-flabored-markdown/#link-label

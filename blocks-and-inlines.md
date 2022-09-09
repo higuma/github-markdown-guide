@@ -42,7 +42,7 @@ Markdownの文法はブロック構文とインライン構文の2種類に分�
 * [葉ブロック(leaf blocks)](leaf-blocks.md): 内部に別のブロックを持てない(ネスト不可)
     * [見出し](atx-headings.md), [コードブロック](fenced-code-blocks.md), [パラグラフ](paragraphs.md), etc.
 
-> [表組み](leaf-blocks.md#410-tables-extension)(`<table>`)はHTMLではネスト可能だが、GFMの表組み機能ではネストできない(葉ブロックとして扱われる)。どうしても必要な場合は[HTMLブロック](leaf-blocks.md#46-html-blocks)を使えば一応可能。ただしネストした表を用いるケースは稀で、筆者は今まで必要になったことはない。
+> [表組み](tables-extension)(`<table>`)はHTMLではネスト可能だが、GFMの表組み機能ではネストできない(葉ブロックとして扱われる)。どうしても必要な場合は[HTMLブロック](html-blocks.md)を使えば一応可能。ただしネストした表を用いるケースは稀で、筆者は今まで必要になったことはない。
 
 ------------------------------------------------------------------------
 
@@ -50,5 +50,5 @@ Markdownの文法はブロック構文とインライン構文の2種類に分�
 ← [目次](index.md) →
 [4 葉ブロック](leaf-blocks.md)
 
-[コードスパン]: inlines.md#63-code-spans
-[リストアイテム]: container-blocks.md#52-list-items
+[コードスパン]: code-spans.md
+[リストアイテム]: list-items.md

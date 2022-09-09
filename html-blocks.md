@@ -24,8 +24,6 @@ GFMでは全部で7通りの仕様を用意しているが、処理実装によ�
 
 > サポート状況を実際に確認するため[GFM implementation checker](https://github.com/higuma/gfm-implementation-checker)を作成した。
 
-checker/leaf-blocks.md#46-html-blocks)を利用すれば実際に確認できる。
-
 GitHubでもこれら全てを仕様書通りには処理しておらず、異なる出力結果がたくさんある。
 
 </details>
@@ -49,7 +47,7 @@ GitHubでもこれら全てを仕様書通りには処理しておらず、異�
 [コードフェンス]: https://higuma.github.io/github-flabored-markdown/#code-fence
 [シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
 [フェンスドコードブロック]: #45-fenced-code-blocks
-[リスト]: container-blocks.md#54-lists
+[リスト]: lists.md
 [リンク]: https://higuma.github.io/github-flabored-markdown/#links
 [リンク参照定義]: https://higuma.github.io/github-flabored-markdown/#link-reference-definition
 [リンクラベル]: https://higuma.github.io/github-flabored-markdown/#link-label

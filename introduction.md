@@ -24,7 +24,7 @@
 > 
 > <https://en.wikipedia.org/wiki/Lightweight_markup_language#Comparison_of_language_features>
 
-## [1.2 Markdownとは?](https://higuma.github.io/github-flabored-markdown/#what-is-markdown-)
+## [1.2 Markdownとは](https://higuma.github.io/github-flabored-markdown/#what-is-markdown-)
 
 > ここから先は基本的にGFM仕様書の章立てに従って説明するが、1.1と1.2は順序を逆にして成立時期の時間軸順に説明する。
 
@@ -60,11 +60,11 @@ GitHub Flavored Markdown (GFM)はGitHub及びGitHub Enterpriseで用いられて
 
 > [GFM仕様書目次](https://higuma.github.io/github-flabored-markdown/)の中で、色付き背景で末尾に"(extension)"と明記されている項目が該当部。ただし今ではこれらも事実上の標準扱いで、例えば投稿サイトの [Qiita](https://qiita.com/) や [はてなブログ](https://hatenablog.com/) では[表組み]や[オートリンク拡張]などの機能を利用できる。
 > 
-> なおextensions仕様が追加されたことにより元の[CommonMark]と仕様が異なる箇所が多数生じている。詳しくは本ガイド最後の [補足 - GitHubのMarkdown実装](github-markdown-implementation.md) で説明する。
+> なおextensions仕様が追加されたことにより元の[CommonMark]と仕様が異なる箇所が多数生じている。詳しくは本ガイド最後の[補足: GitHubのMarkdown実装]で説明する。
 
 GitHubサイトにHTMLレンダリングする際、セキュリティと一貫性のためのプリプロセスとサニタライズ処理が行われる。
 
-> それだけでなくGitHubのMarkdown処理実装には多くの独自拡張機能がある。さらにGitHubのサイト運用に際して日常的に改良が加えられており、その結果GFM仕様書と動作が異なる点も多数ある。これも [補足 - GitHubのMarkdown実装](github-markdown-implementation.md) で説明する。
+> それだけでなくGitHubのMarkdown処理実装には多くの独自拡張機能がある。さらにGitHubのサイト運用に際して日常的に改良が加えられており、その結果GFM仕様書と動作が異なる点も多数ある。これも[補足: GitHubのMarkdown実装]で説明する。
 
 ## [1.3 仕様書の必要性](https://higuma.github.io/github-flabored-markdown/#why-is-a-spec-needed-)
 
@@ -127,4 +127,5 @@ https://github.com/commonmark/commonmark-spec
 [軽量マークアップ言語]: https://ja.wikipedia.org/wiki/軽量マークアップ言語
 [正規表現]: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
 [表組み]: tables-extension.md
-[脚注]: github-markdown-implementation.md#footnotes
+[補足: GitHubのMarkdown実装]: github-markdown-implementation.md
+[脚注]: github-markdown-implementation.md#脚注

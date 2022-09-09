@@ -33,7 +33,7 @@ Markdownビューアを用いる場合は余計なものは付けない方が作
 
 > [Setext]
 
-> これは[リンク]作成の省略記法のひとつ([Example 565](https://higuma.github.io/github-flabored-markdown/#example-565))。[リンク]の作成方法は[6.6 Links](inlines.md#66-links)で詳しく説明する。
+> これは[リンク]作成の省略記法のひとつ([Example 565](https://higuma.github.io/github-flabored-markdown/#example-565))。[リンク]の作成方法は[6.6 Links](links.md)で詳しく説明する。
 
 またhover時にポップアップするリンクタイトルを表示する場合はその後に`"リンクタイトル"`または`'リンクタイトル'`で記述する。これはリンク作成時に`title`属性として設定され、`[リンクラベル]`は``<a href="リンク先" title="リンクタイトル">リンクラベル</a>``と出力する。
 
@@ -67,11 +67,11 @@ Markdownビューアを用いる場合は余計なものは付けない方が作
 * `:`
 * 0個以上の空白文字(なくてもよいが通常スペースを1つ入れる)
 * [リンク先] - 記法が2通りある(次のいずれか)
-    * `<文字列>` - [オートリンク](inlines.md#68-autolinks)記法
+    * `<文字列>` - [オートリンク](autolinks.md)記法
         * 文字列を`<...>`(angle bracket)で囲む
         * 文字列にスペースが含まれていてもよい
         * 文字列中に`<`や`>`が含まれる場合はエスケープして`\<`,`\>`とする
-    * `スペースを含まない文字列` - [オートリンク拡張](inlines.md#69-autolinks-extension)記法
+    * `スペースを含まない文字列` - [オートリンク拡張](autolinks-extension.md)記法
         * `<...>`不要
         * スペースは[パーセントエンコーディング](https://ja.wikipedia.org/wiki/パーセントエンコーディング)を用いて`%20`(他の特殊文字も同様)
         * URLスキーム(`https://`など)は原則省略可能(自動判別する)
@@ -108,7 +108,7 @@ Markdownビューアを用いる場合は余計なものは付けない方が作
 リンク先(URL)が空白文字や特殊文字を含む場合はいくつか方法がある。以下はリンク先`'my url'`(シングルクォートとスペースを含む)に対する記述例。
 
 * [パーセントエンコーディング](https://ja.wikipedia.org/wiki/パーセントエンコーディング)記法: `%27my%20url%27`
-* [オートリンク](inlines.md#68-autolinks)(angle bracket)記法: `<'my url'>`
+* [オートリンク](autolinks.md)(angle bracket)記法: `<'my url'>`
 
 > 興味のある人はExamples [161](https://higuma.github.io/github-flabored-markdown/#example-161)-[188](https://higuma.github.io/github-flabored-markdown/#example-188)を解読するとよい勉強になる。
 
@@ -135,7 +135,7 @@ Markdownビューアを用いる場合は余計なものは付けない方が作
 [コードフェンス]: https://higuma.github.io/github-flabored-markdown/#code-fence
 [シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
 [フェンスドコードブロック]: #45-fenced-code-blocks
-[リスト]: container-blocks.md#54-lists
+[リスト]: lists.md
 [リンク]: https://higuma.github.io/github-flabored-markdown/#links
 [リンク参照定義]: https://higuma.github.io/github-flabored-markdown/#link-reference-definition
 [リンクラベル]: https://higuma.github.io/github-flabored-markdown/#link-label

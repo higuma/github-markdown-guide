@@ -6,7 +6,7 @@
 
 ------------------------------------------------------------------------
 
-[パラグラフ]は上下を[空行](leaf-blocks.md#49-blank-lines)(または文書の開始/終了)で区切った空でないテキスト行で表現する。
+[パラグラフ]は上下を[空行](blank-lines.md)(または文書の開始/終了)で区切った空でないテキスト行で表現する。
 
 * 前後を[空行]または文書の開始・終了で区切る
 * 単語間に複数の連続した空白文字がある場合はHTML側で縮約(スペース1個に変換)
@@ -68,7 +68,7 @@ ddd
 [コードフェンス]: https://higuma.github.io/github-flabored-markdown/#code-fence
 [シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
 [フェンスドコードブロック]: #45-fenced-code-blocks
-[リスト]: container-blocks.md#54-lists
+[リスト]: lists.md
 [リンク]: https://higuma.github.io/github-flabored-markdown/#links
 [リンク参照定義]: https://higuma.github.io/github-flabored-markdown/#link-reference-definition
 [リンクラベル]: https://higuma.github.io/github-flabored-markdown/#link-label

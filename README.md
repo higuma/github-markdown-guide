@@ -1,7 +1,7 @@
 # GitHub Flavored Markdown 実践ガイド
 
 [目次](index.md) →
-[本ガイドについて](README.md)
+[1 はじめに](introduction.md)
 
 ------------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ GitHub Flabored Markdown仕様書 ( [最新 (公式)](https://github.github.com/
 ------------------------------------------------------------------------
 
 [目次](index.md) →
-[本ガイドについて](README.md)
+[1 はじめに](introduction.md)
 
 [CommonMark]: https://commonmark.org/
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown

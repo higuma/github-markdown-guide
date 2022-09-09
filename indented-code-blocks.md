@@ -33,7 +33,7 @@
 >         printf("Hello world!\n");
 >     }
 
-ただし前の行が[リストアイテム](container-blocks.md#52-list-items)の場合はリストアイテムの続きと認識される。[空行]を挿入してもリストのインデントとして扱われる。
+ただし前の行が[リストアイテム]の場合は[リストアイテム]の続きと認識される。[空行]を挿入しても[リスト]のインデントとして扱われる。
 
 ```markdown
 * List
@@ -74,7 +74,8 @@
 [コードフェンス]: https://higuma.github.io/github-flabored-markdown/#code-fence
 [シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
 [フェンスドコードブロック]: #45-fenced-code-blocks
-[リスト]: container-blocks.md#54-lists
+[リスト]: lists.md
+[リストアイテム]: list-items.md
 [リンク]: https://higuma.github.io/github-flabored-markdown/#links
 [リンク参照定義]: https://higuma.github.io/github-flabored-markdown/#link-reference-definition
 [リンクラベル]: https://higuma.github.io/github-flabored-markdown/#link-label
