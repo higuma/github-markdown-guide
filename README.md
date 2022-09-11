@@ -1,4 +1,4 @@
-# GitHub Flavored Markdown 実践ガイド
+# GitHub Markdown 実践ガイド
 
 [目次](index.md) →
 [1 はじめに](introduction.md)
