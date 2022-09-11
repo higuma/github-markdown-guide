@@ -1,4 +1,4 @@
-# [6.3 コードスパン](https://higuma.github.io/github-flabored-markdown/#code-spans)
+# [6.3 コードスパン](https://higuma.github.io/github-markdown-guide/#code-spans)
 
 [6.2 文字参照](entity-and-numeric-character-references.md)
 ← [目次](index.md) →

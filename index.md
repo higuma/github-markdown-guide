@@ -5,7 +5,7 @@
 
 ------------------------------------------------------------------------
 
-章及び節番号は[GitHub Flaboored Markdown仕様書](https://higuma.github.io/github-flabored-markdown/)に準じているが、部分的に説明順序を入れ替えている部分がある(番号が前後している箇所)。また本ドキュメント独自の解説もある(章/節番号なし)。
+章及び節番号は[GitHub Flaboored Markdown仕様書](https://higuma.github.io/github-markdown-guide/)に準じているが、部分的に説明順序を入れ替えている部分がある(番号が前後している箇所)。また本ドキュメント独自の解説もある(章/節番号なし)。
 
 ## 目次
 

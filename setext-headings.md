@@ -1,4 +1,4 @@
-# [4.3 Setext見出し](https://higuma.github.io/github-flabored-markdown/#setext-headings)
+# [4.3 Setext見出し](https://higuma.github.io/github-markdown-guide/#setext-headings)
 
 [4.2 見出し](atx-headings.md)
 ← [目次](index.md) →
@@ -57,25 +57,25 @@ h2
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings
-[コードフェンス]: https://higuma.github.io/github-flabored-markdown/#code-fence
+[コードフェンス]: https://higuma.github.io/github-markdown-guide/#code-fence
 [CommonMark]: https://commonmark.org/
-[info string]: https://higuma.github.io/github-flabored-markdown/#info-string
+[info string]: https://higuma.github.io/github-markdown-guide/#info-string
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
 [Setext]: https://en.wikipedia.org/wiki/Setext
 [Setext heading]: #43-setext-headings
 [インデント方式コードブロック]: #44-indented-code-blocks
 [インライン]: inlines.md
-[コードフェンス]: https://higuma.github.io/github-flabored-markdown/#code-fence
+[コードフェンス]: https://higuma.github.io/github-markdown-guide/#code-fence
 [シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
 [フェンスドコードブロック]: #45-fenced-code-blocks
 [リスト]: lists.md
-[リンク]: https://higuma.github.io/github-flabored-markdown/#links
-[リンク参照定義]: https://higuma.github.io/github-flabored-markdown/#link-reference-definition
-[リンクラベル]: https://higuma.github.io/github-flabored-markdown/#link-label
-[リンク先]: https://higuma.github.io/github-flabored-markdown/#link-destination
-[リンクタイトル]: https://higuma.github.io/github-flabored-markdown/#link-title
+[リンク]: https://higuma.github.io/github-markdown-guide/#links
+[リンク参照定義]: https://higuma.github.io/github-markdown-guide/#link-reference-definition
+[リンクラベル]: https://higuma.github.io/github-markdown-guide/#link-label
+[リンク先]: https://higuma.github.io/github-markdown-guide/#link-destination
+[リンクタイトル]: https://higuma.github.io/github-markdown-guide/#link-title
 [パラグラフ]: #48-paragraphs
 [空行]: #49-blank-lines
-[空白文字]: https://higuma.github.io/github-flabored-markdown/#whitespace-character
+[空白文字]: https://higuma.github.io/github-markdown-guide/#whitespace-character
 [正規表現]: https://deeloper.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
 [見出し]: #42-atx-headings

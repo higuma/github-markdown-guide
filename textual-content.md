@@ -1,4 +1,4 @@
-## [6.14 テキストコンテント](https://higuma.github.io/github-flabored-markdown/#textual-content)
+## [6.14 テキストコンテント](https://higuma.github.io/github-markdown-guide/#textual-content)
 
 [6.13 ソフト改行](soft-line-breaks.md)
 ← [目次](index.md) →
@@ -20,7 +20,7 @@ abcde αβγδε あいうえお
 
 > abcde αβγδε あいうえお
 
-ただし連続するスペースは1個に縮約される。次の文例はGFM仕様書の[Example 673](https://higuma.github.io/github-flabored-markdown/#example-673)からのもの。
+ただし連続するスペースは1個に縮約される。次の文例はGFM仕様書の[Example 673](https://higuma.github.io/github-markdown-guide/#example-673)からのもの。
 
 ```markdown
 Multiple     spaces

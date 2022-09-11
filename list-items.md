@@ -1,4 +1,4 @@
-# [5.2 リストアイテム](https://higuma.github.io/github-flabored-markdown/#list-items)
+# [5.2 リストアイテム](https://higuma.github.io/github-markdown-guide/#list-items)
 
 [5.1 引用](block-quotes.md)
 ← [目次](index.md) →

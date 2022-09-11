@@ -1,4 +1,4 @@
-# [6.12 ハード改行](https://higuma.github.io/github-flabored-markdown/#hard-line-breaks)
+# [6.12 ハード改行](https://higuma.github.io/github-markdown-guide/#hard-line-breaks)
 
 [6.11 GFMに使えないHTML要素](disallowed-raw-html-extension.md)
 ← [目次](index.md) →

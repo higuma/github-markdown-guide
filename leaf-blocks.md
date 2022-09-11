@@ -1,4 +1,4 @@
-# [4 葉ブロック](https://higuma.github.io/github-flabored-markdown/#leaf-blocks)
+# [4 葉ブロック](https://higuma.github.io/github-markdown-guide/#leaf-blocks)
 
 [3 ブロックとインライン](blocks-and-inlines.md)
 ← [目次](index.md) →

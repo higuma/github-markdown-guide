@@ -1,4 +1,4 @@
-# [5.4 リスト](https://higuma.github.io/github-flabored-markdown/#lists)
+# [5.4 リスト](https://higuma.github.io/github-markdown-guide/#lists)
 
 [5.3 タスクリストアイテム](task-list-items-extension.md)
 ← [目次](index.md) →

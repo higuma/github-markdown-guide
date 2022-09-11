@@ -1,4 +1,4 @@
-# [5 コンテナブロック](https://higuma.github.io/github-flabored-markdown/#container-blocks)
+# [5 コンテナブロック](https://higuma.github.io/github-markdown-guide/#container-blocks)
 
 [4.10 表組み](tables-extension.md)
 ← [目次](index.md) →
