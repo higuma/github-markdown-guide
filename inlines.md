@@ -18,7 +18,7 @@
 * [6.8 自動リンク](autolinks.md)
 * [6.9 自動リンク(AFM拡張)](autolinks-extension.md)
 * [6.10 生HTML](raw-html.md)
-* [6.11 生HTMLに使えない要素](disallowed-raw-html-extension.md)
+* [6.11 GFMに使えないHTML要素](disallowed-raw-html-extension.md)
 * [6.12 ハード改行](hard-line-breaks.md)
 * [6.13 ソフト改行](soft-line-breaks.md)
 * [6.14 テキストコンテント](textual-content.md)

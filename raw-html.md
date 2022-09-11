@@ -2,7 +2,7 @@
 
 [6.9 自動リンク (GFM拡張)](autolinks-extension.md)
 ← [目次](index.md) →
-[6.11 生HTMLに使えない要素](disallowed-raw-html-extension.md)
+[6.11 GFMに使えないHTML要素](disallowed-raw-html-extension.md)
 
 ------------------------------------------------------------------------
 
@@ -12,4 +12,4 @@ TODO
 
 [6.9 自動リンク (GFM拡張)](autolinks-extension.md)
 ← [目次](index.md) →
-[6.11 生HTMLに使えない要素](disallowed-raw-html-extension.md)
+[6.11 GFMに使えないHTML要素](disallowed-raw-html-extension.md)
