@@ -1,4 +1,4 @@
-# [6.4 斜体と太字](https://higuma.github.io/github-markdown-guide/#emphasis-and-strong-emphasis)
+# [6.4 斜体と太字](https://higuma.github.io/github-markdown-guide/gfm/#emphasis-and-strong-emphasis)
 
 [6.3 コードスパン](code-spans.md)
 ← [目次](index.md) →

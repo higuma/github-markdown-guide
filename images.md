@@ -1,4 +1,4 @@
-# [6.7 画像](https://higuma.github.io/github-markdown-guide/#images)
+# [6.7 画像](https://higuma.github.io/github-markdown-guide/gfm/#images)
 
 [6.6 リンク](links.md)
 ← [目次](index.md) →

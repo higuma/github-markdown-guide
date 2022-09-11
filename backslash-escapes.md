@@ -1,4 +1,4 @@
-# [6.1 バックスラッシュエスケープ](https://higuma.github.io/github-markdown-guide/#backslash-escapes)
+# [6.1 バックスラッシュエスケープ](https://higuma.github.io/github-markdown-guide/gfm/#backslash-escapes)
 
 [6 インライン](inlines.md)
 ← [目次](index.md) →
@@ -77,7 +77,7 @@ _italic_, **bold**, ***bold italic*** ~~strikethrough~~
 
 ### ASCII区切り文字
 
-[ASCII区切り文字(ASCII puctuation characters)](https://higuma.github.io/github-markdown-guide/#ascii-punctuation-character)とは[ASCII印字可能文字](https://ja.wikipedia.org/wiki/ASCII印字可能文字)(U+0020..U+007F)からスペースと英数字を除外した文字を指す。
+[ASCII区切り文字(ASCII puctuation characters)](https://higuma.github.io/github-markdown-guide/gfm/#ascii-punctuation-character)とは[ASCII印字可能文字](https://ja.wikipedia.org/wiki/ASCII印字可能文字)(U+0020..U+007F)からスペースと英数字を除外した文字を指す。
 
 * U+0021..U+002F: `!`, `"`, `#`, `$`, `%`, `&`, `'`, `(`, `)`, `*`, `+`, `,`, `-`, `.`, `/`
 * U+003A..U+0040: `:`, `;`, `<`, `=`, `>`, `?`, `@`
@@ -267,9 +267,9 @@ http://www.example.com?\-\+\=
 
 その他のケースではバックスラッシュエスケープが効く。以下は仕様書からの要約だが、どれも特殊ケースで通常使うものではないので一覧表示のみとする。
 
-* URL → [Example 318](https://higuma.github.io/github-markdown-guide/#example-318)
-* [リンク]タイトルと[リンク参照定義] → [Example 319](https://higuma.github.io/github-markdown-guide/#example-319)
-* [コードブロック]のinfo文字列 → [Example 320](https://higuma.github.io/github-markdown-guide/#example-320)
+* URL → [Example 318](https://higuma.github.io/github-markdown-guide/gfm/#example-318)
+* [リンク]タイトルと[リンク参照定義] → [Example 319](https://higuma.github.io/github-markdown-guide/gfm/#example-319)
+* [コードブロック]のinfo文字列 → [Example 320](https://higuma.github.io/github-markdown-guide/gfm/#example-320)
 
 <details>
 <summary>上級編: GitHubのMarkdown実装におけるURLの扱い</summary>

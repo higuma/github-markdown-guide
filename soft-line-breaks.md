@@ -1,4 +1,4 @@
-# [6.13 ソフト改行](https://higuma.github.io/github-markdown-guide/#soft-line-breaks)
+# [6.13 ソフト改行](https://higuma.github.io/github-markdown-guide/gfm/#soft-line-breaks)
 
 [6.12 ハード改行](hard-line-breaks.md)
 ← [目次](index.md) →

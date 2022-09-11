@@ -1,4 +1,4 @@
-# [4.1 横線](https://higuma.github.io/github-markdown-guide/#thematic-breaks)
+# [4.1 横線](https://higuma.github.io/github-markdown-guide/gfm/#thematic-breaks)
 
 [4 葉ブロック](leaf-blocks.md)
 ← [目次](index.md) →
@@ -107,13 +107,13 @@ bar
 ← [目次](index.md) →
 [4.2 見出し](atx-headings.md)
 
-[Example 28]: https://higuma.github.io/github-markdown-guide/#example-28
+[Example 28]: https://higuma.github.io/github-markdown-guide/gfm/#example-28
 [Jupyter Notebook]: https://jupyter.org/
 [Pandoc]: https://pandoc.org/
 [Setext見出し]: setext-headings.md
 [インデント式コードブロック]: indented-code-blocks.md
 [パラグラフ]: paragraphs.md
 [空行]: blank-lines.md
-[空白文字]: https://higuma.github.io/github-markdown-guide/#whitespace-character
+[空白文字]: https://higuma.github.io/github-markdown-guide/gfm/#whitespace-character
 [正規表現]: https://deeloper.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
 [見出し]: #42-atx-headings

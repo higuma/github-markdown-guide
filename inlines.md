@@ -1,4 +1,4 @@
-# [6 インライン](https://higuma.github.io/github-markdown-guide/#inlines)
+# [6 インライン](https://higuma.github.io/github-markdown-guide/gfm/#inlines)
 
 [5.4 リスト](lists.md)
 ← [目次](index.md) →

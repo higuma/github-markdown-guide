@@ -1,4 +1,4 @@
-# [6.2 文字参照](https://higuma.github.io/github-markdown-guide/#entity-and-numeric-character-references)
+# [6.2 文字参照](https://higuma.github.io/github-markdown-guide/gfm/#entity-and-numeric-character-references)
 
 [6.1 バックスラッシュエスケープ](backslash-escapes.md)
 ← [目次](index.md) →
@@ -48,7 +48,7 @@ Markdownの文字参照はHTMLと同じ書式を用いる。次の3種類があ�
 * [10進数文字参照](#10進数文字参照): `&#{コードポイントの10進表現};`
 * [16進数文字参照](#16進数文字参照): `&#x{コードポイントの16進表現};`, `&#X{コードポイントの16進表現};`
 
-### [実体参照](https://higuma.github.io/github-markdown-guide/#entity-references)
+### [実体参照](https://higuma.github.io/github-markdown-guide/gfm/#entity-references)
 
 実体参照(entity references)はHTMLの[名前付き文字参照](https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references)と同じ書式を用いる。
 
@@ -71,7 +71,7 @@ Markdownの文字参照はHTMLと同じ書式を用いる。次の3種類があ�
 * [HTML標準仕様書](https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references)
 * [Markdown版](https://gist.github.com/higuma/36c7ff658c4b280b1dfbf802bae52356)
 
-### [10進数文字参照](https://higuma.github.io/github-markdown-guide/#decimal-numeric-character-references)
+### [10進数文字参照](https://higuma.github.io/github-markdown-guide/gfm/#decimal-numeric-character-references)
 
 10進数文字参照(decimal numeric character references)は`&#{Unicodeコードポイントの10進表現};`の形式で表現する。
 
@@ -82,7 +82,7 @@ Markdownの文字参照はHTMLと同じ書式を用いる。次の3種類があ�
 > &#48; &#65; &#97; &#12354;
 
 
-### [16進数文字参照](https://higuma.github.io/github-markdown-guide/#hexadecimal-numeric-character-references)
+### [16進数文字参照](https://higuma.github.io/github-markdown-guide/gfm/#hexadecimal-numeric-character-references)
 
 16進数文字参照(hexadecimal numeric character references)は`&#x{Unicodeコードポイントの16進表現};`または`&#X{Unicodeコードポイントの16進表現};`の形式で表現する。
 
@@ -114,10 +114,10 @@ Markdownの文字参照はHTMLと同じ書式を用いる。次の3種類があ�
 
 (参考) それ以外の次の構文では機能する(仕様書より: どれも特殊ケースで通常使うことはないため一覧のみ)。
 
-* URL → [Example 327](https://higuma.github.io/github-markdown-guide/#example-327)
-* [リンク]タイトル → [Example 328](https://higuma.github.io/github-markdown-guide/#example-328)
-* [リンク参照定義] → [Example 329](https://higuma.github.io/github-markdown-guide/#example-329)
-* [コードブロック]のinfo文字列 → [Example 330](https://higuma.github.io/github-markdown-guide/#example-330)
+* URL → [Example 327](https://higuma.github.io/github-markdown-guide/gfm/#example-327)
+* [リンク]タイトル → [Example 328](https://higuma.github.io/github-markdown-guide/gfm/#example-328)
+* [リンク参照定義] → [Example 329](https://higuma.github.io/github-markdown-guide/gfm/#example-329)
+* [コードブロック]のinfo文字列 → [Example 330](https://higuma.github.io/github-markdown-guide/gfm/#example-330)
 
 ### 文字参照の必要性
 

@@ -1,4 +1,4 @@
-# [6.6 リンク](https://higuma.github.io/github-markdown-guide/#links)
+# [6.6 リンク](https://higuma.github.io/github-markdown-guide/gfm/#links)
 
 [6.5 打ち消し線](strikethrough-extension.md)
 ← [目次](index.md) →

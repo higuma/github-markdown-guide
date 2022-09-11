@@ -1,4 +1,4 @@
-# [5.1 引用](https://higuma.github.io/github-markdown-guide/#block-quotes)
+# [5.1 引用](https://higuma.github.io/github-markdown-guide/gfm/#block-quotes)
 
 [5 コンテナブロック](container-blocks.md)
 ← [目次](index.md) →

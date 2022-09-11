@@ -1,4 +1,4 @@
-# [3 ブロックとインライン](https://higuma.github.io/github-markdown-guide/#blocks-and-inlines)
+# [3 ブロックとインライン](https://higuma.github.io/github-markdown-guide/gfm/#blocks-and-inlines)
 
 [2 予備知識](preliminaries.md)
 ← [目次](index.md) →
@@ -15,7 +15,7 @@
 
 Markdownの文法はブロック構文とインライン構文の2種類に分類され、これらはそれぞれHTMLのブロック要素とインライン要素に対応する。
 
-## [3.1 優先度](https://higuma.github.io/github-markdown-guide/#precedence)
+## [3.1 優先度](https://higuma.github.io/github-markdown-guide/gfm/#precedence)
 
 構文解析はHTMLと同じ木構造に従って行われ、その結果をHTML文書として出力する。木構造では構文要素間の一方がもう一方を含む(子孫関係)ことはあっても、両者が部分的にオーバーラップすることはない。
 
@@ -33,7 +33,7 @@ Markdownの文法はブロック構文とインライン構文の2種類に分�
 
 以上の通りMarkdownの構文解析はまずブロックを先に行い、その後にインラインを処理する。
 
-## [3.2 コンテナブロックと葉ブロック](https://higuma.github.io/github-markdown-guide/#container-blocks-and-leaf-blocks)
+## [3.2 コンテナブロックと葉ブロック](https://higuma.github.io/github-markdown-guide/gfm/#container-blocks-and-leaf-blocks)
 
 ブロックには2種類ある。
 

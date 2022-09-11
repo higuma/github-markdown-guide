@@ -1,4 +1,4 @@
-# [6.11 GFMに使えないHTML要素](https://higuma.github.io/github-markdown-guide/#disallowed-raw-html-extension-)
+# [6.11 GFMに使えないHTML要素](https://higuma.github.io/github-markdown-guide/gfm/#disallowed-raw-html-extension-)
 
 [6.10 生HTML](raw-html.md)
 ← [目次](index.md) →
@@ -54,7 +54,7 @@ https://babelmark.github.io/?text=%3Ctextarea%3E%0AInput+here...%0A%3C%2Ftextare
 
 [CommonMark]: introduction.md#commonmark
 [GFM]: introduction.md#11-github-flavored-markdownとは
-[GFM仕様書]: https://higuma.github.io/github-markdown-guide/
+[GFM仕様書]: https://higuma.github.io/github-markdown-guide/gfm/
 [HTMLブロック]: html-blocks.md
 [Pandoc]: https://pandoc.org/
 [インライン]: inlines.md

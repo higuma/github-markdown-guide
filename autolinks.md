@@ -1,4 +1,4 @@
-# [6.8 自動リンク](https://higuma.github.io/github-markdown-guide/#autolinks)
+# [6.8 自動リンク](https://higuma.github.io/github-markdown-guide/gfm/#autolinks)
 
 [6.7 画像](images.md)
 ← [目次](index.md) →
