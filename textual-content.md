@@ -28,11 +28,11 @@ Multiple     spaces
 
 > Multiple     spaces
 
-> なお仕様書本文には(縮約せず)「文字通りに保持される」(preserved verbatim)と書かれているが、実際にはMarkdown側で縮約処理が行われる。Babelmarkで確認した結果は次の通り。
+> GFM仕様書本文には(縮約せず)「文字通りに保持される」(preserved verbatim)と書かれているが、実際にはほぼ全てのMarkdown処理実装がMarkdown側で縮約処理を行う。Babelmarkで確認した結果は次の通り。
 > 
 > https://babelmark.github.io/?text=Multiple+++++spaces
 > 
-> > 仮に仕様書記述通りMarkdown側で縮約を行わなくてもHTMLのレンダリング処理で縮約されるため同じ表示になる。
+> > ちなみに仮に仕様書記述通りMarkdown側で縮約を行わなくてもHTMLのレンダリング処理で縮約されるため同じ表示になる。
 
 ------------------------------------------------------------------------
 
