@@ -38,12 +38,53 @@
 >     行末スペース1個(ソフト改行)→ 
 >         連結される行
 
+構文解析はインラインよりブロックを優先するため、次の行が[空行]の場合は以降を次のブロック構文と認識する。
+
+```markdown
+ソフト改行
+次は空行(ソフト改行ではない)
+
+次のパラグラフ
+```
+
+> ソフト改行
+> 次は空行(ソフト改行ではない)
+> 
+> 次のパラグラフ
+
+[斜体と太字]、[打ち消し線]はソフト改行で連結される上下の行にまたがっていてもよい。
+
+```markdown
+Plain _italic
+**bold
+italic
+~~also
+strikethrough~~**_ plain.
+```
+
+> Plain _italic
+> **bold
+> italic
+> ~~also
+> strikethrough~~**_ plain.
+
+
+[コードスパン]も同様。
+
+```markdown
+`code
+span`
+```
+
+> `code
+> span`
+
 <details>
-<summary>GitHubでのソフト改行の振る舞い</summary>
+<summary>GitHub Webサイト上でのソフト改行の振る舞い</summary>
 
 > 以下の内容は2022年9月時点のもの。将来は修正される可能性がある。
 
-GitHub Markdown実装の仕様も上記の通りだが、Web画面上の編集中のPreview表示ではソフト改行ではなく改行して表示する(おそらく不具合)。編集を終えるとちゃんと連結されて表示する。
+GitHub Markdown実装の仕様も上記の通りだが、GitHubのWeb画面上の編集中のPreview表示ではソフト改行が適用される行末を改行して表示する(おそらく不具合)。編集を終了するとちゃんと連結されて表示する。
 
 </details>
 
@@ -53,5 +94,9 @@ GitHub Markdown実装の仕様も上記の通りだが、Web画面上の編集�
 ← [目次](index.md) →
 [6.14 テキストコンテント](textual-content.md)
 
-[ハード改行]: hard-line-breaks.md
 [softbreak]: https://higuma.github.io/github-markdown-guide/gfm/#softbreak
+[コードスパン]: code-spans.md
+[ハード改行]: hard-line-breaks.md
+[打ち消し線]: strikethrough-extension.md
+[空行]: blank-lines.md
+[斜体と太字]: emphasis-and-strong-emphasis.md
