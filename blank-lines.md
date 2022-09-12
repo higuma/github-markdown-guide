@@ -2,7 +2,7 @@
 
 [4.8 パラグラフ](paragraphs.md)
 ← [目次](index.md) →
-[4.10 表組み](tables-extension.md)
+[4.10 表](tables.md)
 
 ------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@
 
 ### Best practice
 
-改行のみがお勧め。スペースやタブが入っていると行儀が悪いし、Markdownのインデントを使う文法([リスト]や[インデント方式コードブロック]など)の誤認識の元になりやすい。なお通常は改行一つだが、[パラグラフ]間は改行1個、[見出し]の前は改行2個というように使い分けるのは作業用として有効な方法。
+改行のみがお勧め。スペースやタブが入っていると行儀が悪いし、Markdownのインデントを使う文法([リスト]や[インデント式コードブロック]など)の誤認識の元になりやすい。なお通常は改行一つだが、[パラグラフ]間は改行1個、[見出し]の前は改行2個というように使い分けるのは作業用として有効な方法。
 
 ### Details
 
@@ -58,7 +58,7 @@
 
 [4.8 パラグラフ](paragraphs.md)
 ← [目次](index.md) →
-[4.10 表組み](tables-extension.md)
+[4.10 表](tables.md)
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings
@@ -68,11 +68,10 @@
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
 [Setext]: https://en.wikipedia.org/wiki/Setext
 [Setext heading]: #43-setext-headings
-[インデント方式コードブロック]: #44-indented-code-blocks
+[インデント式コードブロック]: indented-code-blocks.md
 [インライン]: inlines.md
 [コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
 [シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
-[フェンスドコードブロック]: #45-fenced-code-blocks
 [リスト]: lists.md
 [リンク]: https://higuma.github.io/github-markdown-guide/gfm/#links
 [リンク参照定義]: https://higuma.github.io/github-markdown-guide/gfm/#link-reference-definition

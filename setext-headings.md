@@ -1,6 +1,6 @@
 # [4.3 Setext見出し](https://higuma.github.io/github-markdown-guide/gfm/#setext-headings)
 
-[4.2 見出し](atx-headings.md)
+[4.2 見出し](headings.md)
 ← [目次](index.md) →
 [4.4 インデント式コードブロック](indented-code-blocks.md)
 
@@ -51,23 +51,21 @@ h2
 
 ------------------------------------------------------------------------
 
-[4.2 見出し](atx-headings.md)
+[4.2 見出し](headings.md)
 ← [目次](index.md) →
 [4.4 インデント式コードブロック](indented-code-blocks.md)
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
-[ATX headings]: #42-atx-headings
+[ATX headings]: headings.md
 [コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
 [CommonMark]: https://commonmark.org/
 [info string]: https://higuma.github.io/github-markdown-guide/gfm/#info-string
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
 [Setext]: https://en.wikipedia.org/wiki/Setext
 [Setext heading]: #43-setext-headings
-[インデント方式コードブロック]: #44-indented-code-blocks
 [インライン]: inlines.md
 [コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
 [シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
-[フェンスドコードブロック]: #45-fenced-code-blocks
 [リスト]: lists.md
 [リンク]: https://higuma.github.io/github-markdown-guide/gfm/#links
 [リンク参照定義]: https://higuma.github.io/github-markdown-guide/gfm/#link-reference-definition
@@ -78,4 +76,4 @@ h2
 [空行]: #49-blank-lines
 [空白文字]: https://higuma.github.io/github-markdown-guide/gfm/#whitespace-character
 [正規表現]: https://deeloper.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
-[見出し]: #42-atx-headings
+[見出し]: headings.md

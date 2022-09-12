@@ -2,7 +2,7 @@
 
 [6.3 コードスパン](code-spans.md)
 ← [目次](index.md) →
-[6.5 打ち消し線](strikethrough-extension.md)
+[6.5 打ち消し線](strikethrough.md)
 
 ------------------------------------------------------------------------
 
@@ -158,4 +158,4 @@ https://web-365.biz/made_in_wordpress/webfont-how-to-italic
 
 [6.3 コードスパン](code-spans.md)
 ← [目次](index.md) →
-[6.5 打ち消し線](strikethrough-extension.md)
+[6.5 打ち消し線](strikethrough.md)

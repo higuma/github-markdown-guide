@@ -2,7 +2,7 @@
 
 [4.3 Setext見出し](setext-headings.md)
 ← [目次](index.md) →
-[4.5 コードブロック](fenced-code-blocks.md)
+[4.5 コードブロック](code-blocks.md)
 
 ------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@
 
 ### Best practice
 
-文法上の問題が多く、何かと誤認識の元になりやすい。代わりに[フェンスドコードブロック]を用いるとよい。
+旧式で、文法上の問題が多く何かと誤認識の元になりやすい。現方式の[コードブロック]に統一すること。
 
 ### Details
 
@@ -51,7 +51,7 @@
 > 
 >     indent
 
-以下説明は省略する。これ以外にも文法解釈上の問題がとても多く、後に次の[フェンスドコードブロック]が作られた。
+以下説明は省略する。これ以外にも文法解釈上の問題がとても多く、後に現方式の[コードブロック]が作られた。
 
 </details>
 
@@ -59,7 +59,7 @@
 
 [4.3 Setext見出し](setext-headings.md)
 ← [目次](index.md) →
-[4.5 コードブロック](fenced-code-blocks.md)
+[4.5 コードブロック](code-blocks.md)
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings
@@ -69,11 +69,10 @@
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
 [Setext]: https://en.wikipedia.org/wiki/Setext
 [Setext heading]: #43-setext-headings
-[インデント方式コードブロック]: #44-indented-code-blocks
 [インライン]: inlines.md
 [コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
 [シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
-[フェンスドコードブロック]: #45-fenced-code-blocks
+[コードブロック]: code-blocks.md
 [リスト]: lists.md
 [リストアイテム]: list-items.md
 [リンク]: https://higuma.github.io/github-markdown-guide/gfm/#links

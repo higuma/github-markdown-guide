@@ -97,6 +97,6 @@ GitHub Markdown実装の仕様も上記の通りだが、GitHubのWeb画面上�
 [softbreak]: https://higuma.github.io/github-markdown-guide/gfm/#softbreak
 [コードスパン]: code-spans.md
 [ハード改行]: hard-line-breaks.md
-[打ち消し線]: strikethrough-extension.md
+[打ち消し線]: strikethrough.md
 [空行]: blank-lines.md
-[斜体と太字]: emphasis-and-strong-emphasis.md
+[斜体と太字]: bold-and-italic.md

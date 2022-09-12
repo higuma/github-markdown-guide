@@ -158,7 +158,7 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 > # foo *bar* \*baz\*
 > ## Example Domain - <https://www.example.com/>
 
-先頭に3つまでスペースを挿入できる。4つ以上は[インデント方式コードブロック]と認識される。
+先頭に3つまでスペースを挿入できる。4つ以上は[インデント式コードブロック]と認識される。
 
 ```markdown
 #### h4
@@ -223,11 +223,10 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
 [Setext]: https://en.wikipedia.org/wiki/Setext
 [Setext heading]: #43-setext-headings
-[インデント方式コードブロック]: #44-indented-code-blocks
+[インデント式コードブロック]: indented-code-blocks.md
 [インライン]: inlines.md
 [コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
 [シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
-[フェンスドコードブロック]: #45-fenced-code-blocks
 [リスト]: lists.md
 [リンク]: https://higuma.github.io/github-markdown-guide/gfm/#links
 [リンク参照定義]: https://higuma.github.io/github-markdown-guide/gfm/#link-reference-definition

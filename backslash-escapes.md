@@ -2,7 +2,7 @@
 
 [6 インライン](inlines.md)
 ← [目次](index.md) →
-[6.2 文字参照](entity-and-numeric-character-references.md)
+[6.2 文字参照](character-references.md)
 
 ------------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ Markdownではバックスラッシュ(`\`)は特別な意味を持つ。
 
 [ASCII区切り文字]の多くはMarkdownの書式設定に用いられるが、これらを書式ではなく文字として認識させる場合にバックスラッシュエスケープを用いる。
 
-次は[強調]と[打ち消し線]、[区切り]、[見出し]とそのエスケープ例。通常の解釈では書式設定と判定される[ASCII区切り文字]の先頭部分にバックスラッシュを付けてエスケープすることにより通常文字として認識させる。
+次は[斜体と太字]、[打ち消し線]、[区切り]、[見出し]に対するエスケープ例。通常の解釈では書式設定と判定される[ASCII区切り文字]の先頭部分にバックスラッシュを付けてエスケープすることにより通常文字として認識させる。
 
 ```markdown
 _italic_, **bold**, ***bold italic*** ~~strikethrough~~
@@ -189,7 +189,7 @@ _italic_, **bold**, ***bold italic*** ~~strikethrough~~
 > 
 > \`コードスパンではない`
 
-強調書式(`**strong**`)をエスケープする場合は2つ必要になることに注意。1つだけだと斜体と認識される。
+太字(`**bold**`)をエスケープする場合は2つ必要になることに注意。1つだけだと斜体と認識される。
 
 ```markdown
 **bold**
@@ -316,19 +316,19 @@ https://babelmark.github.io/?text=https%5C%3A%5C%2F%5C%2Fwww%5C.example%5C.com
 
 [6 インライン](inlines.md)
 ← [目次](index.md) →
-[6.2 文字参照](entity-and-numeric-character-references.md)
+[6.2 文字参照](character-references.md)
 
 [ASCII区切り文字]: #ASCII区切り文字
 [GitHub Gist]: https://gist.github.com/
 [オートリンク]: autolinks.md
 [オートリンク拡張]: autolinks-extension.md
 [コードスパン]: code-spans.md
-[コードブロック]: fenced-code-blocks.md
+[コードブロック]: code-blocks.md
 [ハード改行]: hard-line-breaks.md
 [リンク]: links.md
 [リンク参照定義]: link-reference-definitions.md
-[見出し]: atx-headings.md
-[強調]: emphasis-and-strong-emphasis.md
-[打ち消し線]: strikethrough-extension.md
+[見出し]: headings.md
+[斜体と太字]: bold-and-italic.md
+[打ち消し線]: strikethrough.md
 [区切り]: thematic-breaks.md
 [生HTML]: raw-html.md

@@ -2,7 +2,7 @@
 
 [5.1 引用](block-quotes.md)
 ← [目次](index.md) →
-[5.3 タスクリストアイテム](task-list-items-extension.md)
+[5.3 タスクリストアイテム](task-list-items.md)
 
 ------------------------------------------------------------------------
 
@@ -12,4 +12,4 @@ TODO
 
 [5.1 引用](block-quotes.md)
 ← [目次](index.md) →
-[5.3 タスクリストアイテム](task-list-items-extension.md)
+[5.3 タスクリストアイテム](task-list-items.md)

@@ -253,7 +253,7 @@ Foo          bar
 ← [目次](index.md) →
 [6.3 コードスパン](code-spans.md)
 
-[コードブロック]: fenced-code-blocks.md
+[コードブロック]: code-blocks.md
 [コードスパン]: code-spans.md
 [ノーブレークスペース]: https://ja.wikipedia.org/wiki/ノーブレークスペース
 [バックスラッシュエスケープ]: backslash-escapes.md

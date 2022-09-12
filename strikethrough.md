@@ -1,6 +1,6 @@
 # [6.5 打ち消し線](https://higuma.github.io/github-markdown-guide/gfm/#strikethrough-extension-)
 
-[6.4 斜体と太字](emphasis-and-strong-emphasis.md)
+[6.4 斜体と太字](bold-and-italic.md)
 ← [目次](index.md) →
 [6.6 リンク](links.md)
 
@@ -45,31 +45,31 @@ Plain text ~~strikethrough~~.
 > 
 > ~~打ち消し線の中の<sub>下付き文字</sub>の例~~
 
-ただしオーバーラップはできない。これは出力形式のHTMLの構文が木構造であることによる当然の結果で、次のように両者を重複させようとしてもうまくいかない。
+ただしオーバーラップはできない。これは出力形式であるHTMLの構文が木構造であることによる当然の結果で、次のように両者を重複させようとしてもうまくいかない。
 
 ```markdown
-**太字~~太字+打ち消し線**打ち消し線~~
+**太字 ~~太字&打ち消し線** 打ち消し線~~
 ```
 
-> **太字~~太字+打ち消し線**打ち消し線~~
+> **太字 ~~太字&打ち消し線** 打ち消し線~~
 
 正しくは次の通り。
 
 ```markdown
-**太字~~太字+打ち消し線~~**~~打ち消し線~~
+**太字 ~~太字&打ち消し線~~** ~~打ち消し線~~
 ```
 
-> **太字~~太字+打ち消し線~~**~~打ち消し線~~
+> **太字 ~~太字&打ち消し線~~** ~~打ち消し線~~
 
 > (補足) 打ち消し線は最初のMarkdown実装である[Gruber版]\(2004年)にすでに存在した機能だが、[CommonMark]では(おそらく`~~~`を[コードブロック]に用いた副作用を考慮して)仕様から外した。[GFM]ではこれを復活させており、現在では主要Markdown実装の大部分で利用できる。
 
 ------------------------------------------------------------------------
 
-[6.4 斜体と太字](emphasis-and-strong-emphasis.md)
+[6.4 斜体と太字](bold-and-italic.md)
 ← [目次](index.md) →
 [6.6 リンク](links.md)
 
-[コードブロック]: fenced-code-blocks.md
+[コードブロック]: code-blocks.md
 [CommonMark]: introduction.md#commonmark
 [GFM]: https://github.com/higuma/github-markdown-guide/blob/main/introduction.md#11-github-flavored-markdownとは
 [Gruber版]: https://daringfireball.net/projects/markdown/syntax

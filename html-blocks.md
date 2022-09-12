@@ -1,6 +1,6 @@
 # [4.6 HTMLブロック](https://higuma.github.io/github-markdown-guide/gfm/#html-blocks)
 
-[4.5 コードブロック](fenced-code-blocks.md)
+[4.5 コードブロック](code-blocks.md)
 ← [目次](index.md) →
 [4.7 リンク参照定義](link-reference-definitions.md)
 
@@ -30,7 +30,7 @@ GitHubでもこれら全てを仕様書通りには処理しておらず、異�
 
 ------------------------------------------------------------------------
 
-[4.5 コードブロック](fenced-code-blocks.md)
+[4.5 コードブロック](code-blocks.md)
 ← [目次](index.md) →
 [4.7 リンク参照定義](link-reference-definitions.md)
 
@@ -42,11 +42,9 @@ GitHubでもこれら全てを仕様書通りには処理しておらず、異�
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
 [Setext]: https://en.wikipedia.org/wiki/Setext
 [Setext heading]: #43-setext-headings
-[インデント方式コードブロック]: #44-indented-code-blocks
 [インライン]: inlines.md
 [コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
 [シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
-[フェンスドコードブロック]: #45-fenced-code-blocks
 [リスト]: lists.md
 [リンク]: https://higuma.github.io/github-markdown-guide/gfm/#links
 [リンク参照定義]: https://higuma.github.io/github-markdown-guide/gfm/#link-reference-definition

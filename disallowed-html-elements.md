@@ -1,4 +1,4 @@
-# [6.11 GFMに使えないHTML要素](https://higuma.github.io/github-markdown-guide/gfm/#disallowed-raw-html-extension-)
+# [6.11 使用できないHTML要素](https://higuma.github.io/github-markdown-guide/gfm/#disallowed-raw-html-extension-)
 
 [6.10 生HTML](raw-html.md)
 ← [目次](index.md) →
@@ -22,7 +22,9 @@
 * [`<noframes>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/noframes)
 * [`<plaintext>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/plaintext)
 
-> `<xmp>`以下はすでに現在のHTMLでは非推奨扱いになっている。詳しくはアイテムのリンク先MDNドキュメントを参照)。
+> `<title>`は本来`<head>`内部で用いる要素なのでMarkdownに用いる意味はまずない。また`<style>`,`<script>`を許可するとHTML文書の他の部分に影響するためGFMでは禁止している。そして`<xmp>`以下の4つは大昔のHTML要素で現在は非推奨扱いになっている(リンク先のMDNドキュメント参照)。
+> 
+> 上記で許可してもよさそうな唯一の要素は`<textarea>`で、実際に他のMarkdown処理系では使えるものが多数ある(下記[文例](#文例)のBabelmark出力を参照)。GFMでは禁止しているが理由は不明。
 
 ## 文例
 
@@ -38,7 +40,7 @@ Babelmarkでの確認結果は次の通り。
 
 https://babelmark.github.io/?text=%3Ctextarea%3E%0AInput+here...%0A%3C%2Ftextarea%3E
 
-大部分のMarkdown処理実装([Pandoc]を含む)はそのまま出力するが、[GFM]はHTMLタグとして認識させないように最低限の文字参照変換を行い次のように出力する。
+多くのMarkdown処理実装([Pandoc]を含む)はそのまま出力するが、[GFM]はHTMLタグとして認識させないように最低限の文字参照変換(`<`→`&lt;`)を行い次のように出力する(他の禁止HTMLタグも同様)。
 
 ```markdown
 &lt;textarea> Input here... &lt;/textarea>

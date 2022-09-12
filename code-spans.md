@@ -1,8 +1,8 @@
 # [6.3 コードスパン](https://higuma.github.io/github-markdown-guide/gfm/#code-spans)
 
-[6.2 文字参照](entity-and-numeric-character-references.md)
+[6.2 文字参照](character-references.md)
 ← [目次](index.md) →
-[6.4 斜体と太字](emphasis-and-strong-emphasis.md)
+[6.4 斜体と太字](bold-and-italic.md)
 
 ------------------------------------------------------------------------
 
@@ -264,11 +264,11 @@ KLM&nbsp;` code`
 
 ------------------------------------------------------------------------
 
-[6.2 文字参照](entity-and-numeric-character-references.md)
+[6.2 文字参照](character-references.md)
 ← [目次](index.md) →
-[6.4 斜体と太字](emphasis-and-strong-emphasis.md)
+[6.4 斜体と太字](bold-and-italic.md)
 
 [インライン]: inlines.md
-[ノーブレークスペース]: entity-and-numeric-character-references.md#ノーブレークスペース
+[ノーブレークスペース]: character-references.md#ノーブレークスペース
 [バックスラッシュエスケープ]: backslash-escapes.md
-[文字参照]: entity-and-numeric-character-references.md
+[文字参照]: character-references.md

@@ -2,7 +2,7 @@
 
 [6.14 テキストコンテント](textual-content.md)
 ← [目次](index.md) →
-[補足: GitHubのMarkdown実装](github-markdown-implementation.md)
+[GitHub Markdown実装](github-markdown.md)
 
 ------------------------------------------------------------------------
 
@@ -18,4 +18,4 @@
 
 [6.14 テキストコンテント](textual-content.md)
 ← [目次](index.md) →
-[補足: GitHubのMarkdown実装](github-markdown-implementation.md)
+[GitHub Markdown実装](github-markdown.md)

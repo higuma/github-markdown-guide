@@ -21,7 +21,7 @@ GitHub Flabored Markdown仕様書 ( [最新 (公式)](https://github.github.com/
 * [5 コンテナブロック](container-blocks.md)
 * [6 インライン](inlines.md)
 * [付録: A parsing strategy](appendix-a-parsing-strategy.md)
-* [補足: GitHubのMarkdown実装](github-markdown-implementation.md)
+* [GitHub Markdown実装](github-markdown.md)
 
 ## [総目次](index.md#総目次)
 

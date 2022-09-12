@@ -1,6 +1,6 @@
 # [6.12 ハード改行](https://higuma.github.io/github-markdown-guide/gfm/#hard-line-breaks)
 
-[6.11 GFMに使えないHTML要素](disallowed-raw-html-extension.md)
+[6.11 使用できないHTML要素](disallowed-html-elements.md)
 ← [目次](index.md) →
 [6.13 ソフト改行](soft-line-breaks.md)
 
@@ -89,12 +89,12 @@ rest of code span`
 
 ------------------------------------------------------------------------
 
-[6.11 GFMに使えないHTML要素](disallowed-raw-html-extension.md)
+[6.11 使用できないHTML要素](disallowed-html-elements.md)
 ← [目次](index.md) →
 [6.13 ソフト改行](soft-line-breaks.md)
 
 [コードスパン]: code-spans.md
 [ソフト改行]: soft-line-breaks.md
-[打ち消し線]: strikethrough-extension.md
+[打ち消し線]: strikethrough.md
 [空行]: blank-lines.md
-[斜体と太字]: emphasis-and-strong-emphasis.md
+[斜体と太字]: bold-and-italic.md
