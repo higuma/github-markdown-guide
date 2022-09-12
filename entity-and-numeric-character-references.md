@@ -112,7 +112,7 @@ Markdownの文字参照はHTMLと同じ書式を用いる。次の3種類があ�
 > 
 > `&lt; &gt; &copy;`
 
-(参考) それ以外の次の構文では機能する(仕様書より: どれも特殊ケースで通常使うことはないため一覧のみ)。
+(参考) それ以外はほぼ全ての構文で機能する。次は仕様書に書かれた特殊ケースの振る舞い(どれも通常使うことはないため一覧のみ)。
 
 * URL → [Example 327](https://higuma.github.io/github-markdown-guide/gfm/#example-327)
 * [リンク]タイトル → [Example 328](https://higuma.github.io/github-markdown-guide/gfm/#example-328)
