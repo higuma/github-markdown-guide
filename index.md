@@ -5,7 +5,7 @@
 
 ------------------------------------------------------------------------
 
-章及び節番号は[GitHub Flaboored Markdown仕様書](https://higuma.github.io/github-markdown-guide/gfm/)に準じているが、部分的に説明順序を入れ替えている部分がある(番号が前後している箇所)。また本ドキュメント独自の解説もある(章/節番号なし)。
+章及び節番号は[GitHub Flaboored Markdown仕様書](https://higuma.github.io/github-markdown-guide/gfm/)に準じているが、説明順序を考慮して部分的に説明順序を入れ替えている部分がある(番号が前後している箇所)。また本ドキュメント独自の解説もある(章/節番号なし)。
 
 ## 目次
 
@@ -45,8 +45,8 @@
     * [4.1 横線](thematic-breaks.md)
     * [4.2 見出し](headings.md)
     * [4.3 Setext見出し](setext-headings.md)
-    * [4.4 インデント式コードブロック](indented-code-blocks.md)
     * [4.5 コードブロック](code-blocks.md)
+    * [4.4 インデント式コードブロック](indented-code-blocks.md)
     * [4.6 HTMLブロック](html-blocks.md)
     * [4.7 リンク参照定義](link-reference-definitions.md)
     * [4.8 パラグラフ](paragraphs.md)

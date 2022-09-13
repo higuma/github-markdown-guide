@@ -1,6 +1,6 @@
 # [4.6 HTMLブロック](https://higuma.github.io/github-markdown-guide/gfm/#html-blocks)
 
-[4.5 コードブロック](code-blocks.md)
+[4.4 インデント式コードブロック](indented-code-blocks.md)
 ← [目次](index.md) →
 [4.7 リンク参照定義](link-reference-definitions.md)
 
@@ -30,7 +30,7 @@ GitHubでもこれら全てを仕様書通りには処理しておらず、異�
 
 ------------------------------------------------------------------------
 
-[4.5 コードブロック](code-blocks.md)
+[4.4 インデント式コードブロック](indented-code-blocks.md)
 ← [目次](index.md) →
 [4.7 リンク参照定義](link-reference-definitions.md)
 

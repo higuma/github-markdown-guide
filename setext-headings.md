@@ -2,11 +2,11 @@
 
 [4.2 見出し](headings.md)
 ← [目次](index.md) →
-[4.4 インデント式コードブロック](indented-code-blocks.md)
+[4.5 コードブロック](code-blocks.md)
 
 ------------------------------------------------------------------------
 
-旧式の[見出し]表現。初学者は飛ばして先へ進むとよい。
+旧式の[見出し]書式。初学時は飛ばして先へ進んでよい。
 
 ## ベストプラクティス
 
@@ -42,13 +42,13 @@ h2
 * 前後に[空行]は不要(だが経験上入れないとよく誤認識する)
 * `<h3>`以上のレベルには対応していない
 
-> 初期のMarkdownで[Setext]から取り入れた仕様。古いMarkdown文書に時おり見られ、今でも後方互換性のため仕様は残されているがあまり用いられない。[GitHub docsのMarkdown解説](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)でも説明から外されている。
+> 初期のMarkdownで[Setext]から取り入れた仕様。古いMarkdown文書に時おり見られ、今でも後方互換性のため仕様は残されている現在は不要。[GitHub docsのMarkdown解説](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)でも説明から外されている。
 
 ------------------------------------------------------------------------
 
 [4.2 見出し](headings.md)
 ← [目次](index.md) →
-[4.4 インデント式コードブロック](indented-code-blocks.md)
+[4.5 コードブロック](code-blocks.md)
 
 [Setext]: https://en.wikipedia.org/wiki/Setext
 [インライン]: inlines.md

@@ -1,12 +1,12 @@
 # [4.4 インデント式コードブロック](https://higuma.github.io/github-markdown-guide/gfm/#indented-code-blocks)
 
-[4.3 Setext見出し](setext-headings.md)
-← [目次](index.md) →
 [4.5 コードブロック](code-blocks.md)
+← [目次](index.md) →
+[4.6 HTMLブロック](html-blocks.md)
 
 ------------------------------------------------------------------------
 
-旧式の[コードブロック]表現。初学者は飛ばして先へ進むとよい。
+旧式の[コードブロック]書式。初学時は飛ばして先へ進んでよい。
 
 ## ベストプラクティス
 
@@ -50,13 +50,13 @@
 
 説明は以上とする。これ以外にも文法解釈上の問題が多数あり、後に現方式の[コードブロック]が作られた。
 
-> 現在は後方互換対応専用と考えるべき。GitHub docsの[コードブロック解説](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)でも現方式しか説明していない。
+> 現在は後方互換対応専用と考えるべき。GitHub docsの[コードブロック解説](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)でも[現方式][コードブロック]しか説明していない。
 
 ------------------------------------------------------------------------
 
-[4.3 Setext見出し](setext-headings.md)
-← [目次](index.md) →
 [4.5 コードブロック](code-blocks.md)
+← [目次](index.md) →
+[4.6 HTMLブロック](html-blocks.md)
 
 [コードブロック]: code-blocks.md
 [リスト]: lists.md
