@@ -1,8 +1,7 @@
 # [付録: A parsing strategy](https://higuma.github.io/github-markdown-guide/gfm/#appendix-a-parsing-strategy)
 
-[6.14 テキストコンテント](textual-content.md)
-← [目次](index.md) →
 [GitHub Markdown実装](github-markdown.md)
+← [目次](index.md)
 
 ------------------------------------------------------------------------
 
@@ -16,6 +15,5 @@
 
 ------------------------------------------------------------------------
 
-[6.14 テキストコンテント](textual-content.md)
-← [目次](index.md) →
 [GitHub Markdown実装](github-markdown.md)
+← [目次](index.md)

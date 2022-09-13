@@ -6,12 +6,14 @@
 
 ------------------------------------------------------------------------
 
-見出し(`<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, `<h6>`)を表現する。
+見出し([`<h1>`,`<h2>`,`<h3>`,`<h4>`,`<h5>`,`<h6>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/Heading_Elements))を表現する。
 
-## Best practice
+## ベストプラクティス
 
-* 先頭にヘッダレベル(1..6)と同じ個数の`#`
-* その後にスペース1つ置いてからコンテンツ(タイトル)
+見出しは次の書式で記述する。
+
+* 先頭に見出しレベル(1..6)と同じ個数の`#`
+* その後にスペース1つ置いてからコンテンツ(タイトル文)
 * 前後に[空行]を入れる(誤認識対策のため推奨)
 
 ```markdown
@@ -25,7 +27,7 @@
 
 ##### 補足事項
 
-###### (あまり用いられない)
+###### さらに補足
 ```
 
 > # 文書タイトル
@@ -38,182 +40,153 @@
 > 
 > ##### 補足事項
 > 
-> ###### (あまり用いられない)
+> ###### さらに補足
 
-コンテンツ(タイトル本文)には任意の[インライン]構文を記述できる。ただし強調(`<strong>`)は元々設定されているため効果がない場合が多い(CSS設定により異なる)。
-
-```markdown
-### 斜体 | 強調 | 取り消し線 → _Italic_ | **(たぶん)効果なし** | ~~取消~~
-
-### リンク | オートリンク → [CommonMark](https://commonmark.org/) | https://github.com/
-
-### 画像 → ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-
-### 文字参照 | コードスパン → → _&nabla;&CenterDot;D = &rho;_ | `document.getElementById('main');`
-```
-
-> ### 斜体 | 強調 | 取り消し線 → _Italic_ | **(たぶん)効果なし** | ~~取消~~
-> 
-> ### リンク | オートリンク → [CommonMark](https://commonmark.org/) | https://github.com/
-> 
-> ### 画像 → ![Bear](https://github.githubassets.com/images/icons/emoji/octocat.png?v8)
-> 
-> ### 文字参照 | コードスパン → → _&nabla;&CenterDot;D = &rho;_ | `document.getElementById('main');`
-
-特殊ケースの記述方法は次の通り。
-
-* コンテンツの末尾が`/ #+$/`の場合は`\`でエスケープ
-* 逆に`#`で始まる通常テキストは先頭を`\`でエスケープ
+コンテンツ(タイトル本文)には任意の[インライン]構文を記述できる。
 
 ```markdown
-### h3 with ending \###
+## 文字参照(&copy;), _italic_, ~~取消~~ `code span`
 
-\### plain text
+### <sup>上付き</sup>, <sub>下付き</sub>, ルビ(<ruby>倫敦<rt>ロンドン</rt></ruby>)
+
+#### [リンク](https://www.example.com/), 自動リンク(https://github.com/)
 ```
 
-> ### h3 with ending \###
+> ## 文字参照(&copy;), _italic_, ~~取消~~ `code span`
 > 
-> \### plain text
+> ### <sup>上付き</sup>, <sub>下付き</sub>, ルビ(<ruby>倫敦<rt>ロンドン</rt></ruby>)
+> 
+> #### [リンク](https://www.example.com/), 自動リンク(https://github.com/)
 
-## Summary
+## まとめ
 
-> [ATX]から取り入れた仕様。
+GFM仕様書に基づいた文法は次の通り。
 
 * 行の先頭文字は`#`(→`<h1>`), `##`(→`<h2>`), ... , `######`(→`<h6>`)
     * 手前に3文字までインデント用スペースを挿入可能
-* 直後に1個以上のスペースの後にコンテンツ(見出し文)
-    * コンテンツ中に任意の[インライン]構文を用いることができる
-* コンテンツの後に1個以上のスペースを隔てて任意個の`#`、任意個のスペースがあってよい(除去される)
+* 直後に1個以上のスペースの後にコンテンツ(見出し本文)
+    * GFM仕様では間にスペースが必要(除去して出力)
+    * コンテンツ中に任意の[インライン]構文を挿入可能
+* 行末に「1個以上の空白,1個以上の`#`,0個以上の空白」の順があれば除去
+    * [正規表現]で表すと`/\s+#+\s*$/`
 * GFM仕様では前後の[空行]は基本的に不要
-    * ただし前後に別のマークアップがあると誤認識の元になりやすい(付けるべき)
-    * 無駄な[空行]は単に無視されるため無害
+    * ただし優先度がより高いブロック書式が前後にないことが条件
+    * 誤認識の元になりやすいので付けるべき(不要な[空行]は単に無視するため無害)
 
-</details>
+## 文例
 
-<details>
-<summary><strong>Examples</strong></summary>
-
-GFM仕様では前後の[空行]は不要。
+書式設定として太字も可能だが、見出し文は通常太字に書式設定されているため視覚では判別できない(ブラウザのデフォルトCSS設定に依存)。
 
 ```markdown
-# h1
-## h2
-### h3
+### regular **bold *bold italic*** *italic*
+```
+
+> ### regular **bold *bold italic*** *italic*
+
+先頭には3文字まで空白を入れてよい。4文字以上は[インデント式コードブロック]として扱われる。
+
+```markdown
 #### h4
-##### h5
-###### h6
+
+ #### h4
+
+   #### h4
+
+    #### indented code block
 ```
 
-> # h1
-> ## h2
-> ### h3
 > #### h4
-> ##### h5
-> ###### h6
-
-> ただし優先度がより高いマークアップが前後にないことが条件。
-
-HTMLの[見出し]要素は``<h6>``までのため、7つ以上はテキストとして扱われる。
-
-```markdown
-####### foo
-```
-
-> ####### foo
-
-`#`, `##`, `###`, ...とコンテンツの間にはスペースが必要(ないとテキストとして扱われる)。なお2つ以上スペースを挿入しても縮約されて同じ出力になる。
-
-```markdown
-### h3
-###     h3
-###text
-```
-
-> ### h3
-> ###     h3
-> ###text
-
-> 昔はスペースなしの文法(例: `##Title`)を使える実装もあったと推測される(→ [Stack Overflow文例](https://stackoverflow.com/questions/27981247/github-markdown-same-page-link))。今はスペースが必須なので注意。
-
-ATX headingの形式に一致する行を通常テキスト([パラグラフ])として扱う場合は`\`でエスケープする。
-
-```markdown
-\## escaped text
-
-#\# another escaped text
-```
-
-> \## escaped text
 > 
-> #\# another escaped text
+>  #### h4
+> 
+>    #### h4
+> 
+>     #### indented code block
 
-コンテンツには任意の[インライン]を挿入できる。
-
-```markdown
-# foo *bar* \*baz\*
-## Example Domain - <https://www.example.com/>
-```
-
-> # foo *bar* \*baz\*
-> ## Example Domain - <https://www.example.com/>
-
-先頭に3つまでスペースを挿入できる。4つ以上は[インデント式コードブロック]と認識される。
+行末に`/\s+#+\s*$/`というパターンがあると除去してから処理する。この仕様は昔の名残で、テキスト入出力しかなかった時代は見出しとして次のようなASCII装飾記法がよく用いられていた。
 
 ```markdown
-#### h4
- ### h3
-  ## h2
-   # h1
-    # Indented code block
+## Second level ##
+
+### Third level ###
 ```
 
-> #### h4
->  ### h3
->   ## h2
->    # h1
->     # Indented code block
+Markdown処理実装は末尾の`#`の部分を除去した後、先頭の見出しレベルに対応したHTML要素として出力する。
 
-行末に1個以上の空白文字、1個以上の`#`、任意個の空白文字の順([正規表現]では``/\s+#+\s*$/``)があってよい(処理時に除去)。またスペースを挟まずに`#`で終了している場合はテキストとしてそのまま出力する。
+> ## Second level ##
+> 
+> ### Third level ###
+
+次のような特殊ケースでは[バックスラッシュエスケープ]を用いる。
+
+* `#`で始まる通常テキストは先頭を`\`でエスケープして見出しとして認識させないようにする
+* 見出し本文の末尾が`/ #+$/`で終わる場合も`\`でエスケープして除去を防止
 
 ```markdown
-### h3 ###
-### h3   ###   
-### h3 ### ###
-### h3###
+\### plain text
+
+#### h4 with ending \####
 ```
 
-> ### h3 ###
-> ### h3   ###   
-> ### h3 ### ###
-> ### h3###
+> \### plain text
+> 
+> #### h4 with ending \####
 
-逆に末尾の`#`を文字として表示する場合は`\`でエスケープする。
+<!-- 
+内容未熟のため一時保留
+
+### 前後の空行の必要性
+
+GFM仕様書には「空行で区切る必要なし」(→ [Example 47](https://higuma.github.io/github-markdown-guide/gfm/#example-47))と書かれているが、空行の省略は勧められない(必ず入れるべき)。例えば次のように[リストアイテム]の直後にインデント付きで書くとアイテムの内部に見出しが作成される。
 
 ```markdown
-# h1 \#
-## h2 #\##
-### h3 \###
+* list item
+  ### h3 (inside list item)
+
+### h3 (top level)
 ```
 
-> # h1 \#
-> ## h2 #\##
-> ### h3 \###
+> * list item
+>   ### h3 (inside list item)
+> 
+> ### h3 (top level)
+-->
 
-その他のポイントは次の通り(例文略)。
+### 他のMarkdown実装との比較
 
-* 前後に[空行]は不要、ただし他の処理系も考慮すると付けた方が安全(見やすさの効果もある)
-* コンテンツは空でもよい
+GFM仕様のMarkdownでは先頭の`#`と見出し本文の間には空白1個以上が必要だが、他のMarkdown処理実装では不要なものも多い。次の例文を考える。
 
-> CommonMark/GFM仕様では前後の[空行]は不要だが、他のMarkdown方言で必要なものもある。また先頭にインデント(空白3文字まで)がある場合、その手前の構文が[リストアイテム]だとそのインデントと認識される。リストの内部に見出しを使うことは通常ないので紛らわしいことはしない方が確実。
+```markdown
+##heading
+```
 
-</details>
+Babelmarkによる比較結果は次の通り。スペースが必要な実装が主流だが、スペースなしを受け付ける実装も多い。
+
+https://babelmark.github.io/?text=%23%23heading
+
+> 実は昔のGitHub Markdown実装も「`#`と本文の間にスペース不要」の仕様だった模様。今ではもう調査困難だが、例えばStack Overflowに今でも次のようなページが残っていることから推測できる(冒頭のコード例参照)。
+> 
+> https://stackoverflow.com/questions/27981247/github-markdown-same-page-link
 
 ------------------------------------------------------------------------
 
 [4.1 横線](thematic-breaks.md)
 ← [目次](index.md) →
 [4.3 Setext見出し](setext-headings.md)
+
+[インデント式コードブロック]: indented-code-blocks.md
+[インライン]: inlines.md
+[バックスラッシュエスケープ]: backslash-escapes.md
+[リストアイテム]: list-items.md
+[正規表現]: https://deeloper.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
+[空行]: blank-lines.md
+
+
+
+
+
+
+
 
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings
@@ -223,18 +196,13 @@ ATX headingの形式に一致する行を通常テキスト([パラグラフ])�
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
 [Setext]: https://en.wikipedia.org/wiki/Setext
 [Setext heading]: #43-setext-headings
-[インデント式コードブロック]: indented-code-blocks.md
-[インライン]: inlines.md
 [コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
 [シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
-[リスト]: lists.md
 [リンク]: https://higuma.github.io/github-markdown-guide/gfm/#links
 [リンク参照定義]: https://higuma.github.io/github-markdown-guide/gfm/#link-reference-definition
 [リンクラベル]: https://higuma.github.io/github-markdown-guide/gfm/#link-label
 [リンク先]: https://higuma.github.io/github-markdown-guide/gfm/#link-destination
 [リンクタイトル]: https://higuma.github.io/github-markdown-guide/gfm/#link-title
 [パラグラフ]: #48-paragraphs
-[空行]: #49-blank-lines
 [空白文字]: https://higuma.github.io/github-markdown-guide/gfm/#whitespace-character
-[正規表現]: https://deeloper.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
 [見出し]: #42-atx-headings

@@ -16,8 +16,8 @@
 * [4 葉ブロック](leaf-blocks.md)
 * [5 コンテナブロック](container-blocks.md)
 * [6 インライン](inlines.md)
-* [付録: A parsing strategy](appendix-a-parsing-strategy.md)
 * [GitHub Markdown実装](github-markdown.md)
+* [付録: A parsing strategy](appendix-a-parsing-strategy.md)
 
 ## 総目次
 
@@ -72,11 +72,11 @@
     * [6.12 ハード改行](hard-line-breaks.md)
     * [6.13 ソフト改行](soft-line-breaks.md)
     * [6.14 テキストコンテント](textual-content.md)
+* [GitHub Markdown実装](github-markdown.md)
 * [付録: A parsing strategy](appendix-a-parsing-strategy.md)
     * [Overview](appendix-a-parsing-strategy.md#overview)
     * [Phase 1: block structure](appendix-a-parsing-strategy.md#phase-1-block-structure)
     * [Phase 2: inline structure](appendix-a-parsing-strategy.md#phase-2-inline-structure)
-* [GitHub Markdown実装](github-markdown.md)
 
 ------------------------------------------------------------------------
 

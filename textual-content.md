@@ -2,7 +2,7 @@
 
 [6.13 ソフト改行](soft-line-breaks.md)
 ← [目次](index.md) →
-[付録: A parsing strategy](appendix-a-parsing-strategy.md)
+[GitHub Markdown実装](github-markdown.md)
 
 ------------------------------------------------------------------------
 
@@ -38,4 +38,4 @@ Multiple     spaces
 
 [6.13 ソフト改行](soft-line-breaks.md)
 ← [目次](index.md) →
-[付録: A parsing strategy](appendix-a-parsing-strategy.md)
+[GitHub Markdown実装](github-markdown.md)

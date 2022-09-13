@@ -6,20 +6,19 @@
 
 ------------------------------------------------------------------------
 
-先頭にスペース4文字のインデントを用いてソースリスティングなどのコードブロックを表現する。
+旧式の[コードブロック]表現。初学者は飛ばして先へ進むとよい。
 
-### Best practice
+## ベストプラクティス
 
-旧式で、文法上の問題が多く何かと誤認識の元になりやすい。現方式の[コードブロック]に統一すること。
+非推奨。現方式の[コードブロック]に統一すること。
 
-### Details
+## まとめ
 
-<details>
-<summary><strong>Summary</strong></summary>
+先頭にスペース4文字のインデントを用いてソースリスティングなどの[コードブロック]を表現する。インデント式コードブロックは前後を[空行]で区切って認識させる。
 
-> Best practiceで「非推奨」としたため説明は最小限に留める。
+## 文例
 
-行頭に4つ以上の連続したスペースがある行はコードブロックとして扱われ、行頭のスペース4つを除去した後、テキスト文書として見た通りに出力する。これは特に次のようなコードリスティングに用いられる。
+行頭に4つ以上の連続したスペースがある行は[コードブロック]として扱われ、行頭のスペース4つを除去した後、テキスト文書として見た通りに出力する。これは主に次のようなコードリスティングに用いられていた。
 
 ```markdown
     #include <stdio.h>
@@ -33,27 +32,25 @@
 >         printf("Hello world!\n");
 >     }
 
-ただし前の行が[リストアイテム]の場合は[リストアイテム]の続きと認識される。[空行]を挿入しても[リスト]のインデントとして扱われる。
+ただし文法上の問題点が多い。次の文例では前の行が[リストアイテム]の場合はそのアイテムの続きと認識される。さらに[空行]を挿入しても効果はなく[リストアイテム]のインデントとして扱われる。
 
 ```markdown
-* List
-    item
+* Item 1
+    rest of item 1
+* Item 2
 
-* List
-
-    indent
+    not an indented code block
 ```
 
-> * List
->     item
+> * Item 1
+>     rest of item 1
+> * Item 2
 > 
-> * List
-> 
->     indent
+>     not an indented code block
 
-以下説明は省略する。これ以外にも文法解釈上の問題がとても多く、後に現方式の[コードブロック]が作られた。
+説明は以上とする。これ以外にも文法解釈上の問題が多数あり、後に現方式の[コードブロック]が作られた。
 
-</details>
+> 現在は後方互換対応専用と考えるべき。GitHub docsの[コードブロック解説](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)でも現方式しか説明していない。
 
 ------------------------------------------------------------------------
 
@@ -61,27 +58,7 @@
 ← [目次](index.md) →
 [4.5 コードブロック](code-blocks.md)
 
-[ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
-[ATX headings]: #42-atx-headings
-[コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
-[CommonMark]: https://commonmark.org/
-[info string]: https://higuma.github.io/github-markdown-guide/gfm/#info-string
-[Markdown]: https://ja.wikipedia.org/wiki/Markdown
-[Setext]: https://en.wikipedia.org/wiki/Setext
-[Setext heading]: #43-setext-headings
-[インライン]: inlines.md
-[コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
-[シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
 [コードブロック]: code-blocks.md
 [リスト]: lists.md
 [リストアイテム]: list-items.md
-[リンク]: https://higuma.github.io/github-markdown-guide/gfm/#links
-[リンク参照定義]: https://higuma.github.io/github-markdown-guide/gfm/#link-reference-definition
-[リンクラベル]: https://higuma.github.io/github-markdown-guide/gfm/#link-label
-[リンク先]: https://higuma.github.io/github-markdown-guide/gfm/#link-destination
-[リンクタイトル]: https://higuma.github.io/github-markdown-guide/gfm/#link-title
-[パラグラフ]: #48-paragraphs
-[空行]: #49-blank-lines
-[空白文字]: https://higuma.github.io/github-markdown-guide/gfm/#whitespace-character
-[正規表現]: https://deeloper.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
-[見出し]: #42-atx-headings
+[空行]: blank-lines.md

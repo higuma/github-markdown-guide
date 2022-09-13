@@ -35,7 +35,7 @@ Markdownではバックスラッシュ(`\`)は特別な意味を持つ。
 
 [ASCII区切り文字]の多くはMarkdownの書式設定に用いられるが、これらを書式ではなく文字として認識させる場合にバックスラッシュエスケープを用いる。
 
-次は[斜体と太字]、[打ち消し線]、[区切り]、[見出し]に対するエスケープ例。通常の解釈では書式設定と判定される[ASCII区切り文字]の先頭部分にバックスラッシュを付けてエスケープすることにより通常文字として認識させる。
+次は[斜体と太字]、[打ち消し線]、[横線]、[見出し]に対するエスケープ例。通常の解釈では書式設定と判定される[ASCII区切り文字]の先頭部分にバックスラッシュを付けてエスケープすることにより通常文字として認識させる。
 
 ```markdown
 _italic_, **bold**, ***bold italic*** ~~strikethrough~~
@@ -327,8 +327,8 @@ https://babelmark.github.io/?text=https%5C%3A%5C%2F%5C%2Fwww%5C.example%5C.com
 [ハード改行]: hard-line-breaks.md
 [リンク]: links.md
 [リンク参照定義]: link-reference-definitions.md
-[見出し]: headings.md
-[斜体と太字]: bold-and-italic.md
 [打ち消し線]: strikethrough.md
-[区切り]: thematic-breaks.md
+[斜体と太字]: bold-and-italic.md
 [生HTML]: raw-html.md
+[見出し]: headings.md
+[横線]: thematic-breaks.md

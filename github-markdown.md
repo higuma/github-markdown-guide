@@ -1,7 +1,8 @@
-# 補足 - GitHubのMarkdown実装
+# GitHub Markdown実装
 
+[6.14 テキストコンテント](textual-content.md)
+← [目次](index.md) →
 [付録: A parsing strategy](appendix-a-parsing-strategy.md)
-← [目次](index.md)
 
 ------------------------------------------------------------------------
 
@@ -9,14 +10,19 @@
 
 TODO
 
-## GFM仕様との違い
+## GitHub独自機能
 
 GitHubのMarkdown実装はGitHubサイト運用で継続的に手が加えられており、今ではGFM仕様にはない独自機能が多数存在する。
 
-
+* 数式
+* 脚注
+* 絵文字
 
 日々変化する性質のものなので、
 
+### 数式
+
+LaTeX形式の数式記述を受け付ける。
 
 ### 脚注
 
@@ -34,5 +40,6 @@ GitHubのMarkdown実装はGitHubサイト運用で継続的に手が加えられ
 
 ------------------------------------------------------------------------
 
+[6.14 テキストコンテント](textual-content.md)
+← [目次](index.md) →
 [付録: A parsing strategy](appendix-a-parsing-strategy.md)
-← [目次](index.md)
