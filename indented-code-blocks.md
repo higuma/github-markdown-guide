@@ -18,7 +18,7 @@
 
 ## 文例
 
-行頭に4つ以上の連続したスペースがある行は[コードブロック]として扱われ、行頭のスペース4つを除去した後、テキスト文書として見た通りに出力する。これは主に次のようなコードリスティングに用いられていた。
+行頭に4つ以上の連続したスペースがある行の連続は[コードブロック]として扱われ、行頭のスペース4つを除去した後、テキスト文書として見た通りに出力する。これは主に次のようなコードリスティングに用いられていた。
 
 ```markdown
     #include <stdio.h>
@@ -50,7 +50,7 @@
 
 説明は以上とする。これ以外にも文法解釈上の問題が多数あり、後に現方式の[コードブロック]が作られた。
 
-> 現在は後方互換対応専用と考えるべき。GitHub docsの[コードブロック解説](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)でも[現方式][コードブロック]しか説明していない。
+> 現在は後方互換対応専用と考えるべき。GitHub Docsの[コードブロック解説](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)でも[現方式][コードブロック]しか説明していない。
 
 ------------------------------------------------------------------------
 

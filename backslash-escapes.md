@@ -101,7 +101,7 @@ _italic_, **bold**, ***bold italic*** ~~strikethrough~~
 
 * [コードブロック]
 * [コードスパン]
-* [オートリンク]
+* [自動リンク]
 * [生HTML]
 
 > これらのコード例はこの先の[Examples](#examples)の中で示す。
@@ -245,7 +245,7 @@ _italic_, **bold**, ***bold italic*** ~~strikethrough~~
 > 
 > `\- not escaped`
 
-[オートリンク]、[オートリンク拡張]でも(バックスラッシュを含むURLが有効であれば)エスケープが適用されない。
+[自動リンク]、[自動リンク拡張]でも(バックスラッシュを含むURLが有効であれば)エスケープが適用されない。
 
 ```markdown
 <http://www.example.com#\-\+\=>
@@ -265,30 +265,30 @@ http://www.example.com?\-\+\=
 
 > <a href="http://www.example.com" title="\=\=example domain=/=/">Example domain</a>
 
-その他のケースではバックスラッシュエスケープが効く。以下は仕様書からの要約だが、どれも特殊ケースで通常使うものではないので一覧表示のみとする。
+その他のケースではバックスラッシュエスケープが効く。以下は仕様書からの要約だが、どれも特殊ケースで通常使うものではないため一覧表示のみとする。
 
 * URL → [Example 318](https://higuma.github.io/github-markdown-guide/gfm/#example-318)
 * [リンク]タイトルと[リンク参照定義] → [Example 319](https://higuma.github.io/github-markdown-guide/gfm/#example-319)
 * [コードブロック]のinfo文字列 → [Example 320](https://higuma.github.io/github-markdown-guide/gfm/#example-320)
 
 <details>
-<summary>上級編: GitHubのMarkdown実装におけるURLの扱い</summary>
+<summary>上級編: GitHub Markdown実装でのURLの扱い</summary>
 
-拡張機能の追加によりURLに関してはGFMやGitHubのMarkdown実装はCommonMark準拠ではなくなっている。例えばURLを純粋にテキストとしてのみ出力しようとして次のように書いたとする。
+拡張機能の追加によりURLに関してはGFMやGitHubのMarkdown実装はCommonMark準拠ではなくなっている。例えばURLを純粋にリンクなしのテキストとして出力しようとして次のように書いたとする。
 
 ```markdown
 https\:\/\/www\.example\.com
 ```
 
-これで通常のMarkdown処理実装はテキストとして出力する。しかしGFM仕様ではこれでもバックスラッシュを無視して[オートリンク拡張]として出力する。
+これで通常のMarkdown処理実装はテキストとして出力する。しかしGFM仕様ではこれでもバックスラッシュを無視して[自動リンク拡張]として出力する。
 
 > https\:\/\/www\.example\.com
 
-Babelmarkでの比較結果は次の通り。大部分の処理実装は通常テキストとして出力するが、GFMなど一部の実装は[オートリンク拡張]として扱う。
+Babelmarkでの比較結果は次の通り。大部分の処理実装は通常テキストとして出力するが、GFMなど一部の実装は[自動リンク拡張]として扱う。
 
 https://babelmark.github.io/?text=https%5C%3A%5C%2F%5C%2Fwww%5C.example%5C.com
 
-> (2022-08-11現在) さらに[GitHub Gist]のMarkdown処理では編集時のPreview表示と最終出力が異なる場合がある(注意)。例えば[次のMarkdowns文](https://gist.github.com/higuma/9fb12dd67597367d15be8bbac1c00c11)を処理させると`https\://...`の部分をプレビューでは通常テキストと判定するが、本処理は[オートリンク拡張]と判定する。
+> (2022-08-11現在) さらに[GitHub Gist]のMarkdown処理では編集時のPreview表示と最終出力が異なる場合がある(注意)。例えば[次のMarkdowns文](https://gist.github.com/higuma/9fb12dd67597367d15be8bbac1c00c11)を処理させると`https\://...`の部分をプレビューでは通常テキストと判定するが、本処理は[自動リンク拡張]と判定する。
 > 
 > ```markdown
 > \[これはリンクではない、しかしリンク先に注意](https\://www\.example\.com)
@@ -320,8 +320,6 @@ https://babelmark.github.io/?text=https%5C%3A%5C%2F%5C%2Fwww%5C.example%5C.com
 
 [ASCII区切り文字]: #ASCII区切り文字
 [GitHub Gist]: https://gist.github.com/
-[オートリンク]: autolinks.md
-[オートリンク拡張]: autolinks-extension.md
 [コードスパン]: code-spans.md
 [コードブロック]: code-blocks.md
 [ハード改行]: hard-line-breaks.md
@@ -329,6 +327,8 @@ https://babelmark.github.io/?text=https%5C%3A%5C%2F%5C%2Fwww%5C.example%5C.com
 [リンク参照定義]: link-reference-definitions.md
 [打ち消し線]: strikethrough.md
 [斜体と太字]: bold-and-italic.md
+[自動リンク]: autolinks.md
+[自動リンク拡張]: autolinks-extension.md
 [生HTML]: raw-html.md
 [見出し]: headings.md
 [横線]: thematic-breaks.md

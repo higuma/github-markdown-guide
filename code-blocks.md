@@ -106,7 +106,7 @@ puts ENV['OS']
 ~~~ 
 ``````
 
-> 昔は手前にスペースを1つ入れる書き方が多かったが(例: ` ``` php `)、現在はスペースなしが主流になっている(例: ` ```php` `)。
+> 昔は手前にスペースを1つ入れる書き方が多かったが(例: ` ``` php `)、現在はスペースなしが主流(` ```php `)。
 
 現行の主要言語の大多数に対応しており、構文解析を行い[シンタックスハイライト]表示する。上記文例の出力は次の通り。
 
@@ -160,7 +160,7 @@ Fenced by ~~~
 > ~~~
 > ``````
 
-> `~~~`は[CommonMark]で採用された仕様で、これを用いて内部に`` ``` ``から始まる行がある場合に対応できる。ただし文字数がより多いコードフェンスの方が汎用性で勝るため`~~~`は[ベストプラクティス](#ベストプラクティス)から除外した。[GitHub docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)でも`~~~`は説明に含まれていない。
+> `~~~`は[CommonMark]で採用された仕様で、これを用いて内部に`` ``` ``から始まる行がある場合に対応できる。ただし文字数がより多いコードフェンスの方が汎用性で勝るため`~~~`は[ベストプラクティス](#ベストプラクティス)から除外した(不要)。[GitHub docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)でも`~~~`は説明に含まれていない。
 
 ------------------------------------------------------------------------
 

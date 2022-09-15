@@ -30,7 +30,7 @@ h2
 > h2
 > --
 
-旧仕様のため要約のみ。
+旧仕様のため要約のみ示す。
 
 * コンテンツ内には任意の[インライン]構文を記述可能
 * コンテンツは複数行にまたがっていてもよい(ただし[空行]でないことが条件)
@@ -42,7 +42,7 @@ h2
 * 前後に[空行]は不要(だが経験上入れないとよく誤認識する)
 * `<h3>`以上のレベルには対応していない
 
-> 初期のMarkdownで[Setext]から取り入れた仕様。古いMarkdown文書に時おり見られ、今でも後方互換性のため仕様は残されている現在は不要。[GitHub docsのMarkdown解説](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)でも説明から外されている。
+> 初期のMarkdownで[Setext]から取り入れた仕様。古いMarkdown文書に時おり見られ、今でも後方互換性のため仕様は残されているが現在は不要。GitHub Docsの[Markdown解説](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)でも説明から外されている。
 
 ------------------------------------------------------------------------
 
