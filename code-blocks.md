@@ -205,5 +205,5 @@ Fenced by ~~~
 [Rouge]: https://github.com/rouge-ruby/rouge
 [YAML]: https://yaml.org/
 [Zenn]: https://zenn.dev/
-[シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
+[シンタックスハイライト]: https://ja.wikipedia.org/wiki/シンタックスハイライト
 [はてなブログ]: https://hatenablog.com/

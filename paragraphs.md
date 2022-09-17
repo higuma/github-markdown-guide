@@ -6,7 +6,38 @@
 
 ------------------------------------------------------------------------
 
-[パラグラフ]は上下を[空行](blank-lines.md)(または文書の開始/終了)で区切った空でないテキスト行で表現する。
+パラグラフはHTML要素の[`<p>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/p)に対応し、[空行]ではない1行以上の連続テキスト行で表現する。
+
+## ベストプラクティス
+
+* 連続するテキスト行で記述する
+* 前後に[空行]を入れる(誤検出防止に効果的)
+* 先頭にインデント空白を入れない(同上)
+* 行末スペースも注意(2個以上あると[ハード改行]と認識される)
+* 行頭パターンが他のブロック構文と重なる場合は[バックスラッシュエスケープ]が必要
+
+```markdown
+パラグラフ1
+1の続き
+
+パラグラフ2
+\* 2の続き
+1の続き
+
+
+
+
+
+
+文字が[ASCII区切り文字]の場合は
+    * `* `, `- `
+* 
+* 
+
+
+
+
+上下を[空行](blank-lines.md)(または文書の開始/終了)で区切った空でないテキスト行で表現する。
 
 * 前後を[空行]または文書の開始・終了で区切る
 * 単語間に複数の連続した空白文字がある場合はHTML側で縮約(スペース1個に変換)
@@ -55,6 +86,14 @@ ddd
 ← [目次](index.md) →
 [4.9 空行](blank-lines.md)
 
+
+[ASCII区切り文字]: backslash-escapes.md#ASCII区切り文字
+[ハード改行]: hard-line-breaks.md
+[バックスラッシュエスケープ]: backslash-escapes.md
+[空行]: blank-lines.md
+
+
+
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [ATX headings]: #42-atx-headings
 [コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
@@ -65,7 +104,6 @@ ddd
 [Setext heading]: #43-setext-headings
 [インライン]: inlines.md
 [コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
-[シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
 [リスト]: lists.md
 [リンク]: https://higuma.github.io/github-markdown-guide/gfm/#links
 [リンク参照定義]: https://higuma.github.io/github-markdown-guide/gfm/#link-reference-definition
@@ -73,7 +111,6 @@ ddd
 [リンク先]: https://higuma.github.io/github-markdown-guide/gfm/#link-destination
 [リンクタイトル]: https://higuma.github.io/github-markdown-guide/gfm/#link-title
 [パラグラフ]: #48-paragraphs
-[空行]: #49-blank-lines
 [空白文字]: https://higuma.github.io/github-markdown-guide/gfm/#whitespace-character
-[正規表現]: https://deeloper.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
+[正規表現]: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
 [見出し]: #42-atx-headings

@@ -385,4 +385,3 @@ a|b
 [絵文字]: github-markdown.md#絵文字
 [空行]: blank-lines.md
 [葉ブロック]: leaf-blocks.md
-

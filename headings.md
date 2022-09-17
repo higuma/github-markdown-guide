@@ -178,31 +178,5 @@ https://babelmark.github.io/?text=%23%23heading
 [インライン]: inlines.md
 [バックスラッシュエスケープ]: backslash-escapes.md
 [リストアイテム]: list-items.md
-[正規表現]: https://deeloper.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
+[正規表現]: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
 [空行]: blank-lines.md
-
-
-
-
-
-
-
-
-[ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
-[ATX headings]: #42-atx-headings
-[コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
-[CommonMark]: https://commonmark.org/
-[info string]: https://higuma.github.io/github-markdown-guide/gfm/#info-string
-[Markdown]: https://ja.wikipedia.org/wiki/Markdown
-[Setext]: https://en.wikipedia.org/wiki/Setext
-[Setext heading]: #43-setext-headings
-[コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
-[シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
-[リンク]: https://higuma.github.io/github-markdown-guide/gfm/#links
-[リンク参照定義]: https://higuma.github.io/github-markdown-guide/gfm/#link-reference-definition
-[リンクラベル]: https://higuma.github.io/github-markdown-guide/gfm/#link-label
-[リンク先]: https://higuma.github.io/github-markdown-guide/gfm/#link-destination
-[リンクタイトル]: https://higuma.github.io/github-markdown-guide/gfm/#link-title
-[パラグラフ]: #48-paragraphs
-[空白文字]: https://higuma.github.io/github-markdown-guide/gfm/#whitespace-character
-[見出し]: #42-atx-headings

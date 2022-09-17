@@ -71,7 +71,7 @@
 [インデント式コードブロック]: indented-code-blocks.md
 [インライン]: inlines.md
 [コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
-[シンタックスハイライト]: https://ja.wikipedia.org/シンタックスハイライト
+[シンタックスハイライト]: https://ja.wikipedia.org/wiki/シンタックスハイライト
 [リスト]: lists.md
 [リンク]: https://higuma.github.io/github-markdown-guide/gfm/#links
 [リンク参照定義]: https://higuma.github.io/github-markdown-guide/gfm/#link-reference-definition
@@ -81,5 +81,5 @@
 [パラグラフ]: #48-paragraphs
 [空行]: #49-blank-lines
 [空白文字]: https://higuma.github.io/github-markdown-guide/gfm/#whitespace-character
-[正規表現]: https://deeloper.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
+[正規表現]: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
 [見出し]: #42-atx-headings
