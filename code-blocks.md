@@ -92,15 +92,17 @@ CommonMark以降のコードブロックではコードフェンス文字とし�
 
 ### info文字列
 
-[info文字列](→ [仕様書](https://higuma.github.io/github-markdown-guide/gfm/#info-string))はコードブロック内部に用いられているコードの言語設定用で、言語名を(慣例として小文字化して)記述する。
+[info文字列](→ [仕様書](https://higuma.github.io/github-markdown-guide/gfm/#info-string))はコードブロック内部に用いられているコードの言語設定に用いられ、言語名を(慣例として小文字化して)記述する。
 
 ``````markdown
-```javascript
-console.log(navigator.userAgent);
+```python
+from datetime import date
+if date.today().weekday() == 5: print('今日は土曜日')
 ```
 
 ~~~ruby
-puts ENV['OS']
+require 'date'
+puts '今日は日曜日' if Date.today.sunday?
 ~~~ 
 ``````
 
@@ -108,41 +110,41 @@ puts ENV['OS']
 
 現行の主要言語の大多数に対応しており、構文解析を行い[シンタックスハイライト]表示する。上記文例の出力は次の通り。
 
-> ```javascript
-> console.log(navigator.userAgent);
+> ```python
+> from datetime import date
+> if date.today().weekday() == 5: print('今日は土曜日')
 > ```
 > 
 > ~~~ruby
-> puts ENV['OS']
+> require 'date'
+> puts '今日は日曜日' if Date.today.sunday?
 > ~~~ 
 
-<details>
-<summary>サポートする言語と記法</summary>
+#### 対応言語と記法
 
-GitHubでは[Linguist]を用いて言語と文法の解析を行っており、サポートする言語一覧は[languages.yml](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)に書かれている。[YAML]のフォーマットで記述されており、は
+GitHubでは[Linguist]を用いて言語と文法の解析を行っており、サポートする言語一覧は[languages.yml](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)に[YAML]のフォーマットで記述されている。例として[Go]言語の記述を示す(部分)。
 
-* 
-* 
+```yaml
+Go:
+  type: programming
+  color: "#00ADD8"
+  aliases:
+  - golang
+  ...以下略...
+```
 
-サイトにより使用ツールや記法は異なる。日本の主要サイトについて少しだけ示す。
+[info文字列]には次のどちらかを指定する。GitHubでは大文字/小文字は区別しない(`GO`,`GoLang`などでも認識する)。
+
+* 言語名(先頭のエントリ): `Go`
+* `aliases`エントリの値(複数ある場合はどれでも可): `golang`
+
+以上がGitHubの場合だが、サイトにより対応言語や記法は異なる。日本の主要サイトの場合をいくつか示す(ドキュメントと言語一覧のみ)。
 
 * [はてなブログ] - [ドキュメント](https://help.hatenablog.com/entry/markup/syntaxhighlight) (→ [一覧](https://help.hatenablog.com/entry/markup/syntaxhighlight#filetype))
-* [Qiita] - [ドキュメント](https://help.hatenablog.com/entry/markup/syntaxhighlight#filetype) (→ [一覧](https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers))
-* [Zenn] - [ドキュメント](https://zenn.dev/zenn/articles/markdown-guide#コードブロック) (→ [一覧](https://prismjs.com/#supported-languages))
+* [Qiita] - [ドキュメント](https://help.hatenablog.com/entry/markup/syntaxhighlight#filetype) (→ [一覧](https://github.com/rouge-ruby/rouge/wiki/List-of-supported-languages-and-lexers))、言語認識に[Rouge]を使用
+* [Zenn] - [ドキュメント](https://zenn.dev/zenn/articles/markdown-guide#コードブロック) (→ [一覧](https://prismjs.com/#supported-languages))、言語認識に[Prism]を使用
 
-文法認識ツールには[Qiita]は[Rouge], [Zenn]は[Prism]を使用([はてなブログ]は不明)。
-
-> 上記3サイトでは言語名には全て小文字を用いる([Zenn]で統一している。
-
-
-TODO
-
-
-この機能は書くWebサイトがHTML表示に用いる実装により記法は異なる。GitHubの場合は次の通り。
-
-> GitHubがサポートする言語一覧は[languages.yml](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml)を参照。言語
-
-</details>
+これらのドキュメントでは言語名を全て小文字で記述していることに注意(各サイトで大文字が使えるかどうかは未調査)。慣例としてすべて小文字にしておいた方が可搬性が高い。
 
 ### 内部に` ``` `や`~~~`を含む場合
 
@@ -195,6 +197,7 @@ Fenced by ~~~
 [4.4 インデント式コードブロック](indented-code-blocks.md)
 
 [CommonMark]: introduction.md#commonmark
+[Go]: https://go.dev/
 [info文字列]: #info文字列
 [Linguist]: https://github.com/github/linguist
 [Prism]: https://prismjs.com/
