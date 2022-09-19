@@ -67,7 +67,7 @@ https://gist.github.com/higuma/f1ef8bc5f9c60ec1c941d8406885dde6
 まとめると次の通り。
 
 * `<summary>`の内部にはMarkdown書式が効かない
-* `<summary>`終了直後にブロック構文を記述すると認識しない場合がある(空行を入れるとよい)
+* `<summary>`終了直後にブロック構文を記述すると認識しない場合がある([空行]を入れるとよい)
 * ネスト可能
 
 ### 高度な表
@@ -259,4 +259,5 @@ GitHub Markdown実装は[`<table>`](https://developer.mozilla.org/ja/docs/Web/HT
 [4.7 リンク参照定義](link-reference-definitions.md)
 
 [リンク]: links.md
+[空行]: blank-lines.md
 [表]: tables.md

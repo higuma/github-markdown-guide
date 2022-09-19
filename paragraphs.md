@@ -109,7 +109,7 @@ in English and other alphabet-based languages.
 
 ### 直前構文との認識
 
-直前が[横線]、[見出し]の場合は空行不要。
+直前が[横線]、[見出し]の場合は[空行]不要。
 
 ```markdown
 ------------------------------------------------------------------------
@@ -152,7 +152,7 @@ in English and other alphabet-based languages.
 > パラグラフ
 
 
-直前が[コンテナブロック]の場合も空行が必要。
+直前が[コンテナブロック]の場合も[空行]が必要。
 
 ```markdown
 > 引用
@@ -243,7 +243,7 @@ in English and other alphabet-based languages.
 > このパラグラフ行で終了(直後がブロック構文)
 > - リスト
 
-ただし[空行]を入れた方が作業時に認識しやすいという利点はある。さらに他のMarkdown実装には空行が必要なものが多く、可搬性を考慮した場合に有利になる(推奨)。
+ただし[空行]を入れた方が作業時に認識しやすいという利点はある。さらに他のMarkdown実装には[空行]が必要なものが多く、可搬性を考慮した場合に有利になる(推奨)。
 
 <details>
 <summary>他のMarkdown実装との仕様比較</summary>
@@ -293,9 +293,9 @@ https://babelmark.github.io/?text=Paragraph%0A%0A-+List
 
 ## 日本語の扱い
 
-Markdownはもともと英語など単語をスペースで区切る言語を想定した作りで、任意の単語区切りスペースで改行できるようにできている(HTMLも同様)。しかしこれは単語をスペースで区切らない言語(特に日本語)との相性が悪い。
+Markdownのパラグラフはもともと英語など単語をスペースで区切る言語を想定しており、任意の単語区切りスペースで改行できるようにできている(HTMLも同様)。しかしこれは単語をスペースで区切らない言語(特に日本語)との相性が悪い。
 
-例えば有名な日本文を40文字(全角20文字)で[ソフト改行]した次のパラグラフを考える。
+例えば日本語の文章を40文字(全角20文字)で[ソフト改行]した次のパラグラフを考える。
 
 ```markdown
 いづれの御時にか、女御、更衣あまたさぶら
@@ -327,8 +327,9 @@ Markdownはもともと英語など単語をスペースで区切る言語を想
 
 [ASCII区切り文字]: backslash-escapes.md#ASCII区切り文字
 [CommonMark]: introduction.md#commonmark
-[GFM]: introduction.md#github-markdownとは
+[GFM]: introduction.md#11-github-flavored-markdownとは
 [インデント式コードブロック]: indented-code-blocks.md
+[インライン]: inlines.md
 [コンテナブロック]: container-blocks.md
 [ソフト改行]: soft-line-breaks.md
 [ハード改行]: hard-line-breaks.md
@@ -336,24 +337,5 @@ Markdownはもともと英語など単語をスペースで区切る言語を想
 [リスト]: lists.md
 [空行]: blank-lines.md
 [表]: tables.md
+[見出し]: headings.md
 [横線]: thematic-breaks.md
-
-
-
-[ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
-[ATX headings]: #42-atx-headings
-[コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
-[info string]: https://higuma.github.io/github-markdown-guide/gfm/#info-string
-[Markdown]: https://ja.wikipedia.org/wiki/Markdown
-[Setext]: https://en.wikipedia.org/wiki/Setext
-[Setext heading]: #43-setext-headings
-[インライン]: inlines.md
-[コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
-[リンク]: https://higuma.github.io/github-markdown-guide/gfm/#links
-[リンク参照定義]: https://higuma.github.io/github-markdown-guide/gfm/#link-reference-definition
-[リンクラベル]: https://higuma.github.io/github-markdown-guide/gfm/#link-label
-[リンク先]: https://higuma.github.io/github-markdown-guide/gfm/#link-destination
-[リンクタイトル]: https://higuma.github.io/github-markdown-guide/gfm/#link-title
-[空白文字]: https://higuma.github.io/github-markdown-guide/gfm/#whitespace-character
-[正規表現]: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
-[見出し]: #42-atx-headings

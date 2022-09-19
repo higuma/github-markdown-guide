@@ -6,53 +6,64 @@
 
 ------------------------------------------------------------------------
 
-[空行]は上下のブロック構文を文法的に区切る。
+空行は上下のブロック構文を文法的に区切る。
 
-### Best practice
+## ベストプラクティス
 
-改行のみがお勧め。スペースやタブが入っていると行儀が悪いし、Markdownのインデントを使う文法([リスト]や[インデント式コードブロック]など)の誤認識の元になりやすい。なお通常は改行一つだが、[パラグラフ]間は改行1個、[見出し]の前は改行2個というように使い分けるのは作業用として有効な方法。
+* 空行には改行のみを用いる(スペースやタブを入れない)
+* 上下のブロック構文の間に区切りとして入れる
 
-### Details
+## まとめ
 
-<details>
-<summary><strong>Summary</strong></summary>
+一行の中に文字を全く含まない(改行のみ)か、またはスペース(U+0020)とタブ(U+0009)のみを含んで改行する行を空行という(→ [仕様書定義](https://higuma.github.io/github-markdown-guide/gfm/#blank-line))。空行はブロック構文の区切りとして用いられ、構文解析後は除去して処理される。
 
-* 上下のブロック間を区切るのに用いられる
-* 改行のみ、または一行の中に[空白文字] (スペースやタブなど)のみを含み改行で終わる
-* 複数の連続する[空行]はまとめられて一つのブロック区切りと認識する
-* 文書開始直後、文書終了直前の[空行]は除去
+> [ノーブレークスペース]がある場合は空行ではない。[ノーブレークスペース]は英数字と同じように扱われる。
 
-</details>
+## 文例
 
-<details>
-<summary><strong>Examples</strong></summary>
+### 空行が必要な場合
 
-次は文書開始前、[パラグラフ]間、文書終了前に複数の空白文字(スペースやタブ)が入った[空行]を含む例。見た目では分からないが、GitHubのコードブロック表示の右上Copyアイコンをクリックするとクリップボードにコピーしてテキストエディタなどで確認できる。
+空行はMarkdown構文の色々な状況でブロック区切りとして用いられるが、空行が必要かどうかは構文の種類により異なる。詳しくは次を参照。
 
-> ```markdown
+* [横線] - [空行の必要性](thematic-breaks.md#空行の必要性)
+* [パラグラフ] - [直前構文との認識](paragraphs.md#直前構文との認識)、[直後構文との認識](paragraphs.md#直後構文との認識)
+* [表] - [表の認識(前後構文との関係)](tables.md#表の認識前後構文との関係)
+* [ハード改行] - [次行の構文認識](hard-line-breaks.md#次行の構文認識)
+* [ソフト改行] - [次行の構文認識](soft-line-breaks.md#次行の構文認識)
+
+ただし詳細規則はやや複雑なので、分からない場合は空行を入れておくのがよい。空行は構文解析後は除去してから処理されるため、不要な空行は全く無害で文書出力に悪影響を与えることはない。
+
+### 無駄スペースの副作用
+
+空行にスペースやタブが入っていても機能はするが、単に無駄なだけではなく思わぬ誤認識の元になる場合もある。例えば次のような2つのパラグラフがあり、中間の空行は2つのスペースを含んでいるとする。
+
+```markdown
+First sentence.
+Second sentence - next blank line contains double spaces.
+  
+Third sentence.
+```
+
+> First sentence.
+> Second sentence - next blank line contains double spaces.
 >   
-> 
-> aaa
->   
-> 	
-> 
-> # aaa
-> 
->   
-> ```
+> Third sentence.
 
-結果は次の通り。文書の開始・終了の手前の[空行]は除去し、[パラグラフ]と[見出し]の間にある複数の[空行]はまとめられて一つのブロック区切りになる。
+上下を一つのパラグラフにまとめようとして` ... next blank line contains double spaces.`の末尾の改行を削除した場合、外見では[ソフト改行]のように見える。
 
->   
-> 
-> aaa
->   
-> 
-> # aaa
-> 
->   
+```markdown
+First sentence.
+Second sentence - next blank line contains double spaces.  
+Third sentence.
+```
 
-</details>
+しかし実際には末尾にスペース2個が追加されているため[ハード改行]と判定され、次のように意図しない改行が入る。
+
+> First sentence.
+> Second sentence - next blank line contains double spaces.  
+> Third sentence.
+
+このようなミスは日頃から空行には改行だけを用い、無駄なスペースを入れないように心掛けていれば未然に防ぐことができる。
 
 ------------------------------------------------------------------------
 
@@ -60,26 +71,10 @@
 ← [目次](index.md) →
 [4.10 表](tables.md)
 
-[ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
-[ATX headings]: #42-atx-headings
-[コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
-[CommonMark]: https://commonmark.org/
-[info string]: https://higuma.github.io/github-markdown-guide/gfm/#info-string
-[Markdown]: https://ja.wikipedia.org/wiki/Markdown
-[Setext]: https://en.wikipedia.org/wiki/Setext
-[Setext heading]: #43-setext-headings
-[インデント式コードブロック]: indented-code-blocks.md
-[インライン]: inlines.md
-[コードフェンス]: https://higuma.github.io/github-markdown-guide/gfm/#code-fence
-[シンタックスハイライト]: https://ja.wikipedia.org/wiki/シンタックスハイライト
-[リスト]: lists.md
-[リンク]: https://higuma.github.io/github-markdown-guide/gfm/#links
-[リンク参照定義]: https://higuma.github.io/github-markdown-guide/gfm/#link-reference-definition
-[リンクラベル]: https://higuma.github.io/github-markdown-guide/gfm/#link-label
-[リンク先]: https://higuma.github.io/github-markdown-guide/gfm/#link-destination
-[リンクタイトル]: https://higuma.github.io/github-markdown-guide/gfm/#link-title
-[パラグラフ]: #48-paragraphs
-[空行]: #49-blank-lines
-[空白文字]: https://higuma.github.io/github-markdown-guide/gfm/#whitespace-character
-[正規表現]: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
-[見出し]: #42-atx-headings
+[GFM]: introduction.md#11-github-flavored-markdownとは
+[ソフト改行]: soft-line-breaks.md
+[ノーブレークスペース]: character-references.md#ノーブレークスペース
+[ハード改行]: hard-line-breaks.md
+[パラグラフ]: paragraphs.md
+[表]: tables.md
+[横線]: thematic-breaks.md
