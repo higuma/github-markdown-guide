@@ -12,7 +12,7 @@
 
 ## ベストプラクティス
 
-Markdown処理実装(及びそれを用いたWebサイトやWebアプリ等)により使える要素の種類や属性は異なる。GitHubに関しては下記[文例](#文例)に実用的な用法をまとめたので参考にするとよい。
+Markdown処理実装(及びそれを用いたWebサイトやWebアプリ等)により使える要素の種類や属性は異なる。GitHubのMarkdown環境で使える実用的な文例を下記[文例](#文例)にまとめたので参考にするとよい。
 
 ## まとめ
 
@@ -66,7 +66,7 @@ Markdown処理実装はHTMLタグを検出すると基本的にそのまま出�
 
 ### 書式設定
 
-GitHubでは次のインライン書式設定要素を使える。文例と実際の出力付きの一覧表で示す。
+GitHubではMarkdown文書中の次のインライン要素が有効に機能する。文例と実際の出力付きの一覧表で示す。
 
 | 要素 | `文例`<br>出力 |
 | - | - |
@@ -75,7 +75,8 @@ GitHubでは次のインライン書式設定要素を使える。文例と実�
 | 変数<br>[`<var>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/var) | `<var>y</var> = 2 <var>x</var> + 3`<br><var>y</var> = 2 <var>x</var> + 3 |
 | ルビ<br>[`<ruby>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/ruby), [`<rt>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/rt) | `<ruby>河豚<rt>ふぐ</rt></ruby>`<br><ruby>河豚<rt>ふぐ</rt></ruby> |
 | キー入力<br>[`<kbd>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/kbd) | `Type <kbd>exit</kbd>.`<br>Type <kbd>exit</kbd>. |
-| サンプル出力<br>[`<samp>`](https://veloper.mozilla.org/ja/docs/Web/HTML/Element/samp) | `<samp>command not found</samp>`<br><samp>command not found</samp>
+| サンプル出力<br>[`<samp>`](https://veloper.mozilla.org/ja/docs/Web/HTML/Element/samp) | `<samp>command not found</samp>`<br><samp>command not found</samp> |
+| 行内引用<br>[`<q>`](https://veloper.mozilla.org/ja/docs/Web/HTML/Element/q) | `<q>Isn't this where...we came in?</q>`<br><q>Isn't this where...we came in?</q> |
 
 ### 無効な属性・要素
 
@@ -87,12 +88,12 @@ GitHubではMarkdown内のHTML要素に対して[`style`](https://developer.mozi
 
 > <span style="color:red">テスト</span>
 
-次のHTML要素はGitHub Markdownでは効果がない。こちらも一覧表にして実際に出力させたものを示す(出力が通常テキストと変わらないのを確認すこと)。
+次のHTML要素はGitHub Markdownでは効果がない。こちらも一覧表にして実際に出力させたものを示す(出力が通常テキストと変わらないのを確認すること)。
 
 | 要素 | `文例`<br>出力 |
 | - | - |
-| 下線<br>[`<u>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/u) | `<u>下線</u>`<br><u>下線</u>
-| 文字列マーク<br>[`<mark>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/mark) | `<mark>マーク</mark>`<br><mark>マーク</mark>
+| 下線<br>[`<u>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/u) | `サンプル <u>サンプル</u>`<br>サンプル <u>サンプル</u>
+| 文字列マーク<br>[`<mark>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/mark) | `サンプル <mark>サンプル</mark>`<br>サンプル <mark>サンプル</mark>
 | 小文字<br>[`<small>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/small) | `サンプル <small>サンプル</small>`<br>サンプル <small>サンプル</small>
 
 > 確認済みの属性・要素のみ(その他は調査中)。なおこれらは他の大多数のMarkdown実装では効果を持つ。
