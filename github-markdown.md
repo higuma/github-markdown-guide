@@ -94,7 +94,7 @@ GitHubのMarkdown環境では`:...:`の書式で絵文字を[インライン]入
 
 > :+1: :-1: :smile: :cry:
 
-絵文字一覧は次を参照。
+GitHubで使える絵文字の一覧は次を参照。
 
 https://github.com/higuma/github-emoji-list/blob/main/README.md
 
@@ -104,19 +104,39 @@ https://github.com/higuma/github-emoji-list/blob/main/README.md
 
 ### Unicode文字の絵文字変換
 
-さらに絵文字に対応するUnicode文字は自動的に絵文字に変換される。
+さらに絵文字に対応するUnicode文字はテキスト文中で自動的に絵文字に変換される。次の文例では直接入力/コード入力のどちらも同一出力になる。
 
 ```markdown
-&#x231A; &#x231B; &#x2600; &#x2601; &#x2602;
+☀ ☁ ☂ ☃
+
+&#x2600; &#x2601; &#x2602; &#x2603;
 ```
 
-> &#x231A; &#x231B; &#x2600; &#x2601; &#x2602;
+> ☀ ☁ ☂ ☃
+> 
+> &#x2600; &#x2601; &#x2602; &#x2603;
+
+ただし絵文字の自動変換は[コードブロック]と[コードスパン]の中には適用されない。
+
+``````markdown
+```markdown
+☀ ☁ ☂ ☃
+```
+
+`☀ ☁ ☂ ☃`
+``````
+
+> ```markdown
+> ☀ ☁ ☂ ☃
+> ```
+> 
+> `☀ ☁ ☂ ☃`
 
 該当する文字コードは次を参照。ただしU+00A9(&copy;)とU+00AE(&reg;)はGitHubでは対象外で、通常文字として出力する。
 
 https://en.wikipedia.org/wiki/Emoji#In_Unicode
 
-ただしこの仕様は時に問題を生じる場合がある。(2022年現在)GitHubではUnicodeで絵文字と対応している文字は(&copy;と&reg;を除き)通常文字として出力できない(`\↔`などと書いても効果はなく \↔ と表示する)。特に次のような文字がGitHubでは絵文字としてしか表示できないことに注意すること。
+ただしこの仕様は時に問題を生じる場合がある。(2022年現在)GitHubではUnicodeで絵文字と対応している文字は(&copy;と&reg;を除き)通常文字として出力できない(`\↔`などと書いても効果はなく \↔ と表示する)。特に次のような文字が本文中では強制的に絵文字変換されることに注意。
 
 * 矢印:
 [`↔`(↔)](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2194),
@@ -137,6 +157,12 @@ https://en.wikipedia.org/wiki/Emoji#In_Unicode
 [`⏏`(⏏)](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#21CF),
 [`▶`(▶)](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#25B6),
 [`◀`(◀)](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#25C0)
+* 天気シンボル
+[`☀`(☀)](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2600)
+[`☁`(☁)](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2601)
+[`☂`(☂)](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2602)
+[`☃`(☃)](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2603)
+[`⛈`(⛈)](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#26C8)
 * 性別シンボル:
 [`♀`(♀)](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2640),
 [`♂`(♂)](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2642)
@@ -176,5 +202,7 @@ https://en.wikipedia.org/wiki/Emoji#In_Unicode
 
 [ASCII区切り文字]: backslash-escapes.md#ASCII区切り文字
 [インライン]: inlines.md
+[コードスパン]: code-spans.md
+[コードブロック]: code-blocks.md
 [折りたたみ]: html-blocks.md#折りたたみ
 [見出し]: thematic-breaks.md
