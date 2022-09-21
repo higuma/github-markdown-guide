@@ -10,7 +10,17 @@
 
 ## ベストプラクティス
 
-非推奨。現方式の[コードブロック]に統一すること。
+原則として非推奨。トップレベル構文に対しては現方式の[コードブロック]に統一すること。
+
+<!--
+
+TODO
+
+ただし[リストアイテム]の内部にコードブロックを入れ子で挿入する場合はこの方法しか使えない。次の「参考」以降の内容を参照。
+
+https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks#fenced-code-blocks
+
+-->
 
 ## まとめ
 
