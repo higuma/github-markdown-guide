@@ -77,7 +77,7 @@ _italic_, **bold**, ***bold italic*** ~~strikethrough~~
 
 ### ASCII区切り文字
 
-[ASCII区切り文字(ASCII puctuation characters)](https://higuma.github.io/github-markdown-guide/gfm/#ascii-punctuation-character)とは[ASCII印字可能文字](https://ja.wikipedia.org/wiki/ASCII印字可能文字)(U+0020..U+007F)からスペースと英数字を除外した文字を指す。
+[ASCII区切り文字(ASCII puctuation characters)](https://higuma.github.io/github-markdown-guide/gfm/#ascii-punctuation-character)とは[ASCII印字可能文字](https://ja.wikipedia.org/wiki/ASCII#ASCII印字可能文字)(U+0020..U+007E)からスペースと英数字を除外した文字を指す。
 
 * U+0021..U+002F: `!`, `"`, `#`, `$`, `%`, `&`, `'`, `(`, `)`, `*`, `+`, `,`, `-`, `.`, `/`
 * U+003A..U+0040: `:`, `;`, `<`, `=`, `>`, `?`, `@`

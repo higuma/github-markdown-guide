@@ -76,13 +76,6 @@ GitHub Markdownでは[見出し]に対して次のルールでIDを自動的に�
 
 > よく知られている仕様だが、これが書かれたGitHubの公式ドキュメントはどこを探しても見当たらない。なおGitHub以外の実装もこれと同じ仕様を採用しているものが数多い。
 
-## 色表現
-
-[コードスパン]の中でCSS形式の色表現(→[MDN](https://developer.mozilla.org/ja/docs/Web/CSS/color_value))を認識し、カラーサンプル付きで表示する。
-
-
-
-
 ## 数式
 
 LaTeX形式の数式記述を受け付ける。
@@ -103,15 +96,28 @@ GitHubのMarkdown環境では`:...:`の書式で絵文字を[インライン]入
 
 GitHubで使える絵文字の一覧は次を参照。
 
+https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
+
+Unicodeに対応しているものだけではなく独自GitHubのこれらは対応するPNG画像と組になっている。
+
 https://github.com/higuma/github-emoji-list/blob/main/README.md
 
-> 一覧はGitHub REST APIで取得できる。方法は次を参照(要GitHub token)。
-> 
-> https://docs.github.com/ja/rest/emojis
+<details>
+<summary>取得方法</summary>
+
+一覧はGitHub REST APIで取得できる。方法は次を参照(要GitHub token)。データはJSON形式。
+
+https://docs.github.com/ja/rest/emojis
+
+より単純に次のURLにアクセスしても取得可能(token不要)。
+
+https://api.github.com/emojis
+
+</details>
 
 ### Unicode文字の絵文字変換
 
-さらに絵文字に対応するUnicode文字はテキスト文中で自動的に絵文字に変換される。次の文例では直接入力/コード入力のどちらも同一出力になる。
+さらに絵文字に対応するUnicode文字はテキスト文中で自動的に絵文字に変換される。次の文例のように直接入力/コード入力のどちらでもよい(同一出力)。
 
 ```markdown
 ☀ ☁ ☂ ☃
@@ -193,7 +199,7 @@ https://en.wikipedia.org/wiki/Emoji#In_Unicode
 [`♣`♣](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2613),
 [`♥`♥](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2615),
 [`♦`♦](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2616)
-* 装飾シンボル:
+* その他:
 [`✂`✂](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2702),
 [`✈`✈](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2708),
 [`✌`✌](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#270C),
@@ -215,7 +221,7 @@ https://en.wikipedia.org/wiki/Emoji#In_Unicode
 
 ### CSSの色表現
 
-Issues/Pull requests/Discussionsでは[コードスパン]中にCSSの色表現を記述するとカラーサンプル付きで表示する。この機能はGitHub repoでは確認できないのでgistに記述した。次を参照。(本文ではなくその下の)コメント欄を見ると効果を確認できる。
+Issues/Pull requests/Discussionsでは[コードスパン]中にCSSの色表現(例: `rgb(80, 120, 240)`)を記述するとカラーサンプル付きで表示する。これはGitHub repoでは機能しないのでgistのコメントとして実例を作成した。次の(本文ではなくその下の)コメント欄を見ると効果を確認できる。
 
 https://gist.github.com/higuma/80cff0982f9f7e2a267b33cad20f984a
 

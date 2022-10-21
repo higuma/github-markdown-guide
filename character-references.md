@@ -40,13 +40,16 @@ Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 > 
 > Foo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bar
 
+またUnicodeの高度な機能、特に[絵文字]を扱う場合にコード入力が必要になることがある。そのような場合はコードポイント値指定の文字参照を用いて対応する。
+
 ## まとめ
 
 Markdownの文字参照はHTMLと同じ書式を用いる。次の3種類がある。
 
 * [実体参照](#実体参照): `&{実体名};`
-* [10進数文字参照](#10進数文字参照): `&#{コードポイントの10進表現};`
-* [16進数文字参照](#16進数文字参照): `&#x{コードポイントの16進表現};`, `&#X{コードポイントの16進表現};`
+* コードポイント値指定
+    * [10進数文字参照](#10進数文字参照): `&#{10進表現};`
+    * [16進数文字参照](#16進数文字参照): `&#x{16進表現};` (大文字小文字区別なし)
 
 ### [実体参照](https://higuma.github.io/github-markdown-guide/gfm/#entity-references)
 
@@ -73,7 +76,7 @@ Markdownの文字参照はHTMLと同じ書式を用いる。次の3種類があ�
 
 ### [10進数文字参照](https://higuma.github.io/github-markdown-guide/gfm/#decimal-numeric-character-references)
 
-10進数文字参照(decimal numeric character references)は`&#{Unicodeコードポイントの10進表現};`の形式で表現する。
+10進数文字参照(decimal numeric character references)は`&#{10進表現};`の形式で表現する。
 
 ```markdown
 &#48; &#65; &#97; &#12354;
@@ -84,7 +87,7 @@ Markdownの文字参照はHTMLと同じ書式を用いる。次の3種類があ�
 
 ### [16進数文字参照](https://higuma.github.io/github-markdown-guide/gfm/#hexadecimal-numeric-character-references)
 
-16進数文字参照(hexadecimal numeric character references)は`&#x{Unicodeコードポイントの16進表現};`または`&#X{Unicodeコードポイントの16進表現};`の形式で表現する。
+16進数文字参照(hexadecimal numeric character references)は`&#x{16進表現};`の形式で表現する(大文字小文字の区別なし)。
 
 ```markdown
 &#x30; &#X41; &#x61; &#X3042;
@@ -247,6 +250,28 @@ Foo          bar
 > 
 > Foo          bar
 
+### 絵文字の制御
+
+Unicode仕様の絵文字をサポートする環境(GitHubもその一つ)では絵文字を用いた様々な表示が可能になる。ただし時々次のような問題を生じることがある。
+
+例として`大 ↔ 小`という文章を通常テキストとして表示する場合を考える。そのまま書けばいいように思えるが実際にはそうではなく、GitHubでは`↔`が絵文字になり次のように表示される。
+
+```markdown
+大 ↔ 小
+```
+
+> 大 ↔ 小
+
+通常テキストを指定して表示させるにはVS15 (U+FE0F)を用いればよい。
+
+```markdown
+大 ↔&#xFE0E; 小
+```
+
+> 大 ↔&#xFE0E; 小
+
+この他にもUnicodeには絵文字の出力制御に用いる数々の特殊コードがある。詳しくは[絵文字]を参照。
+
 ------------------------------------------------------------------------
 
 [6.1 バックスラッシュエスケープ](backslash-escapes.md)
@@ -259,3 +284,4 @@ Foo          bar
 [バックスラッシュエスケープ]: backslash-escapes.md
 [リンク]: links.md
 [リンク参照定義]: link-reference-definitions.md
+[絵文字]: textual-content.md#絵文字
