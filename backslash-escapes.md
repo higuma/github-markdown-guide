@@ -1,4 +1,4 @@
-# [6.1 バックスラッシュエスケープ](https://higuma.github.io/github-markdown-guide/gfm/#backslash-escapes)
+# バックスラッシュエスケープ
 
 [6 インライン](inlines.md)
 ← [目次](index.md) →
