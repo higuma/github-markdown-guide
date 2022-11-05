@@ -1,8 +1,8 @@
 # GitHub Markdown実装
 
-[6.14 テキストコンテント](textual-content.md)
-← [目次](index.md) →
-[付録: A parsing strategy](appendix-a-parsing-strategy.md)
+[HTMLブロック]
+← [目次] →
+[付録]
 
 ------------------------------------------------------------------------
 
@@ -246,9 +246,12 @@ https://gist.github.com/higuma/80cff0982f9f7e2a267b33cad20f984a
 
 ------------------------------------------------------------------------
 
-[6.14 テキストコンテント](textual-content.md)
-← [目次](index.md) →
-[付録: A parsing strategy](appendix-a-parsing-strategy.md)
+[HTMLブロック] ← [目次] →
+[付録 - Markdownの歴史]
+
+[HTMLブロック]: html-blocks.md
+[目次]: index.md
+[付録]: appendices.md
 
 [ASCII区切り文字]: backslash-escapes.md#ASCII区切り文字
 [インライン]: inlines.md

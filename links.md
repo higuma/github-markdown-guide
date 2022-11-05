@@ -1,8 +1,8 @@
-# [6.6 リンク](https://higuma.github.io/github-markdown-guide/gfm/#links)
+# リンク
 
-[6.5 打ち消し線](strikethrough.md)
+[太字、斜体、打ち消し文字](bold-italic-strikethrough.md)
 ← [目次](index.md) →
-[6.7 画像](images.md)
+[画像](images.md)
 
 ------------------------------------------------------------------------
 
@@ -10,6 +10,6 @@ TODO
 
 ------------------------------------------------------------------------
 
-[6.5 打ち消し線](strikethrough.md)
+[太字、斜体、打ち消し文字](bold-italic-strikethrough.md)
 ← [目次](index.md) →
-[6.7 画像](images.md)
+[画像](images.md)

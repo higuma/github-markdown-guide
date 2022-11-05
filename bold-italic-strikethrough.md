@@ -1,8 +1,8 @@
-# [6.4 斜体と太字](https://higuma.github.io/github-markdown-guide/gfm/#emphasis-and-strong-emphasis)
+# 太字、斜体、打ち消し文字
 
-[6.3 コードスパン](code-spans.md)
+[通常テキスト](texts.md)
 ← [目次](index.md) →
-[6.5 打ち消し線](strikethrough.md)
+[リンク](links.md)
 
 ------------------------------------------------------------------------
 
@@ -156,6 +156,6 @@ https://web-365.biz/made_in_wordpress/webfont-how-to-italic
 
 ------------------------------------------------------------------------
 
-[6.3 コードスパン](code-spans.md)
+[通常テキスト](texts.md)
 ← [目次](index.md) →
-[6.5 打ち消し線](strikethrough.md)
+[リンク](links.md)

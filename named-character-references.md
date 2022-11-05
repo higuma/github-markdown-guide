@@ -1,11 +1,11 @@
-# 付録: 名前付き文字参照一覧
+# 付録 - Markdownで使える名前付き文字参照一覧
 
-[付録: GitHub Flavored Markdown仕様](gfm-spec.md)
+[付録 - GitHub Flavored Markdown](github-flavored-markdown.md)
 ← [目次](index.md)
 
 ----------------------------------------
 
-Markdownで有効な文字参照のみ(末尾に`;`が付かないものは除外)
+<https://html.spec.whatwg.org/entities.json>より(末尾に`;`が付かないものはMarkdownでは使えないため除外)
 
 | 名前 | 名前 | 名前 |
 | :-: | :-: | :-: |
@@ -721,5 +721,5 @@ Markdownで有効な文字参照のみ(末尾に`;`が付かないものは除�
 
 ----------------------------------------
 
-[付録: GitHub Flavored Markdown仕様](gfm-spec.md)
+[付録 - GitHub Flavored Markdown](github-flavored-markdown.md)
 ← [目次](index.md)

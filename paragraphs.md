@@ -1,12 +1,27 @@
-# [4.8 パラグラフ](https://higuma.github.io/github-markdown-guide/gfm/#paragraphs)
+# パラグラフ
 
-[4.7 リンク参照定義](link-reference-definitions.md)
-← [目次](index.md) →
-[4.9 空行](blank-lines.md)
+[ブロック]
+← [目次] →
+[見出し]
 
 ------------------------------------------------------------------------
 
 パラグラフはHTML要素の[`<p>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/p)に対応し、[空行]ではない1行以上の連続テキスト行で表現する。
+
+## ソフト改行
+
+TODO: これは必要
+
+## ハード改行
+
+TODO: これは必要
+
+
+
+
+
+
+
 
 ## ベストプラクティス
 
@@ -321,9 +336,13 @@ Markdownのパラグラフはもともと英語など単語をスペースで区
 
 ------------------------------------------------------------------------
 
-[4.7 リンク参照定義](link-reference-definitions.md)
-← [目次](index.md) →
-[4.9 空行](blank-lines.md)
+[ブロック]
+← [目次] →
+[見出し]
+
+[ブロック]: blocks.md
+[見出し]: headings.md
+[目次]: index.md
 
 [ASCII区切り文字]: backslash-escapes.md#ASCII区切り文字
 [CommonMark]: introduction.md#commonmark
@@ -337,5 +356,4 @@ Markdownのパラグラフはもともと英語など単語をスペースで区
 [リスト]: lists.md
 [空行]: blank-lines.md
 [表]: tables.md
-[見出し]: headings.md
 [横線]: thematic-breaks.md

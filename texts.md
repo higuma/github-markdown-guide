@@ -1,8 +1,8 @@
-## [6.14 テキストコンテント](https://higuma.github.io/github-markdown-guide/gfm/#textual-content)
+## 通常テキスト
 
-[6.13 ソフト改行](soft-line-breaks.md)
+[インライン](inlines.md)
 ← [目次](index.md) →
-[GitHub Markdown実装](github-markdown.md)
+[太字、斜体、打ち消し線](bold-italic-strikethrough.md)
 
 ------------------------------------------------------------------------
 
@@ -84,6 +84,6 @@ https://en.wikipedia.org/wiki/Variation_Selectors_(Unicode_block)
 
 ------------------------------------------------------------------------
 
-[6.13 ソフト改行](soft-line-breaks.md)
+[インライン](inlines.md)
 ← [目次](index.md) →
-[GitHub Markdown実装](github-markdown.md)
+[太字、斜体、打ち消し線](bold-italic-strikethrough.md)

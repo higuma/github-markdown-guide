@@ -23,7 +23,7 @@ def output_separator(f)
 end
 
 def output_navigation(f)
-  f.puts '[TODO](#)'
+  f.puts '[付録 - GitHub Flavored Markdown](github-flavored-markdown.md)'
   f.puts '← [目次](index.md)'
 end
 
@@ -33,11 +33,11 @@ def output_markdown(f)
     .keys
     .filter {|name| RE_ENDS_WITH_SEMICOLON.match name }
     .sort_by {|name| name.upcase }
-  f.puts '# 付録 - 名前付き文字参照一覧'
+  f.puts '# 付録 - Markdownで使える名前付き文字参照一覧'
   f.puts
   output_navigation f
   output_separator f
-  f.puts 'Markdownで利用できる名前付き文字参照のみ(末尾に`;`が付かないものは除外)'
+  f.puts "<#{URL_ENTITIES_JSON}>より(末尾に`;`が付かないものはMarkdownでは使えないため除外)"
   f.puts
   f.puts '|' + ' 名前 |' * N_COL
   f.puts '|' + ' :-: |' * N_COL

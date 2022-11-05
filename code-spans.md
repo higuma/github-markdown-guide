@@ -1,8 +1,8 @@
-# [6.3 コードスパン](https://higuma.github.io/github-markdown-guide/gfm/#code-spans)
+# コードスパン
 
-[6.2 文字参照](character-references.md)
+[画像](images.md)
 ← [目次](index.md) →
-[6.4 斜体と太字](bold-and-italic.md)
+[HTMLインライン](html-inlines.md)
 
 ------------------------------------------------------------------------
 
@@ -264,9 +264,9 @@ KLM&nbsp;` code`
 
 ------------------------------------------------------------------------
 
-[6.2 文字参照](character-references.md)
+[画像](images.md)
 ← [目次](index.md) →
-[6.4 斜体と太字](bold-and-italic.md)
+[HTMLインライン](html-inlines.md)
 
 [インライン]: inlines.md
 [ノーブレークスペース]: character-references.md#ノーブレークスペース

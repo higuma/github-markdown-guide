@@ -1,8 +1,8 @@
-# [6.10 生HTML](https://higuma.github.io/github-markdown-guide/gfm/#raw-html)
+# HTMLインライン
 
-[6.9 自動リンク (GFM拡張)](autolinks-extension.md)
+[コードスパン](code-spans.md)
 ← [目次](index.md) →
-[6.11 使用できないHTML要素](disallowed-html-elements.md)
+[ブロック](blocks.md)
 
 ------------------------------------------------------------------------
 
@@ -109,9 +109,9 @@ GitHubではMarkdown内のHTML要素に対して[`style`](https://developer.mozi
 
 ------------------------------------------------------------------------
 
-[6.9 自動リンク (GFM拡張)](autolinks-extension.md)
+[コードスパン](code-spans.md)
 ← [目次](index.md) →
-[6.11 使用できないHTML要素](disallowed-html-elements.md)
+[ブロック](blocks.md)
 
 [GFM]: introduction.md#11-github-flavored-markdownとは
 [HTMLブロック]: html-block.md

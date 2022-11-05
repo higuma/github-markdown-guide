@@ -1,10 +1,11 @@
-# [4.6 HTMLブロック](https://higuma.github.io/github-markdown-guide/gfm/#html-blocks)
+# HTMLブロック
 
-[4.4 インデント式コードブロック](indented-code-blocks.md)
-← [目次](index.md) →
-[4.7 リンク参照定義](link-reference-definitions.md)
+[タスクリスト]
+← [目次] →
+[GitHub Markdown実装]
 
 ------------------------------------------------------------------------
+
 
 HTMLブロック要素を直接認識させる機能。
 
@@ -254,9 +255,13 @@ GitHub Markdown実装は[`<table>`](https://developer.mozilla.org/ja/docs/Web/HT
 
 ------------------------------------------------------------------------
 
-[4.4 インデント式コードブロック](indented-code-blocks.md)
-← [目次](index.md) →
-[4.7 リンク参照定義](link-reference-definitions.md)
+[タスクリスト]
+← [目次] →
+[GitHub Markdown実装]
+
+[GitHub Markdown実装]: github-markdown.md
+[タスクリスト]: task-lists.md
+[目次]: index.md
 
 [リンク]: links.md
 [空行]: blank-lines.md

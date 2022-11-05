@@ -1,31 +1,26 @@
 # GitHub Markdown 実践ガイド
 
 [目次](index.md) →
-[1 はじめに](intro.md)
+[はじめに](intro.md)
 
 ------------------------------------------------------------------------
 
-## 本ガイドについて
+## 概要
 
-TODO
+GitHubを始めとする多くの技術系Webサービスではドキュメント記述言語として[Markdown]を用いている。ただしMarkdownは方言が多いことでも有名で、利用するWebサービスによって書き方の細かい点が異なる。
 
-<!--
-
-GitHub Flabored Markdown仕様書 ( [最新 (公式)](https://github.github.com/gfm/) | [Version 0.29-gfm (ミラー)](https://higuma.github.io/github-markdown-guide/gfm/) ) を題材とし、GitHub Flabored Markdown (以下 __GFM__)の仕様とその実践的な記述方法について解説する。
-
-読者は中級以上のHTMLの知識があるものとする。[Markdown] → [CommonMark] → GFM の流れの歴史的経緯は [1 Introduction](introduction.md) を参照。また本ガイドの方針と構成に関しては [2 Preliminaries](preliminaries.md) の後半部 [本ガイドの構成](preliminaries.md#本ガイドの構成) を参照。
--->
+GitHubでは[GitHub Flavored Markdown] \(GFM)仕様に基づき、さらにGitHubのWebサービス用に数々の機能拡張を追加した専用実装が用いられている。本ドキュメントはGitHubのMarkdown実装を題材とし、その実践的な記述方法を中心に詳しく解説する。
 
 ## 目次
 
-* [本ガイドについて](#本ガイドについて)
-* [はじめに](intro.md)
-* [文法の構造](structure.md)
-* [インライン](inlines.md)
-* [葉ブロック](leaf-blocks.md)
-* [コンテナブロック](container-blocks.md)
-* [GitHub Markdown](github-markdown.md)
-* [付録](appendices.md)
+- [概要](#概要)
+- [はじめに](intro.md)
+- [文字と行](characters.md)
+- [文法の構造](syntax.md)
+- [インライン](inlines.md)
+- [ブロック](blocks.md)
+- [GitHub Markdown実装](github-markdown.md)
+- [付録](appendices.md)
 
 ## [総目次](index.md#総目次)
 
@@ -33,3 +28,6 @@ GitHub Flabored Markdown仕様書 ( [最新 (公式)](https://github.github.com/
 
 [目次](index.md) →
 [はじめに](intro.md)
+
+[Markdown]: https://ja.wikipedia.org/wiki/Markdown
+[GitHub Flavored Markdown]: github-flavored-markdown.md

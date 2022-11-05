@@ -1,12 +1,20 @@
-# [4.5 コードブロック](https://higuma.github.io/github-markdown-guide/gfm/#fenced-code-blocks)
+# コードブロック
 
-[4.3 Setext見出し](setext-headings.md)
-← [目次](index.md) →
-[4.4 インデント式コードブロック](indented-code-blocks.md)
+[表]
+← [目次] →
+[ブロック引用]
 
 ------------------------------------------------------------------------
 
 コードブロックはソースリスティングなどの複数行コードテキスト文書を表現するのに用いられ、コードテキストの前後を開始フェンス行・終了フェンス行で囲って記述する。
+
+## インデントによるコードブロック
+
+TODO
+
+旧文法。今では弊害の方が多いが、各種の他の文法がこれに誤認識される場合の説明のため、最小限の記述は必要
+
+
 
 ## ベストプラクティス
 
@@ -192,9 +200,14 @@ Fenced by ~~~
 
 ------------------------------------------------------------------------
 
-[4.3 Setext見出し](setext-headings.md)
-← [目次](index.md) →
-[4.4 インデント式コードブロック](indented-code-blocks.md)
+[表]
+← [目次] →
+[ブロック引用]
+
+[ブロック引用]: block-quotes.md
+[表]: tables.md
+[目次]: index.md
+
 
 [CommonMark]: introduction.md#commonmark
 [Go]: https://go.dev/

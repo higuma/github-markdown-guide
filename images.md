@@ -1,8 +1,8 @@
-# [6.7 画像](https://higuma.github.io/github-markdown-guide/gfm/#images)
+# 画像
 
-[6.6 リンク](links.md)
+[リンク](links.md)
 ← [目次](index.md) →
-[6.8 自動リンク](autolinks.md)
+[コードスパン](code-spans.md)
 
 ------------------------------------------------------------------------
 
@@ -10,6 +10,6 @@ TODO
 
 ------------------------------------------------------------------------
 
-[6.6 リンク](links.md)
+[リンク](links.md)
 ← [目次](index.md) →
-[6.8 自動リンク](autolinks.md)
+[コードスパン](code-spans.md)

@@ -1,8 +1,8 @@
-# [1 はじめに](https://higuma.github.io/github-markdown-guide/gfm/#introduction)
+# 付録 - Markdownの歴史
 
-[本ガイドについて](README.md)
-← [目次](index.md) →
-[2 予備知識](preliminaries.md)
+[付録]
+← [目次] →
+[GitHub Flavored Markdown]
 
 ------------------------------------------------------------------------
 
@@ -98,9 +98,16 @@ https://github.com/commonmark/commonmark-spec
 
 ------------------------------------------------------------------------
 
-[本ガイドについて](README.md)
-← [目次](index.md) →
-[2 予備知識](preliminaries.md)
+[付録]
+← [目次] →
+[GitHub Flavored Markdown]
+
+[付録]: appendices.md
+[目次]: index.md
+[GitHub Flavored Markdown]: github-flavored-markdown.md
+
+
+
 
 [AsciiDoc]: https://en.wikipedia.org/wiki/AsciiDoc
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx

@@ -1,32 +1,29 @@
-# [6 インライン](https://higuma.github.io/github-markdown-guide/gfm/#inlines)
+# インライン
 
-[5.4 リスト](lists.md)
+[文法の構造](syntax.md)
 ← [目次](index.md) →
-[6.1 バックスラッシュエスケープ](backslash-escapes.md)
+[通常テキスト]
 
 ------------------------------------------------------------------------
 
-インライン構文は文字ストリームの並び順に評価される。
+**インライン**はテキスト文字列中のシーケンスとして順番に評価される。
 
-* [6.1 バックスラッシュエスケープ](backslash-escapes.md)
-* [6.2 文字参照](character-references.md)
-* [6.3 コードスパン](code-spans.md)
-* [6.4 斜体と太字](bold-and-italic.md)
-* [6.5 打ち消し線](strikethrough.md)
-* [6.6 リンク](links.md)
-* [6.7 画像](images.md)
-* [6.8 自動リンク](autolinks.md)
-* [6.9 自動リンク(AFM拡張)](autolinks-extension.md)
-* [6.10 生HTML](raw-html.md)
-* [6.11 使用できないHTML要素](disallowed-html-elements.md)
-* [6.12 ハード改行](hard-line-breaks.md)
-* [6.13 ソフト改行](soft-line-breaks.md)
-* [6.14 テキストコンテント](textual-content.md)
-
-> なお[6.1](backslash-escapes.md)と[6.2](character-references.md)はインライン構文ではなく、Markdown全体の記法に関する説明。適切な章立てではないためその後のCommonMark仕様書最新版([0.30](https://spec.commonmark.org/0.30/))では修正されて2章の後半に記述が移動している。GFM仕様書は[0.29](https://spec.commonmark.org/0.29/)版をリファレンスとしているためそのままにしてある。
+- [通常テキスト]
+- [太字、斜体、打ち消し線]
+- [リンク]
+- [画像]
+- [コードスパン]
+- [HTMLインライン]
 
 ------------------------------------------------------------------------
 
-[5.4 リスト](lists.md)
+[文法の構造](syntax.md)
 ← [目次](index.md) →
-[6.1 バックスラッシュエスケープ](backslash-escapes.md)
+[通常テキスト]
+
+[HTMLインライン]: html-inlines.md
+[コードスパン]: code-spans.md
+[リンク]: links.md
+[画像]: images.md
+[通常テキスト]: texts.md
+[太字、斜体、打ち消し線]: bold-italic-strikethrough.md
