@@ -7,7 +7,7 @@
 
 <https://html.spec.whatwg.org/entities.json>より(末尾に`;`が付かないものはMarkdownでは使えないため除外)
 
-| 名前 | 名前 | 名前 |
+| `名前`<br>文字 (コード) | `名前`<br>文字 (コード) | `名前`<br>文字 (コード) |
 | :-: | :-: | :-: |
 | `&Aacute;`<br>&Aacute; (U+00C1) | `&aacute;`<br>&aacute; (U+00E1) | `&Abreve;`<br>&Abreve; (U+0102) |
 | `&abreve;`<br>&abreve; (U+0103) | `&ac;`<br>&ac; (U+223E) | `&acd;`<br>&acd; (U+223F) |

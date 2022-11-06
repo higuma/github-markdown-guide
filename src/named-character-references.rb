@@ -39,7 +39,7 @@ def output_markdown(f)
   output_separator f
   f.puts "<#{URL_ENTITIES_JSON}>より(末尾に`;`が付かないものはMarkdownでは使えないため除外)"
   f.puts
-  f.puts '|' + ' 名前 |' * N_COL
+  f.puts '|' + ' `名前`<br>文字 (コード) |' * N_COL
   f.puts '|' + ' :-: |' * N_COL
   until characters.empty?
     row = characters.shift N_COL
