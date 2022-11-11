@@ -13,7 +13,7 @@ GitHubでは[GitHub Flavored Markdown] \(GFM)仕様に基づき、さらにGitHu
 
 ## 目次
 
-- [概要](#概要)
+- [概要](README.md#概要)
 - [はじめに](intro.md)
 - [文字と行](characters.md)
 - [文法の構造](syntax.md)
