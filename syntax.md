@@ -16,7 +16,7 @@ Markdownは出力形式であるHTMLと同様の木構造に基づいた文法�
 > - [MDN - インライン要素](https://developer.mozilla.org/ja/docs/Web/HTML/Inline_elements)
 > - [MDN - ブロックレベル要素](https://developer.mozilla.org/ja/docs/Web/HTML/Block-level-elements)
 > 
-> ちなみにインライン/ブロック文法モデルはHTML 4.01までの旧式で、現在のHTMLは[コンテンツカテゴリー](https://developer.mozilla.org/ja/docs/Web/Guide/HTML/Content_categories)という新しいモデルを用いる(これも参考: Markdownとの関係は薄い)。
+> > ちなみにインライン/ブロック文法モデルはHTML 4.01までの旧式で、現在のHTMLは[コンテンツカテゴリー](https://developer.mozilla.org/ja/docs/Web/Guide/HTML/Content_categories)という新しいモデルを用いる(これも参考: Markdownとの関係はあまりない)。
 
 ## インライン
 
