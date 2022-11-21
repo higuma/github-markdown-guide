@@ -37,7 +37,8 @@
     - [仕様書の必要性](introduction.md#13-仕様書の必要性)
     - [GFM仕様書について](introduction.md#14-gfm仕様書について)
   - [GitHub Flavored Markdown](github-flavored-markdown.md)
-  - [Markdownで使える名前付き文字参照](named-character-references.md)
+  - [名前付き文字参照一覧](named-character-references.md)
+  - [区切り文字一覧](punctuation-characters.md)
 
 ------------------------------------------------------------------------
 

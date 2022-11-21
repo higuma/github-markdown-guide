@@ -6,25 +6,20 @@ require 'date'
 require 'json'
 require 'open-uri'
 
+SEPARATOR = '-' * 72
+NAVIGATION = '[付録 - GitHub Flavored Markdown](github-flavored-markdown.md)
+← [目次](index.md) →
+[付録 - 区切り文字一覧](punctuation-characters.md)'
+
 N_COL = 3
 URL_ENTITIES_JSON = 'https://html.spec.whatwg.org/entities.json'
-RE_ENDS_WITH_SEMICOLON = /;$/   # 名前の末尾に`;`がないものは除外(Markdownでは無効)
+RE_ENDS_WITH_SEMICOLON = /;$/   # extract entries which end with `;`
+                                # (Markdown does not allow entries without ending `;`)
 
 def get_entities_json
   URI.open URL_ENTITIES_JSON do |f|
     JSON[f.read()]
   end
-end
-
-def output_separator(f)
-  f.puts
-  f.puts '-' * 40
-  f.puts
-end
-
-def output_navigation(f)
-  f.puts '[付録 - GitHub Flavored Markdown](github-flavored-markdown.md)'
-  f.puts '← [目次](index.md)'
 end
 
 def output_markdown(f)
@@ -33,11 +28,13 @@ def output_markdown(f)
     .keys
     .filter {|name| RE_ENDS_WITH_SEMICOLON.match name }
     .sort_by {|name| name.upcase }
-  f.puts '# 付録 - Markdownで使える名前付き文字参照一覧'
+  f.puts '# 付録 - 名前付き文字参照一覧'
   f.puts
-  output_navigation f
-  output_separator f
-  f.puts "<#{URL_ENTITIES_JSON}>より(末尾に`;`が付かないものはMarkdownでは使えないため除外)"
+  f.puts NAVIGATION
+  f.puts
+  f.puts SEPARATOR
+  f.puts
+  f.puts "<#{URL_ENTITIES_JSON}> より\\\n(末尾に`;`が付かないものはMarkdownでは使えないため除外)"
   f.puts
   f.puts '|' + ' `名前`<br>文字 (コード) |' * N_COL
   f.puts '|' + ' :-: |' * N_COL
@@ -52,8 +49,10 @@ def output_markdown(f)
              }) |"
            }.join('')
   end
-  output_separator f
-  output_navigation f
+  f.puts
+  f.puts SEPARATOR
+  f.puts
+  f.puts NAVIGATION
 end
 
 open '../named-character-references.md', 'w' do |f|
