@@ -354,7 +354,7 @@ Markdownのパラグラフはもともと英語など単語をスペースで区
 [見出し]: headings.md
 [目次]: index.md
 
-[ASCII区切り文字]: backslash-escapes.md#ASCII区切り文字
+[ASCII句読文字]: backslash-escapes.md#ASCII句読文字
 [CommonMark]: introduction.md#commonmark
 [GFM]: introduction.md#11-github-flavored-markdownとは
 [インデント式コードブロック]: indented-code-blocks.md

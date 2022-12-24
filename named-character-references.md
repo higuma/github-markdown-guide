@@ -2,12 +2,9 @@
 
 [付録 - GitHub Flavored Markdown](github-flavored-markdown.md)
 ← [目次](index.md) →
-[付録 - 区切り文字一覧](punctuation-characters.md)
+[付録 - 句読文字一覧](punctuation-characters.md)
 
 ------------------------------------------------------------------------
-
-<https://html.spec.whatwg.org/entities.json> より\
-(末尾に`;`が付かないものはMarkdownでは使えないため除外)
 
 | `名前`<br>文字 (コード) | `名前`<br>文字 (コード) | `名前`<br>文字 (コード) |
 | :-: | :-: | :-: |
@@ -721,8 +718,11 @@
 | `&Zscr;`<br>&Zscr; (U+1D4B5) | `&zscr;`<br>&zscr; (U+1D4CF) | `&zwj;`<br>&zwj; (U+200D) |
 | `&zwnj;`<br>&zwnj; (U+200C) |
 
+> <https://html.spec.whatwg.org/entities.json> より生成\
+(末尾に`;`が付かないものはMarkdownでは使えないため除外)
+
 ------------------------------------------------------------------------
 
 [付録 - GitHub Flavored Markdown](github-flavored-markdown.md)
 ← [目次](index.md) →
-[付録 - 区切り文字一覧](punctuation-characters.md)
+[付録 - 句読文字一覧](punctuation-characters.md)

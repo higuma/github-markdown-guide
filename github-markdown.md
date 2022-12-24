@@ -14,7 +14,7 @@ GitHub Markdownでは[見出し]に対して次のルールでIDを自動的に�
 
 1. 見出し文のテキストを抽出して次の変換を行う
     * スペースを`-`に変換
-    * `-`以外の[ASCII区切り文字]を除去
+    * `-`以外の[ASCII句読文字]を除去
     * アルファベットを全て小文字に変換
     * その他の文字(日本語文字を含む)は無変換
 2. IDに重複が生じた場合は次のように処理
@@ -37,7 +37,7 @@ GitHub Markdownでは[見出し]に対して次のルールでIDを自動的に�
 
 1. テキストを抽出(リンク情報は除去) → `GitHub Markdownとは?`
 2. スペースを`-`に変換 → `GitHub-Markdownとは?`
-3. `-`以外のASCII区切り文字を除去 → `GitHub-Markdownとは`
+3. `-`以外のASCII句読文字を除去 → `GitHub-Markdownとは`
 4. アルファベットを小文字に変換 → `github-markdownとは`
 </details>
 
@@ -53,7 +53,7 @@ GitHub Markdownでは[見出し]に対して次のルールでIDを自動的に�
 <summary>変換手順</summary>
 
 1. テキストを抽出(書式設定は除去) → `F,oo!`
-2. `-`以外のASCII区切り文字を除去 → `Foo`
+2. `-`以外のASCII句読文字を除去 → `Foo`
 3. アルファベットを小文字に変換 → `foo`
 </details>
 
@@ -69,7 +69,7 @@ GitHub Markdownでは[見出し]に対して次のルールでIDを自動的に�
 <summary>変換手順</summary>
 
 1. テキストを抽出 → `F=O/O`
-2. `-`以外のASCII区切り文字を除去 → `FOO`
+2. `-`以外のASCII句読文字を除去 → `FOO`
 3. アルファベットを小文字に変換 → `foo`
 4. 上と重複するため連番を追加 → `foo-1`
 </details>
@@ -253,7 +253,7 @@ https://gist.github.com/higuma/80cff0982f9f7e2a267b33cad20f984a
 [目次]: index.md
 [付録]: appendices.md
 
-[ASCII区切り文字]: backslash-escapes.md#ASCII区切り文字
+[ASCII句読文字]: backslash-escapes.md#ASCII句読文字
 [インライン]: inlines.md
 [コードスパン]: code-spans.md
 [コードブロック]: code-blocks.md

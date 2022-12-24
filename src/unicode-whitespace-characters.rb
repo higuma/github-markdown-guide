@@ -1,10 +1,9 @@
-# Render punctuation-characters.md
+# Render unicode-whitespace-characters.md
 
 require_relative 'unicode-emoji/unicode'
 
-NAVIGATION = '[付録 - 名前付き文字参照一覧](named-character-references.md)
-← [目次](index.md) →
-[付録 - Unicode空白文字一覧](unicode-whitespace-characters.md)'
+NAVIGATION = '[付録 - 句読文字一覧](punctuation-characters.md)
+← [目次](index.md)'
 SEPARATOR = '-' * 72
 
 def resolve_name(info)
@@ -47,21 +46,21 @@ def format_char(info)
   end
 end
 
-def each_punctuation
-  return self.to_enum(:each_punctuation) unless block_given?
+def each_unicode_whitespace_characters
+  return self.to_enum(:each_unicode_whitespace_characters) unless block_given?
   for range in Unicode::Data::Map::new.each_range
-    if range.last < 0x80
+    if range.last < 0x20
       # collect ASCII punctuation characters
       for code in range
         case code
-        when 0x21..0x2F, 0x3A..0x40, 0x5B..0x60, 0x7B..0x7E
+        when 0x09, 0x0A, 0x0D
           yield code
         end
       end
     else
-      # collect for characters which categories begin with P
+      # collect for characters which category Zs
       case Unicode::Data::Info.new(range.first).category
-      when /^P/
+      when 'Zs'
         for code in range
           yield code
         end
@@ -90,23 +89,23 @@ def output_line(f, base, items)
 end
 
 def output_markdown(f)
-  f.puts '# 付録 - 句読文字一覧'
+  f.puts '# 付録 - Unicode空白文字一覧'
   f.puts
   f.puts NAVIGATION
   f.puts
   f.puts SEPARATOR
   f.puts
-  f.puts '[斜体]及び[太字]の検出判定に用いられる[句読文字]の一覧。具体的には次のどちらかの条件に当てはまる文字が該当する。'
+  f.puts '[斜体]及び[太字]の検出判定に用いられる[Unicode空白文字]の一覧。具体的には次のどちらかの条件に当てはまる文字が該当する。'
   f.puts
-  f.puts '- [ASCII句読文字]'
-  f.puts '- `P`で始まるUnicodeカテゴリ(`Pc`, `Pd`, `Pe`, `Pf`, `Pi`, `Po`, `Ps`)を持つ文字'
+  f.puts '- Unicodeカテゴリ`Zs`に該当する文字(スペースなどを含む)'
+  f.puts '- タブ(U+0009), キャリッジリターン(U+000D), 改行(U+000A)'
   f.puts
   f.puts '| U+ |' + (0..0x0F).map {|c| sprintf " %X |", c }.join('')
   f.puts '| - |' + ' :-: |' * 16
 
   base = 0
   items = {}
-  for code in each_punctuation
+  for code in each_unicode_whitespace_characters
     if code >= base + 16
       output_line f, base, items
       base = code & 0xFFFFF0
@@ -123,13 +122,12 @@ def output_markdown(f)
   f.puts
   f.puts NAVIGATION
   f.puts
-  f.puts '[ASCII句読文字]: characters.md#ascii句読文字'
-  f.puts '[句読文字]: characters.md#句読文字'
+  f.puts '[Unicode空白文字]: characters.md#unicode空白文字'
   f.puts '[斜体]: bold-italic-strikethrough.md#斜体'
   f.puts '[太字]: bold-italic-strikethrough.md#太字'
 end
 
 # main
-open('../punctuation-characters.md', 'w') do |f|
+open('../unicode-whitespace-characters.md', 'w') do |f|
   output_markdown f
 end

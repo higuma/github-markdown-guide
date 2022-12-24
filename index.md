@@ -38,7 +38,8 @@
     - [GFM仕様書について](introduction.md#14-gfm仕様書について)
   - [GitHub Flavored Markdown](github-flavored-markdown.md)
   - [名前付き文字参照一覧](named-character-references.md)
-  - [区切り文字一覧](punctuation-characters.md)
+  - [句読文字一覧](punctuation-characters.md)
+  - [Unicode空白文字一覧](unicode-whitespace-characters.md)
 
 ------------------------------------------------------------------------
 
