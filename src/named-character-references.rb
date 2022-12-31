@@ -28,7 +28,7 @@ def output_markdown(f)
     .keys
     .filter {|name| RE_ENDS_WITH_SEMICOLON.match name }
     .sort_by {|name| name.upcase }
-  f.puts '# 付録 - 名前付き文字参照一覧'
+  f.puts '# 付録 - Markdownで使用できる名前付き文字参照一覧'
   f.puts
   f.puts NAVIGATION
   f.puts

@@ -191,14 +191,14 @@ ABC`   foo   bar      baz    `XYZ
 コードスパン内部では各種書式設定や[文字参照]は使えない(そのまま出力される)。文字参照の代わりに任意のUnicode文字を直接入力すればよい。
 
 ```markdown
-文字参照は無効 → `M&ouml;tley Cr&uuml;e`
+文字参照は無効 → `cr&egrave;me br&ucirc;l&eacute;e`
 
-直接入力は可 → `Mötley Crüe`
+直接入力は可 → `crème brûlée`
 ```
 
-> 文字参照は無効 → `M&ouml;tley Cr&uuml;e`
+> 文字参照は無効 → `cr&egrave;me br&ucirc;l&eacute;e`
 > 
-> 直接入力は可 → `Mötley Crüe`
+> 直接入力は可 → `crème brûlée`
 
 ### 先頭・末尾及び前後のスペースの制御
 

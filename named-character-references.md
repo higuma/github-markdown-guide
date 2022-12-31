@@ -1,4 +1,4 @@
-# 付録 - 名前付き文字参照一覧
+# 付録 - Markdownで使用できる名前付き文字参照一覧
 
 [付録 - GitHub Flavored Markdown](github-flavored-markdown.md)
 ← [目次](index.md) →
