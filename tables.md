@@ -390,6 +390,7 @@ a|b
 [Babelmask]: history.md#babelmark
 [HTMLインライン]: html-inlines.md
 [インデントによるコードブロック]: code-blocks.md#インデントによるコードブロック
+[インライン]: inlines.md
 [コードスパン]: code-spans.md
 [コードブロック]: code-blocks.md
 [バックスラッシュエスケープ]: backslash-escapes.md
@@ -402,10 +403,3 @@ a|b
 [空行]: characters.md#空行
 [目次]: index.md
 [横線]: horizontal-rules.md
-
-
-[GFM]: introduction.md#11-github-flavored-markdownとは
-[インライン]: inlines.md
-[コンテナブロック]: container-blocks.md
-[絵文字]: github-markdown.md#絵文字
-[葉ブロック]: leaf-blocks.md

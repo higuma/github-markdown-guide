@@ -6,13 +6,11 @@
 
 ------------------------------------------------------------------------
 
-### Babelmark
+> TODO: 全体的に書き直しが必要。GFM仕様書との対応はもう行わず、純粋に歴史読み物にする。またGFM仕様書に関する部分は分離して次ページにする。
 
-TODO: Babelmark(`#babelmark`)はいろいろな場所で実装比較に使って引用しているため、ここにIDと解説が必要。
+[HTML] → [軽量マークアップ言語] → [Markdown] → [CommonMark] → GitHub Flavored Markdown (__GFM__)へと続く歴史的経緯について説明する。はじめに[HTML]から[Markdown]までの簡単な序論、その後はGFM仕様書と順番を入れ替えて1.2 → 1.1 → 1.3 → 1.4 の順に解説する。
 
-本章は [HTML] → [軽量マークアップ言語] → [Markdown] → [CommonMark] → GitHub Flavored Markdown (__GFM__)へと続く歴史的経緯の解説。はじめに[HTML]から[Markdown]までの簡単な序論、その後はGFM仕様書と順番を入れ替えて1.2 → 1.1 → 1.3 → 1.4 の順に解説する。
-
-> 歴史的経緯に興味がなければ読まずに[次章](preliminaries.md)へ進んでもよい。なお読者は[HTML]に関する中級程度の知識があるものとする。
+> 歴史的経緯に興味がなければ読む必要なし。なお読者は[HTML]に関する中級程度の知識があるものとする。
 
 ## Markdownの成立まで
 
@@ -28,7 +26,7 @@ TODO: Babelmark(`#babelmark`)はいろいろな場所で実装比較に使って
 > 
 > <https://en.wikipedia.org/wiki/Lightweight_markup_language#Comparison_of_language_features>
 
-## [1.2 Markdownとは](https://higuma.github.io/github-markdown-guide/gfm/#what-is-markdown-)
+## [Markdownとは](https://higuma.github.io/github-markdown-guide/gfm/#what-is-markdown-)
 
 > ここから先は基本的にGFM仕様書の章立てに従って説明するが、1.1と1.2は順序を逆にして成立時期の時間軸順に説明する。
 
