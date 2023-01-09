@@ -81,7 +81,7 @@ GitHubの公式ドキュメントは[GitHub Docs](https://docs.github.com/)で�
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
 ```
 
-> 本ドキュメントをソース表示すると末尾にこれと同じものが記述されている。
+> このページをソース表示すると末尾にこれと同じものが実際に記述されているのを確認できる。
 
 これにより[リンク](#リンク)を`[参照名]`だけで記述できるようになる。
 
