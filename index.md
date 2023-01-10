@@ -55,9 +55,17 @@
     - [リンク参照定義](links.md#リンク参照定義)
   - [画像](images.md)
   - [コードスパン](code-spans.md)
-    - **TODO**: 一度完成したが、最近GitHub側の仕様変更で全面書き直しの憂き目にあっている
+    - [基本的な書き方](code-spans.md#基本的な書き方)
+      - [コードスパン内部のバックティック](code-spans.md#コードスパン内部のバックティック)
+    - [文法まとめ](code-spans.md#文法まとめ)
+      - [表内部の`|`のエスケープ](code-spans.md#表内部ののエスケープ)
+      - [文字参照](code-spans.md#文字参照)
+      - [コードスパン内の連続スペース](code-spans.md#コードスパン内の連続スペース)
   - [HTMLインライン](html-inlines.md)
-    - **TODO**
+    - [IDの設定](html-inlines.md#idの設定)
+    - [改行](html-inlines.md#改行)
+    - [スタイル設定](html-inlines.md#スタイル設定)
+    - [GitHubで無効な属性・要素](html-inlines.md#githubで無効な属性・要素)
 - [ブロック](blocks.md)
   - [パラグラフ](paragraphs.md)
     - **TODO**
