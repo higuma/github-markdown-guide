@@ -60,7 +60,6 @@ GitHub Markdown環境では次のインライン要素が有効に機能する�
 | ルビ<br>[`<ruby>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/ruby), [`<rt>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/rt) | `<ruby>倫敦<rt>ロンドン</rt></ruby>`<br><ruby>倫敦<rt>ロンドン</rt></ruby> |
 | キー入力<br>[`<kbd>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/kbd) | `Type <kbd>exit</kbd> to quit.`<br>Type <kbd>exit</kbd> to quit. |
 | サンプル出力<br>[`<samp>`](https://veloper.mozilla.org/ja/docs/Web/HTML/Element/samp) | `<samp>command not found</samp>`<br><samp>command not found</samp> |
-| 行内引用<br>[`<q>`](https://veloper.mozilla.org/ja/docs/Web/HTML/Element/q) | `<q>Isn't this where...we came in?</q>`<br><q>Isn't this where...we came in?</q> |
 | 行内引用<br>[`<q>`](https://veloper.mozilla.org/ja/docs/Web/HTML/Element/q) | `<q>To be, or not to be, that is the question</q>`<br><q>To be, or not to be, that is the question</q> |
 
 ## GitHubで無効な属性・要素
