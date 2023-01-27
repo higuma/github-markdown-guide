@@ -99,6 +99,7 @@ GHI_ JKL
 [GitHub Markdown実装]: github-markdown.md
 [HTMLインライン]: html-inlines.md
 [HTMLブロック]: html-blocks.md
+[インライン]: #インライン
 [コードスパン]: code-spans.md
 [コードブロック]: code-blocks.md
 [ソフト改行]: paragraphs.md#ソフト改行

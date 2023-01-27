@@ -6,11 +6,13 @@
 
 ------------------------------------------------------------------------
 
-標準のMarkdownにはないインライン構文はHTMLの文法を借用して表現する。ただしこの部分はMarkdown処理実装や、それを用いたWebサービスに対する依存性が大きい。ここではGitHubのWebサービスで利用可能なMarkdownのインラインHTMLについて解説する。
+標準のMarkdownにはないインライン構文はHTMLの文法を借用して表現する。ただしこの部分はMarkdown処理実装や、それを用いたWebサービスに対する依存性が大きい。ここではGitHubのWebサービスで利用可能なMarkdownのHTMLインラインについて解説する。
+
+> 本節全体が動作環境に大きく依存する部分で、特にWebサービスに文書をアップロードする場合はそのWebサイトのHTML環境設定により何が使えて何が使えないかは異なる。これはBabelMarkだけでは判別できない部分で、実環境でチェックするよりない。本節はGitHubのWeb環境で動作確認できた結果のみ示す。
 
 ## IDの設定
 
-GitHub Markdown環境ではHTML要素の`id`属性が機能する。文中の特定の用語にIDを設定する場合は`<span id="...">`を用いるとよい。次は[リストアイテム]内の用語に設定する例。
+GitHub Markdown環境ではHTML要素の`id`属性が機能する。文中の特定の用語にIDを設定する場合は`<span id="...">`を用いるとよい。次は[リスト項目]内の用語に設定する例。
 
 ```markdown
 - <span id="横線">横線</span>
@@ -22,7 +24,7 @@ GitHub Markdown環境ではHTML要素の`id`属性が機能する。文中の特
 > - <span id="見出し">見出し</span>
 > - <span id="コードブロック">コードブロック</span>
 
-上記出力には実際にIDが設定されており、次のリストアイテムをクリックすると確認できる。
+上記出力には実際にIDが設定されており、次のリスト項目をクリックすると確認できる。
 
 * → [`id="横線"`](#横線)
 * → [`id="見出し"`](#見出し)
@@ -64,7 +66,7 @@ GitHub Markdown環境では次のインライン要素が有効に機能する�
 
 ## GitHubで無効な属性・要素
 
-GitHubではMarkdown内のHTML要素に対して[`style`](https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/style)属性を無効化している。次の例は大多数のMarkdown実装ではテキストを赤色で表示するが、GitHub Markdownでは効果がない。
+GitHubではMarkdown内のHTML要素に対して[`style`](https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/style)属性を無効化している。次の例は大多数のMarkdown処理環境ではテキストを赤色で表示するが、GitHub Markdownでは効果がない。
 
 ```markdown
 サンプル <span style="color:red">サンプル</span>
@@ -88,10 +90,8 @@ GitHubではMarkdown内のHTML要素に対して[`style`](https://developer.mozi
 ← [目次](index.md) →
 [ブロック](blocks.md)
 
-[GFM]: introduction.md#11-github-flavored-markdownとは
 [HTMLブロック]: html-block.md
-[ハード改行]: hard-line-breaks.md
+[ハード改行]: paragraphs.md#ハード改行
 [パラグラフ]: paragraphs.md
-[リストアイテム]: list-items.md
+[リスト項目]: lists.md#リスト項目
 [表]: tables.md
-[使用できないHTML要素]: disallowed-html-elements.md

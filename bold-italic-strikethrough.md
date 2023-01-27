@@ -6,6 +6,8 @@
 
 ------------------------------------------------------------------------
 
+> **TODO**: いったん自分なりに書いてみたが、その後GFM仕様書と突き合わせて仕様表現を見直し中。おおそらく全面書き直しまたはそれに近いことになると思う。
+
 Markdown標準の表示効果は[太字]、[斜体]、[打ち消し線]の3種類ある。[太字]はHTML要素の[`<strong>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/strong)、[斜体]は[`<em>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/em)、打ち消し線は[`<del>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/del)にそれぞれ変換される。またこれらを組み合わせて太字斜体、打ち消し線付き太字なども表現できる。
 
 ## 太字
