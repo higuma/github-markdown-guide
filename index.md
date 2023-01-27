@@ -124,8 +124,10 @@
     - [順序付きリスト](lists.md#順序付きリスト)
     - [複数行に渡るリスト項目](lists.md#複数行に渡るリスト項目)
     - [リスト項目の認識](lists.md#リスト項目の認識)
+      - [行の連結](lists.md#行の連結)
+      - [インデント](lists.md#インデント)
+      - [空行の挿入](lists.md#空行の挿入)
   - [タスクリスト](task-lists.md)
-    - **TODO**
   - [HTMLブロック](html-blocks.md)
     - **TODO**
 - [GitHub Markdown実装](github-markdown.md)

@@ -182,7 +182,7 @@ https://en.wikipedia.org/wiki/Variation_Selectors_(Unicode_block)
 
 #### テキスト/絵文字の切り替え
 
-> 重要: 現在のGitHub Markdownではこの知識がないと解決できないケースが時々発生する。
+> **重要**: 現在のGitHub Markdownではこの知識がないと解決できないケースが時々発生する。
 
 GitHub Markdownはかなり極端な絵文字優先の仕様で、他の大多数の環境ではデフォルトがテキストの`↔`(U+2194)のような文字も絵文字デフォルトに設定されている。そのため次のようなテキストを書いた場合に困った問題が発生する。
 
