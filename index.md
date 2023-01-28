@@ -130,8 +130,12 @@
   - [タスクリスト](task-lists.md)
   - [HTMLブロック](html-blocks.md)
     - **TODO**
-- [GitHub Markdown実装](github-markdown.md)
-  - **TODO**
+- [GitHub Markdown環境](github-markdown.md)
+  - [折りたたみ](github-markdown.md#折りたたみ)
+    - [折りたたみのネスト](github-markdown.md#折りたたみのネスト)
+  - [高度な表](github-markdown.md#高度な表)
+    - [セルの結合](github-markdown.md#セルの結合)
+    - [表のネスト](github-markdown.md#表のネスト)
 - [付録](appendices.md)
   - [Markdownの歴史](history.md)
     - 全体的に**TODO**

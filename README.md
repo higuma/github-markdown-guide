@@ -57,7 +57,7 @@ https://babelmark.github.io/
 - [Markdownの構文]
 - [インライン]
 - [ブロック]
-- [GitHub Markdown実装]
+- [GitHub Markdown環境]
 - [付録]
 
 ## [総目次](index.md#総目次)
@@ -71,7 +71,7 @@ https://babelmark.github.io/
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
 [GitHub docs]: https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
 [GitHub Flavored Markdown]: github-flavored-markdown.md
-[GitHub Markdown実装]: github-markdown.md
+[GitHub Markdown環境]: github-markdown.md
 [はじめに]: intro.md
 [インライン]: inlines.md
 [ブロック]: blocks.md

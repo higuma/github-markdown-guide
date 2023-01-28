@@ -30,7 +30,7 @@ Markdownの文法構成アイテムの中で、テキスト文字列中のシー
     - [コードスパン]
     - [HTMLインライン]
 
-以上が標準的なMarkdownのインラインアイテムだが、これらとは別にGitHub専用のインライン記法がいくつか存在する。GitHub特有の記法に関しては後の[GitHub Markdown実装]で説明する。
+以上が標準的なMarkdownのインラインアイテムだが、これらとは別にGitHub専用のインライン記法がいくつか存在する。GitHub特有の記法に関しては後の[GitHub Markdown環境]で説明する。
 
 > [GitHub Flavored Markdown]仕様書ではHTMLでの記述をインラインアイテムとして用いる場合を**raw HTML**、ブロックアイテムの場合を**HTML block**と呼ぶ。
 > 
@@ -96,7 +96,7 @@ GHI_ JKL
 [インライン](inlines.md)
 
 [GitHub Flavored Markdown]: github-flavored-markdown.md
-[GitHub Markdown実装]: github-markdown.md
+[GitHub Markdown環境]: github-markdown.md
 [HTMLインライン]: html-inlines.md
 [HTMLブロック]: html-blocks.md
 [インライン]: #インライン

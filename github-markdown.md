@@ -1,4 +1,4 @@
-# GitHub Markdown実装
+# GitHub Markdown環境
 
 [HTMLブロック]
 ← [目次] →

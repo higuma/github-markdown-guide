@@ -40,7 +40,7 @@
 
 その後は徐々に支持を得て普及し、それとともに[脚注]や[表]などの機能が追加されるようになった。さらにはHTML以外の目的(Webアプリ, [PDF], [epub], etc.)にも応用されるようになり、現在では最もよく用いられる[軽量マークアップ言語]としての地位を獲得している。
 
-> 本文はCommonMark仕様書の引用(丸写し)で、機能拡張の例として[脚注]と[表]が書かれている。しかしCommonMarkではどちらも仕様に含まれていない。[表]はCommonMarkの拡張であるGFM、[脚注]はそのさらに拡張である[GitHub Markdown実装]に組み込まれている。
+> 本文はCommonMark仕様書の引用(丸写し)で、機能拡張の例として[脚注]と[表]が書かれている。しかしCommonMarkではどちらも仕様に含まれていない。[表]はCommonMarkの拡張であるGFM、[脚注]はそのさらに拡張である[GitHub Markdown環境]の実装に組み込まれている。
 
 なお長年に渡り色々な開発グループにより仕様や実装の改良が行われており、その結果今では多くの方言が生まれ、仕様が異なる実装が多数存在する(→ [Wikipedia: Markdown - Variants](https://en.wikipedia.org/wiki/Markdown#Variants))。
 
@@ -62,11 +62,11 @@ GitHub Flavored Markdown (GFM)はGitHub及びGitHub Enterpriseで用いられて
 
 > [GFM仕様書目次](https://higuma.github.io/github-markdown-guide/gfm/)の中で、色付き背景で末尾に"(extension)"と明記されている項目が該当部。ただし今ではこれらも事実上の標準扱いで、例えば投稿サイトの [Qiita](https://qiita.com/) や [はてなブログ](https://hatenablog.com/) では[表]や[オートリンク拡張]などの機能を利用できる。
 > 
-> なおextensions仕様が追加されたことにより元の[CommonMark]と仕様が異なる箇所が多数生じている。詳しくは[GitHub Markdown実装]で説明する。
+> なおextensions仕様が追加されたことにより元の[CommonMark]と仕様が異なる箇所が多数生じている。詳しくは[GitHub Markdown環境]で説明する。
 
 GitHubサイトにHTMLレンダリングする際、セキュリティと一貫性のためのプリプロセスとサニタライズ処理が行われる。
 
-> それだけでなくGitHubのMarkdown処理実装には多くの独自拡張機能がある。さらにGitHubのサイト運用に際して日常的に改良が加えられており、その結果GFM仕様書と動作が異なる点も多数ある。これも[GitHub Markdown実装]で説明する。
+> それだけでなくGitHubのMarkdown処理実装には多くの独自拡張機能がある。さらにGitHubのサイト運用に際して日常的に改良が加えられており、その結果GFM仕様書と動作が異なる点も多数ある。これも[GitHub Markdown環境]で説明する。
 
 ## [1.3 仕様書の必要性](https://higuma.github.io/github-markdown-guide/gfm/#why-is-a-spec-needed-)
 
@@ -115,7 +115,7 @@ https://github.com/commonmark/commonmark-spec
 [ATX]: https://en.wikipedia.org/wiki/Aaron_Swartz#atx
 [CommonMark]: https://commonmark.org/
 [epub]: https://ja.wikipedia.org/wiki/EPUB
-[GitHub Markdown実装]: github-markdown.md
+[GitHub Markdown環境]: github-markdown.md
 [HTML]: https://ja.wikipedia.org/wiki/HyperText_Markup_Language
 [HTML Living Standard]: https://html.spec.whatwg.org/multipage/
 [IETF]: https://datatracker.ietf.org/doc/html/rfc1945

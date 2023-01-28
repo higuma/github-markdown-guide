@@ -8,7 +8,7 @@
 
 上下のブロック構文の間に横線を引く。HTML要素の`<hr>`を出力する。
 
-> [GitHub Flavored Markdown Spec](https://github.github.com/gfm/#thematic-breaks)では現在の[HTML仕様書](https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element)内の表現と同じ**thematic breaks**という呼び名を用いている。しかし直訳の「テーマ区切り」ではあまりに堅苦しく、また読者に意味が分かりにくい。要素名`<hr>`は"horizontal rules"が由来であることから、訳語は平易な表現の「横線」とした。
+> [GitHub Flavored Markdown Spec](https://github.github.com/gfm/#thematic-breaks)では現在の[HTML仕様書](https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element)内の表現と同じ**thematic breaks**という呼び名を用いている。しかし直訳の「テーマ区切り」では堅苦しく読者が理解しにくい。要素名`<hr>`は"horizontal rules"が由来であることから、訳語は平易な表現の「横線」とした。
 
 ## 基本的な書き方
 
@@ -94,11 +94,11 @@ __  __  __  __
 > 
 >    ---
 
-このような極めて緩やかな仕様になっているのは昔のテキスト記法を可能な限り寛大に受け付けて処理するため(後方互換対策)。どのように書いても同じ`<hr>`に変換されるのだから簡単な書き方だけ覚えておけば十分。
+> このような極めて緩やかな仕様になっているのは昔のテキスト記法を可能な限り寛大に受け付けて処理するため(後方互換対策)。どのように書いても同じ`<hr>`に変換されるのだから簡単な書き方だけ覚えておけば十分で、今では不要な知識と思って構わない。
 
 ## 文法の認識
 
-> ここから先は[GFM]仕様書を直接読もうと思っている人向けの解説。ただし読んでも得るものは少ないし、現在のGitHub Markdown実装は数々の機能拡張の結果、すでにGFM準拠ではなくなっている。興味がある人のみ推奨。
+> ここから先は[GFM]仕様書を直接読もうと思っている人向けの解説。ただし仕様書はMarkdown実装者向けの内容で、文書作成技術の習得が目的の読者には得るものは少ない。また現在の[GitHub Markdown環境]は数々の機能拡張の結果、すでにGFM準拠ではなくなっている。興味がある人のみ推奨。
 
 [GFM]仕様によれば(基本的に)前後の[空行]は不要で、次の文例(GFM仕様書の[Example 28])は前後の空行がなくても[パラグラフ]を上下に分割する。
 
@@ -164,6 +164,7 @@ bar
 [Example 28]: https://higuma.github.io/github-markdown-guide/gfm/#example-28
 [Example 29]: https://higuma.github.io/github-markdown-guide/gfm/#example-29
 [GFM]: github-flavored-markdown.md
+[GitHub Markdown環境]: github-markdown.md
 [Jupyter Notebook]: https://jupyter.org/
 [Pandoc]: https://pandoc.org/
 [Setext見出し]: headings.md#Setext見出し

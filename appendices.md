@@ -1,6 +1,6 @@
 # 付録
 
-[GitHub Markdown実装]
+[GitHub Markdown環境]
 ← [目次] →
 [付録 - Markdownの歴史]
 
@@ -14,10 +14,10 @@
 
 ------------------------------------------------------------------------
 
-[GitHub Markdown実装]
+[GitHub Markdown環境]
 ← [目次] →
 [付録 - Markdownの歴史]
 
-[GitHub Markdown実装]: github-markdown.md
+[GitHub Markdown環境]: github-markdown.md
 [付録 - Markdownの歴史]: history.md
 [目次]: index.md
