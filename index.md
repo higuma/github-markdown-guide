@@ -51,7 +51,11 @@
     - **TODO**
   - [リンク](links.md)
     - [自動リンク](links.md#自動リンク)
-      - [自動リンクの問題点](links.md#自動リンクの問題点)
+    - [拡張自動リンク](links.md#拡張自動リンク)
+      - [拡張自動リンクのエスケープ](links.md#拡張自動リンクのエスケープ)
+    - [リンク](links.md#リンク)
+      - [title属性の設定](links.md#title属性の設定)
+      - [URLがスペースを含む場合](links.md#urlがスペースを含む場合)
     - [リンク](links.md#リンク)
     - [リンク参照定義](links.md#リンク参照定義)
   - [画像](images.md)
@@ -129,13 +133,13 @@
       - [空行の挿入](lists.md#空行の挿入)
   - [タスクリスト](task-lists.md)
   - [HTMLブロック](html-blocks.md)
-    - **TODO**
+    - [折りたたみ](html-blocks.md#折りたたみ)
+      - [折りたたみのネスト](html-blocks.md#折りたたみのネスト)
+    - [高度な表](html-blocks.md#高度な表)
+      - [セルの結合](html-blocks.md#セルの結合)
+      - [表のネスト](html-blocks.md#表のネスト)
 - [GitHub Markdown環境](github-markdown.md)
-  - [折りたたみ](github-markdown.md#折りたたみ)
-    - [折りたたみのネスト](github-markdown.md#折りたたみのネスト)
-  - [高度な表](github-markdown.md#高度な表)
-    - [セルの結合](github-markdown.md#セルの結合)
-    - [表のネスト](github-markdown.md#表のネスト)
+  - **TODO**
 - [付録](appendices.md)
   - [Markdownの歴史](history.md)
     - 全体的に**TODO**

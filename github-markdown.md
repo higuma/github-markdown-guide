@@ -6,11 +6,24 @@
 
 ------------------------------------------------------------------------
 
-実はGitHubのMarkdown実装はGFM完全準拠ではなく、独自拡張仕様もあれば、逆にGFMと異なる動作や未実装仕様も存在する。
+実際のGitHubサイトのMarkdown環境には[GFM]仕様書には書かれていないサイト専用の機能が多数存在する。
 
-## [見出し]へのID設定
+> 機能拡張の結果[GFM]仕様書通りではなくなっている部分もある。
 
-GitHub Markdownでは[見出し]に対して次のルールでIDを自動的に割り振る。
+
+Markdown
+
+> Markdownを用いる現実のWebサービス/アプリではMarkdown実装だけでなく、文書を表示するWeb環境(HTML, CSS, etc.)にも大きく依存しており、同じ仕様のMarkdown実装を用いていてもそれを利用するためのWeb環境が異なれば当然表示結果も異なる。
+
+本章の内容の中には他のMarkdown環境でも採用されているものがいくつかある。他のMarkdown環境でも採用されている一般的な仕様を前半で説明し、GitHub特有の機能について後半に示す。
+
+## 一般的な機能
+
+次に示す各種機能は他のMarkdown環境でも使える場合が多い。
+
+### 見出しへのID設定
+
+GitHub Markdownをはじめとする多くMarkdown環境では[見出し]に対して次のルールでIDを自動的に割り振る。
 
 1. 見出し文のテキストを抽出して次の変換を行う
     * スペースを`-`に変換
@@ -74,19 +87,25 @@ GitHub Markdownでは[見出し]に対して次のルールでIDを自動的に�
 4. 上と重複するため連番を追加 → `foo-1`
 </details>
 
-> よく知られている仕様だが、これが書かれたGitHubの公式ドキュメントはどこを探しても見当たらない。なおGitHub以外の実装もこれと同じ仕様を採用しているものが数多い。
+> 以上の仕様はよく知られているもので、他のMarkdownを用いたWebサービス/アプリでもこれと同じ仕様が多い。ただしGitHubの公式ドキュメントを探しても記述は見当たらないのでこの機会にまとめておいた。
 
-## 数式
+### 数式
 
-LaTeX形式の数式記述を受け付ける。
+Markdownを用いるWeb環境にはLaTeX形式の数式記述を受け付けるものが多く、GitHubでも採用されている。
+
+> これも他のMarkdown環境ではよくあるTODO
 
 ## 脚注
 
 TODO
 
-## 絵文字
+## GitHub特有の機能
 
-GitHubのMarkdown環境では`:...:`の書式で絵文字を[インライン]入力できる。
+次に示す機能はGitHub特有。
+
+### 絵文字
+
+GitHub Markdown環境には独自の絵文字文化があり、`:name:`の書式で絵文字を[インライン]入力できる機能がある。
 
 ```markdown
 :+1: :-1: :smile: :cry:
@@ -94,11 +113,11 @@ GitHubのMarkdown環境では`:...:`の書式で絵文字を[インライン]入
 
 > :+1: :-1: :smile: :cry:
 
-GitHubで使える絵文字の一覧は次を参照。
+GitHubで使える絵文字名の一覧は次を参照。
 
 https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
 
-Unicodeに対応しているものだけではなく独自GitHubのこれらは対応するPNG画像と組になっている。
+Unicodeの絵文字に対応しているものだけではなく、GitHub独自の絵文字もある。またこれらは対応するPNG画像と組になっている。PNG画像も含めた一覧は次の通り。
 
 https://github.com/higuma/github-emoji-list/blob/main/README.md
 
@@ -115,109 +134,6 @@ https://api.github.com/emojis
 
 </details>
 
-### Unicode文字の絵文字変換
-
-さらに絵文字に対応するUnicode文字はテキスト文中で自動的に絵文字に変換される。次の文例のように直接入力/コード入力のどちらでもよい(同一出力)。
-
-```markdown
-☀ ☁ ☂ ☃
-
-&#x2600; &#x2601; &#x2602; &#x2603;
-```
-
-> ☀ ☁ ☂ ☃
-> 
-> &#x2600; &#x2601; &#x2602; &#x2603;
-
-ただし絵文字の自動変換は[コードブロック]と[コードスパン]の中には適用されない。
-
-``````markdown
-```markdown
-☀ ☁ ☂ ☃
-```
-
-`☀ ☁ ☂ ☃`
-``````
-
-> ```markdown
-> ☀ ☁ ☂ ☃
-> ```
-> 
-> `☀ ☁ ☂ ☃`
-
-該当する文字コードは次を参照。
-
-https://en.wikipedia.org/wiki/Emoji#In_Unicode
-
-> ただしU+00A9(&copy;)とU+00AE(&reg;)は対象から外して通常文字として出力する(この2つはUnicodeができる前からある文字で、絵文字化すると不都合を生じる)。
-
-しかしこの仕様は時に問題を生じることがある。(2022年現在)GitHubでは絵文字と対応しているUnicode文字は(&copy;と&reg;を除き)通常文字として出力できない(`\↔`などと書いても効果はなく \↔ と表示する)。特に次のような文字が本文中では強制的に絵文字変換されることに注意(文字コードはリンク先を参照)。
-
-* 矢印:
-[`↔`↔](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2194),
-[`↕`↕](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2195),
-[`↖`↖](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2196),
-[`↗`↗](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2197),
-[`↘`↘](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2198),
-[`↙`↙](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2199),
-[`↩`↩](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#21A9),
-[`↪`↪](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#21AA),
-[`➡`➡](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#27A1),
-[`⤴`⤴](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2934),
-[`⤵`⤵](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2935),
-[`⬅`⬅](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2B05),
-[`⬆`⬆](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2B06),
-[`⬇`⬇](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2B07)
-* 操作シンボル:
-[`⏏`⏏](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#21CF),
-[`▶`▶](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#25B6),
-[`◀`◀](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#25C0)
-* 天気シンボル
-[`☀`☀](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2600),
-[`☁`☁](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2601),
-[`☂`☂](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2602),
-[`☃`☃](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2603),
-[`⛈`⛈](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#26C8)
-* 性別シンボル:
-[`♀`♀](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2640),
-[`♂`♂](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2642)
-* 星座記号:
-[`♈`♈](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2648),
-[`♉`♉](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2649),
-[`♊`♊](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#264A),
-[`♋`♋](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#264B),
-[`♌`♌](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#264C),
-[`♍`♍](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#264D),
-[`♎`♎](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#264E),
-[`♏`♏](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#264F),
-[`♐`♐](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2650),
-[`♑`♑](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2651),
-[`♒`♒](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2652),
-[`♓`♓](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2653)
-* カードマーク:
-[`♠`♠](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2660),
-[`♣`♣](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2613),
-[`♥`♥](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2615),
-[`♦`♦](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2616)
-* その他:
-[`✂`✂](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2702),
-[`✈`✈](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2708),
-[`✌`✌](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#270C),
-[`✍`✍](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#270D),
-[`✏`✏](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#270F),
-[`✒`✒](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2712),
-[`✔`✔](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2714),
-[`✖`✖](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2716),
-[`✝`✝](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#271D),
-[`✡`✡](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2721),
-[`✳`✳](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2733),
-[`✴`✴](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2734),
-[`❄`❄](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2744),
-[`❇`❇](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2747),
-[`❣`❣](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2763),
-[`❤`❤](https://github.com/higuma/markdown-unicode-check/blob/main/2000.md#2764)
-
-## GitHubサイト特有の機能
 
 ### CSSの色表現
 
@@ -246,8 +162,9 @@ https://gist.github.com/higuma/80cff0982f9f7e2a267b33cad20f984a
 
 ------------------------------------------------------------------------
 
-[HTMLブロック] ← [目次] →
-[付録 - Markdownの歴史]
+[HTMLブロック]
+← [目次] →
+[付録]
 
 [HTMLブロック]: html-blocks.md
 [目次]: index.md
