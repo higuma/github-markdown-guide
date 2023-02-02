@@ -8,25 +8,25 @@
 
 標準のMarkdownにはないインライン構文はHTMLの文法を借用して表現する。ただしこの部分はMarkdown処理実装や、それを用いたWebサービスに対する依存性が大きい。ここではGitHubのWebサービスで利用可能なMarkdownのHTMLインラインについて解説する。
 
-> 本節全体が動作環境に大きく依存する部分で、特にWebサービスに文書をアップロードする場合はそのWebサイトのHTML環境設定により何が使えて何が使えないかは異なる。これはBabelMarkだけでは判別できない部分で、実環境でチェックするよりない。本節はGitHubのWeb環境で動作確認できた結果のみ示す。
+> &#x2757;&#xFE0F; **注意**: 本節全体が動作環境に大きく依存する部分で、特にWebサービスに文書をアップロードする場合はそのWebサイトのHTML環境設定により何が使えて何が使えないかは異なる(BabelMarkでは判別困難で、実環境チェックが必要)。本節はGitHubのWeb環境で動作確認できた結果のみ示す。
 
 ## IDの設定
 
 GitHub Markdown環境ではHTML要素の`id`属性が機能する。文中の特定の用語にIDを設定する場合は`<span id="...">`を用いるとよい。次は[リスト項目]内の用語に設定する例。
 
 ```markdown
-- <span id="横線">横線</span>
+- <span id="水平線">水平線</span>
 - <span id="見出し">見出し</span>
 - <span id="コードブロック">コードブロック</span>
 ```
 
-> - <span id="横線">横線</span>
+> - <span id="水平線">水平線</span>
 > - <span id="見出し">見出し</span>
 > - <span id="コードブロック">コードブロック</span>
 
 上記出力には実際にIDが設定されており、次のリスト項目をクリックすると確認できる。
 
-* → [`id="横線"`](#横線)
+* → [`id="水平線"`](#水平線)
 * → [`id="見出し"`](#見出し)
 * → [`id="コードブロック"`](#コードブロック)
 
@@ -82,7 +82,7 @@ GitHubではMarkdown内のHTML要素に対して[`style`](https://developer.mozi
 | 文字列マーク<br>[`<mark>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/mark) | `サンプル <mark>サンプル</mark>`<br>サンプル <mark>サンプル</mark>
 | 小文字<br>[`<small>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/small) | `サンプル <small>サンプル</small>`<br>サンプル <small>サンプル</small>
 
-> 確認済みの属性・要素のみ(その他は調査中)。なおこれらは他のMarkdown実装では機能することが多い。
+> &#x2757;&#xFE0F; **注意**: 以上はGitHubの実環境で確認済みの属性・要素のみ(現在も継続調査中)。なおこれらは他のMarkdown実装では機能することが多い。
 
 ------------------------------------------------------------------------
 

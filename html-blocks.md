@@ -148,9 +148,55 @@
 > </details>
 > </details>
 
+#### ネストレベルの表現
+
+ただし上記の方法では何重にネストしても全て同じレベルのように表示されるため、折りたたみをどのレベルまで展開した状態なのか読者には分かりにくい。その場合は[ブロック引用]と組み合わせて用いるとよい。
+
+```markdown
+> <details>
+> <summary>レベル1</summary>
+> 
+> レベル1コンテンツ
+> 
+> > <details>
+> > <summary>レベル2</summary>
+> > 
+> > レベル2コンテンツ
+> > 
+> > > <details>
+> > > <summary>レベル3</summary>
+> > > 
+> > > レベル3コンテンツ
+> > > 
+> > > </details>
+> > </details>
+> </details>
+```
+
+> > <details>
+> > <summary>レベル1</summary>
+> > 
+> > レベル1コンテンツ
+> > 
+> > > <details>
+> > > <summary>レベル2</summary>
+> > > 
+> > > レベル2コンテンツ
+> > > 
+> > > > <details>
+> > > > <summary>レベル3</summary>
+> > > > 
+> > > > レベル3コンテンツ
+> > > > 
+> > > > </details>
+> > > </details>
+> > </details>
+
+> &#x2714;&#xFE0F; この方法は本解説のいろいろな場所で実際に用いている。
+
 ## 説明リスト
 
-> &#x2714;&#xFE0F; 英語原文の"definition lists"に対する一般的な訳語は「定義リスト」「説明リスト」の2種類ある。「定義リスト」の方が正確な訳だが、日本版MDNではより平易な表現の「説明リスト」を用いており、ここではMDNに従った。
+> &#x2714;&#xFE0F; **用語の日本語訳について**: 英語原文の"definition lists"に対する一般的な訳語は「定義リスト」「説明リスト」の2種類ある。「定義リスト」の方が正確な訳だが、日本版MDNではより平易な表現の「説明リスト」を用いており、本解説もMDNに従い「説明リスト」としている。
 
 説明リスト全体は[`<dl>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/dl)、用語見出しは[`<dt>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/dt)、用語説明は[`<dd>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/dd)を用いる。
 
@@ -184,7 +230,7 @@
 >   <dd>**強調と認識しない** [リンクと認識しない](#)</dd>
 > </dl>
 
-この場合は部分的にHTMLインラインを用いればよい。
+GitHub Markdownで説明リストを記述する場合、`<dt>`及び`<dd>`の内部は全てHTMLで記述する必要がある。
 
 ```markdown
 <dl>
@@ -378,7 +424,7 @@ GitHubでは[`<table>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/t
 >   </tbody>
 > </table>
 
-> &#x2757;&#xFE0F; 以上の場合もセル(`<th>`, `<td>`)の内部にMarkdown書式は使えず、例えば`<td>[link](#)</td>`と書いても[リンク]として処理されずそのままテキストで表示される。HTMLで記述し`<td><a href="#">link</a></td>`とすれば受け付ける。
+> &#x2757;&#xFE0F; **注意**: 以上のケースでもセル(`<th>`, `<td>`)の内部にMarkdown書式は使えず、例えば`<td>[link](#)</td>`と書いても[リンク]として処理されずそのままテキストで表示される。HTMLで記述し`<td><a href="#">link</a></td>`とすれば受け付ける。
 
 ------------------------------------------------------------------------
 
@@ -389,6 +435,7 @@ GitHubでは[`<table>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/t
 [HTMLインライン]: html-inlines.md
 [タスクリスト]: task-lists.md
 [ブロック]: blocks.md
+[ブロック引用]: blocks引用.md
 [リンク]: links.md
 [空行]: characters.md#空行
 [表]: tables.md

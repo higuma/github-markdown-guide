@@ -10,7 +10,7 @@
 
 - [パラグラフ]
 - [見出し]
-- [横線]
+- [水平線]
 - [表]
 - [コードブロック]
 - [ブロック引用]
@@ -35,4 +35,4 @@
 [表]: tables.md
 [見出し]: headings.md
 [目次]: index.md
-[横線]: horizontal-rules.md
+[水平線]: horizontal-rules.md
