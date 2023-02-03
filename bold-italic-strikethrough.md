@@ -1,14 +1,16 @@
 # 太字、斜体、打ち消し線
 
-[通常テキスト](texts.md)
-← [目次](index.md) →
-[リンク](links.md)
+[通常テキスト]
+← [目次] →
+[リンク]
 
 ------------------------------------------------------------------------
 
-> **TODO**: いったん自分なりに書いてみたが、その後GFM仕様書と突き合わせて仕様表現を見直し中。おおそらく全面書き直しまたはそれに近いことになると思う。
+> **TODO**: 書き直し中。
 
 Markdown標準の表示効果は[太字]、[斜体]、[打ち消し線]の3種類ある。[太字]はHTML要素の[`<strong>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/strong)、[斜体]は[`<em>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/em)、打ち消し線は[`<del>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/del)にそれぞれ変換される。またこれらを組み合わせて太字斜体、打ち消し線付き太字なども表現できる。
+
+> &#x2714;&#xFE0F; 以降の説明(本章の前半)では表示効果対象テキストは前後が行頭・行末または空白文字(スペースなど)で区切られているものとする。区切りなしの場合は複雑なルールが適用されるため、本章の後半「[太字と斜体の文法認識](#太字と斜体の文法認識)」で詳しく解説する。
 
 ## 太字
 
@@ -38,20 +40,58 @@ _text テキスト_
 > 
 > _text テキスト_
 
-> **重要**: Windows環境では`テキスト`の部分が斜体にならない場合がとても多い。ただしこれはWindow環境側の問題によるものであり、
-
-### 斜体とWindowsフォント
-
-**重要**) Windows上の表示環境では日本語文字に対して斜体が機能せず通常表示になる場合がとても多い。そこで本解説では全ての表示環境で同等の出力を保証するため、基本的に斜体のコード例は全て英数字を用いている。詳しくは本章最後の [補足 - 斜体と日本語](#補足-斜体と日本語) で説明する。
-
+> &#x26A0;&#xFE0F; **Windows環境向け(重要)**: Windowsではブラウザ表示フォントとして[メイリオ]がよく用いられるが、その場合に斜体がラテン文字領域(記号、英数字、ギリシャ文字、キリル文字等)にだけ有効で、その他の文字(日本語のかなや漢字などを含む)には効かないという有名な問題を生じる。
 > 
-> 次は動作確認用(ここだけ例外的に日本語に斜体を設定)。表示環境(具体的にはブラウザ)が表示フォントとしてWindows標準の[メイリオ]\(または同等の設定を持つフォント)を使用している場合は日本語部分に斜体が効かず`テキスト`が通常表示になる。
+> > <details>
+> > <summary>&#x2714;&#xFE0F; <strong>理由</strong></summary>
+> > 
+> > > <details>
+> > > <summary>&#x2714;&#xFE0F; <strong>フォントの基礎知識</strong></summary>
+> > > 
+> > > この説明にはまず[フォント]に関する基礎知識を知っておく必要がある。表示に用いるフォントには標準(Regular)、[斜体]\(Italic)、[太字]\(Bold)の文字種があり、これらの集合で一組のフォントとして扱われる。
+> > > 
+> > > > &#x2714;&#xFE0F; 実際はもっと複雑で、一般に「斜体」と呼ばれる書体には[イタリック体](https://ja.wikipedia.org/wiki/イタリック体)(Italic)と[オブリーク体](https://ja.wikipedia.org/wiki/斜体)(Oblique)の2種類ある。また字の太さ([ウェイト](https://ja.wikipedia.org/wiki/フォント#ウェイト_(太字フォント・細字フォント)))が豊富に用意されているフォントもある。ただしMarkdownではそこまで細かい設定はできない。以下Markdownで設定可能な上記3種類に限定して説明する。
+> > > </details>
+> > 
+> > > <details>
+> > > <summary>&#x2714;&#xFE0F; <strong>ブラウザの処理動作</strong></summary>
+> > > 
+> > > ブラウザなどのHTML表示環境では[斜体]と[太字]に関してだいたい次のように処理している(概要だがこの程度の理解で十分)。[斜体]の場合を示す([太字]も同様)。
+> > > 
+> > > 1. 表示用フォントが斜体データを持っている場合はそれを使用する(優先)
+> > >    1. 斜体データが表示する文字コードに対応していればそれを出力
+> > >    2. 表示する文字コードに対して斜体データが未対応の場合に標準フォントで出力(斜体にならない)
+> > > 2. 斜体データを持たないフォントはブラウザ側で斜め変形レンダリングして表示
+> > > 
+> > > 昔からあるWindows日本語対応フォント(MS Pゴシックなど)は斜体データを持たないため、2番目の方法でブラウザが斜め変形処理して表示するため問題は発生しなかった。
+> > > </details>
+> > 
+> > > <details>
+> > > <summary>&#x2714;&#xFE0F; <strong>メイリオで生じる問題</strong></summary>
+> > > 
+> > > 現行Windows用Webブラウザの多くは[メイリオ]を標準の表示フォントに用いている。[メイリオ]は斜体や太字の専用データを持っているが、斜体データは不完全でラテン文字領域しか専用データが作られていない。そのため英数字、アルファベットは斜体表示するが日本語用文字は上記の条件1-2の「斜体データが適用されるがその文字コードに対して未対応」に該当し、斜体ではなく標準で表示する。
+> > > 
+> > > > <details>
+> > > > <summary>&#x2714;&#xFE0F; <strong>メイリオのフォント仕様</strong></summary>
+> > > > 
+> > > > メイリオがこのような仕様になった経緯に関しては次を参照。
+> > > > 
+> > > > https://ja.wikipedia.org/wiki/メイリオ#フォントファミリーの仕様
+> > > > 
+> > > > しかし理由として書かれている「和文は斜体表記を行う文化的背景がない」はどう考えても言い訳で、昔から広告分野などで日本語の斜体文字は用いられている。実際は工数が膨大で対応困難だったというのが本当の理由だろう。
+> > > > </details>
+> > > 
+> > > 
+> > > 現行Windows用ブラウザの多くはインストール時にメイリオを標準表示フォントに設定するため、ユーザーがフォント設定を変更しない限り[`<em>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/em)や[`<i>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/i)を設定しても斜体にならない問題が発生する。またメイリオ以外でもブラウザに斜体データが不完全なフォントを設定すると同じ問題が発生する。
+> > </details>
 > 
-> ```markdown
-> *text テキスト*
-> ```
+> > <details>
+> > <summary>&#x2714;&#xFE0F; <strong>有効な対策</strong></summary>
+> > 
+> > Windowsユーザーの多くはブラウザのフォント設定をわざわざ変えたりしないし、そもそもこういう問題があることを知る人は少ない。Windowsは現行メジャー環境の一つであるため、どのWeb環境のユーザーに対しても同等の表示を保証する場合は「日本語に斜体を使わない」という回避策しか有効な方法はない。
+> > </details>
 > 
-> > *text テキスト*
+> &#x26A0;&#xFE0F; 以下斜体を用いるコード例には常に英数字を入れ、英数字のみまたは日本語文字(かな、漢字等)との併記を用いる(日本語のみの文例を回避)。表示フォントに[メイリオ]を用いるブラウザでは日本語部分だけ斜体にならないので、その場合は英数字部分を見て効果を判断すること。
 
 ## 打ち消し線
 
@@ -75,15 +115,15 @@ _text テキスト_
 
 > ***bold+italic***
 
-<details>
-<summary>組み合わせ一覧(6通り)</summary>
-
-- `***bold+italic***` → ***bold+italic***
-- `___bold+italic___` → ___bold+italic___
-- `**_bold+italic_**` → **_bold+italic_**
-- `__*bold+italic*__` → __*bold+italic*__
-- `*__bold+italic__*` → *__bold+italic__*
-- `_**bold+italic**_` → _**bold+italic**_
+> <details>
+> <summary>&#x2714;&#xFE0F; 全ての書き方(全6通り)</summary>
+> 
+> - `***bold+italic***` → ***bold+italic***
+> - `___bold+italic___` → ___bold+italic___
+> - `**_bold+italic_**` → **_bold+italic_**
+> - `__*bold+italic*__` → __*bold+italic*__
+> - `*__bold+italic__*` → *__bold+italic__*
+> - `_**bold+italic**_` → _**bold+italic**_
 
 </details>
 
@@ -95,15 +135,14 @@ _text テキスト_
 
 > ~~**bold+strikeout**~~
 
-<details>
-<summary>組み合わせ一覧(4通り)</summary>
-
-- `**~~bold+strikeout~~**` → **~~bold+strikeout~~**
-- `__~~bold+strikeout~~__` → __~~bold+strikeout~~__
-- `~~**bold+strikeout**~~` → ~~**bold+strikeout**~~
-- `~~__bold+strikeout__~~` → ~~__bold+strikeout__~~
-
-</details>
+> <details>
+> <summary>&#x2714;&#xFE0F; 全ての書き方(全4通り)</summary>
+> 
+> - `**~~bold+strikeout~~**` → **~~bold+strikeout~~**
+> - `__~~bold+strikeout~~__` → __~~bold+strikeout~~__
+> - `~~**bold+strikeout**~~` → ~~**bold+strikeout**~~
+> - `~~__bold+strikeout__~~` → ~~__bold+strikeout__~~
+> </details>
 
 ### 斜体+打ち消し線
 
@@ -113,15 +152,14 @@ _text テキスト_
 
 > ~~*italic+strikeout*~~
 
-<details>
-<summary>組み合わせ一覧(4通り)</summary>
-
-- `*~~italic+strikeout~~*` → *~~italic+strikeout~~*
-- `_~~italic+strikeout~~_` → _~~italic+strikeout~~_
-- `~~*italic+strikeout*~~` → ~~*italic+strikeout*~~
-- `~~_italic+strikeout_~~` → ~~_italic+strikeout_~~
-
-</details>
+> <details>
+> <summary>&#x2714;&#xFE0F; 全ての書き方(全4通り)</summary>
+> 
+> - `*~~italic+strikeout~~*` → *~~italic+strikeout~~*
+> - `_~~italic+strikeout~~_` → _~~italic+strikeout~~_
+> - `~~*italic+strikeout*~~` → ~~*italic+strikeout*~~
+> - `~~_italic+strikeout_~~` → ~~_italic+strikeout_~~
+> </details>
 
 ### 太字+斜体+打ち消し線
 
@@ -131,31 +169,30 @@ _text テキスト_
 
 > ~~***bold+italic+strikeout***~~
 
-<details>
-<summary>組み合わせ一覧(20通り)</summary>
-
-- `***~~bold+italic+strikeout~~***` → ***~~bold+italic+strikeout~~***
-- `**_~~bold+italic+strikeout~~_**` → **_~~bold+italic+strikeout~~_**
-- `__*~~bold+italic+strikeout~~*__` → __*~~bold+italic+strikeout~~*__
-- `___~~bold+italic+strikeout~~___` → ___~~bold+italic+strikeout~~___
-- `**~~*bold+italic+strikeout*~~**` → **~~*bold+italic+strikeout*~~**
-- `**~~_bold+italic+strikeout_~~**` → **~~_bold+italic+strikeout_~~**
-- `__~~*bold+italic+strikeout*~~__` → __~~*bold+italic+strikeout*~~__
-- `__~~_bold+italic+strikeout_~~__` → __~~_bold+italic+strikeout_~~__
-- `*__~~bold+italic+strikeout~~__*` → *__~~bold+italic+strikeout~~__*
-- `_**~~bold+italic+strikeout~~**_` → _**~~bold+italic+strikeout~~**_
-- `*~~**bold+italic+strikeout**~~*` → *~~**bold+italic+strikeout**~~*
-- `*~~__bold+italic+strikeout__~~*` → *~~__bold+italic+strikeout__~~*
-- `_~~**bold+italic+strikeout**~~_` → _~~**bold+italic+strikeout**~~_
-- `_~~__bold+italic+strikeout__~~_` → _~~__bold+italic+strikeout__~~_
-- `~~***bold+italic+strikeout***~~` → ~~***bold+italic+strikeout***~~
-- `~~**_bold+italic+strikeout_**~~` → ~~**_bold+italic+strikeout_**~~
-- `~~__*bold+italic+strikeout*__~~` → ~~__*bold+italic+strikeout*__~~
-- `~~___bold+italic+strikeout___~~` → ~~___bold+italic+strikeout___~~
-- `~~*__bold+italic+strikeout__*~~` → ~~**_bold+italic+strikeout_**~~
-- `~~_**bold+italic+strikeout**_~~` → ~~_**bold+italic+strikeout**_~~
-
-</details>
+> <details>
+> <summary>&#x2714;&#xFE0F; 全ての書き方(全20通り)</summary>
+> 
+> - `***~~bold+italic+strikeout~~***` → ***~~bold+italic+strikeout~~***
+> - `**_~~bold+italic+strikeout~~_**` → **_~~bold+italic+strikeout~~_**
+> - `__*~~bold+italic+strikeout~~*__` → __*~~bold+italic+strikeout~~*__
+> - `___~~bold+italic+strikeout~~___` → ___~~bold+italic+strikeout~~___
+> - `**~~*bold+italic+strikeout*~~**` → **~~*bold+italic+strikeout*~~**
+> - `**~~_bold+italic+strikeout_~~**` → **~~_bold+italic+strikeout_~~**
+> - `__~~*bold+italic+strikeout*~~__` → __~~*bold+italic+strikeout*~~__
+> - `__~~_bold+italic+strikeout_~~__` → __~~_bold+italic+strikeout_~~__
+> - `*__~~bold+italic+strikeout~~__*` → *__~~bold+italic+strikeout~~__*
+> - `_**~~bold+italic+strikeout~~**_` → _**~~bold+italic+strikeout~~**_
+> - `*~~**bold+italic+strikeout**~~*` → *~~**bold+italic+strikeout**~~*
+> - `*~~__bold+italic+strikeout__~~*` → *~~__bold+italic+strikeout__~~*
+> - `_~~**bold+italic+strikeout**~~_` → _~~**bold+italic+strikeout**~~_
+> - `_~~__bold+italic+strikeout__~~_` → _~~__bold+italic+strikeout__~~_
+> - `~~***bold+italic+strikeout***~~` → ~~***bold+italic+strikeout***~~
+> - `~~**_bold+italic+strikeout_**~~` → ~~**_bold+italic+strikeout_**~~
+> - `~~__*bold+italic+strikeout*__~~` → ~~__*bold+italic+strikeout*__~~
+> - `~~___bold+italic+strikeout___~~` → ~~___bold+italic+strikeout___~~
+> - `~~*__bold+italic+strikeout__*~~` → ~~**_bold+italic+strikeout_**~~
+> - `~~_**bold+italic+strikeout**_~~` → ~~_**bold+italic+strikeout**_~~
+> </details>
 
 ## ネスト
 
@@ -167,7 +204,7 @@ _text テキスト_
 
 > **Bold _and italic_**
 
-> `**Bold *and italic***`でもよいが、同じ記号を使うと文法上の認識に問題を生じやすい。またそれぞれのネスト範囲を明示する意味で記号を分けた方が見た目も意味が分かりやすい。
+> &#x2714;&#xFE0F; `**Bold *and italic***`等でもよい(組み合わせは4通り)。ただし同じ記号を使うと認識しないMarkdown実装がある(→ [Babelmark](https://babelmark.github.io/?text=**Bold+*and+italic***))。またそれぞれのネスト範囲を明示する意味で記号を分けた方が意味が分かりやすい。
 
 ネスト(入れ子)構造に従っていればどのような組み合わせも可能。
 
@@ -181,7 +218,7 @@ _Italic **and bold ~~and strikeout~~** → back to italic_
 > 
 > _Italic **and bold ~~and strikeout~~** → back to italic_
 
-ただしネストはできてもオーバーラップはできない。次は(意図的に作った)失敗例で、`**...**`の範囲を太字、`_..._`の範囲を斜体、そして両者の共通部分は斜体+太字に設定しようとしたもの。しかしネスト構造の条件を満たしていないため意図した通りに文法認識してもらえない。
+ただしネストはできてもオーバーラップはできない。次は意図的に作った失敗例で、`**...**`の範囲を太字、`_..._`の範囲を斜体、そして両者の共通部分は斜体+太字に設定しようとしたもの。しかしネスト構造の条件を満たしていないため意図した通りに文法認識してもらえない。
 
 ```markdown
 **Bold _bold+italic** italic_
@@ -196,6 +233,19 @@ _Italic **and bold ~~and strikeout~~** → back to italic_
 ```
 
 > **Bold _bold+italic_** _italic_
+
+> <details>
+> <summary>&#x2714;&#xFE0F; <strong>全ての書き方(全8通り)</strong></summary>
+> 
+> - `**Bold *bold+italic*** *italic*` → **Bold *bold+italic*** *italic*
+> - `**Bold *bold+italic*** _italic_` → **Bold *bold+italic*** _italic_
+> - `**Bold _bold+italic_** *italic*` → **Bold _bold+italic_** *italic*
+> - `**Bold _bold+italic_** _italic_` → **Bold _bold+italic_** _italic_
+> - `__Bold *bold+italic*__ *italic*` → __Bold *bold+italic*__ *italic*
+> - `__Bold *bold+italic*__ _italic_` → __Bold *bold+italic*__ _italic_
+> - `__Bold _bold+italic___ *italic*` → __Bold _bold+italic___ *italic*
+> - `__Bold _bold+italic___ _italic_` → __Bold _bold+italic___ _italic_
+> </details>
 
 ## エスケープ
 
@@ -215,7 +265,7 @@ _Italic **and bold ~~and strikeout~~** → back to italic_
 > 
 > \~~取り消し線ではない~~
 
-> (参考) 代わりに[文字参照]を用いてもよい。ただし[バックスラッシュエスケープ]の方が楽に書ける。
+> &#x2714;&#xFE0F; **参考**: 代わりに[文字参照]を用いてもよい。ただし[バックスラッシュエスケープ]の方が楽に書ける。
 > 
 > ```markdown
 > &ast;not italic*
@@ -263,27 +313,16 @@ _Italic **and bold ~~and strikeout~~** → back to italic_
 > 
 > \*\*\*normal text***
 
-別のケースとして書式設定対象テキストが`*`や`_`を含んでおり、そこで書式終了と認識される場合もエスケープを用いて対応する。次の文例は"What's the f\*\*k up!?"という文章を太字に設定しようとしたものだが、中間に`**`があるためそこで太字終了と認識されてしまう。
-
-```markdown
-**What's the f**k up!?**
-```
-
-> **What's the f**k up!?**
-
-このような場合に文内の`*`をエスケープすることで解決できる。
-
-```markdown
-**What's the f\*\*k up!?**
-```
-
-> **What's the f\*\*k up!?**
-
-> (注意) 以上はGitHub Markdownの場合で、異なるMarkdown実装では詳細動作が異なることが多い。他のMarkdown環境上でも使う可能性がある文章には考えられ得る箇所全てをエスケープしておく方動作の詳細はMarkd
+> &#x2757;&#xFE0F; **注意**: 以上はGitHub Markdownの動作だが、別のMarkdown実装では詳細動作が異なる場合もある(Babelmarkで確認すると実際にある)。他のMarkdown環境上でも使う可能性がある文章の場合は想定し得る箇所全てをエスケープすることを推奨する。
 
 ## 太字と斜体の文法認識
 
-太字と斜体の文法認識はもともと英文のように単語をスペースで区切る文書を想定した仕様になっている。また[GFM]仕様のMarkdownでは書式設定テキスト内に`_`が含まれる場合(特に[スネークケース])を考慮し、`*`と`_`の扱いが非対称な仕様になっている。
+> &#x2714;&#xFE0F; ここから強調対象テキストが区切られていない場合も含む詳しい文法解説。
+
+
+
+
+太字と斜体の文法認識は英文のように単語をスペースなどの空白文字で区切る文書を想定した仕様になっている。また[GFM]仕様のMarkdownでは書式設定テキスト内に`_`が含まれる場合(特に[スネークケース])を考慮し、`*`と`_`の扱いが非対称な仕様になっている。
 
 ### 空白で区切られている場合
 
@@ -400,69 +439,50 @@ abc***123***xyz abc___123___xyz
 * コードスパン
 * 画像
 
-
-
-
-
-
-
-
-
-
-## 補足 - 斜体と日本語
-
-ブラウザのHTMLレンダリング処理に関して「Windowsでは日本語に斜体が効かない」という有名な問題がある。具体的にはブラウザ表示フォントに[メイリオ]を用いる場合、英数字や他のアルファベット文字(ギリシャ文字やキリル文字など)は斜体になるが、日本語に使われる文字(かな、漢字など)は斜体が効かない。
-
-### フォントの基礎知識
-
-これを説明するにはまず[フォント]に関する基礎知識を知っておく必要がある。表示に用いるフォントには標準(Regular)、[斜体]\(Italic)、[太字]\(Bold)の文字種があり、これらの集合で一組のフォントとして扱われる。
-
-> 実際はもっと複雑で、一般に「斜体」と呼ばれる書体には[イタリック体](https://ja.wikipedia.org/wiki/イタリック体)(Italic)と[オブリーク体](https://ja.wikipedia.org/wiki/斜体)(Oblique)の2種類ある。また字の太さ([ウェイト](https://ja.wikipedia.org/wiki/フォント#ウェイト_(太字フォント・細字フォント)))が豊富に用意されているフォントもある。ただしMarkdownではそこまで細かい設定はできない。以下Markdownで設定可能な上記3種類に限定して説明する。
-
-### ブラウザの処理動作
-
-ブラウザなどのHTML表示環境では[斜体]と[太字]に関してだいたい次のように処理している(概要だがこの程度の理解で十分)。[斜体]の場合を示す([太字]も同様)。
-
-1. 表示用フォントが斜体データを持っている場合はそれを使用する(優先)
-   1. 斜体データが表示する文字コードに対応していればそれを出力
-   2. 未対応の場合は標準フォントで出力(この場合だけ斜体にならない - この点に注意)
-2. 斜体データを持たないフォントはブラウザ側で斜め変形レンダリングして表示
-
-日本語対応フォントの多く(MS Pゴシックなど)は斜体データを持たないため、2番目の方法でブラウザが斜め変形処理して表示する。
-
-### メイリオで生じる問題
-
-現在のWindowsでは[メイリオ]をベースとしたフォントが日本語表示用の標準として用いられている。[メイリオ]は構造が本格的で、斜体や太字の専用データを持っている。しかし斜体に関してはデータが不完全で、日本語用文字に対する斜体データが作られていない。
-
-そのため英数字やギリシャ文字などはデータが作られているため斜体表示するが、日本語用文字は上記の条件1-2の「斜体データが適用されるがその文字コードに対して未対応」に該当し、斜体ではなく標準で表示する。
-
-> メイリオがこのような仕様になった経緯に関しては次を参照。
->
-> https://ja.wikipedia.org/wiki/メイリオ#フォントファミリーの仕様
-> 
-> ただし理由として書かれている「和文は斜体表記を行う文化的背景がない」は事実ではなく、実際はメイリオよりはるか昔から広告分野などで日本語の斜体文字は用いられている。推測だが工数が膨大で対応困難だったというのが本当の理由だろう。
-
-Windows用ブラウザの多くはインストール時にメイリオを標準の表示フォントに設定しており、ユーザーがフォント設定を変更しない限り[`<em>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/em)や[`<i>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/i)を設定しても斜体にならない。
-
-> メイリオが有名だが、これ以外にもメイリオと同じ設定の(斜体データはあるが日本語文字に対応していない)フォントをブラウザが用いていれば同じ問題が発生する。
-
-### 有効な対策
-
-Windowsユーザーの多くはブラウザのフォント設定をわざわざ変えたりしないし、そもそもこういう問題があることを知る人は少ない。どの環境のユーザーに対しても同等の表示を保証するには「日本語に斜体を使わない」という回避策しか有効な方法はない。
-
 ------------------------------------------------------------------------
 
-[通常テキスト](texts.md)
-← [目次](index.md) →
-[リンク](links.md)
+[通常テキスト]
+← [目次] →
+[リンク]
+
+[メイリオ]: https://ja.wikipedia.org/wiki/メイリオ
+[リンク]: links.md
+[打ち消し線]: #打ち消し線
+[斜体]: #斜体
+[通常テキスト]: texts.md
+[太字]: #太字
+[目次]: index.md
+
+
+
+
 
 [ASCII句読文字]: characters.md#ascii句読文字
 [GFM]: github-flavored-markdown.md
 [スネークケース]: https://en.wikipedia.org/wiki/Snake_case
 [バックスラッシュエスケープ]: characters.md#バックスラッシュエスケープ
 [フォント]: https://ja.wikipedia.org/wiki/フォント
-[メイリオ]: https://ja.wikipedia.org/wiki/メイリオ
-[打ち消し線]: #打ち消し線
-[斜体]: #斜体
-[太字]: #太字
 [文字参照]: characters.md#文字参照
+
+
+
+<!--
+別のケースとして書式設定対象テキストが中間に`*`を含んでおり、そこで書式終了と認識される場合もエスケープを用いて対応する。次の文例は文字列全体を太字に設定しようとしたものだが、中間に`**`があるためそこで太字終了と認識されてしまう。
+
+> &#x2714;&#xFE0F; [GFM]仕様では`*`は単語の中間にあっても強調文字と認識するが、`_`は認識しない。これはおそらくは[スネークケース]を考慮した仕様で...以下説明する。
+
+```markdown
+**AMERICAN F**TBALL**
+```
+
+> **AMERICAN F**TBALL**
+
+このような場合は文内の`*`をエスケープすることで解決できる。この場合も[太字]のエスケープは中央部の`*`を両方エスケープする必要があることに注意すること。
+
+```markdown
+**AMERICAN F\*\*TBALL**
+```
+
+> **AMERICAN F\*\*TBALL**
+-->
+

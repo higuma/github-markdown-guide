@@ -8,7 +8,7 @@
 
 標準のMarkdownにはないインライン構文はHTMLの文法を借用して表現する。ただしこの部分はMarkdown処理実装や、それを用いたWebサービスに対する依存性が大きい。ここではGitHubのWebサービスで利用可能なMarkdownのHTMLインラインについて解説する。
 
-> &#x2757;&#xFE0F; **注意**: 本節全体が動作環境に大きく依存する部分で、特にWebサービスに文書をアップロードする場合はそのWebサイトのHTML環境設定により何が使えて何が使えないかは異なる(BabelMarkでは判別困難で、実環境チェックが必要)。本節はGitHubのWeb環境で動作確認できた結果のみ示す。
+> &#x2757;&#xFE0F; **注意**: 本章全体が動作環境に大きく依存する部分で、特にWebサービスに文書をアップロードする場合はそのWebサイトのHTML環境設定により何が使えて何が使えないかは異なる(BabelMarkでは判別困難で、実環境チェックが必要)。本節はGitHubのWeb環境で動作確認できた結果のみ示す。
 
 ## IDの設定
 
@@ -66,7 +66,7 @@ GitHub Markdown環境では次のインライン要素が有効に機能する�
 
 ## GitHubで無効な属性・要素
 
-GitHubではMarkdown内のHTML要素に対して[`style`](https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/style)属性を無効化している。次の例は大多数のMarkdown処理環境ではテキストを赤色で表示するが、GitHub Markdownでは効果がない。
+GitHubではMarkdown内に記述するHTMLタグの[`style`](https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/style)属性を無効化している。次の例は大多数のMarkdown処理環境ではテキストを赤色で表示するが、GitHub Markdownでは効果がない。
 
 ```markdown
 サンプル <span style="color:red">サンプル</span>

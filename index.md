@@ -140,6 +140,7 @@
   - [HTMLブロック](html-blocks.md)
     - [折りたたみ](html-blocks.md#折りたたみ)
       - [折りたたみのネスト](html-blocks.md#折りたたみのネスト)
+        - [ネストレベルの表現](tml-blocks.md#ネストレベルの表現)
     - [高度な表](html-blocks.md#高度な表)
       - [セルの結合](html-blocks.md#セルの結合)
       - [表のネスト](html-blocks.md#表のネスト)

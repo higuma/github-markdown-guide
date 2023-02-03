@@ -8,7 +8,7 @@
 
 上下のブロック構文の間に水平線を引く。HTML要素の`<hr>`を出力する。
 
-> &#x2714;&#xFE0F; [GitHub Flavored Markdown Spec](https://github.github.com/gfm/#thematic-breaks)では現在の[HTML仕様書](https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element)内の表現と同じ**thematic breaks**という呼び名を用いている。しかし直訳の「テーマ区切り」では堅苦しく読者が理解しにくい。要素名`<hr>`は"horizontal rules"が由来であることから、訳語は平易な表現の「水平線」とした。
+> &#x2714;&#xFE0F; **用語の日本語訳について**: [GitHub Flavored Markdown Spec](https://github.github.com/gfm/#thematic-breaks)では現在の[HTML仕様書](https://html.spec.whatwg.org/multipage/grouping-content.html#the-hr-element)内の表現と同じ**thematic breaks**という表現を用いている。しかしこれを直訳した「テーマ区切り」では堅苦しく読者が理解しにくい。要素名`<hr>`は"horizontal rules"が由来であることから、訳語は平易な表現の「水平線」とした。
 
 ## 基本的な書き方
 

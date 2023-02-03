@@ -463,7 +463,7 @@ MarkdownのリストはHTMLの[順序なしリスト](https://developer.mozilla.
    // Code block
    #include <stdio.h>
    ```
-2. > block-quated paragraph
+2. > block-quoted paragraph
    > (continue)
    > 
    > - [ ] inner task list
@@ -474,7 +474,7 @@ MarkdownのリストはHTMLの[順序なしリスト](https://developer.mozilla.
 >    // Code block
 >    #include <stdio.h>
 >    ```
-> 2. > block-quated paragraph
+> 2. > block-quoted paragraph
 >    > (continue)
 >    > 
 >    > - [ ] inner task list
@@ -483,7 +483,7 @@ MarkdownのリストはHTMLの[順序なしリスト](https://developer.mozilla.
 > <details>
 > <summary>&#x2714;&#xFE0F; 実装間の互換性</summary>
 > 
-> ただし上記のこのような書き方はMarkdown実装に大きく依存することに注意。上記文例はGitHubサイトでは意図した通りの結果になるのを確認済みだが、Babelmark(→[比較結果](https://babelmark.github.io/?text=1.+%60%60%60c%0A+++%2F%2F+Code+block%0A+++%23include+%3Cstdio.h%3E%0A+++%60%60%60%0A2.+%3E+block-quated+paragraph%0A+++%3E+(continue)%0A+++%3E+%0A+++%3E+-+%5B+%5D+inner+task+list%0A+++%3E+-+%5Bx%5D+inner+task+list))ではまともに変換しているものは皆無と言ってよい。必ず実環境で確認すること。
+> ただし上記のこのような書き方はMarkdown実装に大きく依存することに注意。上記文例はGitHubサイトでは意図した通りの結果になるのを確認済みだが、Babelmark(→[比較結果](https://babelmark.github.io/?text=1.+%60%60%60c%0A+++%2F%2F+Code+block%0A+++%23include+%3Cstdio.h%3E%0A+++%60%60%60%0A2.+%3E+block-quoted+paragraph%0A+++%3E+(continue)%0A+++%3E+%0A+++%3E+-+%5B+%5D+inner+task+list%0A+++%3E+-+%5Bx%5D+inner+task+list))ではまともに変換しているものは皆無と言ってよい。必ず実環境で確認すること。
 > 
 > </details>
 
