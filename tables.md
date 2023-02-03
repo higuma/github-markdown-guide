@@ -198,7 +198,7 @@ A1 | B1
 > -- | --
 > A1 | B1
 
-> &#x2714;&#xFE0F; この場合は区切り行の先頭セルは`-`が2個以上必要。`- | -`ではGitHub実装は行頭の`- `を先に検出して[リスト項目]と判定する。ただし他のMarkdown処理実装には表と認識するものも多い(→ [Babelmark]を用いた[比較検証結果](https://babelmark.github.io/?text=A+%7C+B%0A-+%7C+-%0AA1+%7C+B1))。
+> &#x2714;&#xFE0F; この場合は区切り行の先頭セルは`-`が2個以上必要。`- | -`ではGitHub実装は行頭の`- `を先に検出して[リスト項目]と判定する。ただし他のMarkdown処理実装には表と認識するものも多い(→ [Babelmarkによる検証結果](https://babelmark.github.io/?text=A+%7C+B%0A-+%7C+-%0AA1+%7C+B1))。
 
 ただし先頭が空セルの場合は認識されない。次は失敗例で、データ行先頭のスペース3つは行頭インデントと判定され、単に除去されてセルとして認識されない。
 
@@ -398,7 +398,6 @@ a|b
 ← [目次] →
 [コードブロック]
 
-[Babelmark]: history.md#babelmark
 [GitHub Markdown環境]: github-markdown.md
 [HTMLインライン]: html-inlines.md
 [インデントによるコードブロック]: code-blocks.md#インデントによるコードブロック

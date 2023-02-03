@@ -67,8 +67,11 @@ for (let word of ["eeny", "meeny", "miny", "moe"]) {
 > ```
 > ``````
 
-逆に`` ``` ``から始まる通常テキスト行は先頭を`\`でエスケープする。
+> &#x2714;&#xFE0F; [Github docsの解説](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)では「4重のバッククォート」と解説している。`` ` ``の数は3より多いことが条件なのでこれで正しいが、本解説では見た目の分かりやすさを考慮してネストレベルに応じた3の倍数(3,6,9,...)を用いている。
+> 
+> > &#x2757;&#xFE0F; 上記コードブロックは「コードブロックの文例を表すコードブロック」のため、そのソースリスティング表示はそれをさらにコードブロックで囲み、3重にネストした状態になっている(`` ` ``を9個使用 → [ソース](https://github.com/higuma/github-markdown-guide/blob/main/code-blocks.md?plain=1#L54-L61))。
 
+逆に`` ``` ``から始まる通常テキスト行は先頭を`\`でエスケープする。
 
 ```markdown
 \```で始まるテキスト
@@ -78,7 +81,7 @@ for (let word of ["eeny", "meeny", "miny", "moe"]) {
 
 ## 文法まとめ
 
-[CommonMark]以降のコードブロックではコードフェンス文字として`` ` ``と`~`の2種類を用いることができる。詳しい文法は次の通り。実際の用法は次の[文例](#文例)で説明する。
+[CommonMark]仕様のコードブロックではコードフェンス文字として`` ` ``と`~`の2種類を用いることができる(本解説では`` ` ``を推奨)。詳しい文法は次の通り。実際の用法は次の[文例](#文例)で説明する。
 
 * コードフェンスは`` ` ``または`~`の同種文字を3つ以上連続(混在不可)
 * コードフェンスは開始・終了とも行頭に3つまでスペースを挿入可能、行末スペースは除去して処理
@@ -167,7 +170,7 @@ Fenced code block
 > ```
 > ~~~
 
-または文字数がより多いコードフェンスを外側に用いてもよい。この方が汎用性が高く、次のように内部に` ``` `と`~~~`の両方がある場合も対応できる。
+だがそれよりも文字数を増やしたコードフェンスを外側に用いる方がよい。この方が汎用性が高く、次のように内部に` ``` `と`~~~`の両方がある場合も対応できる。
 
 `````````markdown
 ``````markdown
@@ -191,7 +194,9 @@ Fenced by ~~~
 > ~~~
 > ``````
 
-> &#x2714;&#xFE0F; `~~~`は[CommonMark]で採用された仕様で、これを用いて内部に`` ``` ``から始まる行がある場合に対応できる。ただし文字数がより多いコードフェンスの方が汎用性で勝るため覚える必要なし。[GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)でも`~~~`は説明に含まれていない。
+> &#x2714;&#xFE0F; `~~~`は[CommonMark]で採用された仕様で、これを用いて内部に`` ``` ``から始まる行がある場合に対応できる。しかし文字数を増やしたコードフェンスの方が汎用性で勝る(3重以上のネストも可能)。[GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)でも`~~~`は説明に含まれていない(覚えなくても文書作成に支障はない)。
+> 
+> &#x2757;&#xFE0F; 上記コード例は3重ネストになるため` ````````` `を用いている(→[ソース](https://github.com/higuma/github-markdown-guide/blob/main/code-blocks.md?plain=1#L172-L182))。また本解説は本章で説明用として`~~~`を使う以外には全く用いていない。さらに`~~~`によるコードブロックをサポートしていないMarkdown実装が多数存在する(→[Babelmark](https://babelmark.github.io/?text=~~~%0Acode+block%0A~~~+))。
 
 ## インデントによるコードブロック
 
