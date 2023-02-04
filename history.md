@@ -104,9 +104,9 @@ https://github.com/commonmark/commonmark-spec
 ← [目次] →
 [GitHub Flavored Markdown]
 
-[付録]: appendices.md
-[目次]: index.md
 [GitHub Flavored Markdown]: github-flavored-markdown.md
+[付録]: appendices.md
+[目次]: index.md#history
 
 
 

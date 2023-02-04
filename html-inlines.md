@@ -1,8 +1,8 @@
 # HTMLインライン
 
-[コードスパン](code-spans.md)
-← [目次](index.md) →
-[ブロック](blocks.md)
+[コードスパン]
+← [目次] →
+[ブロック]
 
 ------------------------------------------------------------------------
 
@@ -86,12 +86,15 @@ GitHubではMarkdown内に記述するHTMLタグの[`style`](https://developer.m
 
 ------------------------------------------------------------------------
 
-[コードスパン](code-spans.md)
-← [目次](index.md) →
-[ブロック](blocks.md)
+[コードスパン]
+← [目次] →
+[ブロック]
 
 [HTMLブロック]: html-block.md
+[コードスパン]: code-spans.md
 [ハード改行]: paragraphs.md#ハード改行
 [パラグラフ]: paragraphs.md
+[ブロック]: blocks.md
 [リスト項目]: lists.md#リスト項目
 [表]: tables.md
+[目次]: index.md#html-inlines

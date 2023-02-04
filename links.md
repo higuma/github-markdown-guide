@@ -203,7 +203,7 @@ GitHubの公式ドキュメントは[GitHub Docs](https://docs.github.com/)で�
 [画像]: images.md
 [空行]: characters.md#空行
 [太字、斜体、打ち消し文字]: bold-italic-strikethrough.md
-[目次]: index.md
+[目次]: index.md#links
 [文字参照]: characters.md#文字参照
 
 <!-- リンク参照定義説明用 -->

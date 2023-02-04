@@ -1,8 +1,8 @@
 # はじめに
 
-[概要](README.md#概要)
-← [目次](index.md) →
-[文字と行](characters.md)
+[概要]
+← [目次] →
+[文字と行]
 
 ------------------------------------------------------------------------
 
@@ -252,9 +252,9 @@ for (let x of [123, "abc"]) {
 
 ------------------------------------------------------------------------
 
-[概要](README.md#概要)
-← [目次](index.md) →
-[文字と行](characters.md)
+[概要]
+← [目次] →
+[文字と行]
 
 [HTML]: https://ja.wikipedia.org/wiki/HyperText_Markup_Language
 [HTMLインライン]: html-inlines.md
@@ -265,6 +265,9 @@ for (let x of [123, "abc"]) {
 [リスト]: lists.md
 [絵文字]: texts.md#絵文字
 [折りたたみ]: html-blocks.md#折りたたみ
+[概要]: README.md#概要
 [空行]: characters.md#空行
 [表]: tables.md
 [見出し]: headings.md
+[目次]: index.md#intro
+[文字と行]: characters.md

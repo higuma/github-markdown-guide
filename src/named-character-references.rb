@@ -8,7 +8,7 @@ require 'open-uri'
 
 SEPARATOR = '-' * 72
 NAVIGATION = '[付録 - GitHub Flavored Markdown](github-flavored-markdown.md)
-← [目次](index.md) →
+← [目次](index.md#named-character-references) →
 [付録 - 句読文字一覧](punctuation-characters.md)'
 
 N_COL = 3
@@ -34,6 +34,8 @@ def output_markdown(f)
   f.puts
   f.puts SEPARATOR
   f.puts
+  f.puts "> &#x2714;&#xFE0F; <#{URL_ENTITIES_JSON}> より生成\\\n(末尾に`;`が付かないものはMarkdownでは使えないため除外)"
+  f.puts
   f.puts '|' + ' `名前`<br>文字 (コード) |' * N_COL
   f.puts '|' + ' :-: |' * N_COL
   until characters.empty?
@@ -47,8 +49,6 @@ def output_markdown(f)
              }) |"
            }.join('')
   end
-  f.puts
-  f.puts "> <#{URL_ENTITIES_JSON}> より生成\\\n(末尾に`;`が付かないものはMarkdownでは使えないため除外)"
   f.puts
   f.puts SEPARATOR
   f.puts

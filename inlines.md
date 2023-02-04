@@ -28,5 +28,5 @@
 [画像]: images.md
 [通常テキスト]: texts.md
 [太字、斜体、打ち消し線]: bold-italic-strikethrough.md
-[目次]: index.md
+[目次]: index.md#inlines
 

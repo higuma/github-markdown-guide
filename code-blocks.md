@@ -49,7 +49,7 @@ for (let word of ["eeny", "meeny", "miny", "moe"]) {
 > }
 > ```
 
-コードテキストの内部に`` ``` ``で始まる行がある場合は外側に`` ` ``の文字数がより多いコードフェンスを用いることで対応できる。
+コードテキストの内部に`` ``` ``で始まる行がある場合は外側に`` ` ``の文字数を増やしたコードフェンスを用いることで対応できる。
 
 `````````markdown
 ``````
@@ -67,9 +67,9 @@ for (let word of ["eeny", "meeny", "miny", "moe"]) {
 > ```
 > ``````
 
-> &#x2714;&#xFE0F; [Github docsの解説](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)では「4重のバッククォート」と解説している。`` ` ``の数は3より多いことが条件なのでこれで正しいが、本解説では見た目の分かりやすさを考慮してネストレベルに応じた3の倍数(3,6,9,...)を用いている。
+> &#x2714;&#xFE0F; [GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)では「4重のバッククォート」と解説している。上記ケースでは`` ` ``の数が3より多いことが条件なのでこれでも正しいが、本解説では認識しやすさを考慮してネストレベルに応じた3の倍数(3,6,9,...)を用いている。
 > 
-> > &#x2757;&#xFE0F; 上記コードブロックは「コードブロックの文例を表すコードブロック」のため、そのソースリスティング表示はそれをさらにコードブロックで囲み、3重にネストした状態になっている(`` ` ``を9個使用 → [ソース](https://github.com/higuma/github-markdown-guide/blob/main/code-blocks.md?plain=1#L54-L61))。
+> > &#x2757;&#xFE0F; 上記コードブロックは「コードブロックの文例を表すコードブロック」であり、そのソース表示はそれをさらにコードブロックで囲んだ3重ネスト(`` ` ``を9個使用)になっている(→[ソース](https://github.com/higuma/github-markdown-guide/blob/main/code-blocks.md?plain=1#L54-L61))。
 
 逆に`` ``` ``から始まる通常テキスト行は先頭を`\`でエスケープする。
 
@@ -106,10 +106,10 @@ from datetime import date
 if date.today().weekday() == 5: print('今日は土曜日')
 ```
 
-~~~ruby
+```ruby
 require 'date'
 puts '今日は日曜日' if Date.today.sunday?
-~~~ 
+```
 ``````
 
 > &#x2714;&#xFE0F; 昔は手前にスペースを1つ入れる書き方が多かったが(例: ` ``` php `)、現在はスペースなしが主流(` ```php `)。どちらでも認識する。
@@ -121,10 +121,10 @@ puts '今日は日曜日' if Date.today.sunday?
 > if date.today().weekday() == 5: print('今日は土曜日')
 > ```
 > 
-> ~~~ruby
+> ```ruby
 > require 'date'
 > puts '今日は日曜日' if Date.today.sunday?
-> ~~~ 
+> ```
 
 #### 対応言語と記法
 
@@ -194,9 +194,9 @@ Fenced by ~~~
 > ~~~
 > ``````
 
-> &#x2714;&#xFE0F; `~~~`は[CommonMark]で採用された仕様で、これを用いて内部に`` ``` ``から始まる行がある場合に対応できる。しかし文字数を増やしたコードフェンスの方が汎用性で勝る(3重以上のネストも可能)。[GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)でも`~~~`は説明に含まれていない(覚えなくても文書作成に支障はない)。
+> &#x2714;&#xFE0F; `~~~`は[CommonMark]で採用された仕様で、これを用いて内部に`` ``` ``から始まる行がある場合に対応できる。しかし文字数を増やしたコードフェンスの方が汎用性で勝る(3重以上のネストも可能)。[GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)でも`~~~`は説明に含まれておらず、覚えなくても文書作成に支障はない。
 > 
-> &#x2757;&#xFE0F; 上記コード例は3重ネストになるため` ````````` `を用いている(→[ソース](https://github.com/higuma/github-markdown-guide/blob/main/code-blocks.md?plain=1#L172-L182))。また本解説は本章で説明用として`~~~`を使う以外には全く用いていない。さらに`~~~`によるコードブロックをサポートしていないMarkdown実装が多数存在する(→[Babelmark](https://babelmark.github.io/?text=~~~%0Acode+block%0A~~~+))。
+> &#x2757;&#xFE0F; 上記コード例のソース表示は3重ネストのため`` ` ``を9個用いている(→[ソース](https://github.com/higuma/github-markdown-guide/blob/main/code-blocks.md?plain=1#L175-L185))。また本解説では本章の説明に必要な場合のみ`~~~`を用いているが他には全く使っていない。さらに`~~~`によるコードブロックをサポートしていないMarkdown実装が多数存在する(→[Babelmark](https://babelmark.github.io/?text=~~~%0Acode+block%0A~~~+))。
 
 ## インデントによるコードブロック
 
@@ -232,19 +232,23 @@ Markdown初期からの文法では前後に[空行]などのブロック区切�
 > - リスト項目
 >     リスト項目の続き
 
-さらに[空行]を挿入してもコードブロックと認識されず、今度は[リスト項目]の内側にネストされた内部ドキュメントとして扱われる。
+さらに[空行]を挿入してもコードブロックではなく[リスト項目]の内側にネストされた内部ドキュメントと認識する。インデントレベルをさらに増やすと今度は[リスト項目]の内側にあるコードブロックと認識する。
 
 ```markdown
 - リスト項目
 
     リスト項目の続き
+
+      リスト項目内のコードブロック
 ```
 
 > - リスト項目
 > 
 >     リスト項目の続き
+> 
+>       リスト項目内のコードブロック
 
-つまりリスト項目の直後に次のブロックとしてインデントによるコードブロックを配置することはできないが、代わりにコードフェンス(` ``` `)を用いたコードブロックを用いればよい。
+結論としてインデントによるコードブロックをリストの後に配置することはできない。代わりにコードフェンス(` ``` `)を用いたコードブロックを用いればよい。
 
 ``````markdown
 - リスト項目
@@ -260,7 +264,7 @@ Markdown初期からの文法では前後に[空行]などのブロック区切�
 > コードブロック
 > ```
 
-初期のMarkdown実装にはインデントによるコードブロックしかなかったが、上記のような問題があるため後でコードフェンスを用いた仕様が加えられた。今ではコードブロックと言えば通常はコードフェンスを用いる文法を指す。
+初期のMarkdown実装にはインデントによるコードブロックしかなかったが、上記のような問題が様々なケースで発生するため後でコードフェンスを用いた仕様が加えられた。今ではコードブロックと言えば通常はコードフェンスを用いる文法を指す。
 
 ------------------------------------------------------------------------
 
@@ -285,5 +289,5 @@ Markdown初期からの文法では前後に[空行]などのブロック区切�
 [リスト項目]: lists.md#リスト項目
 [空行]: characters.md#空行
 [表]: tables.md
-[目次]: index.md
+[目次]: index.md#code-blocks
 [文字参照]: characters.md#文字参照

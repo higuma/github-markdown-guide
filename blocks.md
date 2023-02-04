@@ -34,5 +34,5 @@
 [リスト]: lists.md
 [表]: tables.md
 [見出し]: headings.md
-[目次]: index.md
+[目次]: index.md#blocks
 [水平線]: horizontal-rules.md

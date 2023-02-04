@@ -7,11 +7,11 @@
 
 ## 総目次
 
-- [概要](README.md#概要)
+- <span id="README">[概要](README.md#概要)</span>
   - [レベル](README.md#レベル)
   - [構成](README.md#構成)
   - [処理実装間の互換性](README.md#処理実装間の互換性)
-- [はじめに](intro.md)
+- <span id="intro">[はじめに](intro.md)</span>
   - [本解説の記法について](intro.md#本解説の記法について)
   - [Markdownひとめぐり](intro.md#markdownひとめぐり)
     - [見出し](intro.md#見出し)
@@ -22,7 +22,7 @@
     - [ブロック引用](intro.md#ブロック引用)
     - [リスト](intro.md#リスト)
     - [タスクリスト](intro.md#タスクリスト)
-- [文字と行](characters.md)
+- <span id="characters">[文字と行](characters.md)</span>
   - [スペースとタブ](characters.md#スペースとタブ)
   - [改行と空行](characters.md#改行と空行)
   - [ASCII句読文字](characters.md#ASCII句読文字)
@@ -37,12 +37,12 @@
     - [文字参照が効かない構文](characters.md#文字参照が効かない構文)
     - [文字参照の必要性](characters.md#文字参照の必要性)
   - [コメント](characters.md#コメント)
-- [Markdownの構文](syntax.md)
+- <span id="syntax">[Markdownの構文](syntax.md)</span>
   - [インライン](syntax.md#インライン)
   - [ブロック](syntax.md#ブロック)
   - [構文解析](syntax.md#構文解析)
-- [インライン](inlines.md)
-  - [通常テキスト](texts.md)
+- <span id="inlines">[インライン](inlines.md)</span>
+  - <span id="texts">[通常テキスト](texts.md)</span>
     - [テキスト入力](texts.md#テキスト入力)
     - [バックスラッシュエスケープ](texts.md#バックスラッシュエスケープ)
     - [文字参照の応用](texts.md#文字参照の応用)
@@ -51,7 +51,7 @@
       - [絵文字](texts.md#絵文字)
         - [異体字セレクタ](texts.md#異体字セレクタ)
         - [テキスト/絵文字の切り替え](texts.md#テキスト/絵文字の切り替え)
-  - [太字、斜体、打ち消し線](bold-italic-strikethrough.md)
+  - <span id="bold-italic-strikethrough">[太字、斜体、打ち消し線](bold-italic-strikethrough.md)</span>
     - [太字](bold-italic-strikethrough.md#太字)
     - [斜体](bold-italic-strikethrough.md#斜体)
     - [打ち消し線](bold-italic-strikethrough.md#打ち消し線)
@@ -64,7 +64,7 @@
     - [エスケープ](bold-italic-strikethrough.md#エスケープ)
     - [太字と斜体の文法認識](bold-italic-strikethrough.md#太字と斜体の文法認識)
       - **TODO**
-  - [リンク](links.md)
+  - <span id="links">[リンク](links.md)</span>
     - [自動リンク](links.md#自動リンク)
     - [拡張自動リンク](links.md#拡張自動リンク)
       - [拡張自動リンクのエスケープ](links.md#拡張自動リンクのエスケープ)
@@ -73,8 +73,8 @@
       - [URLがスペースを含む場合](links.md#urlがスペースを含む場合)
     - [リンク](links.md#リンク)
     - [リンク参照定義](links.md#リンク参照定義)
-  - [画像](images.md)
-  - [コードスパン](code-spans.md)
+  - <span id="images">[画像](images.md)</span>
+  - <span id="code-spans">[コードスパン](code-spans.md)</span>
     - [基本的な書き方](code-spans.md#基本的な書き方)
       - [コードスパン内部のバックティック](code-spans.md#コードスパン内部のバックティック)
     - [文法まとめ](code-spans.md#文法まとめ)
@@ -82,13 +82,13 @@
       - [表内部の`|`のエスケープ](code-spans.md#表内部ののエスケープ)
       - [文字参照](code-spans.md#文字参照)
       - [コードスパン内の連続スペース](code-spans.md#コードスパン内の連続スペース)
-  - [HTMLインライン](html-inlines.md)
+  - <span id="html-inlines">[HTMLインライン](html-inlines.md)</span>
     - [IDの設定](html-inlines.md#idの設定)
     - [改行](html-inlines.md#改行)
     - [スタイル設定](html-inlines.md#スタイル設定)
     - [GitHubで無効な属性・要素](html-inlines.md#githubで無効な属性・要素)
-- [ブロック](blocks.md)
-  - [パラグラフ](paragraphs.md)
+- <span id="blocks">[ブロック](blocks.md)</span>
+  - <span id="paragraphs">[パラグラフ](paragraphs.md)</span>
     - [基本的な書き方](paragraphs.md#基本的な書き方)
     - [行の連結](paragraphs.md#行の連結)
       - [日本語の扱い](paragraphs.md#日本語の扱い)
@@ -99,19 +99,19 @@
       - [行頭スペースの除去](paragraphs.md#行頭スペースの除去)
       - [直前構文に対する文法認識](paragraphs.md#直前構文に対する文法認識)
       - [直後構文に対する文法認識](paragraphs.md#直後構文に対する文法認識)
-  - [見出し](headings.md)
+  - <span id="headings">[見出し](headings.md)</span>
     - [基本的な書き方](headings.md#基本的な書き方)
     - [詳しい文法規則](headings.md#詳しい文法規則)
       - [現方式の完全な文法](headings.md#現方式の完全な文法)
         - [インデントの副作用](headings.md#インデントの副作用)
       - [Setext見出し](headings.md#setext見出し)
     - [Markdown実装による仕様の違い](headings.md#markdown実装による仕様の違い)
-  - [水平線](horizontal-rules.md)
+  - <span id="horizontal-rules">[水平線](horizontal-rules.md)</span>
     - [基本的な書き方](horizontal-rules.md#基本的な書き方)
     - [詳細仕様](horizontal-rules.md#詳細仕様)
     - [文法の認識](horizontal-rules.md#文法の認識)
       - [他のMarkdown実装](horizontal-rules.md#他のMarkdown実装)
-  - [表](tables.md)
+  - <span id="tables">[表](tables.md)</span>
     - [基本的な書き方](tables.md#基本的な書き方)
       - [テキスト文書の整形](tables.md#テキスト文書の整形)
       - [アラインメント](tables.md#アラインメント)
@@ -123,7 +123,7 @@
       - [行頭・行末の`|`](tables.md#行頭・行末の)
       - [セル前後の空白](tables.md#セル前後の空白)
       - [表の認識(前後構文との関係)](tables.md#表の認識前後構文との関係)
-  - [コードブロック](code-blocks.md)
+  - <span id="code-blocks">[コードブロック](code-blocks.md)</span>
     - [基本的な書き方](code-blocks.md#基本的な書き方)
     - [文法まとめ](code-blocks.md#文法まとめ)
     - [詳細文法](code-blocks.md#詳細文法)
@@ -131,13 +131,13 @@
         - [対応言語と記法](code-blocks.md#対応言語と記法)
       - [内部に` ``` `や`~~~`を含む場合](code-blocks.md#内部にやを含む場合)
     - [インデントによるコードブロック](code-blocks.md#インデントによるコードブロック)
-  - [ブロック引用](block-quotes.md)
+  - <span id="block-quotes">[ブロック引用](block-quotes.md)</span>
     - [基本的な書き方](block-quotes.md#基本的な書き方)
     - [詳しい文法](block-quotes.md#詳しい文法)
       - [先頭マーカーとインデント](block-quotes.md#先頭マーカーとインデント)
       - [先頭マーカーの省略](block-quotes.md#先頭マーカーの省略)
       - [その他](block-quotes.md#その他)
-  - [リスト](lists.md)
+  - <span id="lists">[リスト](lists.md)</span>
     - [基本的な書き方](lists.md#基本的な書き方)
     - [リスト項目](lists.md#リスト項目)
     - [順序なしリスト](lists.md#順序なしリスト)
@@ -147,29 +147,29 @@
       - [行の連結](lists.md#行の連結)
       - [インデント](lists.md#インデント)
       - [空行の挿入](lists.md#空行の挿入)
-  - [タスクリスト](task-lists.md)
-  - [HTMLブロック](html-blocks.md)
+  - <span id="task-lists">[タスクリスト](task-lists.md)</span>
+  - <span id="html-blocks">[HTMLブロック](html-blocks.md)</span>
     - [折りたたみ](html-blocks.md#折りたたみ)
       - [折りたたみのネスト](html-blocks.md#折りたたみのネスト)
         - [ネストレベルの表現](tml-blocks.md#ネストレベルの表現)
     - [高度な表](html-blocks.md#高度な表)
       - [セルの結合](html-blocks.md#セルの結合)
       - [表のネスト](html-blocks.md#表のネスト)
-- [GitHub Markdown環境](github-markdown.md)
+- <span id="github-markdown">[GitHub Markdown環境](github-markdown.md)</span>
   - **TODO**
-- [付録](appendices.md)
-  - [Markdownの歴史](history.md)
+- <span id="appendices">[付録](appendices.md)</span>
+  - <span id="history">[Markdownの歴史](history.md)</span>
     - 全体的に**TODO**
     - [Markdownの成立まで](history.md#Markdownの成立まで)
     - [Markdownとは](history.md#12-markdownとは)
     - [GitHub Flavored Markdownとは](history.md#github-flavored-markdownとは)
     - [仕様書の必要性](history.md#13-仕様書の必要性)
     - [GFM仕様書について](history.md#14-gfm仕様書について)
-  - [GitHub Flavored Markdown](github-flavored-markdown.md)
+  - <span id="github-flavored-markdown">[GitHub Flavored Markdown](github-flavored-markdown.md)</span>
     - **TODO**
-  - [名前付き文字参照一覧](named-character-references.md)
-  - [句読文字一覧](punctuation-characters.md)
-  - [Unicode空白文字一覧](unicode-whitespace-characters.md)
+  - <span id="named-character-references">[名前付き文字参照一覧](named-character-references.md)</span>
+  - <span id="punctuation-characters">[句読文字一覧](punctuation-characters.md)</span>
+  - <span id="unicode-whitespace-characters">[Unicode空白文字一覧](unicode-whitespace-characters.md)</span>
 
 ------------------------------------------------------------------------
 

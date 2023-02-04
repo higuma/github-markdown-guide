@@ -1,10 +1,13 @@
 # 付録 - Markdownで使用できる名前付き文字参照一覧
 
 [付録 - GitHub Flavored Markdown](github-flavored-markdown.md)
-← [目次](index.md) →
+← [目次](index.md#named-character-references) →
 [付録 - 句読文字一覧](punctuation-characters.md)
 
 ------------------------------------------------------------------------
+
+> &#x2714;&#xFE0F; <https://html.spec.whatwg.org/entities.json> より生成\
+(末尾に`;`が付かないものはMarkdownでは使えないため除外)
 
 | `名前`<br>文字 (コード) | `名前`<br>文字 (コード) | `名前`<br>文字 (コード) |
 | :-: | :-: | :-: |
@@ -718,11 +721,8 @@
 | `&Zscr;`<br>&Zscr; (U+1D4B5) | `&zscr;`<br>&zscr; (U+1D4CF) | `&zwj;`<br>&zwj; (U+200D) |
 | `&zwnj;`<br>&zwnj; (U+200C) |
 
-> <https://html.spec.whatwg.org/entities.json> より生成\
-(末尾に`;`が付かないものはMarkdownでは使えないため除外)
-
 ------------------------------------------------------------------------
 
 [付録 - GitHub Flavored Markdown](github-flavored-markdown.md)
-← [目次](index.md) →
+← [目次](index.md#named-character-references) →
 [付録 - 句読文字一覧](punctuation-characters.md)

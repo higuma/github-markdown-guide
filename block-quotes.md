@@ -221,4 +221,4 @@
 [ブロック]: blocks.md
 [リスト]: lists.md
 [空行]: characters.md#空行
-[目次]: index.md
+[目次]: index.md#block-quotes

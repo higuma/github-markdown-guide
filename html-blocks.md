@@ -432,6 +432,7 @@ GitHubでは[`<table>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/t
 ← [目次] →
 [GitHub Markdown環境]
 
+[GitHub Markdown環境]: github-markdown.md
 [HTMLインライン]: html-inlines.md
 [タスクリスト]: task-lists.md
 [ブロック]: blocks.md
@@ -439,5 +440,4 @@ GitHubでは[`<table>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/t
 [リンク]: links.md
 [空行]: characters.md#空行
 [表]: tables.md
-[目次]: index.md
-[GitHub Markdown環境]: github-markdown.md
+[目次]: index.md#html-blocks

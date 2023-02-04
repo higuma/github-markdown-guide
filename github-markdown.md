@@ -167,8 +167,11 @@ https://gist.github.com/higuma/80cff0982f9f7e2a267b33cad20f984a
 [付録]
 
 [HTMLブロック]: html-blocks.md
-[目次]: index.md
 [付録]: appendices.md
+[目次]: index.md#github-markdown
+
+
+
 
 [ASCII句読文字]: backslash-escapes.md#ASCII句読文字
 [インライン]: inlines.md

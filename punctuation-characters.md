@@ -1,10 +1,12 @@
 # 付録 - 句読文字一覧
 
 [付録 - 名前付き文字参照一覧](named-character-references.md)
-← [目次](index.md) →
+← [目次](index.md#punctuation-characters) →
 [付録 - Unicode空白文字一覧](unicode-whitespace-characters.md)
 
 ------------------------------------------------------------------------
+
+> &#x2714;&#xFE0F; <https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt> より生成 (2023-02-04)
 
 [斜体]及び[太字]の検出判定に用いられる[句読文字]の一覧。具体的には次のどちらかの条件に当てはまる文字が該当する。
 
@@ -187,12 +189,10 @@
 | 1DA8\* | <span id="1DA80" title="U+1DA80 (対象外)">-</span> | <span id="1DA81" title="U+1DA81 (対象外)">-</span> | <span id="1DA82" title="U+1DA82 (対象外)">-</span> | <span id="1DA83" title="U+1DA83 (対象外)">-</span> | <span id="1DA84" title="U+1DA84 (対象外)">-</span> | <span id="1DA85" title="U+1DA85 (対象外)">-</span> | <span id="1DA86" title="U+1DA86 (対象外)">-</span> | <span id="1DA87" title="U+1DA87 SIGNWRITING COMMA, Po">`𝪇`<br>𝪇</span> | <span id="1DA88" title="U+1DA88 SIGNWRITING FULL STOP, Po">`𝪈`<br>𝪈</span> | <span id="1DA89" title="U+1DA89 SIGNWRITING SEMICOLON, Po">`𝪉`<br>𝪉</span> | <span id="1DA8A" title="U+1DA8A SIGNWRITING COLON, Po">`𝪊`<br>𝪊</span> | <span id="1DA8B" title="U+1DA8B SIGNWRITING PARENTHESIS, Po">`𝪋`<br>𝪋</span> | <span id="1DA8C" title="U+1DA8C (対象外)">-</span> | <span id="1DA8D" title="U+1DA8D (対象外)">-</span> | <span id="1DA8E" title="U+1DA8E (対象外)">-</span> | <span id="1DA8F" title="U+1DA8F (対象外)">-</span> |
 | 1E95\* | <span id="1E950" title="U+1E950 (対象外)">-</span> | <span id="1E951" title="U+1E951 (対象外)">-</span> | <span id="1E952" title="U+1E952 (対象外)">-</span> | <span id="1E953" title="U+1E953 (対象外)">-</span> | <span id="1E954" title="U+1E954 (対象外)">-</span> | <span id="1E955" title="U+1E955 (対象外)">-</span> | <span id="1E956" title="U+1E956 (対象外)">-</span> | <span id="1E957" title="U+1E957 (対象外)">-</span> | <span id="1E958" title="U+1E958 (対象外)">-</span> | <span id="1E959" title="U+1E959 (対象外)">-</span> | <span id="1E95A" title="U+1E95A (対象外)">-</span> | <span id="1E95B" title="U+1E95B (対象外)">-</span> | <span id="1E95C" title="U+1E95C (対象外)">-</span> | <span id="1E95D" title="U+1E95D (対象外)">-</span> | <span id="1E95E" title="U+1E95E ADLAM INITIAL EXCLAMATION MARK, Po">`𞥞`<br>𞥞</span> | <span id="1E95F" title="U+1E95F ADLAM INITIAL QUESTION MARK, Po">`𞥟`<br>𞥟</span> |
 
-> <https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt> より生成 (2022-12-24)
-
 ------------------------------------------------------------------------
 
 [付録 - 名前付き文字参照一覧](named-character-references.md)
-← [目次](index.md) →
+← [目次](index.md#punctuation-characters) →
 [付録 - Unicode空白文字一覧](unicode-whitespace-characters.md)
 
 [ASCII句読文字]: characters.md#ascii句読文字

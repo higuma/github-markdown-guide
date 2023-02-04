@@ -20,4 +20,4 @@
 
 [GitHub Markdown環境]: github-markdown.md
 [付録 - Markdownの歴史]: history.md
-[目次]: index.md
+[目次]: index.md#appendices

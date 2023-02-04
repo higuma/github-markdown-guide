@@ -378,7 +378,7 @@ ABDEFG<br>HIJKLM
 [ブロック引用]: block-quotes.md
 [リスト]: lists.md
 [空行]: characters.md#空行
+[水平線]: thematic-breaks.md
 [表]: tables.md
 [見出し]: headings.md
-[目次]: index.md
-[水平線]: thematic-breaks.md
+[目次]: index.md#paragraphs

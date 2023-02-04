@@ -15,5 +15,5 @@ TODO
 [名前付き文字参照一覧]
 
 [Markdownの歴史]: history.md
-[目次]: index.md
 [名前付き文字参照一覧]: named-character-references.md
+[目次]: index.md#github-flavored-markdown

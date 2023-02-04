@@ -3,7 +3,7 @@
 require_relative 'unicode-emoji/unicode'
 
 NAVIGATION = '[付録 - 名前付き文字参照一覧](named-character-references.md)
-← [目次](index.md) →
+← [目次](index.md#punctuation-characters) →
 [付録 - Unicode空白文字一覧](unicode-whitespace-characters.md)'
 SEPARATOR = '-' * 72
 
@@ -96,6 +96,8 @@ def output_markdown(f)
   f.puts
   f.puts SEPARATOR
   f.puts
+  f.puts "> &#x2714;&#xFE0F; <#{Unicode::Data::URL}> より生成 (#{Date.today})"
+  f.puts
   f.puts '[斜体]及び[太字]の検出判定に用いられる[句読文字]の一覧。具体的には次のどちらかの条件に当てはまる文字が該当する。'
   f.puts
   f.puts '- [ASCII句読文字]'
@@ -116,8 +118,6 @@ def output_markdown(f)
   end
   output_line f, base, items
 
-  f.puts
-  f.puts "> <#{Unicode::Data::URL}> より生成 (#{Date.today})"
   f.puts
   f.puts SEPARATOR
   f.puts

@@ -648,5 +648,4 @@ MarkdownのリストはHTMLの[順序なしリスト](https://developer.mozilla.
 [順序付きリスト]: #順序付きリスト
 [複数行に渡るリスト項目]: #複数行に渡るリスト項目
 [見出し]: headings.md
-[目次]: index.md
-
+[目次]: index.md#lists

@@ -121,6 +121,6 @@ GHI_ JKL
 [太字、斜体、打ち消し線]: bold-italic-strikethrough.md
 [画像]: images.md
 [見出し]: headings.md
-[目次]: index.md
+[目次]: index.md#syntax
 [文字と行]: characters.md
 [水平線]: horizontal-rules.md

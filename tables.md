@@ -413,5 +413,5 @@ a|b
 [リスト]: lists.md
 [リスト項目]: lists.md#リスト項目
 [空行]: characters.md#空行
-[目次]: index.md
 [水平線]: horizontal-rules.md
+[目次]: index.md#tables
