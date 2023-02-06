@@ -25,15 +25,15 @@ Markdown
 
 GitHub Markdownをはじめとする多くMarkdown環境では[見出し]に対して次のルールでIDを自動的に割り振る。
 
-1. 見出し文のテキストを抽出して次の変換を行う
-    * スペースを`-`に変換
-    * `-`以外の[ASCII句読文字]を除去
-    * アルファベットを全て小文字に変換
-    * その他の文字(日本語文字を含む)は無変換
-2. IDに重複が生じた場合は次のように処理
-    * 最初はそのまま(例: `foo`)
-    * 2番目は`-1`を追加(`foo-1`)
-    * 3番目以降も同様に連番を振る(`foo-2`, `foo-3`, ...)
+- 見出し文のテキストを抽出して次の変換を行う
+  - スペースを`-`に変換
+  - `-`以外の[ASCII句読文字]を除去
+  - アルファベットを全て小文字に変換
+  - その他の文字(日本語文字を含む)は無変換
+- IDに重複が生じた場合は次のように処理
+  - 最初はそのまま(例: `foo`)
+  - 2番目は`-1`を追加(`foo-1`)
+  - 3番目以降も同様に連番を振る(`foo-2`, `foo-3`, ...)
 
 実例を示す。
 
@@ -45,14 +45,14 @@ GitHub Markdownをはじめとする多くMarkdown環境では[見出し]に対�
 
 → [`id="github-markdownとは"`](#github-markdownとは)
 
-<details>
-<summary>変換手順</summary>
-
-1. テキストを抽出(リンク情報は除去) → `GitHub Markdownとは?`
-2. スペースを`-`に変換 → `GitHub-Markdownとは?`
-3. `-`以外のASCII句読文字を除去 → `GitHub-Markdownとは`
-4. アルファベットを小文字に変換 → `github-markdownとは`
-</details>
+> <details>
+> <summary>変換手順</summary>
+> 
+> 1. テキストを抽出(リンク情報は除去) → `GitHub Markdownとは?`
+> 2. スペースを`-`に変換 → `GitHub-Markdownとは?`
+> 3. `-`以外のASCII句読文字を除去 → `GitHub-Markdownとは`
+> 4. アルファベットを小文字に変換 → `github-markdownとは`
+> </details>
 
 ```markdown
 ### *F*,o<sup>o</sup>!
@@ -62,13 +62,13 @@ GitHub Markdownをはじめとする多くMarkdown環境では[見出し]に対�
 
 → [`id="foo"`](#foo)
 
-<details>
-<summary>変換手順</summary>
-
-1. テキストを抽出(書式設定は除去) → `F,oo!`
-2. `-`以外のASCII句読文字を除去 → `Foo`
-3. アルファベットを小文字に変換 → `foo`
-</details>
+> <details>
+> <summary>変換手順</summary>
+> 
+> 1. テキストを抽出(書式設定は除去) → `F,oo!`
+> 2. `-`以外のASCII句読文字を除去 → `Foo`
+> 3. アルファベットを小文字に変換 → `foo`
+> </details>
 
 ```markdown
 #### F=OO
@@ -78,22 +78,135 @@ GitHub Markdownをはじめとする多くMarkdown環境では[見出し]に対�
 
 → [`id="foo-1"`](#foo-1)
 
-<details>
-<summary>変換手順</summary>
+> <details>
+> <summary>変換手順</summary>
+> 
+> 1. テキストを抽出 → `F=O/O`
+> 2. `-`以外のASCII句読文字を除去 → `FOO`
+> 3. アルファベットを小文字に変換 → `foo`
+> 4. 上と重複するため連番を追加 → `foo-1`
+> </details>
 
-1. テキストを抽出 → `F=O/O`
-2. `-`以外のASCII句読文字を除去 → `FOO`
-3. アルファベットを小文字に変換 → `foo`
-4. 上と重複するため連番を追加 → `foo-1`
-</details>
-
-> 以上の仕様はよく知られているもので、他のMarkdownを用いたWebサービス/アプリでもこれと同じ仕様が多い。ただしGitHubの公式ドキュメントを探しても記述は見当たらないのでこの機会にまとめておいた。
+> 以上の仕様はよく知られているもので、他のMarkdownを用いたWebサービス/アプリでも同じ仕様が多い。ただしGitHubの公式ドキュメントを探しても記述は見当たらないのでこの機会にまとめておいた。
 
 ### 数式
 
-Markdownを用いるWeb環境にはLaTeX形式の数式記述を受け付けるものが多く、GitHubでも採用されている。
+Markdown応用環境の多くが[LaTeX]仕様の数式表現を取り入れており、GitHubでも採用されている。
 
-> これも他のMarkdown環境ではよくあるTODO
+> &#x2714;&#xFE0F; **[LaTeX]の数式表現**
+> 
+> [LaTeX]は元々書籍用の組版ツールで、現在も論文執筆用によく用いられる。また最近はLaTeXの数式記述書式が事実上の標準となり他分野でも用いられるようになった。Markdown習得に関してはこの数式表現だけ覚えればよい。次のWikipedia解説が詳しい。
+> 
+> https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#関数・演算子・特殊記号
+> 
+> https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#大きな式
+> 
+> https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#アルファベットと書体
+
+MarkdownにLaTeX数式表現を埋め込む書式は環境によって異なる。GitHub仕様をまとめると次の通り。
+
+- [ブロック]の場合(2通り)
+  - 前後に[空行]を挟んで`$$...$$`
+  - または[info文字列]に`math`を設定した[コードブロック]
+  - 数式表現内部に`$`を含む場合は`\$`でエスケープ
+- [インライン]の場合は`$...$`
+  - 前後に区切りとして認識できる文字(通常はスペース)が必要。
+  - 同じ行にテキストの`$`がある場合は`<span>$</span>`でエスケープ
+  - 数式表現内部に`$`を含む場合は`\$`または`\\$`でエスケープ **注意**
+
+#### ブロックの場合
+
+前後に[空行]を入れて`$$...$$`、または[info文字列]に`math`を設定した[コードブロック]で記述する。
+
+``````markdown
+##### 例1
+
+$$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2 R$$
+
+##### 例2
+
+```math
+a^2 = b^2 + c^2 - 2 b c \cos A
+```
+``````
+
+> ##### 例1
+> 
+> $$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2 R$$
+> 
+> ##### 例2
+> 
+> ```math
+> a^2 = b^2 + c^2 - 2 b c \cos A
+> ```
+
+数式が内部に`$`を含む場合はエスケープして`\$`とする(これはLaTeXの仕様)。
+
+```markdown
+$$f\>\$!\>x$$
+```
+
+> $$f\>\$!\>x$$
+
+#### インラインの場合
+
+`$...$`の内部に記述する。
+
+```markdown
+質量 $m$ とエネルギー $E$ は等価であり、両者の関係は光速度を $c$ として $E = m c^2$ で表される。
+```
+
+> 質量 $m$ とエネルギー $E$ は等価であり、両者の関係は光速度を $c$ として $E = m c^2$ で表される。
+
+> <details>
+> <summary>&#x26A0;&#xFE0F; <strong>失敗例</strong></summary>
+> 
+> 日本語の場合は数式の前後をスペースで区切らないと認識しない。次は失敗例。
+> 
+> ```markdown
+> 質量$m$とエネルギー$E$は等価であり...
+> ```
+> 
+> > 質量$m$とエネルギー$E$は等価であり...
+> </details>
+
+同じ文章の手前にテキストとして`$`が含まれる場合は`<span>`でエスケープする必要がある。
+
+```markdown
+<span>$</span>10 の $\frac{1}{4}$
+```
+
+> <span>$</span>10 の $\frac{1}{4}$
+
+> <details>
+> <summary>&#x26A0;&#xFE0F; <strong>失敗例</strong></summary>
+> 
+> 失敗例を示す。最初の文例はエスケープしない場合で、手前にある`$10 の $`までの部分を数式と判定する(誤認識)。[バックスラッシュエスケープ]や[文字参照]を用いても効果はなく(同じ結果)、解決法は`<span>$</span>`によるエスケープしかない。
+> 
+> ```markdown
+> エスケープが必要な例(正しく表示しない): $10 の $\frac{1}{4}$
+> 
+> エスケープ失敗例(1): \$10 の $\frac{1}{4}$
+> 
+> エスケープ失敗例(2): &dollar;10 の $\frac{1}{4}$
+> ```
+> 
+> > エスケープが必要な例(正しく表示しない): $10 の $\frac{1}{4}$
+> > 
+> > エスケープ失敗例(1): \$10 の $\frac{1}{4}$
+> > 
+> > エスケープ失敗例(2): &dollar;10 の $\frac{1}{4}$
+> </details>
+
+数式内に`$`が含まれる場合も同じ理由によりエスケープを用いるが、LaTeXにはもともと数式内の`$`をエスケープして`\$`とするルールがあることに注意。次の例ではダブルエスケープして`\\$`とする必要があり、さらにスペース指定(通常は`\>`)もダブルエスケープが必要。
+
+```markdown
+Haskellの例: $f\\>\\$!\\>x$
+```
+
+> Haskellの例: $f\\>\\$!\\>x$
+
+> &#x26A0;&#xFE0F; **注意** この部分は動作が不安定なので気を付けること(不具合の可能性あり)。
 
 ## 脚注
 
@@ -167,15 +280,22 @@ https://gist.github.com/higuma/80cff0982f9f7e2a267b33cad20f984a
 [付録]
 
 [HTMLブロック]: html-blocks.md
+[info文字列]: code-blocks.md#info文字列
+[LaTeX]: https://ja.wikipedia.org/wiki/LaTeX
+[インライン]: inlines.md
+[コードブロック]: code-blocks.md
+[ブロック]: blocks.md
 [付録]: appendices.md
+[空行]: characters.md#空行
 [目次]: index.md#github-markdown
 
 
 
 
+<!--
 [ASCII句読文字]: backslash-escapes.md#ASCII句読文字
-[インライン]: inlines.md
 [コードスパン]: code-spans.md
 [コードブロック]: code-blocks.md
 [折りたたみ]: html-blocks.md#折りたたみ
 [見出し]: thematic-breaks.md
+-->
