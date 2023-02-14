@@ -23,20 +23,21 @@
     - [リスト](intro.md#リスト)
     - [タスクリスト](intro.md#タスクリスト)
 - <span id="characters">[文字と行](characters.md)</span>
+  - [コメント](characters.md#コメント)
   - [スペースとタブ](characters.md#スペースとタブ)
   - [改行と空行](characters.md#改行と空行)
   - [ASCII句読文字](characters.md#ASCII句読文字)
-    - [バックスラッシュエスケープ](characters.md#バックスラッシュエスケープ)
+  - [バックスラッシュエスケープ](characters.md#バックスラッシュエスケープ)
     - [バックスラッシュエスケープが効かない構文](characters.md#バックスラッシュエスケープが効かない構文)
-  - [句読文字](characters.md#句読文字)
-    - **TODO**
   - [文字参照](characters.md#文字参照)
     - [名前付き文字参照](characters.md#名前付き文字参照)
     - [10進数文字参照](characters.md#10進数文字参照)
     - [16進数文字参照](characters.md#16進数文字参照)
     - [文字参照が効かない構文](characters.md#文字参照が効かない構文)
     - [文字参照の必要性](characters.md#文字参照の必要性)
-  - [コメント](characters.md#コメント)
+  - [強調書式の認識に用いられる文字](characters.md#強調書式の認識に用いられる文字)
+    - [Unicode空白文字](characters.md#unicode空白文字)
+    - [句読文字](characters.md#句読文字)
 - <span id="syntax">[Markdownの構文](syntax.md)</span>
   - [インライン](syntax.md#インライン)
   - [ブロック](syntax.md#ブロック)
@@ -47,7 +48,7 @@
     - [バックスラッシュエスケープ](texts.md#バックスラッシュエスケープ)
     - [文字参照の応用](texts.md#文字参照の応用)
       - [ノーブレークスペース](texts.md#ノーブレークスペース)
-        - **TODO**
+      - [幅0の非表示区切り](texts.md#幅0の非表示区切り)
       - [絵文字](texts.md#絵文字)
         - [異体字セレクタ](texts.md#異体字セレクタ)
         - [テキスト/絵文字の切り替え](texts.md#テキスト/絵文字の切り替え)
@@ -168,8 +169,8 @@
   - <span id="github-flavored-markdown">[GitHub Flavored Markdown](github-flavored-markdown.md)</span>
     - **TODO**
   - <span id="named-character-references">[名前付き文字参照一覧](named-character-references.md)</span>
-  - <span id="punctuation-characters">[句読文字一覧](punctuation-characters.md)</span>
   - <span id="unicode-whitespace-characters">[Unicode空白文字一覧](unicode-whitespace-characters.md)</span>
+  - <span id="punctuation-characters">[句読文字一覧](punctuation-characters.md)</span>
 
 ------------------------------------------------------------------------
 

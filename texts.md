@@ -24,7 +24,7 @@ ABCDE      ΑΒΓΔΕ      アイウエオ
 
 > ABCDE      ΑΒΓΔΕ      アイウエオ
 
-> &#x2714;&#xFE0F; 多くのMarkdown処理実装ではMarkdown側で縮約を行う。また縮約せずそのまま出力するMarkdown実装もあるが、この場合はHTMLパーサ側で縮約が行われる。どちらの場合もHTMLブラウザに表示される最終出力は縮約された状態で表示されるため同じ結果になる。
+> &#x2714;&#xFE0F; 多くのMarkdown処理実装ではMarkdown側で縮約を行う。また縮約せずそのまま出力するMarkdown実装もあるが、この場合は通常HTMLパーサ側で縮約が行われる(CSS設定に依存)。どちらの場合もHTMLブラウザに表示される最終出力は縮約された状態で表示されるため多くの場合は同じ結果になる。
 
 ## バックスラッシュエスケープ
 
@@ -74,7 +74,7 @@ Markdownでは通常の文字に関しては文字参照の必要性は低い。
 
 > 0 < x < 100
 
-Markdownではこのようなケースで文字参照を用いる必要はない。それよりもUnicodeの機能を用いた書式制御に関して文字参照の使い道がある。
+Markdownではこのようなケースで文字参照を用いる必要はない。それよりもUnicodeの機能を用いた書式制御に関して文字参照が有用なケースがいくつかある。
 
 ### ノーブレークスペース
 
@@ -106,26 +106,6 @@ Foo&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;bar
 > 
 > Foo&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;bar
 
-------------------------------------------------------------------------
-
-> ここからTODO: 2022-12-31
-> 
-> GitHubがコードスパン内部の連続空白を除去しないようにする機能対応を行った。そのためこの記述はもう使えない。ただしつい最近のことで(1ヶ月以内)、GitHub以外の実装では今でもこのテクニックが有効なので説明は何らかの形でしておきたい。検討中。
-
-また「幅0のノーブレークスペース」としてWORD JOINER (U+2060)があり、名前付き文字参照`&NoBreak;`を用いることができる。これは次のようにコードスパン先頭の空白除去防止に利用できる。
-
-```markdown
-` EFG`
-
-&NoBreak;` EFG`
-```
-
-> ` EFG`
-> 
-> &NoBreak;` EFG`
-
-> この部分はやや高度な内容(必要なければ飛ばしてよい)。詳しくは[HTMLレンダリング処理での空白の縮約と除去](code-spans.md#htmlレンダリング処理での空白の縮約と除去)及び[先頭・末尾及び前後のスペースの制御](code-spans.md#先頭末尾及び前後のスペースの制御)を参照。
-
 さらにUnicodeにはこれら以外にも様々な幅や用途を持つ空白文字が多数ある。一覧は次を参照。
 
 https://en.wikipedia.org/wiki/Whitespace_character#Unicode
@@ -142,10 +122,6 @@ Foo&emsp;&emsp;&emsp;&emsp;bar
 > 
 > Foo&emsp;&emsp;&emsp;&emsp;bar
 
-TODO: ここまで
-
-------------------------------------------------------------------------
-
 (参考) なお文字コードを直接入力しても機能はする。次のコード例は`Foo`と`bar`の間にコードポイント値U+00A0を直接挿入したもの(→ [ソースコード](src/nbsp-direct-insertion.rb))。しかしこれではスペースと区別困難になるためあまり勧められない(文字参照を使わないと確認困難)。
 
 ```markdown
@@ -157,6 +133,31 @@ Foo          bar
 > Foo     bar
 > 
 > Foo          bar
+
+### 幅0の非表示区切り
+
+Unicodeには次のような文字(カテゴリー[Cf](https://www.compart.com/en/unicode/category/Cf))があり、これらはみな「幅0で非表示の区切り」としての機能を持つ。
+> 
+> - [Soft Hyphen (U+00AD, `&shy;`)](https://www.compart.com/en/unicode/U+00AD)
+> - [Zero Width Space (U+200B, `&ZeroWidthSpace;`)](https://www.compart.com/en/unicode/U+200B)
+> - [Zero Width Non-Joiner (U+200C, `&zwnj;`)](https://www.compart.com/en/unicode/U+200C)
+> - [Zero Width Joiner (U+200D, `&zwj;`)](https://www.compart.com/en/unicode/U+200D)
+> 
+> > さらにGitHub実環境チェックしたところWord Joiner (U+2060)やInvisible Separator (U+2063)なども同様に扱われているが、これ以上は実装者以外には不要な情報と判断した(未調査)。
+
+これらを[太字]と[斜体]の制御に用いることができる。太字や斜体を認識させるには境界にスペースを入れる場合が多いが、スペースなしで密着した状態で認識させる場合はこれらの文字を用いることで解決できる。強調書式に`_`を用いる場合は次のケースがある。
+
+- 認識しないケース: `A_B_C` → A_B_C (`B`が斜体にならない)
+- スペース挿入による解決法: `A _B_ C` → A _B_ C
+- 密着したままで認識させる(`&shy;`を使用): `A&shy;_B_&shy;C` → A&shy;_B_&shy;C
+
+`*`を用いる場合は次のケースがある。
+
+- 認識しないケース: `A**"B"**C` → `"B"`が太字にならない
+- スペース挿入による解決法: `A **"B"** C` → A **"B"** C
+- 密着したままで認識させる: `A&shy;**"B"**&shy;C` → A&shy;**"B"**&shy;C
+
+> &#x2714;&#xFE0F; `&shy;`を用いる理由は単純に文字数が少なく書きやすいから(推奨)。他の文字(`&ZeroWidthSpace;`など)でも同様に機能する。
 
 ### 絵文字
 
@@ -232,5 +233,7 @@ https://github.com/higuma/markdown-emoji-test/blob/main/ja/basic-emojis.md
 [インライン]: inlines.md
 [バックスラッシュエスケープ]: characters.md#バックスラッシュエスケープ
 [ノーブレークスペース]: https://ja.wikipedia.org/wiki/ノーブレークスペース
+[斜体]: bold-italic-strikethrough.md#斜体
+[太字]: bold-italic-strikethrough.md#太字
 [太字、斜体、打ち消し線]: bold-italic-strikethrough.md
 [目次]: index.md#texts

@@ -6,6 +6,8 @@
 
 ------------------------------------------------------------------------
 
+> **TODO** GFMには含まれないが他の環境にもよくあるもの(見出しへのID設定、数式、脚注)と、GitHub特有の機能(絵文字の名前指定、CSS色表現など)を分割して章を分けるべき。検討中。
+
 実際のGitHubサイトのMarkdown環境には[GFM]仕様書には書かれていないサイト専用の機能が多数存在する。
 
 > 機能拡張の結果[GFM]仕様書通りではなくなっている部分もある。
@@ -87,19 +89,17 @@ GitHub Markdownをはじめとする多くMarkdown環境では[見出し]に対�
 
 ## 数式
 
-Markdown応用環境の多くが[LaTeX]仕様の数式表現を取り入れており、GitHubでも採用されている。
+Markdown応用環境の多くが[LaTeX]仕様の数式表現を取り入れており、GitHubにも採用されている。
 
 > &#x2714;&#xFE0F; **[LaTeX]の数式表現**
 > 
-> [LaTeX]は元々書籍用の組版ツールで、現在も論文執筆用によく用いられる。また最近はLaTeXの数式記述書式が事実上の標準となり他分野でも用いられるようになった。Markdown習得に関してはこの数式表現だけ覚えればよい。次のWikipedia解説が詳しい。
+> [LaTeX]は元々書籍用の組版ツールで現在も論文執筆用によく用いられる。また数式表現の分野では[LaTeX]仕様が事実上の標準となり他分野でも用いられている。Markdown習得に関してはこの部分だけ覚えればよい。次のWikipedia解説がよい(数学の基礎知識がある人向け、そうでない人はWeb検索して勉強してね)。
 > 
-> https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#関数・演算子・特殊記号
-> 
-> https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#大きな式
-> 
-> https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#アルファベットと書体
+> - https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#関数・演算子・特殊記号
+> - https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#大きな式
+> - https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#アルファベットと書体
 
-MarkdownにLaTeX数式を埋め込む書式はMarkdown実装/環境により異なる。GitHubの場合をまとめると次の通り。
+MarkdownにLaTeX数式を埋め込む書式のGitHub仕様をまとめると次の通り。
 
 - [ブロック]の場合(2通り)
   - 前後に[空行]を入れて`$$...$$`
@@ -108,6 +108,8 @@ MarkdownにLaTeX数式を埋め込む書式はMarkdown実装/環境により異�
   - 前後に区切りとして認識できる文字(通常スペース)が必要。
   - 同じ行にテキストの`$`がある場合は`<span>$</span>`でエスケープ
 
+> &#x2714;&#xFE0F; 他のWeb環境もこれに準じた仕様が多い(Qiitaなど)。
+
 ### ブロックの場合
 
 前後に[空行]を入れて`$$...$$`、または[info文字列]に`math`を設定した[コードブロック]で記述する。
@@ -115,7 +117,7 @@ MarkdownにLaTeX数式を埋め込む書式はMarkdown実装/環境により異�
 ``````markdown
 #### 例1
 
-$$a^2 = b^2 + c^2 - 2 b c \cos A$$
+$$x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}$$
 
 #### 例2
 
@@ -145,7 +147,7 @@ $$a^2 = b^2 + c^2 - 2 b c \cos A$$
 > 質量 $m$ とエネルギー $E$ は等価であり、両者の関係は光速度を $c$ として $E = m c^2$ で表される。
 
 > <details>
-> <summary>&#x26A0;&#xFE0F; <strong>失敗例</strong></summary>
+> <summary>&#x2757;&#xFE0F; <strong>失敗例</strong></summary>
 > 
 > 日本語に埋め込む場合は数式の前後をスペースで区切らないと認識しない。次は失敗例。
 > 
@@ -169,9 +171,9 @@ $$a^2 = b^2 + c^2 - 2 b c \cos A$$
 > この`$`はエスケープ不要: $$a^2 = b^2 + c^2 - 2 b c \cos A$$
 
 > <details>
-> <summary>&#x26A0;&#xFE0F; <strong>失敗例</strong></summary>
+> <summary>&#x2757;&#xFE0F; <strong>失敗例</strong></summary>
 > 
-> 失敗例を示す。最初の文例はエスケープしない場合で、手前にある`$10 の $`までの部分を数式と判定する(誤認識)。[バックスラッシュエスケープ]や[文字参照]を用いても効果はなく(同じ結果)、解決法は`<span>$</span>`によるエスケープしかない。
+> 失敗例を示す。最初の文例はエスケープしない場合で、手前にある`$10 の $`までの部分を数式と判定する(誤認識)。[バックスラッシュエスケープ]や[文字参照]を用いても効果はなく、`<span>$</span>`を使わないと正しく処理できない。
 > 
 > ```markdown
 > エスケープなし(`$10 の $`の部分を数式と認識する): $10 の $\frac{1}{4}$
@@ -181,8 +183,8 @@ $$a^2 = b^2 + c^2 - 2 b c \cos A$$
 > エスケープ失敗例(2): &dollar;10 の $\frac{1}{4}$
 > 
 > 正しいエスケープ: <span>$</span>10 の $\frac{1}{4}$
-
 > ```
+> 
 > > エスケープなし(`$10 の $`の部分を数式と認識する): $10 の $\frac{1}{4}$
 > > 
 > > エスケープ失敗例(1): \$10 の $\frac{1}{4}$
@@ -194,13 +196,13 @@ $$a^2 = b^2 + c^2 - 2 b c \cos A$$
 
 ### 数式の内部に`$`を含む場合
 
-> &#x26A0;&#xFE0F; **注意** 動作に不安定な傾向があるため、可能であれば回避すべき。[LaTeX]数式埋め込みは後から追加された機能のため仕様が厳密ではなく(パッチを当てたような状態)、予想とは異なる振る舞いがよく発生する。
+> &#x26A0;&#xFE0F; **注意(2023-02現在)** 内部に`$`がある数式の[インライン]埋め込みは動作不安定のため回避すべき。[LaTeX]数式埋め込みは後から追加された機能のため仕様に不明瞭な点があり、予想と異なる振る舞いがよく発生する(パッチを当てたような状態)。
 
 Markdown側ではのLaTeX数式の認識に`$`を用いるため、数式表現の中に`$`が含まれる場合は特殊な記法を用いる。
 
 #### 例1 `\sqrt{$4}`
 
-これは[GitHub docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions#インラインで数式の内外にドル記号を記述する)からの例。この場合は数式内の`$`をエスケープして`\$`に置換すればよい。
+[GitHub docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions#インラインで数式の内外にドル記号を記述する)からの例。この場合は数式内の`$`をエスケープして`\$`に置換すればよい。
 
 ``````markdown
 $$\sqrt{\$2}$$
@@ -220,11 +222,11 @@ $$\sqrt{\$2}$$
 > 
 > インライン: $\sqrt{$2}$
 
-> (2023-02現在)GitHubの実環境チェックによればブロックの中ではエスケープ不要。ただし`$`はLaTeXでは特殊文字扱いで、テキストとして表示する場合は`\$`とするのがLaTeX本来の仕様なのでマナーとして付けておくべき。
+> &#x2757;&#xFE0F; **注意** (2023-02現在)GitHub実環境チェックによればブロックの中ではエスケープ不要。ただし`$`は[LaTeX]では特殊文字扱いであり、テキストとして表示する場合は`\$`とするのが本来の仕様なのでマナーとして付けるべき。また現状の動作は将来変更(修正)される可能性も考えられる。
 
 #### 例2 `f $ x`
 
-数式の中に`$`を用いることはめったにないが、[Haskell]の教科書にはよく`f $ x`という表現を数式と同じスタイルで表示する記法が見られる。数式中に1文字分のスペースを確保するにはtext spaceの`\ `を用いる。ところがこの場合はインライン記法で複雑なエスケープを用いる必要がある。
+数式の中に`$`を用いることは滅多にないが、[Haskell]の教科書にはよく`f $ x`というコード(式)を数式スタイルで表示する記法が見られる。数式中に1文字分のスペースを確保するにはtext spaceの`\ `を用いるが、これをインライン記法に用いる場合には複雑なエスケープが必要になる。
 
 ``````markdown
 $$f \ \$ \ x$$
@@ -244,11 +246,25 @@ f \ \$ \ x
 > 
 > インライン: $f \\ \\$ \\ x$
 
-> &#x26A0;&#xFE; **注意** この動作(ダブルエスケープが必要)は2023-02現在のもので、意図通りには動作しないため相当試行錯誤してやっと見つけた。ただしこの動作は後で修正される可能性があり、そういう意味でも回避できるのであれば使わない方が無難。
+> &#x1F6AB; **非推奨** インラインの特殊記法(二重エスケープ)はどこにも書かれていないため試行錯誤して見つけた(2023-02現在)。ただしこの動作は後で修正される可能性が高く、そういう意味でも回避可能な状況では使用を控えるべき。
 
 ## 脚注
 
-TODO
+Here is a simple footnote[^1].
+
+A footnote can also have multiple lines[^2].  
+
+You can also use words, to fit your writing style more closely[^note].
+
+[^1]: My reference.
+[^2]: Every new line should be prefixed with 2 spaces.  
+  This allows you to have a footnote with multiple lines.
+[^note]:
+    Named footnotes will still render with numbers instead of the text but allow easier identification and linking.  
+    This footnote also has been made with a different syntax using 4 spaces for new lines.
+
+
+
 
 ## GitHub特有の機能
 
@@ -301,26 +317,18 @@ https://gist.github.com/higuma/80cff0982f9f7e2a267b33cad20f984a
 
 
 
-
-## GFM準拠チェック
-
-
-> ここからTODO: 現実のGitHubサイトはGFM仕様に完全準拠しているわけではなく、独自拡張もあれば逆に未実装部分もある。ただし習得中はまだ考えなくてよい。
-> 
-> > (補足: これはここではなく、Appendix Bとかに回した方が思う) この点に関しては次のドキュメントが詳しい。特に後半部の[GFMとGitHub実装の違い](https://qiita.com/tk0miya/items/6b81e0e4563199037018#githubcom-の動作と合致していない)や[GitHub独自拡張の解説](https://qiita.com/tk0miya/items/6b81e0e4563199037018#gfm-に記載されていない-githubcom-独自のマークアップが存在する)は要チェック。
-> > 
-> > https://qiita.com/tk0miya/items/6b81e0e4563199037018
-
 ------------------------------------------------------------------------
 
 [HTMLブロック]
 ← [目次] →
 [付録]
 
+[Haskell]: https://ja.wikipedia.org/wiki/Haskell
 [HTMLブロック]: html-blocks.md
 [info文字列]: code-blocks.md#info文字列
 [LaTeX]: https://ja.wikipedia.org/wiki/LaTeX
 [インライン]: inlines.md
+[コードスパン]: code-spans.md
 [コードブロック]: code-blocks.md
 [ブロック]: blocks.md
 [付録]: appendices.md
@@ -332,8 +340,6 @@ https://gist.github.com/higuma/80cff0982f9f7e2a267b33cad20f984a
 
 <!--
 [ASCII句読文字]: backslash-escapes.md#ASCII句読文字
-[コードスパン]: code-spans.md
-[コードブロック]: code-blocks.md
 [折りたたみ]: html-blocks.md#折りたたみ
 [見出し]: thematic-breaks.md
 -->

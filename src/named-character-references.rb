@@ -9,7 +9,7 @@ require 'open-uri'
 SEPARATOR = '-' * 72
 NAVIGATION = '[付録 - GitHub Flavored Markdown](github-flavored-markdown.md)
 ← [目次](index.md#named-character-references) →
-[付録 - 句読文字一覧](punctuation-characters.md)'
+[付録 - Unicode空白文字一覧](unicode-whitespace-characters.md)'
 
 N_COL = 3
 URL_ENTITIES_JSON = 'https://html.spec.whatwg.org/entities.json'

@@ -2,8 +2,10 @@
 
 require_relative 'unicode-emoji/unicode'
 
-NAVIGATION = '[付録 - 句読文字一覧](punctuation-characters.md)
-← [目次](index.md#unicode-whitespace-characters)'
+
+NAVIGATION = '[付録 - 名前付き文字参照一覧](named-character-references.md)
+← [目次](index.md#unicode-whitespace-characters) →
+[付録 - 句読文字一覧](punctuation-characters.md)'
 SEPARATOR = '-' * 72
 
 def resolve_name(info)

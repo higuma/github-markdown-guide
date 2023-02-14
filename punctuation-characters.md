@@ -1,17 +1,25 @@
 # 付録 - 句読文字一覧
 
-[付録 - 名前付き文字参照一覧](named-character-references.md)
-← [目次](index.md#punctuation-characters) →
 [付録 - Unicode空白文字一覧](unicode-whitespace-characters.md)
+← [目次](index.md#punctuation-characters)
 
 ------------------------------------------------------------------------
 
-> &#x2714;&#xFE0F; <https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt> より生成 (2023-02-04)
+> &#x2714;&#xFE0F; <https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt> より生成 (2023-02-14)
 
-[斜体]及び[太字]の検出判定に用いられる[句読文字]の一覧。具体的には次のどちらかの条件に当てはまる文字が該当する。
+[斜体]及び[太字]の検出判定に用いられる[句読文字]の一覧。[GFM仕様書の定義](https://github.github.com/gfm/#punctuation-character)によれば次のどちらかの条件に当てはまる文字が該当する。
 
 - [ASCII句読文字]
 - `P`で始まるUnicodeカテゴリ(`Pc`, `Pd`, `Pe`, `Pf`, `Pi`, `Po`, `Ps`)を持つ文字
+
+> &#x2757;&#xFE0F; **注意** ただし実際のGitHub Markdown実装はこれらだけではなく、次のような文字も句読文字扱いで処理している。
+> 
+> - [Soft Hyphen (U+00AD, `&shy;`)](https://www.compart.com/en/unicode/U+00AD)
+> - [Zero Width Space (U+200B, `&ZeroWidthSpace;`)](https://www.compart.com/en/unicode/U+200B)
+> - [Zero Width Non-Joiner (U+200C, `&zwnj;`)](https://www.compart.com/en/unicode/U+200C)
+> - [Zero Width Joiner (U+200D, `&zwj;`)](https://www.compart.com/en/unicode/U+200D)
+> 
+> > さらにGitHub実環境チェックしたところWord Joiner (U+2060)やInvisible Separator (U+2063)なども認識するが、これ以上は実装者以外には不要な情報と判断し未調査。
 
 | U+ | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | A | B | C | D | E | F |
 | - | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -191,9 +199,8 @@
 
 ------------------------------------------------------------------------
 
-[付録 - 名前付き文字参照一覧](named-character-references.md)
-← [目次](index.md#punctuation-characters) →
 [付録 - Unicode空白文字一覧](unicode-whitespace-characters.md)
+← [目次](index.md#punctuation-characters)
 
 [ASCII句読文字]: characters.md#ascii句読文字
 [句読文字]: characters.md#句読文字

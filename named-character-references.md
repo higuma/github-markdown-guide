@@ -2,7 +2,7 @@
 
 [付録 - GitHub Flavored Markdown](github-flavored-markdown.md)
 ← [目次](index.md#named-character-references) →
-[付録 - 句読文字一覧](punctuation-characters.md)
+[付録 - Unicode空白文字一覧](unicode-whitespace-characters.md)
 
 ------------------------------------------------------------------------
 
@@ -725,4 +725,4 @@
 
 [付録 - GitHub Flavored Markdown](github-flavored-markdown.md)
 ← [目次](index.md#named-character-references) →
-[付録 - 句読文字一覧](punctuation-characters.md)
+[付録 - Unicode空白文字一覧](unicode-whitespace-characters.md)

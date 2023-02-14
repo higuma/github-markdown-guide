@@ -1,11 +1,12 @@
 # 付録 - Unicode空白文字一覧
 
+[付録 - 名前付き文字参照一覧](named-character-references.md)
+← [目次](index.md#unicode-whitespace-characters) →
 [付録 - 句読文字一覧](punctuation-characters.md)
-← [目次](index.md#unicode-whitespace-characters)
 
 ------------------------------------------------------------------------
 
-> &#x2714;&#xFE0F; <https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt> より生成 (2023-02-04)
+> &#x2714;&#xFE0F; <https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt> より生成 (2023-02-14)
 
 [斜体]及び[太字]の検出判定に用いられる[Unicode空白文字]の一覧。具体的には次のどちらかの条件に当てはまる文字が該当する。
 
@@ -25,8 +26,9 @@
 
 ------------------------------------------------------------------------
 
+[付録 - 名前付き文字参照一覧](named-character-references.md)
+← [目次](index.md#unicode-whitespace-characters) →
 [付録 - 句読文字一覧](punctuation-characters.md)
-← [目次](index.md#unicode-whitespace-characters)
 
 [Unicode空白文字]: characters.md#unicode空白文字
 [斜体]: bold-italic-strikethrough.md#斜体

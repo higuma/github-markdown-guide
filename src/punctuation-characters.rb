@@ -2,9 +2,8 @@
 
 require_relative 'unicode-emoji/unicode'
 
-NAVIGATION = '[付録 - 名前付き文字参照一覧](named-character-references.md)
-← [目次](index.md#punctuation-characters) →
-[付録 - Unicode空白文字一覧](unicode-whitespace-characters.md)'
+NAVIGATION = '[付録 - Unicode空白文字一覧](unicode-whitespace-characters.md)
+← [目次](index.md#punctuation-characters)'
 SEPARATOR = '-' * 72
 
 def resolve_name(info)
@@ -98,10 +97,19 @@ def output_markdown(f)
   f.puts
   f.puts "> &#x2714;&#xFE0F; <#{Unicode::Data::URL}> より生成 (#{Date.today})"
   f.puts
-  f.puts '[斜体]及び[太字]の検出判定に用いられる[句読文字]の一覧。具体的には次のどちらかの条件に当てはまる文字が該当する。'
+  f.puts '[斜体]及び[太字]の検出判定に用いられる[句読文字]の一覧。[GFM仕様書の定義](https://github.github.com/gfm/#punctuation-character)によれば次のどちらかの条件に当てはまる文字が該当する。'
   f.puts
   f.puts '- [ASCII句読文字]'
   f.puts '- `P`で始まるUnicodeカテゴリ(`Pc`, `Pd`, `Pe`, `Pf`, `Pi`, `Po`, `Ps`)を持つ文字'
+  f.puts
+  f.puts '> &#x2757;&#xFE0F; **注意** ただし実際のGitHub Markdown実装はこれらだけではなく、次のような文字も句読文字扱いで処理している。'
+  f.puts '> '
+  f.puts '> - [Soft Hyphen (U+00AD, `&shy;`)](https://www.compart.com/en/unicode/U+00AD)'
+  f.puts '> - [Zero Width Space (U+200B, `&ZeroWidthSpace;`)](https://www.compart.com/en/unicode/U+200B)'
+  f.puts '> - [Zero Width Non-Joiner (U+200C, `&zwnj;`)](https://www.compart.com/en/unicode/U+200C)'
+  f.puts '> - [Zero Width Joiner (U+200D, `&zwj;`)](https://www.compart.com/en/unicode/U+200D)'
+  f.puts '> '
+  f.puts '> > さらにGitHub実環境チェックしたところWord Joiner (U+2060)やInvisible Separator (U+2063)なども認識するが、これ以上は実装者以外には不要な情報と判断し未調査。'
   f.puts
   f.puts '| U+ |' + (0..0x0F).map {|c| sprintf " %X |", c }.join('')
   f.puts '| - |' + ' :-: |' * 16
