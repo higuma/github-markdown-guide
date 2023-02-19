@@ -134,7 +134,7 @@ Foo          bar
 > 
 > Foo          bar
 
-### 幅0の非表示区切り
+### 非表示区切り
 
 Unicodeには次のような文字(カテゴリー[Cf](https://www.compart.com/en/unicode/category/Cf))があり、これらはみな「幅0で非表示の区切り」としての機能を持つ。
 > 

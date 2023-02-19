@@ -265,11 +265,13 @@ HTMLはマークアップ優先の文法規則で、例えば`<`,`>`は要素タ
 
 ## 強調書式の認識に用いられる文字
 
-[強調書式]\(具体的には[斜体]及び[太字])の検出の際、次の2種類の文字種を検出して文法解析を行う。
+> &#x2714;&#xFE0F; 最初は読む必要なし。これらは[太字]と[斜体]の文法認識の際にのみ用いられる。後で[太字と斜体の文法認識]を読む時にここに戻って確認すればよい(ここへのリンクも十分に付けてある)。
+
+[強調書式]\(具体的には[太字]と[斜体])の検出の際、次の2種類の文字種を検出して文法解析を行う。
 
 ### Unicode空白文字
 
-[強調書式]の構文解析では空白を表す文字として**Unicode空白文字**を検出する。[GFM仕様書の定義](https://github.github.com/gfm/#unicode-whitespace-character)によれば次のどちらかの条件に当てはまる文字が該当する。
+[強調書式]の構文解析では空白を表す文字として**Unicode空白文字**(Unicode punctuation characters)を検出する。[GFM仕様書の定義](https://github.github.com/gfm/#unicode-whitespace-character)によれば次のどちらかの条件に当てはまる文字が該当する。
 
 - Unicodeカテゴリ`Zs`に該当する文字(スペースなどを含む)
 - タブ(U+0009), キャリッジリターン(U+000D), 改行(U+000A)
@@ -323,6 +325,7 @@ HTMLはマークアップ優先の文法規則で、例えば`<`,`>`は要素タ
 [斜体]: bold-italic-strikethrough.md#斜体
 [表]: tables.md
 [太字]: bold-italic-strikethrough.md#太字
+[太字と斜体の文法認識]: bold-italic-strikethrough.md#太字と斜体の文法認識
 [見出し]: headings.md
 [目次]: index.md#characters
 [文字参照]: #文字参照

@@ -48,10 +48,10 @@
     - [バックスラッシュエスケープ](texts.md#バックスラッシュエスケープ)
     - [文字参照の応用](texts.md#文字参照の応用)
       - [ノーブレークスペース](texts.md#ノーブレークスペース)
-      - [幅0の非表示区切り](texts.md#幅0の非表示区切り)
+      - [非表示区切り](texts.md#非表示区切り)
       - [絵文字](texts.md#絵文字)
         - [異体字セレクタ](texts.md#異体字セレクタ)
-        - [テキスト/絵文字の切り替え](texts.md#テキスト/絵文字の切り替え)
+        - [テキスト/絵文字の切り替え](texts.md#テキスト絵文字の切り替え)
   - <span id="bold-italic-strikethrough">[太字、斜体、打ち消し線](bold-italic-strikethrough.md)</span>
     - [太字](bold-italic-strikethrough.md#太字)
     - [斜体](bold-italic-strikethrough.md#斜体)
@@ -63,8 +63,13 @@
       - [太字+斜体+打ち消し線](bold-italic-strikethrough.md#太字斜体打ち消し線)
     - [ネスト](bold-italic-strikethrough.md#ネスト)
     - [エスケープ](bold-italic-strikethrough.md#エスケープ)
+    - [適用箇所](bold-italic-strikethrough.md#適用箇所)
+    - [インラインの内部挿入](bold-italic-strikethrough.md#インラインの内部挿入)
     - [太字と斜体の文法認識](bold-italic-strikethrough.md#太字と斜体の文法認識)
-      - **TODO**
+      - [空白と句読文字](bold-italic-strikethrough.md#空白と句読文字)
+      - [`*`の場合](bold-italic-strikethrough.md#の場合)
+      - [`_`の場合](bold-italic-strikethrough.md#_の場合)
+      - [実用的なまとめ](bold-italic-strikethrough.md#実用的なまとめ)
   - <span id="links">[リンク](links.md)</span>
     - [自動リンク](links.md#自動リンク)
     - [拡張自動リンク](links.md#拡張自動リンク)
@@ -152,7 +157,7 @@
   - <span id="html-blocks">[HTMLブロック](html-blocks.md)</span>
     - [折りたたみ](html-blocks.md#折りたたみ)
       - [折りたたみのネスト](html-blocks.md#折りたたみのネスト)
-        - [ネストレベルの表現](tml-blocks.md#ネストレベルの表現)
+        - [ネストレベルの表現](html-blocks.md#ネストレベルの表現)
     - [高度な表](html-blocks.md#高度な表)
       - [セルの結合](html-blocks.md#セルの結合)
       - [表のネスト](html-blocks.md#表のネスト)

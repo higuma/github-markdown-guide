@@ -25,7 +25,7 @@ GitHub Markdownをはじめとする多くMarkdown環境では[見出し]に対�
 
 - 見出し文のテキストを抽出して次の変換を行う
   - スペースを`-`に変換
-  - `-`以外の[ASCII句読文字]を除去
+  - `-`と`_`以外の[ASCII句読文字]を除去
   - アルファベットを全て小文字に変換
   - その他の文字(日本語文字を含む)は無変換
 - IDに重複が生じた場合は次のように処理
@@ -48,7 +48,7 @@ GitHub Markdownをはじめとする多くMarkdown環境では[見出し]に対�
 > 
 > 1. テキストを抽出(リンク情報は除去) → `GitHub Markdownとは?`
 > 2. スペースを`-`に変換 → `GitHub-Markdownとは?`
-> 3. `-`以外のASCII句読文字を除去 → `GitHub-Markdownとは`
+> 3. `-`と`_`以外のASCII句読文字を除去 → `GitHub-Markdownとは`
 > 4. アルファベットを小文字に変換 → `github-markdownとは`
 > </details>
 
@@ -64,7 +64,7 @@ GitHub Markdownをはじめとする多くMarkdown環境では[見出し]に対�
 > <summary>変換手順</summary>
 > 
 > 1. テキストを抽出(書式設定は除去) → `F,oo!`
-> 2. `-`以外のASCII句読文字を除去 → `Foo`
+> 2. `-`と`_`以外のASCII句読文字を除去 → `Foo`
 > 3. アルファベットを小文字に変換 → `foo`
 > </details>
 
@@ -80,7 +80,7 @@ GitHub Markdownをはじめとする多くMarkdown環境では[見出し]に対�
 > <summary>変換手順</summary>
 > 
 > 1. テキストを抽出 → `F=O/O`
-> 2. `-`以外のASCII句読文字を除去 → `FOO`
+> 2. `-`と`_`以外のASCII句読文字を除去 → `FOO`
 > 3. アルファベットを小文字に変換 → `foo`
 > 4. 上と重複するため連番を追加 → `foo-1`
 > </details>
@@ -93,7 +93,7 @@ Markdown応用環境の多くが[LaTeX]仕様の数式表現を取り入れて�
 
 > &#x2714;&#xFE0F; **[LaTeX]の数式表現**
 > 
-> [LaTeX]は元々書籍用の組版ツールで現在も論文執筆用によく用いられる。また数式表現の分野では[LaTeX]仕様が事実上の標準となり他分野でも用いられている。Markdown習得に関してはこの部分だけ覚えればよい。次のWikipedia解説がよい(数学の基礎知識がある人向け、そうでない人はWeb検索して勉強してね)。
+> [LaTeX]は元々書籍用の組版ツールで現在も論文執筆用によく用いられる。また数式表現の分野では[LaTeX]仕様が事実上の標準となり他分野でも用いられている。Markdown習得に関してはこの部分だけ覚えればよい。次のWikipedia解説がよい(実用的)。
 > 
 > - https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#関数・演算子・特殊記号
 > - https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#大きな式
@@ -106,7 +106,7 @@ MarkdownにLaTeX数式を埋め込む書式のGitHub仕様をまとめると次�
   - または[info文字列]に`math`を設定した[コードブロック]
 - [インライン]は`$...$`
   - 前後に区切りとして認識できる文字(通常スペース)が必要。
-  - 同じ行にテキストの`$`がある場合は`<span>$</span>`でエスケープ
+  - 同じ行の手前にテキストの`$`がある場合は`<span>$</span>`でエスケープ
 
 > &#x2714;&#xFE0F; 他のWeb環境もこれに準じた仕様が多い(Qiitaなど)。
 
@@ -138,7 +138,7 @@ $$x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}$$
 
 #### インラインの場合
 
-`$...$`の内部に記述する。
+`$...$`の内部に記述する。数式の前後にスペースが必要。
 
 ```markdown
 質量 $m$ とエネルギー $E$ は等価であり、両者の関係は光速度を $c$ として $E = m c^2$ で表される。
@@ -149,13 +149,13 @@ $$x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}$$
 > <details>
 > <summary>&#x2757;&#xFE0F; <strong>失敗例</strong></summary>
 > 
-> 日本語に埋め込む場合は数式の前後をスペースで区切らないと認識しない。次は失敗例。
+> 次は失敗例。密着すると認識せず、[ノーブレークスペース]や[非表示区切り]も効かない。
 > 
 > ```markdown
-> 質量$m$とエネルギー$E$は...
+> 質量$m$とエネルギー&nbsp;$E$&nbsp;は等価であり、両者の関係は光速度を&shy;$c$&shy;として...
 > ```
 > 
-> > 質量$m$とエネルギー$E$は...
+> > 質量$m$とエネルギー&nbsp;$E$&nbsp;は等価であり、両者の関係は光速度を&shy;$c$&shy;として...
 > </details>
 
 同じ文章の手前にテキストとして`$`が含まれる場合は`<span>`でエスケープする。ただし[コードスパン]内部の`$`はエスケープ不要。
@@ -330,10 +330,14 @@ https://gist.github.com/higuma/80cff0982f9f7e2a267b33cad20f984a
 [インライン]: inlines.md
 [コードスパン]: code-spans.md
 [コードブロック]: code-blocks.md
+[ノーブレークスペース]: texts.md#ノーブレークスペース
+[バックスラッシュエスケープ]:characters.md#バックスラッシュエスケープ
 [ブロック]: blocks.md
+[非表示区切り]: texts.md#非表示区切り
 [付録]: appendices.md
 [空行]: characters.md#空行
 [目次]: index.md#github-markdown
+[文字参照]: characters.md#文字参照
 
 
 
