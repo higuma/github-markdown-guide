@@ -38,6 +38,7 @@
   - [強調書式の認識に用いられる文字](characters.md#強調書式の認識に用いられる文字)
     - [Unicode空白文字](characters.md#unicode空白文字)
     - [句読文字](characters.md#句読文字)
+      - [非表示区切り](characters.md#非表示区切り)
 - <span id="syntax">[Markdownの構文](syntax.md)</span>
   - [インライン](syntax.md#インライン)
   - [ブロック](syntax.md#ブロック)
@@ -70,6 +71,19 @@
       - [`*`の場合](bold-italic-strikethrough.md#の場合)
       - [`_`の場合](bold-italic-strikethrough.md#_の場合)
       - [実用的なまとめ](bold-italic-strikethrough.md#実用的なまとめ)
+    - [GFMの詳細仕様](bold-italic-strikethrough.md#gfmの詳細仕様)
+      - [評価の優先順位](bold-italic-strikethrough.md#評価の優先順位)
+      - [連続区切り](bold-italic-strikethrough.md#連続区切り)
+      - [強調範囲の検出](bold-italic-strikethrough.md#強調範囲の検出)
+        - [`*`の場合](bold-italic-strikethrough.md#の場合)
+        - [`_`の場合](bold-italic-strikethrough.md#_の場合)
+      - [強調の適用](bold-italic-strikethrough.md#強調の適用)
+        - [ルールまとめ](bold-italic-strikethrough.md#ルールまとめ)
+        - [太字優先](bold-italic-strikethrough.md#太字優先)
+        - [先着優先](bold-italic-strikethrough.md#先着優先)
+        - [マッチの再帰的な適用](bold-italic-strikethrough.md#マッチの再帰的な適用)
+        - [3の倍数ルール](bold-italic-strikethrough.md#3の倍数ルール)
+      - [現実的な対処方法](bold-italic-strikethrough.md#現実的な対処方法)
   - <span id="links">[リンク](links.md)</span>
     - [自動リンク](links.md#自動リンク)
     - [拡張自動リンク](links.md#拡張自動リンク)
@@ -90,8 +104,8 @@
       - [コードスパン内の連続スペース](code-spans.md#コードスパン内の連続スペース)
   - <span id="html-inlines">[HTMLインライン](html-inlines.md)</span>
     - [IDの設定](html-inlines.md#idの設定)
-    - [改行](html-inlines.md#改行)
-    - [スタイル設定](html-inlines.md#スタイル設定)
+    - [改行の挿入](html-inlines.md#改行の挿入)
+    - [書式設定](html-inlines.md#書式設定)
     - [GitHubで無効な属性・要素](html-inlines.md#githubで無効な属性・要素)
 - <span id="blocks">[ブロック](blocks.md)</span>
   - <span id="paragraphs">[パラグラフ](paragraphs.md)</span>
@@ -161,7 +175,9 @@
     - [高度な表](html-blocks.md#高度な表)
       - [セルの結合](html-blocks.md#セルの結合)
       - [表のネスト](html-blocks.md#表のネスト)
-- <span id="github-markdown">[GitHub Markdown環境](github-markdown.md)</span>
+- <span id="other-features">[その他の機能](other-features.md)</span>
+  - **TODO**
+- <span id="github-specific">[GitHub特有の機能](github-specific.md)</span>
   - **TODO**
 - <span id="appendices">[付録](appendices.md)</span>
   - <span id="history">[Markdownの歴史](history.md)</span>

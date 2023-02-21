@@ -1,6 +1,6 @@
 # 付録
 
-[GitHub Markdown環境]
+[GitHub特有の機能]
 ← [目次] →
 [付録 - Markdownの歴史]
 
@@ -18,6 +18,6 @@
 ← [目次] →
 [付録 - Markdownの歴史]
 
-[GitHub Markdown環境]: github-markdown.md
+[GitHub特有の機能]: github-specific.md
 [付録 - Markdownの歴史]: history.md
 [目次]: index.md#appendices

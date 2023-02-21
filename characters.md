@@ -282,23 +282,27 @@ HTMLはマークアップ優先の文法規則で、例えば`<`,`>`は要素タ
 
 ### 句読文字
 
-[強調書式]の検出にはもうひとつ**句読文字**(punctuation characters)も用いられる。[GFM仕様書の定義](https://github.github.com/gfm/#punctuation-character)によれば次のどちらかの条件に当てはまる文字が該当する。
+[強調書式]の検出には**句読文字**(punctuation characters)も用いられる。[GFM仕様書の定義](https://github.github.com/gfm/#punctuation-character)によれば次のどちらかの条件に当てはまる文字が該当する。
 
 - [ASCII句読文字]
 - `P`で始まるUnicodeカテゴリ(`Pc`, `Pd`, `Pe`, `Pf`, `Pi`, `Po`, `Ps`)を持つ文字
 
-> &#x2757;&#xFE0F; **注意** ただし実際のGitHub Markdown実装はこれらだけではなく、次のような文字も句読文字扱いで処理している。
-> 
-> - [Soft Hyphen (U+00AD, `&shy;`)](https://www.compart.com/en/unicode/U+00AD)
-> - [Zero Width Space (U+200B, `&ZeroWidthSpace;`)](https://www.compart.com/en/unicode/U+200B)
-> - [Zero Width Non-Joiner (U+200C, `&zwnj;`)](https://www.compart.com/en/unicode/U+200C)
-> - [Zero Width Joiner (U+200D, `&zwj;`)](https://www.compart.com/en/unicode/U+200D)
-> 
-> > さらにGitHub実環境チェックしたところWord Joiner (U+2060)やInvisible Separator (U+2063)なども認識するが、これ以上は実装者以外には不要な情報と判断した(未調査)。
-
 一覧は次の通り。
 
 - [付録 - 句読文字一覧](punctuation-characters.md)
+
+#### 非表示区切り
+
+ただし実際のGitHub Markdown実装はGFM仕様書の定義通りの動作ではなく、次のような文字も句読文字として扱い処理している。
+
+- [Soft Hyphen (U+00AD, `&shy;`)](https://www.compart.com/en/unicode/U+00AD)
+- [Zero Width Space (U+200B, `&ZeroWidthSpace;`)](https://www.compart.com/en/unicode/U+200B)
+- [Zero Width Non-Joiner (U+200C, `&zwnj;`)](https://www.compart.com/en/unicode/U+200C)
+- [Zero Width Joiner (U+200D, `&zwj;`)](https://www.compart.com/en/unicode/U+200D)
+
+これらの文字は「幅0の非表示区切り」として機能する。そこで[強調書式]の認識時はこれらを補助的に挿入して強調書式の制御に利用することができる。具体的な方法は[通常テキスト] - [非表示区切り]を参照。
+
+> &#x2714;&#xFE0F; さらにGitHub実環境チェックによればWord Joiner (U+2060)やInvisible Separator (U+2063)なども同じ用途に使えることを確認している。ただし実装者以外には不要な情報なのでこれ以上の調査は行っていない。
 
 ------------------------------------------------------------------------
 
@@ -323,6 +327,8 @@ HTMLはマークアップ優先の文法規則で、例えば`<`,`>`は要素タ
 [画像]: images.md
 [強調書式]: bold-italic-strikethrough.md
 [斜体]: bold-italic-strikethrough.md#斜体
+[通常テキスト]: texts.md
+[非表示区切り]: texts.md#非表示区切り
 [表]: tables.md
 [太字]: bold-italic-strikethrough.md#太字
 [太字と斜体の文法認識]: bold-italic-strikethrough.md#太字と斜体の文法認識

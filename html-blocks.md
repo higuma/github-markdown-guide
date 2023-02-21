@@ -2,7 +2,7 @@
 
 [タスクリスト]
 ← [目次] →
-[GitHub Markdown環境]
+[その他の機能]
 
 ------------------------------------------------------------------------
 
@@ -430,10 +430,10 @@ GitHubでは[`<table>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/t
 
 [タスクリスト]
 ← [目次] →
-[GitHub Markdown環境]
+[その他の機能]
 
-[GitHub Markdown環境]: github-markdown.md
 [HTMLインライン]: html-inlines.md
+[その他の機能]: other-features.md
 [タスクリスト]: task-lists.md
 [ブロック]: blocks.md
 [ブロック引用]: blocks引用.md
