@@ -176,7 +176,13 @@
       - [セルの結合](html-blocks.md#セルの結合)
       - [表のネスト](html-blocks.md#表のネスト)
 - <span id="other-features">[その他の機能](other-features.md)</span>
-  - **TODO**
+  - [見出しのID設定](other-features.md#見出しのID設定)
+  - [数式](other-features.md#数式)
+    - [ブロックの場合](other-features.md#ブロックの場合)
+    - [インラインの場合](other-features.md#インラインの場合)
+    - [数式の内部に`$`を含む場合](other-features.md#数式の内部にを含む場合)
+  - [脚注](other-features.md#脚注)
+    - **TODO**
 - <span id="github-specific">[GitHub特有の機能](github-specific.md)</span>
   - **TODO**
 - <span id="appendices">[付録](appendices.md)</span>

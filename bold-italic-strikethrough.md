@@ -15,52 +15,52 @@ Markdown標準の表示効果は[太字]、[斜体]、[打ち消し線]の3種�
 `**テキスト**`または`__テキスト__`のように表示効果を与える対象テキストの前後を`**`または`__`で囲む。これはHTMLの[`<strong>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/strong)に変換され、ブラウザ上では太字で表示される。
 
 ```markdown
-**text テキスト**
+**テキスト bold text**
 
-__text テキスト__
+__テキスト bold text__
 ```
 
-> **text テキスト**
+> **テキスト bold text**
 > 
-> __text テキスト__
+> __テキスト bold text__
 
 境界の内側にスペースを入れてはならない。次は認識しない例。
 
 ```markdown
-** text テキスト**
+** テキスト plain text**
 
-__text テキスト __
+__テキスト plain text __
 ```
 
-> ** text テキスト**
+> ** テキスト plain text**
 > 
-> __text テキスト __
+> __テキスト plain text __
 
 ## 斜体
 
 `*text*`または`_text_`のように表示効果を与える対象テキストの前後を`*`または`_`で囲む。これはHTMLの[`<em>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/em)に変換され、ブラウザ上では斜体で表示される。
 
 ```markdown
-*text テキスト*
+*テキスト italic text*
 
-_text テキスト_
+_テキスト italic text_
 ```
 
-> *text テキスト*
+> *テキスト italic text*
 > 
-> _text テキスト_
+> _テキスト italic text_
 
-やはり境界の内側にスペースを入れてはならない。次は認識しない例(`*`は[順序なしリスト]の行頭マーカーに用いられる文字のため、`* `で始まる行は[リスト]と判定される)。
+これも境界の内側にスペースを入れてはならない。次は認識しない例(`*`は[順序なしリスト]の行頭マーカーに用いられる文字のため、`* `で始まる行は[リスト]と判定される)。
 
 ```markdown
-* text テキスト*
+* テキスト plain text*
 
-_text テキスト _
+_テキスト plain text _
 ```
 
-> * text テキスト*
+> * テキスト plain text*
 > 
-> _text テキスト _
+> _テキスト plain text _
 
 > &#x26A0;&#xFE0F; **Windows環境向け(重要)**: Windowsではブラウザ表示フォントとして[メイリオ]がよく用いられるが、その場合に斜体がラテン文字領域(記号、英数字、ギリシャ文字、キリル文字等)にだけ有効で、その他の文字(日本語のかなや漢字などを含む)には効かないという有名な問題を生じる。
 > 
@@ -108,12 +108,12 @@ _text テキスト _
 > > </details>
 > 
 > > <details>
-> > <summary>&#x2714;&#xFE0F; <strong>有効な対策</strong></summary>
+> > <summary>&#x2714;&#xFE0F; <strong>有効な対策(2023年現在)</strong></summary>
 > > 
-> > Windowsユーザーの多くはブラウザのフォント設定をわざわざ変えたりしないし、そもそもこういう問題があることを知る人は少ない。Windowsは現行メジャー環境の一つであるため、どのWeb環境のユーザーに対しても同等の表示を保証する場合は「日本語に斜体を使わない」という回避策しか有効な方法はない。
+> > Windowsユーザーの多くはブラウザのフォント設定をわざわざ変えたりしないし、そもそもこういう問題があることを知る人は少ない。Windowsは現行メジャー環境の一つであるため、どのWeb環境のユーザーに対しても同等の表示を保証するには「日本語に斜体を使わない」という回避策しか有効な方法はない。
 > > </details>
 > 
-> &#x26A0;&#xFE0F; 以下斜体を用いるコード例には常に英数字を入れ、英数字のみまたは日本語文字(かな、漢字等)との併記を用いる(日本語のみの文例を回避)。表示フォントに[メイリオ]を用いるブラウザでは日本語部分だけ斜体にならないので、その場合は英数字部分を見て効果を判断すること。
+> &#x26A0;&#xFE0F; 本章全体を通じて斜体を用いるコード例には常に英数字を入れ、英数字のみまたは日本語文字(かな、漢字等)との併記を用いる(日本語のみの文例を回避)。表示フォントに[メイリオ]を用いるブラウザでは斜体認識しても日本語部分だけ斜体にならないので、表示効果の確認は英数字部分を見て行うこと。
 
 ## 打ち消し線
 
@@ -139,7 +139,7 @@ _text テキスト _
 
 ## 組み合わせ
 
-[斜体]、[太字]、[打ち消し線]の3つをネストして組み合わせて用いることができる。組み合わせ方法は多数あるがみな同様の表示結果になるため、ここではそれぞれ一番覚えやすそうなものを代表として1種類だけ示す。
+[斜体]、[太字]、[打ち消し線]の3つをネストして組み合わせて用いることができる。組み合わせ方法は多数あるがみな同様の表示結果になるため、ここではそれぞれ一番覚えやすそうなものを代表として示す。
 
 ### 太字+斜体
 
@@ -360,9 +360,9 @@ _Italic **and bold ~~and strikeout~~** → back to italic_
 
 ### ***見出しの中: Inside of a heading***
 
-| *表の中* |
+| ~~表見出しの中~~ |
 | -------- |
-| ~~セル~~ |
+| _セルの中: Inside of a table cell_ |
 ```
 
 > > _ブロック引用の中: Inside of a block quote_
@@ -371,9 +371,9 @@ _Italic **and bold ~~and strikeout~~** → back to italic_
 > 
 > ### ***見出しの中: Inside of a heading***
 > 
-> | *表の中* |
+> | ~~表見出しの中~~ |
 > | -------- |
-> | ~~セル~~ |
+> | _セルの中: Inside of a table cell_ |
 
 ## インラインの内部挿入
 
@@ -540,19 +540,19 @@ GFM仕様書の強調(太字と斜体)に関する仕様記述は非常に長大
 > <details>
 > <summary>&#x2714;&#xFE0F; <strong>GFM仕様書の記述</strong></summary>
 > 
-> 例としてGFM仕様書から[左側面連続区切りの定義](https://github.github.com/gfm/#left-flanking-delimiter-run)を示す(忠実な和訳)。
+> 例としてGFM仕様書から[左側面連続区切りの定義](https://github.github.com/gfm/#left-flanking-delimiter-run)を示す。ほぼ忠実な和訳だが、理解の助けになるよう階層リストに書き換えた。また英文がやや説明不足のため、接続詞や指示代名詞が不足している部分は括弧付きで補った(特に「(その)」の部分)。
 > 
-> 1. その次はUnicode空白(または行末)ではなく(not followed by Unicode whitespace)
+> 1. (その)次はUnicode空白(または行末)ではなく(not followed by Unicode whitespace)
 > 2. (さらに)次のどちらかの条件を満たす
->    - (2a) その次は句読文字でもない(not followed by a punctuation character)、または(or)
->    - (2b) その次は句読文字(followed by a punctuation character)で、さらに次のどちらかを満たす
->      - その前はUnicode空白(または行頭) (preceded by Unicode whitespace)
->      - その前は句読文字 (... or a punctuation character)
+>    - (2a) (その)次は句読文字でもない(not followed by a punctuation character)、または(or)
+>    - (2b) (その)次は句読文字(followed by a punctuation character)で、さらに次のどちらかを満たす
+>      - (その)前はUnicode空白(または行頭) (preceded by Unicode whitespace)
+>      - (その)前は句読文字 (... or a punctuation character)
 > 3. 以上の定義で行頭・行末はUnicode空白扱いとする(the beginning and ... as Unicode whitespace)
 > 
 > > &#x2714;&#xFE0F; 3の「行頭・行末」(the beginning and the end of the line)という表現は厳密には不正確で、連続区切りの認識は行単位ではなく[ブロック]分割終了後の内の[インライン]ソーステキスト(部分文字列)に対して行う。そのため以下の説明では「文頭・文末」という表現に修正している。
 > 
-> 上記表現は理解の補助として階層リストを用いたが、実際の仕様書は全て冗長な英文表現で記述されており、解読が非常に難しい(特に「その次」「その前」の「その」が何を指すのか不明瞭)。そこで以下では冗長性を排除した上で厳密な記述を行うために数学記号を導入して表現した(意味は同じ)。
+> しかし実際の仕様書は全て冗長な英文表現で記述されており、解読が非常に難しい(特に原文には「(その)次」「(その)前」の「その」が示されていないため、何を指すのか不明瞭)。そこで以下では冗長性を排除した上で厳密な記述を行うために数学記号を導入して表現した(意味は同じ)。
 > </details>
 
 以下の定義では次の記号を用いる。
@@ -738,12 +738,12 @@ abc***def***ghi
 
 ### 現実的な対処方法
 
-以上CommonMark/GFM仕様に基づいた強調の認識方法に関して詳細に説明した。ただしこのような知識は仕様を作る際やその実装を行う際には必要だが、文書作成にはあまり役に立つことはないということを強調しておく。
+以上CommonMark/GFM仕様に基づいた強調の認識方法に関して詳細に説明した。ただしこのような知識は仕様を作る際やその実装を行う際には必要だが、文書作成の際にはあまり役に立つものではないということを強調しておく。
 
 > <details>
-> <summary>&#x2714;&#xFE0F; <strong>問題を生じやすい文例</strong></summary>
+> <summary>&#x2714;&#xFE0F; <strong>見解が分かれそうな文例</strong></summary>
 > 
-> そもそもCommonMark仕様が既存仕様のなかで最良かというと必ずしもそうとは言えない部分もある。例えば次の例はいかにもオーバーラップによる先着優先が適用されそうだが、実はCommonMark仕様では斜体の3重ネストにより解決可能で`*abc _*def* ghi_*`のように認識される。
+> そもそもCommonMark仕様が既存仕様のなかで最良かというと必ずしもそうとは言えない部分もある。例えば次の例はいかにも`*abc...def*`と`**def...ghi**`がオーバーラップしているケースで、先着優先が適用されそうに見える。しかしCommonMark仕様はそうではない。
 > 
 > ```markdown
 > *abc **def* ghi**
@@ -751,9 +751,11 @@ abc***def***ghi
 > 
 > > *abc **def* ghi**
 > 
-> > &#x2714;&#xFE0F; これを解決する手順はGFM仕様書のAppendix: [An algorithm for parsing nested emphasis and links](https://github.github.com/gfm/#an-algorithm-for-parsing-nested-emphasis-and-links)に書かれている。ただし知っていても全く実用性はない知識なので本解説では省略した。
+> CommonMark仕様では`*abc _*def* ghi_*`のように認識され、斜体の3重ネストとして処理される。
 > 
-> しかし[BabelMark](https://babelmark.github.io/?text=*abc+**def*+ghi**)で確認するとやはり出力は様々で、特に(太字優先を適用して)`**`を太字と認識するものが多数ある。この`*abc **def* ghi**`のケースは確かに斜体の3重掛けで解決可能だが、人間が自然と感じる解釈はむしろ斜体と太字がオーバーラップした状態という意見も多いだろう。
+> > &#x2714;&#xFE0F; この解決手順はGFM仕様書のAppendix: [An algorithm for parsing nested emphasis and links](https://github.github.com/gfm/#an-algorithm-for-parsing-nested-emphasis-and-links)に書かれている。ただし知っていても全く実用性はない知識なので本解説では省略した。
+> 
+> しかし[BabelMark](https://babelmark.github.io/?text=*abc+**def*+ghi**)で確認するとやはり出力は様々で、特に(太字優先を適用して)`**`を太字と認識するものが多数ある。このケースは確かに斜体の3重掛けで解決可能だが、人間が自然と感じる解釈はむしろ斜体と太字のオーバーラップという意見も多いだろう。
 > </details>
 
 このような詳細仕様に依存した記述はCommonMark系以外のMarkdown実装への応用が効かない。そうではなく、逆にどのようなMarkdown実装でも同じように文法認識されるような記述方法を考えた方が遥かに実用的であり、得るものも大きい。

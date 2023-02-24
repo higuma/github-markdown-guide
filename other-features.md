@@ -6,21 +6,11 @@
 
 ------------------------------------------------------------------------
 
-> **TODO** GFMには含まれないが他の環境にもよくあるもの(見出しへのID設定、数式、脚注)と、GitHub特有の機能(絵文字の名前指定、CSS色表現など)を分割して章を分けるべき。検討中。
-
-実際のGitHubサイトのMarkdown環境には[GFM]仕様書には書かれていないサイト専用の機能が多数存在する。
-
-> 機能拡張の結果[GFM]仕様書通りではなくなっている部分もある。
-
-
-
-> Markdownを用いる現実のWebサービス/アプリではMarkdown実装だけでなく、文書を表示するWeb環境(HTML, CSS, etc.)にも大きく依存しており、同じ仕様のMarkdown実装を用いていてもそれを利用するためのWeb環境が異なれば当然表示結果も異なる。
-
-本章の内容の中には他のMarkdown環境でも採用されているものがいくつかある。他のMarkdown環境でも採用されている一般的な仕様を前半で説明し、GitHub特有の機能について後半に示す。
+本章では[GitHub Flavored Markdown]仕様には含まれていないが、すでに多くのMarkdown環境に取り入れられており、GitHubでも利用可能な機能について説明する。
 
 ## 見出しのID設定
 
-GitHub Markdownをはじめとする多くMarkdown環境では[見出し]に対して次のルールでIDを自動的に割り振る。
+GitHub Markdownでは[見出し]に対して次のルールでIDを自動的に割り振る。この仕様はMarkdownを利用する多くのWeb環境で用いられているもので、GitHubでも事実上の標準扱いとして採用している。
 
 - 見出し文のテキストを抽出して次の変換を行う
   - スペースを`-`に変換
@@ -84,21 +74,21 @@ GitHub Markdownをはじめとする多くMarkdown環境では[見出し]に対�
 > 4. 上と重複するため連番を追加 → `foo-1`
 > </details>
 
-> 以上の仕様はよく知られているもので、他のMarkdownを用いたWebサービス/アプリでも同じ仕様が多い。ただしGitHubの公式ドキュメントを探しても記述は見当たらないのでこの機会にまとめておいた。
+> 以上の仕様はよく知られているものだが、GitHubの公式ドキュメントを探しても記述は見当たらないのでこの機会にまとめておいた。
 
 ## 数式
 
-Markdown応用環境の多くが[LaTeX]仕様の数式表現を取り入れており、GitHubにも採用されている。
+Markdown応用環境の多くが[LaTeX]仕様の数式表現を採用しており、GitHubにも取り込まれている。
 
 > &#x2714;&#xFE0F; **[LaTeX]の数式表現**
 > 
-> [LaTeX]は元々書籍用の組版ツールで現在も論文執筆用によく用いられる。また数式表現の分野では[LaTeX]仕様が事実上の標準となり他分野でも用いられている。Markdown習得に関してはこの部分だけ覚えればよい。次のWikipedia解説がよい(実用的)。
+> [LaTeX]は元々書籍用の組版ツールで現在も論文執筆用にはよく用いられる。また数式表現の分野では[LaTeX]仕様が事実上の標準となり他分野でも用いられる。Markdown習得に関してはこの数式表現部分だけ覚えればよい。次のWikipedia解説がよい(実用的)。
 > 
 > - https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#関数・演算子・特殊記号
 > - https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#大きな式
 > - https://meta.wikimedia.org/wiki/Help:Displaying_a_formula/ja#アルファベットと書体
 
-MarkdownにLaTeX数式を埋め込む書式のGitHub仕様をまとめると次の通り。
+GitHub MarkdownでLaTeX数式を埋め込む書式は次の通り(まとめ)。細かい注意点は後で説明する。
 
 - [ブロック]の場合(2通り)
   - 前後に[空行]を入れて`$$...$$`
@@ -135,7 +125,7 @@ $$x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}$$
 > \int_{-\infty}^{\infty} exp \left ( - \frac{x^2}{2} \right ) dx = \sqrt{2 \pi}
 > ```
 
-#### インラインの場合
+### インラインの場合
 
 `$...$`の内部に記述する。数式の前後にスペースが必要。
 
@@ -162,12 +152,12 @@ $$x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}$$
 ```markdown
 エスケープが必要な例: <span>$</span>10 の $\frac{1}{4}$
 
-この`$`はエスケープ不要: $a^2 = b^2 + c^2 - 2 b c \cos A$
+`コードスパン内の$`はエスケープ不要: $a^2 = b^2 + c^2 - 2 b c \cos A$
 ```
 
 > エスケープが必要な例: <span>$</span>10 の $\frac{1}{4}$
 > 
-> この`$`はエスケープ不要: $$a^2 = b^2 + c^2 - 2 b c \cos A$$
+> `コードスパン内の$`はエスケープ不要: $a^2 = b^2 + c^2 - 2 b c \cos A$
 
 > <details>
 > <summary>&#x2757;&#xFE0F; <strong>失敗例</strong></summary>
@@ -175,22 +165,16 @@ $$x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}$$
 > 失敗例を示す。最初の文例はエスケープしない場合で、手前にある`$10 の $`までの部分を数式と判定する(誤認識)。[バックスラッシュエスケープ]や[文字参照]を用いても効果はなく、`<span>$</span>`を使わないと正しく処理できない。
 > 
 > ```markdown
-> エスケープなし(`$10 の $`の部分を数式と認識する): $10 の $\frac{1}{4}$
-> 
-> エスケープ失敗例(1): \$10 の $\frac{1}{4}$
-> 
-> エスケープ失敗例(2): &dollar;10 の $\frac{1}{4}$
-> 
-> 正しいエスケープ: <span>$</span>10 の $\frac{1}{4}$
+> - エスケープなし(`$10 の $`の部分を数式と認識する): $10 の $\frac{1}{4}$
+> - エスケープ失敗例(1): \$10 の $\frac{1}{4}$
+> - エスケープ失敗例(2): &dollar;10 の $\frac{1}{4}$
+> - 正しいエスケープ: <span>$</span>10 の $\frac{1}{4}$
 > ```
 > 
-> > エスケープなし(`$10 の $`の部分を数式と認識する): $10 の $\frac{1}{4}$
-> > 
-> > エスケープ失敗例(1): \$10 の $\frac{1}{4}$
-> > 
-> > エスケープ失敗例(2): &dollar;10 の $\frac{1}{4}$
-> > 
-> > 正しいエスケープ: <span>$</span>10 の $\frac{1}{4}$
+> > - エスケープなし(`$10 の $`の部分を数式と認識する): $10 の $\frac{1}{4}$
+> > - エスケープ失敗例(1): \$10 の $\frac{1}{4}$
+> > - エスケープ失敗例(2): &dollar;10 の $\frac{1}{4}$
+> > - 正しいエスケープ: <span>$</span>10 の $\frac{1}{4}$
 > </details>
 
 ### 数式の内部に`$`を含む場合
@@ -225,7 +209,7 @@ $$\sqrt{\$2}$$
 
 #### 例2 `f $ x`
 
-数式の中に`$`を用いることは滅多にないが、[Haskell]の教科書にはよく`f $ x`というコード(式)を数式スタイルで表示する記法が見られる。数式中に1文字分のスペースを確保するにはtext spaceの`\ `を用いるが、これをインライン記法に用いる場合には複雑なエスケープが必要になる。
+数学分野では数式の中に`$`を用いることは滅多にないが、[Haskell]の教科書にはよく`f $ x`や`f $! x`のようなコード(式)を数式スタイルで表示する記法が見られる。数式中に1文字分のスペースを確保するにはtext spaceの`\ `を用いるが、これをインライン記法に用いる場合には複雑なエスケープが必要になる。
 
 ``````markdown
 $$f \ \$ \ x$$
@@ -245,31 +229,165 @@ f \ \$ \ x
 > 
 > インライン: $f \\ \\$ \\ x$
 
-> &#x1F6AB; **非推奨** インラインの特殊記法(二重エスケープ)はどこにも書かれていないため試行錯誤して見つけた(2023-02現在)。ただしこの動作は後で修正される可能性が高く、そういう意味でも回避可能な状況では使用を控えるべき。
+> &#x1F6AB; **非推奨** インラインの特殊記法(二重エスケープ)はどこにも書かれていないため試行錯誤して見つけた(2023-02現在)。ただしこの動作は(不具合ではないと思われるが)後で修正される可能性が高く、その意味でもできるたけ回避すべき。
 
 ## 脚注
 
-Here is a simple footnote[^1].
+脚注はGitHubの他、はてなブログ、Qiita、Zennなどが対応しており、どのWebサイトも同様の文法仕様を採用している。以下はGitHub上で確認した内容について詳しく説明する。
 
-A footnote can also have multiple lines[^2].  
+### 脚注の記述
 
-You can also use words, to fit your writing style more closely[^note].
+脚注は次のように`[^ラベル]: テキスト`の形式で記述する。これらは文書内の任意の場所に記述可能で、複数箇所に分散していてもよい。出力時にまとめられて文書の末尾に出力される。
 
-[^1]: My reference.
-[^2]: Every new line should be prefixed with 2 spaces.  
-  This allows you to have a footnote with multiple lines.
-[^note]:
-    Named footnotes will still render with numbers instead of the text but allow easier identification and linking.  
-    This footnote also has been made with a different syntax using 4 spaces for new lines.
+```markdown
+[^1]: 脚注の例
+[^2]: *Italic(斜体)* __太字__ ~~打ち消し線~~
+[^3]: リンク https://github.com/
+[^4]: `コードスパン`
+[^5]: 画像 ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png?v8)
+[^6]: HTMLインライン <ruby>羆<rt>ひぐま</rt></ruby>
+[^7]: 数式 $y=f(x)$
+[^abc]: ラベルの例
+[^あいう]: ラベルは日本語でもよい
+[^used]: この脚注は複数回引用される
+[^not-used]: この脚注は引用されない
+[^soft-break]: ソフト改行の例
+同じ行の続き
+[^hard-break]: ハード改行の例\
+次の行
+[^block-list]:
+    - リストアイテム1
+    - リストアイテム2
+[^block-code-block]:
+    ```lisp
+    ;; code block example
+    (defun hello-markdown() (format t "hello Markdown!"))
+    ```
+[^block-table]:
+    | 表 | 表 |
+    | - | - |
+    | セル | セル |
+```
 
+<!-- これらはこの場所ではなくページ末尾に出力される -->
 
+[^1]: 脚注の例
+[^2]: *Italic(斜体)* __太字__ ~~打ち消し線~~
+[^3]: リンク https://github.com/
+[^4]: `コードスパン`
+[^5]: 画像 ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png?v8)
+[^6]: HTMLインライン <ruby>羆<rt>ひぐま</rt></ruby>
+[^7]: 数式 $y=f(x)$
+[^abc]: ラベルの例
+[^あいう]: ラベルは日本語でもよい
+[^used]: この脚注は複数回引用される
+[^not-used]: この脚注は引用されない
+[^soft-break]: ソフト改行の例
+同じ行の続き
+[^hard-break]: ハード改行の例\
+次の行
+[^block-list]:
+    - リストアイテム1
+    - リストアイテム2
+[^block-code-block]:
+    ```lisp
+    ;; code block example
+    (defun hello-markdown() (format t "hello Markdown!"))
+    ```
+[^block-table]:
+    | 表 | 表 |
+    | - | - |
+    | セル | セル |
 
+<!-- 脚注終わり -->
 
+文法上の要点をリストにまとめる。
 
+- `[^ラベル]: テキスト`の形式で記述
+  - `[^ラベル]:`とテキストの間の空白は除去して処理(GitHubでは密着していても認識する)
+  - `ラベル`は整数だけでなくユニークな文字列(識別子)であれば何でもよい
+  - テキストは基本的に[パラグラフ]と同じ文法
+    - 内部に任意の[インライン]アイテムを記述可能
+      - ただしGitHubでは今のところ[数式]は効果なし(2023-02現在)
+    - [ソフト改行]、[ハード改行]も認識する
+  - [ブロック]アイテムを挿入する場合は改行して4文字インデントする
+- 脚注の認識も基本的に[パラグラフ]と同様(単一の[ブロック]扱い)
+  - 連続する脚注の間は[空行]不要
+  - 前後に別種の[ブロック]アイテムがある場合は[空行]を入れるとよい(推奨)
+  - 複数箇所に分散して記述してよい(処理時にまとめられる)
 
+> &#x26A0;&#xFE0F; [GitHub docs](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#footnotes)に書かれている”Every new line should be prefixed with 2 spaces."は誤り。この例の場合はインデントは無関係で、実際には行末スペース2個による[ハード改行]により改行している。
 
+### 脚注の引用
 
+脚注を引用する側の文章では`[^ラベル]`の書式を用いる。[インライン]アイテムを挿入できる場所ならどこにでも使える。
 
+```markdown
+パラグラフの中[^1] **強調文の中[^2]**
+
+- 以下はリストの中: リンク[^3]
+- コードスパン[^4]
+- 画像[^5]
+- HTMLインライン[^6]
+- 数式[^7]
+- ラベル[^abc]
+- 日本語ラベル確認用[^あいう]
+
+### 見出しの中[^used]
+
+> ブロック引用の中[^used]
+
+| 表の中 | [^used] |
+| - | - |
+| ソフト改行[^soft-break] | ハード改行[^hard-break] |
+| リスト[^block-list] | コードブロック[^block-code-block] |
+| 表[^block-table] |
+```
+
+> パラグラフの中[^1] **強調文の中[^2]**
+> 
+> - 以下はリストの中: リンク[^3]
+> - コードスパン[^4]
+> - 画像[^5]
+> - HTMLインライン[^6]
+> - 数式[^7]
+> - ラベル[^abc]
+> - 日本語ラベル確認用[^あいう]
+> 
+> ### 見出しの中[^used]
+> 
+> > ブロック引用の中[^used]
+> 
+> | 表の中 | [^used] |
+> | - | - |
+> | ソフト改行[^soft-break] | ハード改行[^hard-break] |
+> | リスト[^block-list] | コードブロック[^block-code-block] |
+> | 表[^block-table] |
+
+ただし[コードスパン]と[コードブロック]の内部には効果がなくそのまま出力する。
+
+``````markdown
+```markdown
+[^1]
+```
+
+`コードスパン[^1]`
+``````
+
+> ```markdown
+> [^1]
+> ```
+> 
+> `コードスパン[^1]`
+
+### 脚注の出力
+
+処理時にラベルに連番が割り振られ、未参照の脚注は出力から除去する。そしてソーステキストの記述場所とは関係なく常にHTML出力の末尾に脚注用のスタイルで表示する(→ [表示確認](#footnotes))。また脚注には引用元値のリンクが自動的に付与される。
+
+- 全てまとめて末尾にまとめて脚注のスタイルで出力される
+  - 連番処理を行い、番号が付け直される
+  - 引用(参照)されていない脚注を除去
+  - 各脚注の末尾に参照先へのリンクが付く
 
 ------------------------------------------------------------------------
 
@@ -278,6 +396,7 @@ You can also use words, to fit your writing style more closely[^note].
 [GitHub特有の機能]
 
 [ASCII句読文字]: backslash-escapes.md#ASCII句読文字
+[GitHub Flavored Markdown]: github-flavored-markdown.md
 [GitHub特有の機能]: github-specific.md
 [Haskell]: https://ja.wikipedia.org/wiki/Haskell
 [HTMLブロック]: html-blocks.md
@@ -286,11 +405,17 @@ You can also use words, to fit your writing style more closely[^note].
 [インライン]: inlines.md
 [コードスパン]: code-spans.md
 [コードブロック]: code-blocks.md
+[ソフト改行]: paragraphs.md#ソフト改行
 [ノーブレークスペース]: texts.md#ノーブレークスペース
-[バックスラッシュエスケープ]:characters.md#バックスラッシュエスケープ
+[ハード改行]: paragraphs.md#ハード改行
+[パラグラフ]: paragraphs.md
+[バックスラッシュエスケープ]: characters.md#バックスラッシュエスケープ
 [ブロック]: blocks.md
+[リンク参照定義]: links.md#リンク参照定義
 [空行]: characters.md#空行
 [非表示区切り]: texts.md#非表示区切り
 [見出し]: thematic-breaks.md
 [目次]: index.md#other-features
 [文字参照]: characters.md#文字参照
+
+<div id="footnotes"></div>
