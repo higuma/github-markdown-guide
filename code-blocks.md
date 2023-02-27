@@ -67,9 +67,9 @@ for (let word of ["eeny", "meeny", "miny", "moe"]) {
 > ```
 > ``````
 
-> &#x2714;&#xFE0F; [GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)では「4重のバッククォート」と解説している。上記ケースでは`` ` ``の数が3より多いことが条件なのでこれでも正しいが、本解説では認識しやすさを考慮してネストレベルに応じた3の倍数(3,6,9,...)を用いている。
+> &#x2714;&#xFE0F; [GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)では**4文字のバッククォート**(` ````...```` `)を用いて説明している。この場合は`` ` ``の数が3より多いことが条件なのでこれでも正しいが、本解説では認識性を考慮してネストレベルに応じた3の倍数(3,6,9,...)を用いている。
 > 
-> > &#x2757;&#xFE0F; 上記コードブロックは「コードブロックの文例を表すコードブロック」であり、そのソース表示はそれをさらにコードブロックで囲んだ3重ネスト(`` ` ``を9個使用)になっている(→[ソース](https://github.com/higuma/github-markdown-guide/blob/main/code-blocks.md?plain=1#L54-L61))。
+> > &#x2714;&#xFE0F; 上記コードブロックは「コードブロックの文例を表すコードブロック」であり、そのソースコードはそれの全体をさらにコードブロックで囲んだ3重ネスト(`` ` ``を9個使用)を用いている(→ [ソースコード](https://github.com/higuma/github-markdown-guide/blob/main/code-blocks.md?plain=1#L54-L61))。
 
 逆に`` ``` ``から始まる通常テキスト行は先頭を`\`でエスケープする。
 
@@ -194,9 +194,9 @@ Fenced by ~~~
 > ~~~
 > ``````
 
-> &#x2714;&#xFE0F; `~~~`は[CommonMark]で採用された仕様で、これを用いて内部に`` ``` ``から始まる行がある場合に対応できる。しかし文字数を増やしたコードフェンスの方が汎用性で勝る(3重以上のネストも可能)。[GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)でも`~~~`は説明に含まれておらず、覚えなくても文書作成に支障はない。
+> &#x2714;&#xFE0F; `~~~`は[CommonMark]で採用された仕様で、これを用いて内部に`` ``` ``から始まる行がある場合に対応できるが、2重ネストまでしか対応できない。一方文字数を増やしたコードフェンスなら3重以上任意レベルのネストが可能。今では[GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)にも`~~~`は説明に含まれておらず、覚える必要なし。
 > 
-> &#x2757;&#xFE0F; 上記コード例のソース表示は3重ネストのため`` ` ``を9個用いている(→[ソース](https://github.com/higuma/github-markdown-guide/blob/main/code-blocks.md?plain=1#L175-L185))。また本解説では本章の説明に必要な場合のみ`~~~`を用いているが他には全く使っていない。さらに`~~~`によるコードブロックをサポートしていないMarkdown実装が多数存在する(→[Babelmark](https://babelmark.github.io/?text=~~~%0Acode+block%0A~~~+))。
+> > &#x2714;&#xFE0F; ちなみに上記コード例のソース表示は3重ネストのため`` ` ``を9個用いている(→[ソース](https://github.com/higuma/github-markdown-guide/blob/main/code-blocks.md?plain=1#L175-L185))。また本解説では本章の説明に必要な場合のみ`~~~`を用いているが他には全く使っていない。さらに`~~~`によるコードブロックをサポートしていないMarkdown実装が多数存在する(→[Babelmark](https://babelmark.github.io/?text=~~~%0Acode+block%0A~~~+))。
 
 ## インデントによるコードブロック
 

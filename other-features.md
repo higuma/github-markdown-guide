@@ -231,6 +231,28 @@ f \ \$ \ x
 
 > &#x1F6AB; **非推奨** インラインの特殊記法(二重エスケープ)はどこにも書かれていないため試行錯誤して見つけた(2023-02現在)。ただしこの動作は(不具合ではないと思われるが)後で修正される可能性が高く、その意味でもできるたけ回避すべき。
 
+## Mermaidダイアグラム
+
+[Mermaid]はダイアグラム記述用の言語で、2021,2年頃にMarkdown応用Webサイトに一斉に採用されて普及した(GitHubは[2022年2月](https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/))。どのサイトもコードブロックとして扱い、[info文字列](code-blocks.md#info文字列)として`mermaid`を指定して記述する。
+
+``````markdown
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+``````
+
+> ```mermaid
+> graph TD;
+>     A-->B;
+>     A-->C;
+>     B-->D;
+>     C-->D;
+> ```
+
 ## 脚注
 
 脚注はGitHubの他、はてなブログ、Qiita、Zennなどが対応しており、どのWebサイトも同様の文法仕様を採用している。以下はGitHub上で確認した内容について詳しく説明する。
@@ -269,7 +291,7 @@ f \ \$ \ x
     | セル | セル |
 ```
 
-<!-- これらはこの場所ではなくページ末尾に出力される -->
+<!-- ここから脚注: これらはこの場所ではなくページ末尾に出力される -->
 
 [^1]: 脚注の例
 [^2]: *Italic(斜体)* __太字__ ~~打ち消し線~~
@@ -310,13 +332,13 @@ f \ \$ \ x
     - 内部に任意の[インライン]アイテムを記述可能
       - ただしGitHubでは今のところ[数式]は効果なし(2023-02現在)
     - [ソフト改行]、[ハード改行]も認識する
-  - [ブロック]アイテムを挿入する場合は改行して4文字インデントする
+  - [ブロック]アイテムを挿入する場合は改行して4文字インデント(GitHubの場合)
 - 脚注の認識も基本的に[パラグラフ]と同様(単一の[ブロック]扱い)
   - 連続する脚注の間は[空行]不要
   - 前後に別種の[ブロック]アイテムがある場合は[空行]を入れるとよい(推奨)
   - 複数箇所に分散して記述してよい(処理時にまとめられる)
 
-> &#x26A0;&#xFE0F; [GitHub docs](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#footnotes)に書かれている”Every new line should be prefixed with 2 spaces."は誤り。この例の場合はインデントは無関係で、実際には行末スペース2個による[ハード改行]により改行している。
+> &#x26A0;&#xFE0F; [GitHub docs](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#footnotes)の`[^2]`のコード例に書かれている”Every new line should be prefixed with 2 spaces."は誤り。この場合はインデントは無関係で、実際には行末スペース2個による[ハード改行]により改行している。
 
 ### 脚注の引用
 
@@ -331,7 +353,7 @@ f \ \$ \ x
 - HTMLインライン[^6]
 - 数式[^7]
 - ラベル[^abc]
-- 日本語ラベル確認用[^あいう]
+- 日本語ラベル[^あいう]
 
 ### 見出しの中[^used]
 
@@ -352,7 +374,7 @@ f \ \$ \ x
 > - HTMLインライン[^6]
 > - 数式[^7]
 > - ラベル[^abc]
-> - 日本語ラベル確認用[^あいう]
+> - 日本語ラベル[^あいう]
 > 
 > ### 見出しの中[^used]
 > 
@@ -402,6 +424,7 @@ f \ \$ \ x
 [HTMLブロック]: html-blocks.md
 [info文字列]: code-blocks.md#info文字列
 [LaTeX]: https://ja.wikipedia.org/wiki/LaTeX
+[Mermaid]: https://mermaid.js.org/
 [インライン]: inlines.md
 [コードスパン]: code-spans.md
 [コードブロック]: code-blocks.md

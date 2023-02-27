@@ -6,7 +6,69 @@
 
 ------------------------------------------------------------------------
 
-> **TODO** GFMには含まれないが他の環境にもよくあるもの(見出しへのID設定、数式、脚注)と、GitHub特有の機能(絵文字の名前指定、CSS色表現など)を分割して章を分けるべき。検討中。
+> **TODO**: 執筆中。まだ書き始めたばかり。
+
+最後にGitHub独自の機能について説明する。
+
+## 名前付き絵文字
+
+GitHub Markdown環境には昔から独自の絵文字文化があり、`:name:`の書式で絵文字を[インライン]入力できる。
+
+```markdown
+:+1: :-1: :smile: :cry:
+```
+
+> :+1: :-1: :smile: :cry:
+
+GitHubで使える絵文字名の一覧は次を参照。
+
+https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
+
+これらの絵文字は対応するPNG画像と組になっている。PNG画像も含めた一覧は次の通り。
+
+https://github.com/higuma/github-emoji-list/blob/main/README.md
+
+
+> <details>
+> <summary><strong>&#x2714;&#xFE0F; 取得方法</strong></summary>
+> 
+> 一覧はGitHub REST APIで取得できる。方法は次を参照(要GitHub token)。データはJSON形式。
+> 
+> https://docs.github.com/ja/rest/emojis
+> 
+> より単純に次のURLにアクセスしても取得可能(token不要)。
+> 
+> https://api.github.com/emojis
+> </details>
+
+> <details>
+> <summary><strong>&#x2714;&#xFE0F; GitHub独自の絵文字</strong></summary>
+> 
+> 大部分はUnicodeの絵文字に対応しているが、中にはGitHub独自の絵文字もある。例えば次のような絵文字はGitHub独自で、Unicodeには対応する文字はない。
+> 
+> - `:atom:` → :atom:
+> - `:electron:` → :electron:
+> - `:octocat:` → :octocat:
+> 
+> 一覧は次を参照。
+> 
+> https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#github-custom-emoji
+> </details>
+
+## ソースリスティングURIの範囲指定
+
+
+
+## ダイアグラム系
+
+
+GeoJSON/TopoJSON
+
+STD 3D - ASCII STL
+
+
+
+
 
 実際のGitHubサイトのMarkdown環境には[GFM]仕様書には書かれていないサイト専用の機能が多数存在する。
 
@@ -20,37 +82,6 @@ Markdown
 ## GitHub特有の機能
 
 次に示す機能はGitHub特有。
-
-### 絵文字
-
-GitHub Markdown環境には独自の絵文字文化があり、`:name:`の書式で絵文字を[インライン]入力できる機能がある。
-
-```markdown
-:+1: :-1: :smile: :cry:
-```
-
-> :+1: :-1: :smile: :cry:
-
-GitHubで使える絵文字名の一覧は次を参照。
-
-https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
-
-Unicodeの絵文字に対応しているものだけではなく、GitHub独自の絵文字もある。またこれらは対応するPNG画像と組になっている。PNG画像も含めた一覧は次の通り。
-
-https://github.com/higuma/github-emoji-list/blob/main/README.md
-
-<details>
-<summary>取得方法</summary>
-
-一覧はGitHub REST APIで取得できる。方法は次を参照(要GitHub token)。データはJSON形式。
-
-https://docs.github.com/ja/rest/emojis
-
-より単純に次のURLにアクセスしても取得可能(token不要)。
-
-https://api.github.com/emojis
-
-</details>
 
 
 ### CSSの色表現
