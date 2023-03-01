@@ -231,9 +231,9 @@ f \ \$ \ x
 
 > &#x1F6AB; **非推奨** インラインの特殊記法(二重エスケープ)はどこにも書かれていないため試行錯誤して見つけた(2023-02現在)。ただしこの動作は(不具合ではないと思われるが)後で修正される可能性が高く、その意味でもできるたけ回避すべき。
 
-## Mermaidダイアグラム
+## Mermaidによるダイアグラム・チャート
 
-[Mermaid]はダイアグラム記述用の言語で、2021,2年頃にMarkdown応用Webサイトに一斉に採用されて普及した(GitHubは[2022年2月](https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/))。どのサイトもコードブロックとして扱い、[info文字列](code-blocks.md#info文字列)として`mermaid`を指定して記述する。
+[Mermaid]はダイアグラム・チャート記述用の言語で、2021,2年頃にMarkdownを用いるWebサイトに一斉に採用され普及した(GitHubは[2022年2月](https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/))。どのサイトも[コードブロック]として扱い、[info文字列](code-blocks.md#info文字列)として`mermaid`を指定して記述する。
 
 ``````markdown
 ```mermaid

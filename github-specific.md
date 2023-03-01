@@ -6,9 +6,7 @@
 
 ------------------------------------------------------------------------
 
-> **TODO**: 執筆中。まだ書き始めたばかり。
-
-最後にGitHub独自の機能について説明する。
+最後にGitHub独自の機能から主要なものをいくつか説明する。
 
 ## 名前付き絵文字
 
@@ -27,7 +25,6 @@ https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
 これらの絵文字は対応するPNG画像と組になっている。PNG画像も含めた一覧は次の通り。
 
 https://github.com/higuma/github-emoji-list/blob/main/README.md
-
 
 > <details>
 > <summary><strong>&#x2714;&#xFE0F; 取得方法</strong></summary>
@@ -55,33 +52,183 @@ https://github.com/higuma/github-emoji-list/blob/main/README.md
 > https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#github-custom-emoji
 > </details>
 
+## GeoJSON, TopoJSON
+
+GitHubでは[地理情報システム](https://ja.wikipedia.org/wiki/地理情報システム)に用いられる[GeoJSON](https://ja.wikipedia.org/wiki/GeoJSON)及び[TopoJSON](https://github.com/topojson/topojson)の両形式のデータを取り込む事ができる。それには[コードブロック]の[info文字列]として`geojson`, `topojson`を指定して記述する。まず簡単なGeoJSONの例文を示す。
+
+``````markdown
+```geojson
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "東京"
+      },
+      "geometry": {
+        "coordinates": [
+          139.76608172126356,
+          35.68137975640924
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "富士山"
+      },
+      "geometry": {
+        "coordinates": [
+          138.73091465967775,
+          35.36282365514147
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}
+```
+``````
+
+> ```geojson
+> {
+>   "type": "FeatureCollection",
+>   "features": [
+>     {
+>       "type": "Feature",
+>       "properties": {
+>         "name": "東京"
+>       },
+>       "geometry": {
+>         "coordinates": [
+>           139.76608172126356,
+>           35.68137975640924
+>         ],
+>         "type": "Point"
+>       }
+>     },
+>     {
+>       "type": "Feature",
+>       "properties": {
+>         "name": "富士山"
+>       },
+>       "geometry": {
+>         "coordinates": [
+>           138.73091465967775,
+>           35.36282365514147
+>         ],
+>         "type": "Point"
+>       }
+>     }
+>   ]
+> }
+> ```
+
+同じデータをTopoJSONに変換したものは次の通り。
+
+``````markdown
+```topojson
+{
+  "type": "Topology",
+  "objects": {
+    "collection": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Point",
+          "coordinates": [
+            9999,
+            9999
+          ]
+        },
+        {
+          "type": "Point",
+          "coordinates": [
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "arcs": [],
+  "bbox": [
+    138.73091465967775,
+    35.36282365514147,
+    139.76608172126356,
+    35.68137975640924
+  ],
+  "transform": {
+    "scale": [
+      0.00010352705886446742,
+      0.00003185879600637802
+    ],
+    "translate": [
+      138.73091465967775,
+      35.36282365514147
+    ]
+  }
+}
+```
+``````
+
+> ```topojson
+> {
+>   "type": "Topology",
+>   "objects": {
+>     "collection": {
+>       "type": "GeometryCollection",
+>       "geometries": [
+>         {
+>           "type": "Point",
+>           "coordinates": [
+>             9999,
+>             9999
+>           ]
+>         },
+>         {
+>           "type": "Point",
+>           "coordinates": [
+>             0,
+>             0
+>           ]
+>         }
+>       ]
+>     }
+>   },
+>   "arcs": [],
+>   "bbox": [
+>     138.73091465967775,
+>     35.36282365514147,
+>     139.76608172126356,
+>     35.68137975640924
+>   ],
+>   "transform": {
+>     "scale": [
+>       0.00010352705886446742,
+>       0.00003185879600637802
+>     ],
+>     "translate": [
+>       138.73091465967775,
+>       35.36282365514147
+>     ]
+>   }
+> }
+> ```
+
+> (2022-03現在) GitHubの地図機能がまだ十分なレベルに達しておらず、現段階ではまた有効な使い道としては難しい。ただしこの点は将来改良される可能性が高いので使えるように準備しておいて損はない。
+
+## ASCII STL
+
+TODO
+
 ## ソースリスティングURIの範囲指定
 
+TODO
 
 
-## ダイアグラム系
-
-
-GeoJSON/TopoJSON
-
-STD 3D - ASCII STL
-
-
-
-
-
-実際のGitHubサイトのMarkdown環境には[GFM]仕様書には書かれていないサイト専用の機能が多数存在する。
-
-> 機能拡張の結果[GFM]仕様書通りではなくなっている部分もある。
-
-
-Markdown
-
-> Markdownを用いる現実のWebサービス/アプリではMarkdown実装だけでなく、文書を表示するWeb環境(HTML, CSS, etc.)にも大きく依存しており、同じ仕様のMarkdown実装を用いていてもそれを利用するためのWeb環境が異なれば当然表示結果も異なる。
-
-## GitHub特有の機能
-
-次に示す機能はGitHub特有。
 
 
 ### CSSの色表現
@@ -99,21 +246,18 @@ https://gist.github.com/higuma/80cff0982f9f7e2a267b33cad20f984a
 ← [目次] →
 [付録]
 
+[info文字列]: code-blocks.md#info文字列
+[インライン]: inlines.md
+[コードブロック]: code-blocks.md
 [その他の機能]: other.features.md
 [目次]: index.md#github-markdown
 [付録]: appendices.md
 
 
 
-
-
-
 <!--
 [HTMLブロック]: html-blocks.md
-[info文字列]: code-blocks.md#info文字列
-[インライン]: inlines.md
 [コードスパン]: code-spans.md
-[コードブロック]: code-blocks.md
 [ノーブレークスペース]: texts.md#ノーブレークスペース
 [バックスラッシュエスケープ]:characters.md#バックスラッシュエスケープ
 [ブロック]: blocks.md
