@@ -52,10 +52,6 @@ https://github.com/higuma/github-emoji-list/blob/main/README.md
 > https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#github-custom-emoji
 > </details>
 
-## ソースリスティングの範囲指定
-
-**TODO**
-
 ## 他形式データの挿入
 
 他形式のデータを取り込む場合は[コードブロック]を利用する。[Mermaidによるダイアグラム・チャート](other-features.md#mermaidによるダイアグラムチャート)に関しては前章で示した通りだが、ここではまだGitHub以外ではサポートしている環境が少ないものを取り上げる。
@@ -466,13 +462,13 @@ endsolid
 
 ## 拡張自動リンクの認識
 
-GitHubサイト内の書き込み機能では[拡張自動リンク]としてURLやメールアドレスだけでなく、イシューやプルリクエストの番号(`#番号`または`GH-番号`)の次の形式を認識する。またコミットのSHAハッシュ値も認識する。
+GitHubサイト内の書き込み機能では[拡張自動リンク]としてURLやメールアドレスだけでなく、イシューやプルリクエストの番号(`#番号`または`GH-番号`)の形式を認識する。またコミットのSHAハッシュ値も認識する。
 
-| 種類 | 書式 | (実例) |
+| 種類 | 書式(文例)|
 | - | - | - |
-| イシューまたはプルリクエスト番号 | `#1` | #1 |
-| イシューまたはプルリクエスト番号 | `GH-123` |
-| SHAプルリクエスト | `03bb1b9b960e8dbe97010fcdea4a2b754996f843` | 03bb1b9b960e8dbe97010fcdea4a2b754996f843 |
+| イシュー,プルリクエスト,ディスカッションの番号 | `#123` |
+| イシュー,プルリクエスト,ディスカッションの番号 | `GH-123` |
+| コミットのSHAハッシュ | `03bb1b9b960e8dbe97010fcdea4a2b754996f843` |
 
 より詳しくは[GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls)を参照。
 
@@ -482,10 +478,10 @@ Issues, Pull requestsやGISTのコメントなどGitHub Webサイトからの書
 
 これはGitHub repoでは機能しないため、ここに書いても効果を確認できない。そこで結果はIssuesを用いて示す。次のリンク先を参照。
 
-CSS形式の色表現(確認用サンプル) - https://github.com/higuma/github-markdown-guide/issues/1
+[Issues#1 - CSS形式の色表現(確認用サンプル)](https://github.com/higuma/github-markdown-guide/issues/1)
 
 > <details>
-> <summary><strong>サンプルコード</strong</summary>
+> <summary><strong>サンプルコード</strong></summary>
 > 
 > ```markdown
 > | 表現 | 文例 | 判定 |
@@ -512,6 +508,7 @@ CSS形式の色表現(確認用サンプル) - https://github.com/higuma/github-
 
 [info文字列]: code-blocks.md#info文字列
 [インライン]: inlines.md
+[コードスパン]: code-spans.md
 [コードブロック]: code-blocks.md
 [その他の機能]: other-features.md
 [拡張自動リンク]: links.md#拡張自動リンク
