@@ -52,7 +52,15 @@ https://github.com/higuma/github-emoji-list/blob/main/README.md
 > https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#github-custom-emoji
 > </details>
 
-## GeoJSON, TopoJSON
+## ソースリスティングの範囲指定
+
+**TODO**
+
+## 他形式データの挿入
+
+他形式のデータを取り込む場合は[コードブロック]を利用する。[Mermaidによるダイアグラム・チャート](other-features.md#mermaidによるダイアグラムチャート)に関しては前章で示した通りだが、ここではまだGitHub以外ではサポートしている環境が少ないものを取り上げる。
+
+### GeoJSON, TopoJSON
 
 [地理情報システム](https://ja.wikipedia.org/wiki/地理情報システム)に用いられる[GeoJSON](https://ja.wikipedia.org/wiki/GeoJSON)及び[TopoJSON](https://github.com/topojson/topojson)の両形式に対応しており、[コードブロック]の[info文字列]にそれぞれ`geojson`, `topojson`を指定して記述する。簡単なGeoJSONの例文を示す。
 
@@ -220,13 +228,13 @@ https://github.com/higuma/github-emoji-list/blob/main/README.md
 
 > (2022-03現在) GitHubの地図機能がまだ十分なレベルに達しておらず、現段階ではまた有効な使い道としては難しい。ただしこの点は将来改良される可能性が高いので今から使えるように準備しておいて損はない。
 
-## STL
+### STL
 
 三次元形状を表現する[Standard Triangulated Language (STL)](https://ja.wikipedia.org/wiki/Standard_Triangulated_Language)のテキスト形式(ASCII STL)に対応しており、[コードブロック]の[info文字列]に`stl`を指定して記述する。
 
 ``````markdown
 ```stl
-solid tetrahedron
+solid regular-tetrahedron
   facet normal -0.5773502691896258 0.5773502691896258 0.5773502691896258
     outer loop
       vertex 1 1 1
@@ -260,7 +268,7 @@ endsolid
 ``````
 
 > ```stl
-> solid tetrahedron
+> solid regular-tetrahedron
 >   facet normal -0.5773502691896258 0.5773502691896258 0.5773502691896258
 >     outer loop
 >       vertex 1 1 1
@@ -452,21 +460,49 @@ endsolid
 > > ```
 > > </details>
 
-## ソースリスティングURIの範囲指定
+## GitHubサイト専用の機能
 
-TODO
+最後にリポジトリではなくGitHubのWebアプリ機能の一部としてのみ使える機能を紹介する。
 
+## 拡張自動リンクの認識
 
+GitHubサイト内の書き込み機能では[拡張自動リンク]としてURLやメールアドレスだけでなく、イシューやプルリクエストの番号(`#番号`または`GH-番号`)の次の形式を認識する。またコミットのSHAハッシュ値も認識する。
 
+| 種類 | 書式 | (実例) |
+| - | - | - |
+| イシューまたはプルリクエスト番号 | `#1` | #1 |
+| イシューまたはプルリクエスト番号 | `GH-123` |
+| SHAプルリクエスト | `03bb1b9b960e8dbe97010fcdea4a2b754996f843` | 03bb1b9b960e8dbe97010fcdea4a2b754996f843 |
 
-### CSSの色表現
+より詳しくは[GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/autolinked-references-and-urls)を参照。
 
-Issues/Pull requests/Discussionsでは[コードスパン]中にCSSの色表現(例: `rgb(80, 120, 240)`)を記述するとカラーサンプル付きで表示する。これはGitHub repoでは機能しないのでgistのコメントとして実例を作成した。次の(本文ではなくその下の)コメント欄を見ると効果を確認できる。
+### CSS形式の色表現
 
-https://gist.github.com/higuma/80cff0982f9f7e2a267b33cad20f984a
+Issues, Pull requestsやGISTのコメントなどGitHub Webサイトからの書き込み時に使える機能の一つとして、[コードスパン]中にCSS形式の色表現(例: `rgb(80, 120, 240)`)を記述するとカラーサンプル付きで表示する。ただし対応は完璧ではなく、使える形式とそうでないものがある。
 
+これはGitHub repoでは機能しないため、ここに書いても効果を確認できない。そこで結果はIssuesを用いて示す。次のリンク先を参照。
 
+CSS形式の色表現(確認用サンプル) - https://github.com/higuma/github-markdown-guide/issues/1
 
+> <details>
+> <summary><strong>サンプルコード</strong</summary>
+> 
+> ```markdown
+> | 表現 | 文例 | 判定 |
+> | - | - | - |
+> | RGB(16進3桁) | `#48A` | 無効 |
+> | RGB(16進6桁大文字) | `#44CCAA` | 有効 |
+> | RGB(16進6桁小文字) | `#eeaacc` | 有効 |
+> | rgb関数(0-255) | `rgb(0, 240, 170)` | 有効 |
+> | rgb関数(%) | `rgb(70%, 40%, 20%)` | 無効 |
+> | rgba関数(0-255) | `rgba(120, 240, 170, 0.7)` | 有効 |
+> | rgba関数(%) | `rgba(70%, 40%, 20%, 70%)` | 無効 |
+> | hsl | `hsl(120, 70%, 50%)` | 有効 |
+> | hsla | `hsl(120, 70%, 50%, 0.7)` | 有効 |
+> | hsla(%) | `hsl(120, 70%, 50%, 70%)` | 無効 |
+> | lch | `lch(29.2345% 44.2 27)` | 無効 |
+> ```
+> </details>
 
 ------------------------------------------------------------------------
 
@@ -477,22 +513,7 @@ https://gist.github.com/higuma/80cff0982f9f7e2a267b33cad20f984a
 [info文字列]: code-blocks.md#info文字列
 [インライン]: inlines.md
 [コードブロック]: code-blocks.md
-[その他の機能]: other.features.md
+[その他の機能]: other-features.md
+[拡張自動リンク]: links.md#拡張自動リンク
 [目次]: index.md#github-specific
 [付録]: appendices.md
-
-
-
-<!--
-[HTMLブロック]: html-blocks.md
-[コードスパン]: code-spans.md
-[ノーブレークスペース]: texts.md#ノーブレークスペース
-[バックスラッシュエスケープ]:characters.md#バックスラッシュエスケープ
-[ブロック]: blocks.md
-[非表示区切り]: texts.md#非表示区切り
-[空行]: characters.md#空行
-[文字参照]: characters.md#文字参照
-[ASCII句読文字]: backslash-escapes.md#ASCII句読文字
-[折りたたみ]: html-blocks.md#折りたたみ
-[見出し]: thematic-breaks.md
--->

@@ -181,19 +181,19 @@
     - [ブロックの場合](other-features.md#ブロックの場合)
     - [インラインの場合](other-features.md#インラインの場合)
     - [数式の内部に`$`を含む場合](other-features.md#数式の内部にを含む場合)
-  - [Mermaidによるダイアグラム・チャート](other-features.md#mermaidによるダイアグラム・チャート)
+  - [Mermaidによるダイアグラム・チャート](other-features.md#mermaidによるダイアグラムチャート)
   - [脚注](other-features.md#脚注)
     - [脚注の記述](other-features.md#脚注の記述)
     - [脚注の引用](other-features.md#脚注の引用)
     - [脚注の出力](other-features.md#脚注の出力)
 - <span id="github-specific">[GitHub特有の機能](github-specific.md)</span>
   - [名前付き絵文字](github-specific.md#名前付き絵文字)
-  - [GeoJSON, TopoJSON](github-specific.md#geojson-topojson)
-  - [STL](github-specific.md#stl)
-  - [](github-specific.md#)
-  - [](github-specific.md#)
-  - [](github-specific.md#)
-  - **TODO**
+  - [他形式データの挿入](github-specific.md#他形式データの挿入)
+    - [GeoJSON, TopoJSON](github-specific.md#geojson-topojson)
+    - [STL](github-specific.md#stl)
+  - [GitHubサイト専用の機能](github-specific.md#githubサイト専用の機能)
+    - [拡張自動リンクの認識](github-specific.md#拡張自動リンクの認識)
+    - [CSS形式の色表現](github-specific.md#css形式の色表現)
 - <span id="appendices">[付録](appendices.md)</span>
   - <span id="history">[Markdownの歴史](history.md)</span>
     - 全体的に**TODO**
