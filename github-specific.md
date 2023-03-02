@@ -54,7 +54,7 @@ https://github.com/higuma/github-emoji-list/blob/main/README.md
 
 ## GeoJSON, TopoJSON
 
-[地理情報システム](https://ja.wikipedia.org/wiki/地理情報システム)に用いられる[GeoJSON](https://ja.wikipedia.org/wiki/GeoJSON)及び[TopoJSON](https://github.com/topojson/topojson)の両形式に対応しており、[コードブロック]の[info文字列]として`geojson`, `topojson`を指定して記述する。簡単なGeoJSONの例文を示す。
+[地理情報システム](https://ja.wikipedia.org/wiki/地理情報システム)に用いられる[GeoJSON](https://ja.wikipedia.org/wiki/GeoJSON)及び[TopoJSON](https://github.com/topojson/topojson)の両形式に対応しており、[コードブロック]の[info文字列]にそれぞれ`geojson`, `topojson`を指定して記述する。簡単なGeoJSONの例文を示す。
 
 ``````markdown
 ```geojson
@@ -222,81 +222,37 @@ https://github.com/higuma/github-emoji-list/blob/main/README.md
 
 ## STL
 
-三次元形状を表現する[Standard Triangulated Language (STL)](https://ja.wikipedia.org/wiki/Standard_Triangulated_Language)のテキスト形式(ASCII STL)に対応しており、[コードブロック]の[info文字列]として`stl`を指定して記述する。
+三次元形状を表現する[Standard Triangulated Language (STL)](https://ja.wikipedia.org/wiki/Standard_Triangulated_Language)のテキスト形式(ASCII STL)に対応しており、[コードブロック]の[info文字列]に`stl`を指定して記述する。
 
 ``````markdown
 ```stl
-solid unit-cube
-  facet normal -1 0 0
+solid tetrahedron
+  facet normal -0.5773502691896258 0.5773502691896258 0.5773502691896258
     outer loop
-      vertex 0 0 0
-      vertex 0 1 1
+      vertex 1 1 1
       vertex 0 1 0
-    endloop
-    outer loop
-      vertex 0 0 0
-      vertex 0 0 1
-      vertex 0 1 1
-    endloop
-  endfacet
-  facet normal 1 0 0
-    outer loop
-      vertex 1 0 0
-      vertex 1 1 0
-      vertex 1 1 1
-    endloop
-    outer loop
-      vertex 1 0 0
-      vertex 1 1 1
-      vertex 1 0 1
-    endloop
-  endfacet
-  facet normal 0 -1 0
-    outer loop
-      vertex 0 0 0
-      vertex 1 0 1
       vertex 0 0 1
     endloop
-    outer loop
-      vertex 0 0 0
-      vertex 1 0 0
-      vertex 1 0 1
-    endloop
   endfacet
-  facet normal 0 1 0
-    outer loop
-      vertex 0 1 0
-      vertex 0 1 1
-      vertex 1 1 1
-    endloop
-    outer loop
-      vertex 0 1 0
-      vertex 1 1 1
-      vertex 1 1 0
-    endloop
-  endfacet
-  facet normal 0 0 -1
-    outer loop
-      vertex 0 0 0
-      vertex 1 1 0
-      vertex 1 0 0
-    endloop
-    outer loop
-      vertex 0 0 0
-      vertex 0 1 0
-      vertex 1 1 0
-    endloop
-  endfacet
-  facet normal 0 0 1
+  facet normal 0.5773502691896258 -0.5773502691896258 0.5773502691896258
     outer loop
       vertex 0 0 1
-      vertex 1 0 1
+      vertex 1 0 0
       vertex 1 1 1
     endloop
+  endfacet
+  facet normal 0.5773502691896258 0.5773502691896258 -0.5773502691896258
+    outer loop
+      vertex 1 0 0
+      vertex 0 1 0
+      vertex 1 1 1
+    endloop
+  endfacet
+  facet normal -0.5773502691896258 -0.5773502691896258 -0.5773502691896258
     outer loop
       vertex 0 0 1
-      vertex 1 1 1
-      vertex 0 1 1
+      vertex 0 1 0
+      vertex 1 0 0
     endloop
   endfacet
 endsolid
@@ -304,7 +260,44 @@ endsolid
 ``````
 
 > ```stl
-> solid unit-cube
+> solid tetrahedron
+>   facet normal -0.5773502691896258 0.5773502691896258 0.5773502691896258
+>     outer loop
+>       vertex 1 1 1
+>       vertex 0 1 0
+>       vertex 0 0 1
+>     endloop
+>   endfacet
+>   facet normal 0.5773502691896258 -0.5773502691896258 0.5773502691896258
+>     outer loop
+>       vertex 0 0 1
+>       vertex 1 0 0
+>       vertex 1 1 1
+>     endloop
+>   endfacet
+>   facet normal 0.5773502691896258 0.5773502691896258 -0.5773502691896258
+>     outer loop
+>       vertex 1 0 0
+>       vertex 0 1 0
+>       vertex 1 1 1
+>     endloop
+>   endfacet
+>   facet normal -0.5773502691896258 -0.5773502691896258 -0.5773502691896258
+>     outer loop
+>       vertex 0 0 1
+>       vertex 0 1 0
+>       vertex 1 0 0
+>     endloop
+>   endfacet
+> endsolid
+> ```
+
+> <details>
+> <summary>&#x2714;&#xFE0F; <strong>例: 立方体</strong></summary>
+> 
+> ``````markdown
+> ```stl
+> solid cube
 >   facet normal -1 0 0
 >     outer loop
 >       vertex 0 0 0
@@ -379,6 +372,85 @@ endsolid
 >   endfacet
 > endsolid
 > ```
+> ``````
+> 
+> > ```stl
+> > solid cube
+> >   facet normal -1 0 0
+> >     outer loop
+> >       vertex 0 0 0
+> >       vertex 0 1 1
+> >       vertex 0 1 0
+> >     endloop
+> >     outer loop
+> >       vertex 0 0 0
+> >       vertex 0 0 1
+> >       vertex 0 1 1
+> >     endloop
+> >   endfacet
+> >   facet normal 1 0 0
+> >     outer loop
+> >       vertex 1 0 0
+> >       vertex 1 1 0
+> >       vertex 1 1 1
+> >     endloop
+> >     outer loop
+> >       vertex 1 0 0
+> >       vertex 1 1 1
+> >       vertex 1 0 1
+> >     endloop
+> >   endfacet
+> >   facet normal 0 -1 0
+> >     outer loop
+> >       vertex 0 0 0
+> >       vertex 1 0 1
+> >       vertex 0 0 1
+> >     endloop
+> >     outer loop
+> >       vertex 0 0 0
+> >       vertex 1 0 0
+> >       vertex 1 0 1
+> >     endloop
+> >   endfacet
+> >   facet normal 0 1 0
+> >     outer loop
+> >       vertex 0 1 0
+> >       vertex 0 1 1
+> >       vertex 1 1 1
+> >     endloop
+> >     outer loop
+> >       vertex 0 1 0
+> >       vertex 1 1 1
+> >       vertex 1 1 0
+> >     endloop
+> >   endfacet
+> >   facet normal 0 0 -1
+> >     outer loop
+> >       vertex 0 0 0
+> >       vertex 1 1 0
+> >       vertex 1 0 0
+> >     endloop
+> >     outer loop
+> >       vertex 0 0 0
+> >       vertex 0 1 0
+> >       vertex 1 1 0
+> >     endloop
+> >   endfacet
+> >   facet normal 0 0 1
+> >     outer loop
+> >       vertex 0 0 1
+> >       vertex 1 0 1
+> >       vertex 1 1 1
+> >     endloop
+> >     outer loop
+> >       vertex 0 0 1
+> >       vertex 1 1 1
+> >       vertex 0 1 1
+> >     endloop
+> >   endfacet
+> > endsolid
+> > ```
+> > </details>
 
 ## ソースリスティングURIの範囲指定
 

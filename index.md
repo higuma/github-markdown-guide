@@ -189,8 +189,7 @@
 - <span id="github-specific">[GitHub特有の機能](github-specific.md)</span>
   - [名前付き絵文字](github-specific.md#名前付き絵文字)
   - [GeoJSON, TopoJSON](github-specific.md#geojson-topojson)
-  - **TODO**
-  - [](github-specific.md#)
+  - [STL](github-specific.md#stl)
   - [](github-specific.md#)
   - [](github-specific.md#)
   - [](github-specific.md#)
