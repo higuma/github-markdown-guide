@@ -54,7 +54,7 @@ https://github.com/higuma/github-emoji-list/blob/main/README.md
 
 ## GeoJSON, TopoJSON
 
-GitHubでは[地理情報システム](https://ja.wikipedia.org/wiki/地理情報システム)に用いられる[GeoJSON](https://ja.wikipedia.org/wiki/GeoJSON)及び[TopoJSON](https://github.com/topojson/topojson)の両形式のデータを取り込む事ができる。それには[コードブロック]の[info文字列]として`geojson`, `topojson`を指定して記述する。まず簡単なGeoJSONの例文を示す。
+[地理情報システム](https://ja.wikipedia.org/wiki/地理情報システム)に用いられる[GeoJSON](https://ja.wikipedia.org/wiki/GeoJSON)及び[TopoJSON](https://github.com/topojson/topojson)の両形式に対応しており、[コードブロック]の[info文字列]として`geojson`, `topojson`を指定して記述する。簡単なGeoJSONの例文を示す。
 
 ``````markdown
 ```geojson
@@ -64,7 +64,7 @@ GitHubでは[地理情報システム](https://ja.wikipedia.org/wiki/地理情�
     {
       "type": "Feature",
       "properties": {
-        "name": "東京"
+        "label": "東京"
       },
       "geometry": {
         "coordinates": [
@@ -77,7 +77,7 @@ GitHubでは[地理情報システム](https://ja.wikipedia.org/wiki/地理情�
     {
       "type": "Feature",
       "properties": {
-        "name": "富士山"
+        "label": "富士山"
       },
       "geometry": {
         "coordinates": [
@@ -99,7 +99,7 @@ GitHubでは[地理情報システム](https://ja.wikipedia.org/wiki/地理情�
 >     {
 >       "type": "Feature",
 >       "properties": {
->         "name": "東京"
+>         "label": "東京"
 >       },
 >       "geometry": {
 >         "coordinates": [
@@ -112,7 +112,7 @@ GitHubでは[地理情報システム](https://ja.wikipedia.org/wiki/地理情�
 >     {
 >       "type": "Feature",
 >       "properties": {
->         "name": "富士山"
+>         "label": "富士山"
 >       },
 >       "geometry": {
 >         "coordinates": [
@@ -218,11 +218,167 @@ GitHubでは[地理情報システム](https://ja.wikipedia.org/wiki/地理情�
 > }
 > ```
 
-> (2022-03現在) GitHubの地図機能がまだ十分なレベルに達しておらず、現段階ではまた有効な使い道としては難しい。ただしこの点は将来改良される可能性が高いので使えるように準備しておいて損はない。
+> (2022-03現在) GitHubの地図機能がまだ十分なレベルに達しておらず、現段階ではまた有効な使い道としては難しい。ただしこの点は将来改良される可能性が高いので今から使えるように準備しておいて損はない。
 
-## ASCII STL
+## STL
 
-TODO
+三次元形状を表現する[Standard Triangulated Language (STL)](https://ja.wikipedia.org/wiki/Standard_Triangulated_Language)のテキスト形式(ASCII STL)に対応しており、[コードブロック]の[info文字列]として`stl`を指定して記述する。
+
+``````markdown
+```stl
+solid unit-cube
+  facet normal -1 0 0
+    outer loop
+      vertex 0 0 0
+      vertex 0 1 1
+      vertex 0 1 0
+    endloop
+    outer loop
+      vertex 0 0 0
+      vertex 0 0 1
+      vertex 0 1 1
+    endloop
+  endfacet
+  facet normal 1 0 0
+    outer loop
+      vertex 1 0 0
+      vertex 1 1 0
+      vertex 1 1 1
+    endloop
+    outer loop
+      vertex 1 0 0
+      vertex 1 1 1
+      vertex 1 0 1
+    endloop
+  endfacet
+  facet normal 0 -1 0
+    outer loop
+      vertex 0 0 0
+      vertex 1 0 1
+      vertex 0 0 1
+    endloop
+    outer loop
+      vertex 0 0 0
+      vertex 1 0 0
+      vertex 1 0 1
+    endloop
+  endfacet
+  facet normal 0 1 0
+    outer loop
+      vertex 0 1 0
+      vertex 0 1 1
+      vertex 1 1 1
+    endloop
+    outer loop
+      vertex 0 1 0
+      vertex 1 1 1
+      vertex 1 1 0
+    endloop
+  endfacet
+  facet normal 0 0 -1
+    outer loop
+      vertex 0 0 0
+      vertex 1 1 0
+      vertex 1 0 0
+    endloop
+    outer loop
+      vertex 0 0 0
+      vertex 0 1 0
+      vertex 1 1 0
+    endloop
+  endfacet
+  facet normal 0 0 1
+    outer loop
+      vertex 0 0 1
+      vertex 1 0 1
+      vertex 1 1 1
+    endloop
+    outer loop
+      vertex 0 0 1
+      vertex 1 1 1
+      vertex 0 1 1
+    endloop
+  endfacet
+endsolid
+```
+``````
+
+> ```stl
+> solid unit-cube
+>   facet normal -1 0 0
+>     outer loop
+>       vertex 0 0 0
+>       vertex 0 1 1
+>       vertex 0 1 0
+>     endloop
+>     outer loop
+>       vertex 0 0 0
+>       vertex 0 0 1
+>       vertex 0 1 1
+>     endloop
+>   endfacet
+>   facet normal 1 0 0
+>     outer loop
+>       vertex 1 0 0
+>       vertex 1 1 0
+>       vertex 1 1 1
+>     endloop
+>     outer loop
+>       vertex 1 0 0
+>       vertex 1 1 1
+>       vertex 1 0 1
+>     endloop
+>   endfacet
+>   facet normal 0 -1 0
+>     outer loop
+>       vertex 0 0 0
+>       vertex 1 0 1
+>       vertex 0 0 1
+>     endloop
+>     outer loop
+>       vertex 0 0 0
+>       vertex 1 0 0
+>       vertex 1 0 1
+>     endloop
+>   endfacet
+>   facet normal 0 1 0
+>     outer loop
+>       vertex 0 1 0
+>       vertex 0 1 1
+>       vertex 1 1 1
+>     endloop
+>     outer loop
+>       vertex 0 1 0
+>       vertex 1 1 1
+>       vertex 1 1 0
+>     endloop
+>   endfacet
+>   facet normal 0 0 -1
+>     outer loop
+>       vertex 0 0 0
+>       vertex 1 1 0
+>       vertex 1 0 0
+>     endloop
+>     outer loop
+>       vertex 0 0 0
+>       vertex 0 1 0
+>       vertex 1 1 0
+>     endloop
+>   endfacet
+>   facet normal 0 0 1
+>     outer loop
+>       vertex 0 0 1
+>       vertex 1 0 1
+>       vertex 1 1 1
+>     endloop
+>     outer loop
+>       vertex 0 0 1
+>       vertex 1 1 1
+>       vertex 0 1 1
+>     endloop
+>   endfacet
+> endsolid
+> ```
 
 ## ソースリスティングURIの範囲指定
 
@@ -250,7 +406,7 @@ https://gist.github.com/higuma/80cff0982f9f7e2a267b33cad20f984a
 [インライン]: inlines.md
 [コードブロック]: code-blocks.md
 [その他の機能]: other.features.md
-[目次]: index.md#github-markdown
+[目次]: index.md#github-specific
 [付録]: appendices.md
 
 
