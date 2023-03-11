@@ -263,15 +263,15 @@ HTMLはマークアップ優先の文法規則で、例えば`<`,`>`は要素タ
 
 > &#x2714;&#xFE0F; ただしMarkdownでも文字参照の使用が有効かつ適切な状況が時々ある。これらは応用編として[文字参照の応用](texts.md#文字参照の応用)にまとめた。
 
-## 強調書式の認識に用いられる文字
+## 太字と斜体の認識に用いられる文字
 
 > &#x2714;&#xFE0F; 最初は読む必要なし。これらは[太字]と[斜体]の文法認識の際にのみ用いられる。後で[太字と斜体の文法認識]を読む時にここに戻って確認すればよい(ここへのリンクも十分に付けてある)。
 
-[強調書式]\(具体的には[太字]と[斜体])の検出の際、次の2種類の文字種を検出して文法解析を行う。
+[太字]と[斜体]の検出の際、次の2種類の文字種を検出して文法解析を行う。
 
 ### Unicode空白文字
 
-[強調書式]の構文解析では空白を表す文字として**Unicode空白文字**(Unicode punctuation characters)を検出する。[GFM仕様書の定義](https://github.github.com/gfm/#unicode-whitespace-character)によれば次のどちらかの条件に当てはまる文字が該当する。
+[太字]及び[子値]の構文解析では空白を表す文字として**Unicode空白文字**(Unicode punctuation characters)を検出する。[GFM仕様書の定義](https://github.github.com/gfm/#unicode-whitespace-character)によれば次のどちらかの条件に当てはまる文字が該当する。
 
 - Unicodeカテゴリ`Zs`に該当する文字(スペースなどを含む)
 - タブ(U+0009), キャリッジリターン(U+000D), 改行(U+000A)
@@ -282,7 +282,7 @@ HTMLはマークアップ優先の文法規則で、例えば`<`,`>`は要素タ
 
 ### 句読文字
 
-[強調書式]の検出には**句読文字**(punctuation characters)も用いられる。[GFM仕様書の定義](https://github.github.com/gfm/#punctuation-character)によれば次のどちらかの条件に当てはまる文字が該当する。
+[太字]や[斜体]の検出には**句読文字**(punctuation characters)も用いられる。[GFM仕様書の定義](https://github.github.com/gfm/#punctuation-character)によれば次のどちらかの条件に当てはまる文字が該当する。
 
 - [ASCII句読文字]
 - `P`で始まるUnicodeカテゴリ(`Pc`, `Pd`, `Pe`, `Pf`, `Pi`, `Po`, `Ps`)を持つ文字
@@ -291,7 +291,7 @@ HTMLはマークアップ優先の文法規則で、例えば`<`,`>`は要素タ
 
 - [付録 - 句読文字一覧](punctuation-characters.md)
 
-#### 非表示区切り
+#### 書式制御文字
 
 ただし実際のGitHub Markdown実装はGFM仕様書の定義通りの動作ではなく、次のような文字も句読文字として扱い処理している。
 
@@ -300,9 +300,7 @@ HTMLはマークアップ優先の文法規則で、例えば`<`,`>`は要素タ
 - [Zero Width Non-Joiner (U+200C, `&zwnj;`)](https://www.compart.com/en/unicode/U+200C)
 - [Zero Width Joiner (U+200D, `&zwj;`)](https://www.compart.com/en/unicode/U+200D)
 
-これらの文字は「幅0の非表示区切り」として機能する。そこで[強調書式]の認識時はこれらを補助的に挿入して強調書式の制御に利用することができる。具体的な方法は[通常テキスト] - [非表示区切り]を参照。
-
-> &#x2714;&#xFE0F; さらにGitHub実環境チェックによればWord Joiner (U+2060)やInvisible Separator (U+2063)なども同じ用途に使えることを確認している。ただし実装者以外には不要な情報なのでこれ以上の調査は行っていない。
+これらの文字は「幅0で非表示の書式設定」として機能する。[太字]や[斜体]の記述時にこれらを補助的に挿入して書式の認識制御に利用することができる。より詳しくは[通常テキスト] - [書式制御文字]を参照。
 
 ------------------------------------------------------------------------
 
@@ -325,10 +323,9 @@ HTMLはマークアップ優先の文法規則で、例えば`<`,`>`は要素タ
 [リスト]: lists.md
 [リンク]: links.md
 [画像]: images.md
-[強調書式]: bold-italic-strikethrough.md
 [斜体]: bold-italic-strikethrough.md#斜体
-[通常テキスト]: texts.md
-[非表示区切り]: texts.md#非表示区切り
+[書式制御文字]: texts.md#書式制御文字
+[通常テキスト]: texts.md#通常テキスト
 [表]: tables.md
 [太字]: bold-italic-strikethrough.md#太字
 [太字と斜体の文法認識]: bold-italic-strikethrough.md#太字と斜体の文法認識

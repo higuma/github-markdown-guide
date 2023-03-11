@@ -138,13 +138,13 @@ $$x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a}$$
 > <details>
 > <summary>&#x2757;&#xFE0F; <strong>失敗例</strong></summary>
 > 
-> 次は失敗例。密着すると認識せず、[ノーブレークスペース]や[非表示区切り]も効かない。
+> 次は失敗例。密着すると認識せず、[ノーブレークスペース]や[書式制御文字]も効かない。
 > 
 > ```markdown
-> 質量$m$とエネルギー&nbsp;$E$&nbsp;は等価であり、両者の関係は光速度を&shy;$c$&shy;として...
+> 質量$m$とエネルギー&nbsp;$E$&nbsp;は等価であり、両者の関係は光速度を&ZeroWidthSpace;$c$&ZeroWidthSpace;として...
 > ```
 > 
-> > 質量$m$とエネルギー&nbsp;$E$&nbsp;は等価であり、両者の関係は光速度を&shy;$c$&shy;として...
+> > 質量$m$とエネルギー&nbsp;$E$&nbsp;は等価であり、両者の関係は光速度を&ZeroWidthSpace;$c$&ZeroWidthSpace;として...
 > </details>
 
 同じ文章の手前にテキストとして`$`が含まれる場合は`<span>`でエスケープする。ただし[コードスパン]内部の`$`はエスケープ不要。
@@ -436,7 +436,7 @@ graph TD;
 [リンク参照定義]: links.md#リンク参照定義
 [空行]: characters.md#空行
 [句読文字]: characters.md#句読文字
-[非表示区切り]: texts.md#非表示区切り
+[書式制御文字]: texts.md#書式制御文字
 [見出し]: thematic-breaks.md
 [目次]: index.md#other-features
 [文字参照]: characters.md#文字参照

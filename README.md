@@ -7,9 +7,9 @@
 
 ## 概要
 
-Web標準のドキュメント記述言語は[HTML]だが、現在のHTML仕様は人間が直接認識・入力することを第一に作られてはない(直接作成は可能だが手間が掛かる)。そこでWebドキュメントをより容易に扱うための言語として[Markdown]がある。
+Web標準のドキュメント記述言語である[HTML]は豊富な機能を持ち、現在も[WHATWG]により保守と改良を継続している。HTMLはその長い歴史の中で自然と複雑化し、今では人間が直接入力するのが困難になりつつある。そこでWebドキュメントをより容易に扱うための言語として[Markdown]がある。
 
-[Markdown]では人間がより扱いやすいテキスト形式で入力し、Markdown処理実装を用いてHTMLに変換・出力する。この利点から[Markdown]はGitHubを始めとする多くの技術系Webサービスのドキュメント記述言語として採用されている。
+[Markdown]では人間がより扱いやすいテキスト形式で入力し、Markdown処理実装を用いてHTMLに変換・出力する。この利点から[Markdown]は特にGitHubを始めとする多くの技術系Webサービスのドキュメント記述言語として採用されている。
 
 [Markdown]は寛容な言語仕様を持ち、どんなテキスト文書もブラウザで表示できるようにHTMLに変換して出力する(基本的にエラーを発生するという概念はない)。仕様は一般的な文書向けで、特に技術文書の作成によく用いられる。
 
@@ -37,7 +37,7 @@ Web標準のドキュメント記述言語は[HTML]だが、現在のHTML仕様�
 
 また[GitHub Flavored Markdown]仕様には含まれていないが、徐々に普及して標準的な地位を獲得しつつある仕様がいくつかあり、これらは[その他の機能]で解説する。またGitHub環境には他には見られない独自機能もあり、これらは本編最後の[GitHub特有の機能]で説明する。
 
-文書作成には必ずしも必要ない内容や文字コード一覧表などは末尾の[付録]にまとめられている。[Markdown]の成立までの経緯とその発展、[GitHub Flavored Markdown]についての説明、強調書式の判定で用いられる文字種の一覧表などがある。
+文書作成には必ずしも必要ない内容や文字コード一覧表などは末尾の[付録]にまとめられている。[Markdown]の成立までの経緯とその発展、[GitHub Flavored Markdown]についての説明、構文判定で用いられる文字種の一覧表などがある。
 
 ### 処理実装間の互換性
 
@@ -45,11 +45,9 @@ Web標準のドキュメント記述言語は[HTML]だが、現在のHTML仕様�
 
 > &#x2714;&#xFE0F; 開発競争の中では十分なドキュメンテーションよりも機能実現の方が優先される(やむを得ない)。GitHub実装もGitHub Docsの簡単な説明はあるが、詳細仕様を記したドキュメントは見当たらない。もしあったとしても開発者向けで、利用者向けにまとめられたものは期待できない。
 
-そのため現行のWebサービスやアプリで採用している[Markdown]実装の仕様を確認するためには実際にデータを変換させて比較する以外に有効な方法はない。このためのWebアプリとして**Babelmark**があり、主要[Markdown]処理実装に同じ文書を入力し、変換結果を比較する事ができる。
+そのため現行のWebサービスやアプリで採用している[Markdown]実装の仕様を確認するためには実際にデータを変換させて比較する以外に有効な方法はない。このためのWebアプリとして**[Babelmark]**があり、主要[Markdown]処理実装に同じ文書を入力し、変換出力した結果を比較できる。
 
-https://babelmark.github.io/
-
-本解説では[Markdown]処理実装の仕様比較を議論する場合にこのBabelmarkを適宜引用して説明を行う。
+本解説では[Markdown]処理実装の仕様比較を議論する場合にこの[Babelmark]を利用して実際に主要Markdown実装による出力を比較し、その結果を適宜引用して説明を行う。
 
 ## 概略目次
 
@@ -70,11 +68,13 @@ https://babelmark.github.io/
 [目次] →
 [はじめに]
 
+[Babelmark]: github-flavored-markdown.md#babelmark
 [HTML]: https://ja.wikipedia.org/wiki/HyperText_Markup_Language
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
 [GitHub Docs]: https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
 [GitHub Flavored Markdown]: github-flavored-markdown.md
 [GitHub特有の機能]: github-specific.md
+[WHATWG]: https://ja.wikipedia.org/wiki/Web_Hypertext_Application_Technology_Working_Group
 [はじめに]: intro.md
 [その他の機能]: other-features.md
 [インライン]: inlines.md

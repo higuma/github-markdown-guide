@@ -245,11 +245,13 @@ Regular&shy;_Italic_&shy;Regular&shy;_Italic_&shy;Regular
 > - `Scho&zwj;enberg` → Scho&zwj;enberg (合字が適用されるかどうかはCSS設定に依存)
 > - `Sch&oelig;nberg` → Sch&oelig;nberg (常に合字で表示)
 > 
-> また`&zwj;`には最近新たな意味が加えられた。Unicodeでは絵文字の導入を積極的に進めており、複数の絵文字コードを`&zwj;`で連結して複合絵文字を表現する仕様を発表している。これは急速に普及しており、現在は多くのブラウザがサポートしている(→ [仕様解説](https://github.com/higuma/markdown-emoji-test/blob/main/README.ja.md##ゼロ幅接合子シーケンス)、→ [一覧](https://github.com/higuma/markdown-emoji-test/blob/main/ja/zwj-sequences.md))。
-
+> また`&zwj;`には最近新たな意味が加えられた。Unicodeでは絵文字の導入を積極的に進めており、複数の絵文字コードを`&zwj;`で連結して複合絵文字を表現する仕様を発表している。これは急速に普及しており、現在は多くのブラウザがサポートしている(→ [仕様解説](https://github.com/higuma/markdown-emoji-test/blob/main/README.ja.md#ゼロ幅接合子シーケンス)、→ [一覧](https://github.com/higuma/markdown-emoji-test/blob/main/ja/zwj-sequences.md))。
+> 
 > 一方の`&zwnj;`はデフォルトで合字が適用される言語(アラビア語やペルシャ語など)に対してよく用いられる(Wiki → [ゼロ幅非接合子])。
 > 
 > 最後に[単語結合子]\(`&NoBreak;`)は[ゼロ幅スペース]\(`&ZeroWidthSpace;`)とほぼ同じ意味だが、折り返しに対する動作が異なる。`&ZeroWidthSpace;`はその位置での折り返しを許容するが、`&NoBreak;`はその逆で折り返しを抑制する。
+> 
+> 以上を総合するとMarkdown記述時に「斜体または太字制御用区切りを入れるが折り返しは抑制する」という目的には`&NoBreak;`が本来の意味に最も近い。ただしGitHubではどれを用いても動作に違いはない(記述は`&zwj;`が最も楽)。
 > </details>
 
 ### 絵文字
