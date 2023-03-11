@@ -62,7 +62,7 @@ _テキスト plain text _
 > 
 > _テキスト plain text _
 
-> &#x26A0;&#xFE0F; **Windows環境向け(重要)**: Windowsではブラウザ表示フォントとして[メイリオ]がよく用いられるが、その場合に斜体がラテン文字領域(記号、英数字、ギリシャ文字、キリル文字等)にだけ有効で、その他の文字(日本語のかなや漢字などを含む)には効かないという有名な問題を生じる。
+> &#x26A0;&#xFE0F; **Windows環境向け(重要)**: Windowsではブラウザ表示フォントとして[メイリオ]がよく用いられるが、その場合に斜体がラテン文字領域(記号、英数字、ギリシャ文字、キリル文字等)にだけ有効で、その他の文字(日本語のかなや漢字などを含む)には効かないという既知の問題がある。
 > 
 > > <details>
 > > <summary>&#x2714;&#xFE0F; <strong>理由</strong></summary>
@@ -104,7 +104,7 @@ _テキスト plain text _
 > > > > </details>
 > > > 
 > > > 
-> > > 現行Windows用ブラウザの多くはインストール時にメイリオを標準表示フォントに設定するため、ユーザーがフォント設定を変更しない限り[`<em>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/em)や[`<i>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/i)を設定しても斜体にならない問題が発生する。またメイリオ以外でもブラウザに斜体データが不完全なフォントを設定すると同じ問題が発生する。
+> > > 現行Windows用ブラウザの多くはインストール時にメイリオを標準表示フォントに設定するため、ユーザーがフォント設定を変更しない限り[`<em>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/em)や[`<i>`](https://developer.mozilla.org/ja/docs/Web/HTML/Element/i)を設定しても斜体にならない問題が発生する。またメイリオ以外でもブラウザに設定されたフォントがメイリオと同種の不完全性を持っている場合に同じ問題が発生する。
 > > </details>
 > 
 > > <details>

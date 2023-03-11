@@ -1,4 +1,4 @@
-## 通常テキスト
+# 通常テキスト
 
 [インライン]
 ← [目次] →
@@ -28,17 +28,21 @@ ABCDE      ΑΒΓΔΕ      アイウエオ
 
 ## バックスラッシュエスケープ
 
-[ASCII句読文字]に該当する文字をそのまま出力する場合は必要に応じて[バックスラッシュエスケープ]を用いる。次の例では最初のパラグラフはMarkdown文法に該当しないためエスケープ不要。第2パラグラフは付けないと順序付きリスト項目と判定されるため必要。
+[ASCII句読文字]に該当する文字をそのまま出力する場合は必要に応じて[バックスラッシュエスケープ]を用いる。次の例では最初の2行は[順序付きリスト]と認識する。これをリストではなく通常テキスト([パラグラフ])として認識させる場合は[ASCII句読文字]の`.`をエスケープする。
 
 ```markdown
-$ 12.34 (1,815.32円)
+123. これは順序付きリスト項目
+123. そのためこれは`124`になる
 
-123\. (これはピリオドをエスケープしないと順序付きリスト項目と認識される)
+123\. ピリオドをエスケープして順序付きリスト項目への認識を回避
+123\. 行継続して連結
 ```
 
-> $ 12.34 (1,815.32円)
+> 123. これは順序付きリスト項目
+> 123. そのためこれは`124`になる
 > 
-> 123\. (これはピリオドをエスケープしないと順序付きリスト項目と認識される)
+> 123\. ピリオドをエスケープして順序付きリスト項目への認識を回避
+> 123\. 行継続して連結
 
 エスケープはMarkdown構文と判定される[ASCII句読文字]に対して行うことに注意。次のように[ASCII句読文字]以外をエスケープするとリストへの認識は防止できるが先頭の`\`が表示される。
 
@@ -106,7 +110,7 @@ Foo&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;bar
 > 
 > Foo&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;bar
 
-さらにUnicodeにはこれら以外にも様々な幅や用途を持つ空白文字が多数ある。一覧は次を参照。
+さらにUnicodeにはこれら以外にも様々な幅や用途を持つ空白文字がある。一覧は次を参照。
 
 https://en.wikipedia.org/wiki/Whitespace_character#Unicode
 
@@ -134,30 +138,119 @@ Foo          bar
 > 
 > Foo          bar
 
-### 非表示区切り
+### 書式制御文字
 
-Unicodeには次のような文字(カテゴリー[Cf](https://www.compart.com/en/unicode/category/Cf))があり、これらはみな「幅0で非表示の区切り」としての機能を持つ。
-> 
-> - [Soft Hyphen (U+00AD, `&shy;`)](https://www.compart.com/en/unicode/U+00AD)
-> - [Zero Width Space (U+200B, `&ZeroWidthSpace;`)](https://www.compart.com/en/unicode/U+200B)
-> - [Zero Width Non-Joiner (U+200C, `&zwnj;`)](https://www.compart.com/en/unicode/U+200C)
-> - [Zero Width Joiner (U+200D, `&zwj;`)](https://www.compart.com/en/unicode/U+200D)
-> 
-> > さらにGitHub実環境チェックしたところWord Joiner (U+2060)やInvisible Separator (U+2063)なども同様に扱われているが、これ以上は実装者以外には不要な情報と判断した(未調査)。
+> &#x2714;&#xFE0F; やや高度。[太字]と[斜体]を学んでから読むとよい。
 
-これらを[太字]と[斜体]の制御に用いることができる。太字や斜体を認識させるには境界にスペースを入れる場合が多いが、スペースなしで密着した状態で認識させる場合はこれらの文字を用いることで解決できる。強調書式に`_`を用いる場合は次のケースがある。
+Unicodeカテゴリー [Cf](https://www.compart.com/en/unicode/category/Cf) (format) に属する文字は主に書式制御に用いられる。これらの中でMarkdown文書作成時に有用な文字をいくつか紹介する(→ [Wiki](https://ja.wikipedia.org/wiki/Unicode文字のマッピング#その他の特殊用途文字))。
+
+| 名称 | コード | 文字参照 |
+| :-: | :-: | :-: |
+| [ソフトハイフン]<br>([Soft Hyphen](https://en.wikipedia.org/wiki/Soft_hyphen)) | U+00AD | `&shy;`, `&#xAD;` |
+| [ゼロ幅スペース]<br>([Zero-width space](https://en.wikipedia.org/wiki/Zero-width_space)) | U+200B | `&ZeroWidthSpace;`, `&#x200B;` |
+| [ゼロ幅非接合子]<br>([Zero-width non-joiner (ZWNJ)](https://en.wikipedia.org/wiki/Zero-width_non-joiner)) | U+200C | `&zwnj;`, `&#x200C;` |
+| [ゼロ幅接合子]<br>([Zero-width joiner (ZWJ)](https://en.wikipedia.org/wiki/Zero-width_joiner)) | U+200D | `&zwj;`, `&#x200D;` |
+| [単語結合子]<br>([Word joiner (WJ)](https://en.wikipedia.org/wiki/Word_joiner)) | U+2060 | `&NoBreak;`, `&#x2060;` |
+
+これらはみな「幅0で非表示の制御文字」としての機能を持ち、[太字]と[斜体]の制御に用いることができる。太字や斜体を認識させるには境界にスペースを入れる場合が多いが、スペースなしで密着した状態で認識させる場合は代わりにこれらの文字を用いることで解決できる。
+
+強調書式に`_`を用いる場合の典型例を示す。
 
 - 認識しないケース: `A_B_C` → A_B_C (`B`が斜体にならない)
 - スペース挿入による解決法: `A _B_ C` → A _B_ C
-- 密着したままで認識させる(`&shy;`を使用): `A&shy;_B_&shy;C` → A&shy;_B_&shy;C
+- 密着状態で認識(スペースを`&shy;`に置き換え): `A&shy;_B_&shy;C` → A&shy;_B_&shy;C
 
-`*`を用いる場合は次のケースがある。
+強調書式に`*`を用いる場合の例も示す。
 
-- 認識しないケース: `A**"B"**C` → `"B"`が太字にならない
+- 認識しないケース: `A**"B"**C` → A**"B"**C (`"B"`が太字にならない)
 - スペース挿入による解決法: `A **"B"** C` → A **"B"** C
-- 密着したままで認識させる: `A&shy;**"B"**&shy;C` → A&shy;**"B"**&shy;C
+- 密着状態で認識: `A&shy;**"B"**&shy;C` → A&shy;**"B"**&shy;C
 
-> &#x2714;&#xFE0F; `&shy;`を用いる理由は単純に文字数が少なく書きやすいから(推奨)。他の文字(`&ZeroWidthSpace;`など)でも同様に機能する。
+#### 折り返し動作の違い
+
+GitHub Markdownでは表示幅に対して十分短いテキストであれば上記のどれを使ってもよい。文例として次のようなテキストを考える。`Regular`の部分を通常、`Italic`を斜体で表示する。表示幅が十分あれば`&shy;`の代わりに`&ZeroWidthSpace;`や`&NoBreak;`などを使っても変わりはない。
+
+```markdown
+Regular&shy;_Italic_&shy;Regular&shy;_Italic_&shy;Regular
+```
+
+> Regular&shy;_Italic_&shy;Regular&shy;_Italic_&shy;Regular
+
+しかし折り返しが発生する場合は動作に違いを生じる。まず[ソフトハイフン]\(`&shy;`)と[ゼロ幅スペース]\(`&ZeroWidthSpace;`)は共に単語区切りとしての意味を持ち、折り返し位置の候補として扱われるが、折り返し発生時の処理が両者で異なる。
+
+[ソフトハイフン]\(`&shy;`)は折り返しが発生すると末尾に`-`を挿入する。これを示すために[表]を用い、左端にテスト用テキスト、その右に折り返しを意図的に発生させるためダミーセルを配置する。
+
+```markdown
+| text | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X |
+| ---- | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Regular&shy;_Italic_&shy;Regular&shy;_Italic_&shy;Regular |
+```
+
+結果は次の通り。折り返し位置に`-`を挿入する。
+
+> | text | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X |
+> | ---- | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+> | Regular&shy;_Italic_&shy;Regular&shy;_Italic_&shy;Regular |
+
+これを[ゼロ幅スペース]\(`&ZeroWidthSpace`)に変更すると折り返し位置には何も挿入しない。
+
+```markdown
+| text | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X |
+| ---- | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Regular&ZeroWidthSpace;_Italic_&ZeroWidthSpace;Regular&ZeroWidthSpace;_Italic_&ZeroWidthSpace;Regular |
+```
+
+> | text | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X |
+> | ---- | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+> | Regular&ZeroWidthSpace;_Italic_&ZeroWidthSpace;Regular&ZeroWidthSpace;_Italic_&ZeroWidthSpace;Regular |
+
+残りの3つには折り返し抑制効果があり、(ブラウザが表示可能な範囲までは)折り返しを発生させない。
+
+```markdown
+| text | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X |
+| ---- | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Regular&zwnj;_Italic_&zwnj;Regular&zwnj;_Italic_&zwnj;Regular |
+
+| text | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X |
+| ---- | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Regular&zwj;_Italic_&zwj;Regular&zwj;_Italic_&zwj;Regular |
+
+| text | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X |
+| ---- | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| Regular&NoBreak;_Italic_&NoBreak;Regular&NoBreak;_Italic_&NoBreak;Regular |
+```
+
+> | text | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X |
+> | ---- | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+> | Regular&zwnj;_Italic_&zwnj;Regular&zwnj;_Italic_&zwnj;Regular |
+> 
+> | text | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X |
+> | ---- | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+> | Regular&zwj;_Italic_&zwj;Regular&zwj;_Italic_&zwj;Regular |
+> 
+> | text | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X |
+> | ---- | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+> | Regular&NoBreak;_Italic_&NoBreak;Regular&NoBreak;_Italic_&NoBreak;Regular |
+
+> <details>
+> <summary>&#x2714;&#xFE0F; <strong><code>&amp;zwnj;</code>, <code>&amp;zwj;</code>, <code>&amp;NoBreak;</code>の違い</strong></summary>
+> 
+> GitHub Markdown上ではどれも同じ結果になるが、これら3種類の制御文字は元々Unicodeでは異なる意味を持つ。
+> 
+> [ゼロ幅非接合子]\(`&zwnj;`)と[ゼロ幅接合子]\(`&zwj;`)はもともとタイポグラフィーの[合字]\([Ligature](https://en.wikipedia.org/wiki/Ligature_(writing)))の制御が目的で、前後を合字として扱う場合に`&zwj;`、また合字ではないことを明示する場合に`&zwnj;`を用いる。
+> 
+> 次は合字の例で、`oe`には合字表現の`œ`が存在する(U+0153, `&oelig;`)。また`o&zwnj;e`という表現も可能で、これを合字と認識するかどうかはCSSの[font-variant-ligatures](https://developer.mozilla.org/ja/docs/Web/CSS/font-variant-ligatures)の設定に依存する(ただしMarkdown環境でこれを有効にしているものはまずないと思ってよい)。
+> 
+> - `Schoenberg` → Schoenberg (別々に表示)
+> - `Scho&zwj;enberg` → Scho&zwj;enberg (合字が適用されるかどうかはCSS設定に依存)
+> - `Sch&oelig;nberg` → Sch&oelig;nberg (常に合字で表示)
+> 
+> また`&zwj;`には最近新たな意味が加えられた。Unicodeでは絵文字の導入を積極的に進めており、複数の絵文字コードを`&zwj;`で連結して複合絵文字を表現する仕様を発表している。これは急速に普及しており、現在は多くのブラウザがサポートしている(→ [仕様解説](https://github.com/higuma/markdown-emoji-test/blob/main/README.ja.md##ゼロ幅接合子シーケンス)、→ [一覧](https://github.com/higuma/markdown-emoji-test/blob/main/ja/zwj-sequences.md))。
+
+> 一方の`&zwnj;`はデフォルトで合字が適用される言語(アラビア語やペルシャ語など)に対してよく用いられる(Wiki → [ゼロ幅非接合子])。
+> 
+> 最後に[単語結合子]\(`&NoBreak;`)は[ゼロ幅スペース]\(`&ZeroWidthSpace;`)とほぼ同じ意味だが、折り返しに対する動作が異なる。`&ZeroWidthSpace;`はその位置での折り返しを許容するが、`&NoBreak;`はその逆で折り返しを抑制する。
+> </details>
 
 ### 絵文字
 
@@ -170,7 +263,7 @@ Unicodeで絵文字表現可能な文字コードには2種類ある。
 * 絵文字専用コード(例: U+1F9F2 → &#x1F9F2;)
 * テキスト・絵文字共有コード(例: U+2601 → &#x2601;&#xFE0E;, &#x2601;&#xFE0F;)
 
-文字コードがテキスト・絵文字両方の表現を持つ場合、その選択にVS15(U+FE0E)またはVS16(U+FE0F)を用いる。これらは異体字セレクタ(Variation selectors)と呼ばれ、表現が複数ある文字に対して用いられる。
+文字コードがテキスト・絵文字両方の表現を持つ場合、その選択にVS15(U+FE0E)またはVS16(U+FE0F)を用いる。これらは異体字セレクタ(Variation selectors)と呼ばれ、同じ文字コードに対して表現が複数ある場合に用いられる。
 
 https://en.wikipedia.org/wiki/Variation_Selectors_(Unicode_block)
 
@@ -231,9 +324,18 @@ https://github.com/higuma/markdown-emoji-test/blob/main/ja/basic-emojis.md
 
 [ASCII句読文字]: characters.md#ascii句読文字
 [インライン]: inlines.md
+[ゼロ幅スペース]: https://ja.wikipedia.org/wiki/ゼロ幅スペース
+[ゼロ幅接合子]: https://ja.wikipedia.org/wiki/ゼロ幅接合子
+[ゼロ幅非接合子]: https://ja.wikipedia.org/wiki/ゼロ幅非接合子
+[ソフトハイフン]: https://ja.wikipedia.org/wiki/ソフトハイフン
 [バックスラッシュエスケープ]: characters.md#バックスラッシュエスケープ
+[パラグラフ]: paragraphs.md
 [ノーブレークスペース]: https://ja.wikipedia.org/wiki/ノーブレークスペース
+[合字]: https://ja.wikipedia.org/wiki/合字
+[表]: tables.md
 [斜体]: bold-italic-strikethrough.md#斜体
+[順序付きリスト]: lists.md#順序付きリスト
+[単語結合子]: https://ja.wikipedia.org/wiki/単語結合子
 [太字]: bold-italic-strikethrough.md#太字
 [太字、斜体、打ち消し線]: bold-italic-strikethrough.md
 [目次]: index.md#texts
