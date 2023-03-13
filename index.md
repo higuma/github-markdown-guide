@@ -184,7 +184,7 @@
     - [数式の内部に`$`を含む場合](other-features.md#数式の内部にを含む場合)
   - [他形式のデータ取り込み](other-features.md#他形式のデータ取り込み)
     - [Mermaidによるダイアグラム・チャート](other-features.md#mermaidによるダイアグラムチャート)
-    - [GeoJSON, TopoJSON](other-features.md#geojsontopojson)
+    - [GeoJSON, TopoJSON](other-features.md#geojson-topojson)
     - [STL](other-features.md#stl)
   - [脚注](other-features.md#脚注)
     - [脚注の記述](other-features.md#脚注の記述)
@@ -204,7 +204,15 @@
     - [仕様書の必要性](history.md#13-仕様書の必要性)
     - [GFM仕様書について](history.md#14-gfm仕様書について)
   - <span id="github-flavored-markdown">[GitHub Flavored Markdown](github-flavored-markdown.md)</span>
-    - **TODO**
+    - [Markdownの登場](github-flavored-markdown.md#markdownの登場)
+    - [Markdownの普及](github-flavored-markdown.md#markdownの普及)
+    - [CommonMark](github-flavored-markdown.md#commonmark)
+      - [Babelmark](github-flavored-markdown.md#babelmark)
+      - [CommonMark仕様の現状](github-flavored-markdown.md#commonmark仕様の現状)
+    - [GitHub Flavored Markdown](github-flavored-markdown.md#gitHub-flavored-markdown)
+      - [GFM仕様書の構成](github-flavored-markdown.md#gfm仕様書の構成)
+    - [GFM仕様書の問題点](github-flavored-markdown.md#gfm仕様書の問題点)
+    - [最近の動向](github-flavored-markdown.md#最近の動向)
   - <span id="named-character-references">[名前付き文字参照一覧](named-character-references.md)</span>
   - <span id="unicode-whitespace-characters">[Unicode空白文字一覧](unicode-whitespace-characters.md)</span>
   - <span id="punctuation-characters">[句読文字一覧](punctuation-characters.md)</span>

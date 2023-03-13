@@ -5,7 +5,7 @@
 
 ------------------------------------------------------------------------
 
-> &#x2714;&#xFE0F; <https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt> より生成 (2023-02-14)
+> &#x2714;&#xFE0F; <https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt> より生成 (2023-03-14)
 
 [斜体]及び[太字]の検出判定に用いられる[句読文字]の一覧。[GFM仕様書の定義](https://github.github.com/gfm/#punctuation-character)によれば次のどちらかの条件に当てはまる文字が該当する。
 
@@ -18,8 +18,9 @@
 > - [Zero Width Space (U+200B, `&ZeroWidthSpace;`)](https://www.compart.com/en/unicode/U+200B)
 > - [Zero Width Non-Joiner (U+200C, `&zwnj;`)](https://www.compart.com/en/unicode/U+200C)
 > - [Zero Width Joiner (U+200D, `&zwj;`)](https://www.compart.com/en/unicode/U+200D)
+> - [Word Joiner (U+2060, `&NoBreak;`)](https://www.compart.com/en/unicode/U+2060)
 > 
-> > さらにGitHub実環境チェックしたところWord Joiner (U+2060)やInvisible Separator (U+2063)なども認識するが、これ以上は実装者以外には不要な情報と判断し未調査。
+> これらの文字の扱いに関しては[書式制御文字](texts.md#書式制御文字)を参照。
 
 | U+ | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | A | B | C | D | E | F |
 | - | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |

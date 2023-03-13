@@ -108,8 +108,9 @@ def output_markdown(f)
   f.puts '> - [Zero Width Space (U+200B, `&ZeroWidthSpace;`)](https://www.compart.com/en/unicode/U+200B)'
   f.puts '> - [Zero Width Non-Joiner (U+200C, `&zwnj;`)](https://www.compart.com/en/unicode/U+200C)'
   f.puts '> - [Zero Width Joiner (U+200D, `&zwj;`)](https://www.compart.com/en/unicode/U+200D)'
+  f.puts '> - [Word Joiner (U+2060, `&NoBreak;`)](https://www.compart.com/en/unicode/U+2060)'
   f.puts '> '
-  f.puts '> > さらにGitHub実環境チェックしたところWord Joiner (U+2060)やInvisible Separator (U+2063)なども認識するが、これ以上は実装者以外には不要な情報と判断し未調査。'
+  f.puts '> これらの文字の扱いに関しては[書式制御文字](texts.md#書式制御文字)を参照。'
   f.puts
   f.puts '| U+ |' + (0..0x0F).map {|c| sprintf " %X |", c }.join('')
   f.puts '| - |' + ' :-: |' * 16
