@@ -332,22 +332,22 @@ _Italic **and bold ~~and strikeout~~** → back to italic_
 ```markdown
 ***bold and italic***
 
-\***bold surrounded by asteriks***
+\***bold surrounded by asterisks***
 
-\*\**italic surrounded by double-asteriks***
+\*\**italic surrounded by double-asterisks***
 
 \*\*\*normal text***
 ```
 
 > ***bold and italic***
 > 
-> \***bold surrounded by asteriks***
+> \***bold surrounded by asterisks***
 > 
-> \*\**italic surrounded by double-asteriks***
+> \*\**italic surrounded by double-asterisks***
 > 
 > \*\*\*normal text***
 
-> &#x2757;&#xFE0F; **注意**: 以上はGitHub Markdownの動作だが、別のMarkdown実装では詳細動作が異なる場合もある(Babelmarkで確認すると実際にある)。他のMarkdown環境上でも使う可能性がある文章の場合は想定し得る箇所全てをエスケープするとよい(推奨)。
+> &#x2757;&#xFE0F; **注意**: 以上はGitHub Markdownの動作だが、別のMarkdown実装では詳細動作が異なる場合もある([Babelmarkで確認](https://babelmark.github.io/?text=***bold+and+italic***%0A%0A%5C***bold+surrounded+by+asterisks***%0A%0A%5C*%5C**italic+surrounded+by+double-asterisks***%0A%0A%5C*%5C*%5C*normal+text***)すると実際にある)。他のMarkdown環境上でも使う可能性がある文章の場合は想定し得る箇所全てをエスケープするとよい(推奨)。
 
 ## 適用箇所
 
@@ -383,6 +383,7 @@ _Italic **and bold ~~and strikeout~~** → back to italic_
   - 通常リンク: `_[PAGE TOP](#)_` → _[PAGE TOP](#)_
   - 自動リンク: `**Send to <nobody@example.com>.**` → **Send to <nobody@example.com>.**
   - 拡張自動リンク: `***Visit http:://github.com/ later.***` → ***Visit https://github.com/ later.***
+- [コードスパン]: ``**`bold`** _`italic`_ ***`bold+italic`***`` -> **`bold`** _`italic`_ ***`bold+italic`***
 - [HTMLインライン]\(GitHub環境で有効なもの)
   - 上付き文字: `_N<sup>2</sup>_` → _N<sup>2</sup>_
   - 下付き文字: `**NH<sub>3</sub>**` → **NH<sub>3</sub>**
@@ -391,9 +392,10 @@ _Italic **and bold ~~and strikeout~~** → back to italic_
   - サンプル出力: `**<samp>logout</samp>**` → **<samp>logout</samp>**
   - 行内引用: `~~<q>引用取り消し</q>~~` → ~~<q>引用取り消し</q>~~
 
-テキストを文字通り出力する目的のアイテムや、テキストではないアイテムも挿入可能だが効果はない。
+> &#x2757;&#xFE0F; **注意**: (2023-03現在) 今のGitHub Markdown環境では[コードスパン]に対しても効果がある。ただし以前はそうではなく、また別のMarkdown環境では無効な場合が多い。元来[コードスパン]はテキストを文字通り出力する目的に用いられる性格のものなので推奨しない。
 
-- [コードスパン]: ``**ここは太字、`効果なし`**`` → **ここは太字、`効果なし`**
+テキストではないアイテムも挿入可能だが効果はない。
+
 - [画像]: `_Italic here, ![](img/arrow-right-circle.svg)_` → _Italic here, ![](img/arrow-right-circle.svg)_
 
 ## 太字と斜体の文法認識

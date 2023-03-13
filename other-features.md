@@ -231,9 +231,13 @@ f \ \$ \ x
 
 > &#x1F6AB; **非推奨** インラインの特殊記法(二重エスケープ)はどこにも書かれていないため試行錯誤して見つけた(2023-02現在)。ただしこの動作は(不具合ではないと思われるが)後で修正される可能性が高く、その意味でもできるたけ回避すべき。
 
-## Mermaidによるダイアグラム・チャート
+## 他形式のデータ取り込み
 
-[Mermaid]はダイアグラム・チャート記述用の言語で、2021,2年頃にMarkdownを用いるWebサイトに一斉に採用され普及した(GitHubは[2022年2月](https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/))。どのサイトも[コードブロック]として扱い、[info文字列](code-blocks.md#info文字列)として`mermaid`を指定して記述する。
+[コードブロック]を利用し、[info文字列]に特定の値を設定することによりMarkdownとは異なる別形式のデータを取り込む手法があり、今では半ば標準化している。特に`mermaid`を指定してダイアグラムを記述する機能は多くのサイトがサポートしている。
+
+### Mermaidによるダイアグラム・チャート
+
+[Mermaid]はダイアグラム・チャート記述用の言語で、2021,2年頃にMarkdownを用いるWebサイトに一斉に採用され普及した(GitHubは[2022年2月より採用](https://github.blog/2022-02-14-include-diagrams-markdown-files-mermaid/))。どのサイトも[コードブロック]の[info文字列](code-blocks.md#info文字列)として`mermaid`を指定して記述する。
 
 ``````markdown
 ```mermaid
@@ -252,6 +256,406 @@ graph TD;
 >     B-->D;
 >     C-->D;
 > ```
+
+### GeoJSON, TopoJSON
+
+GitHubでは[地理情報システム](https://ja.wikipedia.org/wiki/地理情報システム)に用いられる[GeoJSON](https://ja.wikipedia.org/wiki/GeoJSON)及び[TopoJSON](https://github.com/topojson/topojson)の両形式に対応しており、[コードブロック]の[info文字列]にそれぞれ`geojson`, `topojson`を指定して記述する。簡単なGeoJSONの例文を示す。
+
+``````markdown
+```geojson
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "東京"
+      },
+      "geometry": {
+        "coordinates": [
+          139.76608172126356,
+          35.68137975640924
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "label": "富士山"
+      },
+      "geometry": {
+        "coordinates": [
+          138.73091465967775,
+          35.36282365514147
+        ],
+        "type": "Point"
+      }
+    }
+  ]
+}
+```
+``````
+
+> ```geojson
+> {
+>   "type": "FeatureCollection",
+>   "features": [
+>     {
+>       "type": "Feature",
+>       "properties": {
+>         "label": "東京"
+>       },
+>       "geometry": {
+>         "coordinates": [
+>           139.76608172126356,
+>           35.68137975640924
+>         ],
+>         "type": "Point"
+>       }
+>     },
+>     {
+>       "type": "Feature",
+>       "properties": {
+>         "label": "富士山"
+>       },
+>       "geometry": {
+>         "coordinates": [
+>           138.73091465967775,
+>           35.36282365514147
+>         ],
+>         "type": "Point"
+>       }
+>     }
+>   ]
+> }
+> ```
+
+同じデータをTopoJSONに変換したものは次の通り。
+
+``````markdown
+```topojson
+{
+  "type": "Topology",
+  "objects": {
+    "collection": {
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Point",
+          "coordinates": [
+            9999,
+            9999
+          ]
+        },
+        {
+          "type": "Point",
+          "coordinates": [
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "arcs": [],
+  "bbox": [
+    138.73091465967775,
+    35.36282365514147,
+    139.76608172126356,
+    35.68137975640924
+  ],
+  "transform": {
+    "scale": [
+      0.00010352705886446742,
+      0.00003185879600637802
+    ],
+    "translate": [
+      138.73091465967775,
+      35.36282365514147
+    ]
+  }
+}
+```
+``````
+
+> ```topojson
+> {
+>   "type": "Topology",
+>   "objects": {
+>     "collection": {
+>       "type": "GeometryCollection",
+>       "geometries": [
+>         {
+>           "type": "Point",
+>           "coordinates": [
+>             9999,
+>             9999
+>           ]
+>         },
+>         {
+>           "type": "Point",
+>           "coordinates": [
+>             0,
+>             0
+>           ]
+>         }
+>       ]
+>     }
+>   },
+>   "arcs": [],
+>   "bbox": [
+>     138.73091465967775,
+>     35.36282365514147,
+>     139.76608172126356,
+>     35.68137975640924
+>   ],
+>   "transform": {
+>     "scale": [
+>       0.00010352705886446742,
+>       0.00003185879600637802
+>     ],
+>     "translate": [
+>       138.73091465967775,
+>       35.36282365514147
+>     ]
+>   }
+> }
+> ```
+
+> &#x2757;&#xFE0F; **注意**: (2022-03現在) GitHubの地図機能がまだ十分なレベルに達しておらず、現段階ではまた有効な使い道としては難しい。ただしこの点は将来改良される可能性が高いので今から使えるように準備しておいて損はない。
+
+### STL
+
+GitHub Markdown環境は三次元形状を表現する[Standard Triangulated Language (STL)](https://ja.wikipedia.org/wiki/Standard_Triangulated_Language)のテキスト形式(ASCII STL)に対応しており、[コードブロック]の[info文字列]に`stl`を指定して記述する。
+
+``````markdown
+```stl
+solid regular-tetrahedron
+  facet normal -0.5773502691896258 0.5773502691896258 0.5773502691896258
+    outer loop
+      vertex 1 1 1
+      vertex 0 1 0
+      vertex 0 0 1
+    endloop
+  endfacet
+  facet normal 0.5773502691896258 -0.5773502691896258 0.5773502691896258
+    outer loop
+      vertex 0 0 1
+      vertex 1 0 0
+      vertex 1 1 1
+    endloop
+  endfacet
+  facet normal 0.5773502691896258 0.5773502691896258 -0.5773502691896258
+    outer loop
+      vertex 1 0 0
+      vertex 0 1 0
+      vertex 1 1 1
+    endloop
+  endfacet
+  facet normal -0.5773502691896258 -0.5773502691896258 -0.5773502691896258
+    outer loop
+      vertex 0 0 1
+      vertex 0 1 0
+      vertex 1 0 0
+    endloop
+  endfacet
+endsolid
+```
+``````
+
+> ```stl
+> solid regular-tetrahedron
+>   facet normal -0.5773502691896258 0.5773502691896258 0.5773502691896258
+>     outer loop
+>       vertex 1 1 1
+>       vertex 0 1 0
+>       vertex 0 0 1
+>     endloop
+>   endfacet
+>   facet normal 0.5773502691896258 -0.5773502691896258 0.5773502691896258
+>     outer loop
+>       vertex 0 0 1
+>       vertex 1 0 0
+>       vertex 1 1 1
+>     endloop
+>   endfacet
+>   facet normal 0.5773502691896258 0.5773502691896258 -0.5773502691896258
+>     outer loop
+>       vertex 1 0 0
+>       vertex 0 1 0
+>       vertex 1 1 1
+>     endloop
+>   endfacet
+>   facet normal -0.5773502691896258 -0.5773502691896258 -0.5773502691896258
+>     outer loop
+>       vertex 0 0 1
+>       vertex 0 1 0
+>       vertex 1 0 0
+>     endloop
+>   endfacet
+> endsolid
+> ```
+
+> <details>
+> <summary>&#x2714;&#xFE0F; <strong>例: 立方体</strong></summary>
+> 
+> ``````markdown
+> ```stl
+> solid cube
+>   facet normal -1 0 0
+>     outer loop
+>       vertex 0 0 0
+>       vertex 0 1 1
+>       vertex 0 1 0
+>     endloop
+>     outer loop
+>       vertex 0 0 0
+>       vertex 0 0 1
+>       vertex 0 1 1
+>     endloop
+>   endfacet
+>   facet normal 1 0 0
+>     outer loop
+>       vertex 1 0 0
+>       vertex 1 1 0
+>       vertex 1 1 1
+>     endloop
+>     outer loop
+>       vertex 1 0 0
+>       vertex 1 1 1
+>       vertex 1 0 1
+>     endloop
+>   endfacet
+>   facet normal 0 -1 0
+>     outer loop
+>       vertex 0 0 0
+>       vertex 1 0 1
+>       vertex 0 0 1
+>     endloop
+>     outer loop
+>       vertex 0 0 0
+>       vertex 1 0 0
+>       vertex 1 0 1
+>     endloop
+>   endfacet
+>   facet normal 0 1 0
+>     outer loop
+>       vertex 0 1 0
+>       vertex 0 1 1
+>       vertex 1 1 1
+>     endloop
+>     outer loop
+>       vertex 0 1 0
+>       vertex 1 1 1
+>       vertex 1 1 0
+>     endloop
+>   endfacet
+>   facet normal 0 0 -1
+>     outer loop
+>       vertex 0 0 0
+>       vertex 1 1 0
+>       vertex 1 0 0
+>     endloop
+>     outer loop
+>       vertex 0 0 0
+>       vertex 0 1 0
+>       vertex 1 1 0
+>     endloop
+>   endfacet
+>   facet normal 0 0 1
+>     outer loop
+>       vertex 0 0 1
+>       vertex 1 0 1
+>       vertex 1 1 1
+>     endloop
+>     outer loop
+>       vertex 0 0 1
+>       vertex 1 1 1
+>       vertex 0 1 1
+>     endloop
+>   endfacet
+> endsolid
+> ```
+> ``````
+> 
+> > ```stl
+> > solid cube
+> >   facet normal -1 0 0
+> >     outer loop
+> >       vertex 0 0 0
+> >       vertex 0 1 1
+> >       vertex 0 1 0
+> >     endloop
+> >     outer loop
+> >       vertex 0 0 0
+> >       vertex 0 0 1
+> >       vertex 0 1 1
+> >     endloop
+> >   endfacet
+> >   facet normal 1 0 0
+> >     outer loop
+> >       vertex 1 0 0
+> >       vertex 1 1 0
+> >       vertex 1 1 1
+> >     endloop
+> >     outer loop
+> >       vertex 1 0 0
+> >       vertex 1 1 1
+> >       vertex 1 0 1
+> >     endloop
+> >   endfacet
+> >   facet normal 0 -1 0
+> >     outer loop
+> >       vertex 0 0 0
+> >       vertex 1 0 1
+> >       vertex 0 0 1
+> >     endloop
+> >     outer loop
+> >       vertex 0 0 0
+> >       vertex 1 0 0
+> >       vertex 1 0 1
+> >     endloop
+> >   endfacet
+> >   facet normal 0 1 0
+> >     outer loop
+> >       vertex 0 1 0
+> >       vertex 0 1 1
+> >       vertex 1 1 1
+> >     endloop
+> >     outer loop
+> >       vertex 0 1 0
+> >       vertex 1 1 1
+> >       vertex 1 1 0
+> >     endloop
+> >   endfacet
+> >   facet normal 0 0 -1
+> >     outer loop
+> >       vertex 0 0 0
+> >       vertex 1 1 0
+> >       vertex 1 0 0
+> >     endloop
+> >     outer loop
+> >       vertex 0 0 0
+> >       vertex 0 1 0
+> >       vertex 1 1 0
+> >     endloop
+> >   endfacet
+> >   facet normal 0 0 1
+> >     outer loop
+> >       vertex 0 0 1
+> >       vertex 1 0 1
+> >       vertex 1 1 1
+> >     endloop
+> >     outer loop
+> >       vertex 0 0 1
+> >       vertex 1 1 1
+> >       vertex 0 1 1
+> >     endloop
+> >   endfacet
+> > endsolid
+> > ```
+> > </details>
 
 ## 脚注
 
@@ -338,7 +742,7 @@ graph TD;
   - 前後に別種の[ブロック]アイテムがある場合は[空行]を入れるとよい(推奨)
   - 複数箇所に分散して記述してよい(処理時にまとめられる)
 
-> &#x26A0;&#xFE0F; [GitHub docs](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#footnotes)の`[^2]`のコード例に書かれている”Every new line should be prefixed with 2 spaces."は誤り。この場合はインデントは無関係で、実際には行末スペース2個による[ハード改行]により改行している。
+> &#x26A0;&#xFE0F; [GitHub docs](https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#footnotes)の`[^2]`のコード例に書かれている”Every new line should be prefixed with 2 spaces."は誤り。この場合はインデントは無関係で、実際にはその前の行に行末スペース2個による[ハード改行]を用いて改行している。
 
 ### 脚注の引用
 

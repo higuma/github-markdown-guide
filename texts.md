@@ -237,21 +237,25 @@ Regular&shy;_Italic_&shy;Regular&shy;_Italic_&shy;Regular
 > 
 > GitHub Markdown上ではどれも同じ結果になるが、これら3種類の制御文字は元々Unicodeでは異なる意味を持つ。
 > 
-> [ゼロ幅非接合子]\(`&zwnj;`)と[ゼロ幅接合子]\(`&zwj;`)はもともとタイポグラフィーの[合字]\([Ligature](https://en.wikipedia.org/wiki/Ligature_(writing)))の制御が目的で、前後を合字として扱う場合に`&zwj;`、また合字ではないことを明示する場合に`&zwnj;`を用いる。
+> [ゼロ幅非接合子]\(`&zwnj;`)と[ゼロ幅接合子]\(`&zwj;`)はもともとタイポグラフィーの[合字]\([Ligature](https://en.wikipedia.org/wiki/Ligature_(writing)))の制御が目的で、前後を合字として扱う場合に`&zwj;`、逆に合字ではないことを指示する場合に`&zwnj;`を用いる。
 > 
-> 次は合字の例で、`oe`には合字表現の`œ`が存在する(U+0153, `&oelig;`)。また`o&zwnj;e`という表現も可能で、これを合字と認識するかどうかはCSSの[font-variant-ligatures](https://developer.mozilla.org/ja/docs/Web/CSS/font-variant-ligatures)の設定に依存する(ただしMarkdown環境でこれを有効にしているものはまずないと思ってよい)。
+> 次は合字の例で、`oe`には合字表現の`œ`が存在する(U+0153, `&oelig;`)。また`o&zwj;e`という表現も可能だが、これを合字と認識するかどうかはCSSの[font-variant-ligatures](https://developer.mozilla.org/ja/docs/Web/CSS/font-variant-ligatures)の設定に依存する。ただしMarkdown環境ではこれを有効にしているものは通常ないと考えてよい。
 > 
 > - `Schoenberg` → Schoenberg (別々に表示)
 > - `Scho&zwj;enberg` → Scho&zwj;enberg (合字が適用されるかどうかはCSS設定に依存)
 > - `Sch&oelig;nberg` → Sch&oelig;nberg (常に合字で表示)
 > 
-> また`&zwj;`には最近新たな意味が加えられた。Unicodeでは絵文字の導入を積極的に進めており、複数の絵文字コードを`&zwj;`で連結して複合絵文字を表現する仕様を発表している。これは急速に普及しており、現在は多くのブラウザがサポートしている(→ [仕様解説](https://github.com/higuma/markdown-emoji-test/blob/main/README.ja.md#ゼロ幅接合子シーケンス)、→ [一覧](https://github.com/higuma/markdown-emoji-test/blob/main/ja/zwj-sequences.md))。
+> またUnicodeコンソーシアムは絵文字の導入を積極的に推進しており、複数の絵文字コードを`&zwj;`で連結して複合絵文字を表現する仕様を発表している(次を参照)。今では大部分の環境がサポートしている。
 > 
-> 一方の`&zwnj;`はデフォルトで合字が適用される言語(アラビア語やペルシャ語など)に対してよく用いられる(Wiki → [ゼロ幅非接合子])。
+> - Unicode絵文字: ゼロ幅接合子シーケンス
+>   - [仕様解説](https://github.com/higuma/markdown-emoji-test/blob/main/README.ja.md#ゼロ幅接合子シーケンス)
+>   - [一覧](https://github.com/higuma/markdown-emoji-test/blob/main/ja/zwj-sequences.md)
+> 
+> 一方`&zwnj;`はこの位置では合字を適用しないことを指示する意味を持つ(Wiki → [ゼロ幅非接合子])。これは特にアラビア語やペルシャ語などで用いられる。
 > 
 > 最後に[単語結合子]\(`&NoBreak;`)は[ゼロ幅スペース]\(`&ZeroWidthSpace;`)とほぼ同じ意味だが、折り返しに対する動作が異なる。`&ZeroWidthSpace;`はその位置での折り返しを許容するが、`&NoBreak;`はその逆で折り返しを抑制する。
 > 
-> 以上を総合するとMarkdown記述時に「斜体または太字制御用区切りを入れるが折り返しは抑制する」という目的には`&NoBreak;`が本来の意味に最も近い。ただしGitHubではどれを用いても動作に違いはない(記述は`&zwj;`が最も楽)。
+> 以上を総合するとMarkdown記述時に「斜体または太字制御用の区切りを入れるが折り返しは抑制する」という目的には`&NoBreak;`が本来の意味に最も近い。ただしGitHubではどれを用いても動作に違いはない(記述は`&zwj;`が最も楽)。
 > </details>
 
 ### 絵文字
@@ -305,10 +309,10 @@ GitHub Markdownはかなり極端な絵文字優先の仕様で、他の大多�
 逆にテキスト表現がデフォルトの文字に対して絵文字表現を指定する場合はVS16を用いる。`©`(U+00A9)には絵文字表現も存在し、VS16を追加すれば絵文字で表示する。
 
 ```markdown
-©&#xFE0F;
+© ©&#xFE0F;
 ```
 
-> ©&#xFE0F;
+> © ©&#xFE0F;
 
 なお前に述べた通り、文字のデフォルト表現がテキスト/絵文字のどちらになるかは文字コードだけでなく、処理環境及び表示環境にも依存する。GitHub Markdown環境で絵文字表現が可能な全文字の表示状況は次を参照すること(実環境で調査済み)。
 

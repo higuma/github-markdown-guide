@@ -6,7 +6,7 @@
 
 ------------------------------------------------------------------------
 
-HTMLなどと異なり、Markdownにはそれを扱う(WHATWGやW3Cのような)標準化組織は存在しない。そのため現実は実装の数だけ仕様が存在する状況だが、現在はその中で**GitHub Flavored Markdown** (以下**GFM**)が事実上の標準扱いとなり、仕様のリファレンスとして参照されるようになっている。
+HTMLなどと異なり、Markdownにはそれを扱う(WHATWGやW3Cのような)標準化組織は存在しない。そのため現実は実装の数だけ仕様が存在する状況だが、今はその中で**GitHub Flavored Markdown** (以下**GFM**)仕様が事実上の標準扱いとなり、仕様のリファレンスとして参照されるようになっている。
 
 しかしGFM仕様書の構成には特殊な事情があり、その理解にはまず仕様書がどのように作られたのかという点から知る必要がある。その点を踏まえ、ここではまずGFM仕様書の成立までの経緯を解説する。次にGFM仕様書の構成とその問題点を説明し、最後に現在の状況について考察する。
 
@@ -61,7 +61,7 @@ CommonMark仕様が発表された2014年当時はまだ他にMarkdown仕様書�
 
 ### GFM仕様書の問題点
 
-ただしGFM仕様書のこのような構成には構造的な問題があり、実際には仕様書の中には矛盾する記述が多数存在する。特に追加機能の副作用によりCommonMark仕様とは異なる動作が色々な場所で発生している。
+ただしGFM仕様書のこのような構成には構造的な問題があり、仕様書中に矛盾する記述が多数存在する。特に追加機能の副作用によりCommonMark仕様とは異なる動作が色々な場所で発生している。
 
 例えば[6.8 Autolinks](https://github.github.com/gfm/#textual-content)のExamples [619](https://github.github.com/gfm/#example-620), [620](https://github.github.com/gfm/#example-621)は「自動リンクではない」と明記されている。これらはCommonMarkからの丸写しだが、実際には追加機能の拡張自動リンク([6.9 Autolinks (extension)](https://github.github.com/gfm/#autolinks-extension-))によりリンクが作られる。
 
@@ -75,17 +75,25 @@ Example 620 → foo@bar.example.com
 > 
 > Example 620 → foo@bar.example.com
 
-> &#x2714;&#xFE0F; 丸写し自体はその旨を明記しているので問題ない。しかし副作用が避けられない機能を追加したにもかかわらず「**厳密(strict)な**上位互換」を謳っている点が問題で、実際には上記の通り仕様書の中に矛盾した記述が生じている(最低限の対応として**strict**は削除すべき)。
+> &#x2714;&#xFE0F; 丸写し自体はその旨を明記しているので問題ない。しかし副作用が避けられない機能を追加したにもかかわらず「**厳密(strict)な**上位互換」を謳っている点が問題で、実際には上記の通り仕様書の中で矛盾する記述を生じている(最低限の対応として**strict**は削除すべき)。
 
 > &#x2714;&#xFE0F; 序論の部分(特に[1.2](https://github.github.com/gfm/#what-is-markdown-),[1.3](https://github.github.com/gfm/#why-is-a-spec-needed-),[1.4](https://github.github.com/gfm/#about-this-document))もCommonMark仕様書の引用だが、これらは少なくとも10年以上前の状況説明であり、今読んでも実用性はない。ただし歴史を知るための読み物としてならその価値はある。
 
 ## 最近の動向
 
-GitHubではGFM仕様書の発表後も継続してMarkdown実装に運用上の更新や機能追加を行っているが、仕様書への反映は全く行われていない。またGFM仕様書に代わる新たな仕様書も見当たらない。
+GitHubではGFM仕様書の発表後も継続してMarkdown実装に運用上の更新や機能追加を行っているが、仕様書への反映は全く行われていない。しかしGFM仕様書に代わる新たな仕様書も見当たらず、このような状態が長く続いている。
 
-> どこも開発競争の中で機能の充実を最優先に進めるためやむを得ない部分もある。
+> みな開発競争の中で機能充実を最優先に進めているため、ドキュメント整備は二の次になるのはやむを得ない点はある。だがそれだけでなく多くの人はGFM仕様のレベルでもう十分と考えており、その結果この状況が続いているものと推測される。
 
-**TODO: 最後に少し締めたい**
+またGFM仕様には含まれて仕様で事実上標準化している(あるいはしつつある)ものは[その他の機能]にまとめた通りだが、これらを取り込んでGFM仕様を改訂することは今後も当分ないものと思われる。
+
+> サイト運用で多忙を極める彼らにそのような余裕はないはず。また現状のままでも仕様は実用上十分なレベルにまでは安定しており、そのような要望はあまり多くはないのだと思う。
+
+最後にMarkdown仕様に関する今後の動向を予測すると、まずMarkdown自身に関しては今後も主力ドキュメント記述言語として使われ続けるだろう。特に技術ドキュメント分野ではほぼMarkdownの一択で、この状況が急に変わるとは考えにくい。
+
+文法に関しても現在のMarkdownから大きく変わることはもうなく、今後は必要に応じて徐々に機能追加されるに留まるのもと思われる。
+
+ただし[ブロック]アイテムとして[コードブロック]に[info文字列]を設定して他形式の文書を取り込む手法が広まり、今では半ば標準化されている。GitHubでは現在[Mermaid]、[GeoJSON/TopoJSON](other-features.md#geojsontopojson)、[STL]の3種類をサポートしているが、この方法を用いて今後も対応データ形式を拡大していくものと思われる。
 
 ------------------------------------------------------------------------
 
@@ -97,12 +105,18 @@ GitHubではGFM仕様書の発表後も継続してMarkdown実装に運用上の
 [Babelmark]: https://babelmark.github.io/
 [CommonMark]: https://commonmark.org/
 [epub]: https://ja.wikipedia.org/wiki/EPUB
+[info文字列]: code-blocks.md#info文字列
 [John MacFarlane]: https://en.wikipedia.org/wiki/John_MacFarlane_(philosopher)
 [Jupyter Notebook]: https://jupyter.org/
 [Markdownの歴史]: history.md
+[Mermaid]: other-features.md#mermaidによるダイアグラムチャート
 [Pandoc]: https://en.wikipedia.org/wiki/Pandoc
 [PDF]: https://ja.wikipedia.org/wiki/Portable_Document_Format
 [Setext]: https://en.wikipedia.org/wiki/Setext
+[STL]: other-features.md#stl
+[コードブロック]: code-blocks.md
+[ブロック]: blocks.md
+[その他の機能]: other-features.md
 [打ち消し線]: bold-italic-strikethrough.md#打ち消し線
 [拡張自動リンク]: links.md#拡張自動リンク
 [脚注]: other-features.md#脚注

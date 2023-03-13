@@ -10,7 +10,7 @@ Markdownはテキスト形式でドキュメントを記述し、MarkdownからH
 
 > &#x2714;&#xFE0F; 現在は大部分の環境で文字エンコーディングとして[UTF-8]が用いられている。GitHubのWebサービスは[UTF-8]に統一されており、本解説も[UTF-8]エンコーディングで作成している。
 
-なおこれから示す用語はMarkdown仕様をマスターするためには必須の知識だが、Markdownで文章を書くためには必ずしも覚える必要のない用語も多い。後半の構文説明([インライン], [ブロック])へ進み、用語の意味が分からなければここに戻って確認すればよい。
+なおこれから示す用語はMarkdown仕様をマスターするためには必要な知識だが、Markdownで文章を書くためには必ずしも覚える必要のない用語も多い。ここは軽く流して先に進み、意味が分からない用語があったらここに戻って確認してよい。
 
 ## コメント
 
@@ -80,7 +80,7 @@ Markdownの書式や構文の表現にはこれらの文字が用いられる。
 ```markdown
 _italic_ **bold** ~~strikethrough~~ `code`
 
-<var>N</var><sub>A</sub> = 6.022 × 10<sup>23</sup>
+N<sub>A</sub> = 6.022 × 10<sup>23</sup>
 
 画像 → ![car](https://github.githubassets.com/images/icons/emoji/unicode/1f697.png?v8)
 
@@ -93,7 +93,7 @@ _italic_ **bold** ~~strikethrough~~ `code`
 
 > _italic_ **bold** ~~strikethrough~~ `code`
 > 
-> <var>N</var><sub>A</sub> = 6.022 × 10<sup>23</sup>
+> N<sub>A</sub> = 6.022 × 10<sup>23</sup>
 > 
 > 画像 → ![car](https://github.githubassets.com/images/icons/emoji/unicode/1f697.png?v8)
 > 
@@ -182,7 +182,7 @@ MarkdownでもHTMLと同じ文字参照表現を用いることができる。�
 
 - [名前付き文字参照](#名前付き文字参照): `&{文字参照名};`
 - [10進数文字参照](#10進数文字参照): `&#{10進表現};`
-- [16進数文字参照](#16進数文字参照): `&#x{16進表現};` (大文字小文字区別なし)
+- [16進数文字参照](#16進数文字参照): `&#x{16進表現};`
 
 ### 名前付き文字参照
 
@@ -265,13 +265,13 @@ HTMLはマークアップ優先の文法規則で、例えば`<`,`>`は要素タ
 
 ## 太字と斜体の認識に用いられる文字
 
-> &#x2714;&#xFE0F; 最初は読む必要なし。これらは[太字]と[斜体]の文法認識の際にのみ用いられる。後で[太字と斜体の文法認識]を読む時にここに戻って確認すればよい(ここへのリンクも十分に付けてある)。
+> &#x2714;&#xFE0F; 最初は読む必要なし。これらは[太字]と[斜体]の文法認識の際に用いられる。[太字と斜体の文法認識]を読む際にここに戻って確認すればよい。
 
 [太字]と[斜体]の検出の際、次の2種類の文字種を検出して文法解析を行う。
 
 ### Unicode空白文字
 
-[太字]及び[子値]の構文解析では空白を表す文字として**Unicode空白文字**(Unicode punctuation characters)を検出する。[GFM仕様書の定義](https://github.github.com/gfm/#unicode-whitespace-character)によれば次のどちらかの条件に当てはまる文字が該当する。
+[太字]や[斜体]の構文解析では空白を表す文字として**Unicode空白文字**(Unicode punctuation characters)を検出する。[GFM仕様書の定義](https://github.github.com/gfm/#unicode-whitespace-character)によれば次のどちらかの条件に当てはまる文字が該当する。
 
 - Unicodeカテゴリ`Zs`に該当する文字(スペースなどを含む)
 - タブ(U+0009), キャリッジリターン(U+000D), 改行(U+000A)
@@ -293,14 +293,19 @@ HTMLはマークアップ優先の文法規則で、例えば`<`,`>`は要素タ
 
 #### 書式制御文字
 
-ただし実際のGitHub Markdown実装はGFM仕様書の定義通りの動作ではなく、次のような文字も句読文字として扱い処理している。
+また実際のGitHub Markdown実装はGFM仕様書の定義通りの動作ではなく、実用性を考慮して次のような文字も句読文字として扱い処理している。
 
-- [Soft Hyphen (U+00AD, `&shy;`)](https://www.compart.com/en/unicode/U+00AD)
-- [Zero Width Space (U+200B, `&ZeroWidthSpace;`)](https://www.compart.com/en/unicode/U+200B)
-- [Zero Width Non-Joiner (U+200C, `&zwnj;`)](https://www.compart.com/en/unicode/U+200C)
-- [Zero Width Joiner (U+200D, `&zwj;`)](https://www.compart.com/en/unicode/U+200D)
+> &#x2714;&#xFE0F; このようなことが書かれている公式ドキュメントはない。GitHubのMarkdown環境で実際に確認した。
 
-これらの文字は「幅0で非表示の書式設定」として機能する。[太字]や[斜体]の記述時にこれらを補助的に挿入して書式の認識制御に利用することができる。より詳しくは[通常テキスト] - [書式制御文字]を参照。
+| 名称 | コード | 文字参照 |
+| :-: | :-: | :-: |
+| [ソフトハイフン]<br>([Soft Hyphen](https://en.wikipedia.org/wiki/Soft_hyphen)) | U+00AD | `&shy;`, `&#xAD;` |
+| [ゼロ幅スペース]<br>([Zero-width space](https://en.wikipedia.org/wiki/Zero-width_space)) | U+200B | `&ZeroWidthSpace;`, `&#x200B;` |
+| [ゼロ幅非接合子]<br>([Zero-width non-joiner (ZWNJ)](https://en.wikipedia.org/wiki/Zero-width_non-joiner)) | U+200C | `&zwnj;`, `&#x200C;` |
+| [ゼロ幅接合子]<br>([Zero-width joiner (ZWJ)](https://en.wikipedia.org/wiki/Zero-width_joiner)) | U+200D | `&zwj;`, `&#x200D;` |
+| [単語結合子]<br>([Word joiner (WJ)](https://en.wikipedia.org/wiki/Word_joiner)) | U+2060 | `&NoBreak;`, `&#x2060;` |
+
+これらは「幅0で非表示の書式制御文字」として機能し、[太字]や[斜体]の記述時に書式の認識制御に利用することができる。より詳しくは[通常テキスト] - [書式制御文字]を参照。
 
 ------------------------------------------------------------------------
 
@@ -316,6 +321,10 @@ HTMLはマークアップ優先の文法規則で、例えば`<`,`>`は要素タ
 [インライン]: inlines.md
 [コードスパン]: code-spans.md
 [コードブロック]: code-blocks.md
+[ゼロ幅スペース]: https://ja.wikipedia.org/wiki/ゼロ幅スペース
+[ゼロ幅接合子]: https://ja.wikipedia.org/wiki/ゼロ幅接合子
+[ゼロ幅非接合子]: https://ja.wikipedia.org/wiki/ゼロ幅非接合子
+[ソフトハイフン]: https://ja.wikipedia.org/wiki/ソフトハイフン
 [バックスラッシュエスケープ]: #バックスラッシュエスケープ
 [パラグラフ]: paragraphs.md
 [ブロック]: blocks.md
@@ -325,6 +334,7 @@ HTMLはマークアップ優先の文法規則で、例えば`<`,`>`は要素タ
 [画像]: images.md
 [斜体]: bold-italic-strikethrough.md#斜体
 [書式制御文字]: texts.md#書式制御文字
+[単語結合子]: https://ja.wikipedia.org/wiki/単語結合子
 [通常テキスト]: texts.md#通常テキスト
 [表]: tables.md
 [太字]: bold-italic-strikethrough.md#太字
