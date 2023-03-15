@@ -197,6 +197,7 @@
     - [CSS形式の色表現](github-specific.md#css形式の色表現)
 - <span id="appendices">[付録](appendices.md)</span>
   - <span id="github-flavored-markdown">[GitHub Flavored Markdown](github-flavored-markdown.md)</span>
+    - [Markdownの成立まで](github-flavored-markdown.md#markdownの成立まで)
     - [Markdownの登場](github-flavored-markdown.md#markdownの登場)
     - [Markdownの普及](github-flavored-markdown.md#markdownの普及)
     - [CommonMark](github-flavored-markdown.md#commonmark)
