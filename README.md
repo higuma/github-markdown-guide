@@ -37,7 +37,7 @@ Web標準のドキュメント記述言語である[HTML]は豊富な機能を�
 
 また[GitHub Flavored Markdown]仕様には含まれていないが、徐々に普及して標準的な地位を獲得しつつある仕様がいくつかあり、これらは[その他の機能]で解説する。またGitHub環境には他には見られない独自機能もあり、これらは本編最後の[GitHub特有の機能]で説明する。
 
-文書作成には必ずしも必要ない内容や文字コード一覧表などは末尾の[付録]にまとめられている。[Markdown]の成立までの経緯とその発展、[GitHub Flavored Markdown]についての説明、構文判定で用いられる文字種の一覧表などがある。
+文書作成には必ずしも必要ない内容や文字コード一覧表などは末尾の[付録]にまとめられている。[Markdown]の成り立ちから[GitHub Flavored Markdown]仕様そして現在までの経緯や、構文判定に用いられる文字種の一覧表などがある。
 
 ### 処理実装間の互換性
 
@@ -71,6 +71,7 @@ Web標準のドキュメント記述言語である[HTML]は豊富な機能を�
 [Babelmark]: github-flavored-markdown.md#babelmark
 [HTML]: https://ja.wikipedia.org/wiki/HyperText_Markup_Language
 [Markdown]: https://ja.wikipedia.org/wiki/Markdown
+[Markdownの構文]: syntax.md
 [GitHub Docs]: https://docs.github.com/ja/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
 [GitHub Flavored Markdown]: github-flavored-markdown.md
 [GitHub特有の機能]: github-specific.md
@@ -83,6 +84,3 @@ Web標準のドキュメント記述言語である[HTML]は豊富な機能を�
 [付録]: appendices.md
 [目次]: index.md#README
 [文字と行]: characters.md
-[Markdownの構文]: syntax.md
-[文字と行]: characters.md
-[Markdownの構文]: syntax.md

@@ -69,7 +69,7 @@ for (let word of ["eeny", "meeny", "miny", "moe"]) {
 
 > &#x2714;&#xFE0F; [GitHub Docs](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks)では**4文字のバッククォート**(` ````...```` `)を用いて説明している。この場合は`` ` ``の数が3より多いことが条件なのでこれでも正しいが、本解説では認識性を考慮してネストレベルに応じた3の倍数(3,6,9,...)を用いている。
 > 
-> > &#x2714;&#xFE0F; 上記コードブロックは「コードブロックの文例を表すコードブロック」であり、そのソースコードはそれの全体をさらにコードブロックで囲んだ3重ネスト(`` ` ``を9個使用)を用いている(→ [ソースコード](https://github.com/higuma/github-markdown-guide/blob/main/code-blocks.md?plain=1#L54-L61))。
+> > &#x2714;&#xFE0F; 上記コードブロックは「コードブロックの文例を表すコードブロック」であり、そのソースコードはそれの全体をさらにコードブロックで囲んだ3重ネスト(`` ` ``を9個使用)を用いている(→ [ソースコード](code-blocks.md?plain=1#L54-L61))。
 
 逆に`` ``` ``から始まる通常テキスト行は先頭を`\`でエスケープする。
 
@@ -98,7 +98,7 @@ for (let word of ["eeny", "meeny", "miny", "moe"]) {
 
 ### info文字列
 
-[info文字列](→ [仕様書](https://higuma.github.io/github-markdown-guide/gfm/#info-string))はコードブロック内部に用いられているコードの言語設定に用いられ、言語名を(慣例として小文字化して)記述する。
+[info文字列](→ [仕様書](https://github.github.com/gfm/#info-string))はコードブロック内部に用いられているコードの言語設定に用いられ、言語名を(慣例として小文字化して)記述する。
 
 ``````markdown
 ```python

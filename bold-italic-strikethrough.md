@@ -726,7 +726,7 @@ GFM仕様書の強調(太字と斜体)に関する仕様記述は非常に長大
 
 これにより両端の $a_L^1$ ... $a_R^1$ だけが適用可能な候補となり、中間の`**`はそのままテキスト出力して全体に斜体を適用する。
 
-> &#x26A0;&#xFE0F; **注意**: この3の倍数に関するルールはCommonMark系特有のものであり、他のMarkdown実装は動作が異なる(→ [BabelMark](https://babelmark.github.io/?text=*abc**def*))。
+> &#x26A0;&#xFE0F; **注意**: この3の倍数に関するルールはCommonMark系特有のものであり、他のMarkdown実装は動作が異なる(→ [Babelmark](https://babelmark.github.io/?text=*abc**def*))。
 
 もうひとつの「3の倍数ルール」として、両端とも両側面連続区切りであり、かつ双方の $N$ がどちらも3の倍数である場合は適用される。
 
@@ -755,9 +755,9 @@ abc***def***ghi
 > 
 > CommonMark仕様では`*abc _*def* ghi_*`のように認識され、斜体の3重ネストとして処理される。
 > 
-> > &#x2714;&#xFE0F; この解決手順はGFM仕様書のAppendix: [An algorithm for parsing nested emphasis and links](https://github.github.com/gfm/#an-algorithm-for-parsing-nested-emphasis-and-links)に書かれている。ただし知っていても全く実用性はない知識なので本解説では省略した。
+> > &#x2714;&#xFE0F; この解決手順はGFM仕様書のAppendix: [An algorithm for parsing nested emphasis and links](https://github.github.com/gfm/#an-algorithm-for-parsing-nested-emphasis-and-links)に書かれている。ただし知っていても実装者以外には不要な知識なのでここでは省略する。
 > 
-> しかし[BabelMark](https://babelmark.github.io/?text=*abc+**def*+ghi**)で確認するとやはり出力は様々で、特に(太字優先を適用して)`**`を太字と認識するものが多数ある。このケースは確かに斜体の3重掛けで解決可能だが、人間が自然と感じる解釈はむしろ斜体と太字のオーバーラップという意見も多いだろう。
+> しかし[Babelmark](https://babelmark.github.io/?text=*abc+**def*+ghi**)で確認するとやはり出力は様々で、特に(太字優先を適用して)`**`を太字と認識するものが多数ある。このケースは確かに斜体の3重掛けで解決可能だが、人間が自然と感じる解釈はむしろ斜体と太字のオーバーラップという意見も多いだろう。
 > </details>
 
 このような詳細仕様に依存した記述はCommonMark系以外のMarkdown実装への応用が効かない。そうではなく、逆にどのようなMarkdown実装でも同じように文法認識されるような記述方法を考えた方が遥かに実用的であり、得るものも大きい。

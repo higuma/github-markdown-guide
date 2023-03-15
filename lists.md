@@ -109,7 +109,7 @@ MarkdownのリストはHTMLの[順序なしリスト](https://developer.mozilla.
 > <details>
 > <summary>&#x2714;&#xFE0F; <strong>参考</strong>:Markdown実装による仕様の違い</summary>
 > 
-> リスト項目は複数行に渡る場合があるため、リストが2つ連続する場合は[空行]だけではブロック区切りと認識しない。次の文例を用いてBabelMarkで確認すると、全ての実装が単一のリストと認識するのが分かる。
+> リスト項目は複数行に渡る場合があるため、リストが2つ連続する場合は[空行]だけではブロック区切りと認識しない。次の文例を用いてBabelmarkで確認すると、全ての実装が単一のリストと認識するのが分かる。
 > 
 > ```markdown
 > - A
@@ -121,7 +121,7 @@ MarkdownのリストはHTMLの[順序なしリスト](https://developer.mozilla.
 > 
 > https://babelmark.github.io/?text=-+A%0A-+B%0A%0A-+X%0A-+Y
 > 
-> そのため上下を別のリストと認識させるにはマーカーを変える必要がある。ただしこの方法も認識しない実装が多数あることに注意。BabelMark確認結果は次の通り。
+> そのため上下を別のリストと認識させるにはマーカーを変える必要がある。ただしこの方法も認識しない実装が多数あることに注意。Babelmark確認結果は次の通り。
 > 
 > ```markdown
 > - A
@@ -133,7 +133,7 @@ MarkdownのリストはHTMLの[順序なしリスト](https://developer.mozilla.
 > 
 > https://babelmark.github.io/?text=-+A%0A-+B%0A%0A*+X%0A*+Y
 > 
-> また`+`を順序付きリストと認識するMarkdown実装が1つだけ存在する([Gambas])。次のBabelMark確認結果の最後の部分を見ると分かる。
+> また`+`を順序付きリストと認識するMarkdown実装が1つだけ存在する([Gambas])。次のBabelmark確認結果の最後の部分を見ると分かる。
 > 
 > ```markdown
 > - A
@@ -209,7 +209,7 @@ MarkdownのリストはHTMLの[順序なしリスト](https://developer.mozilla.
 > <details>
 > <summary>&#x2714;&#xFE0F; <strong>参考</strong>: Markdown実装による動作の違い</summary>
 > 
-> 順序付きリストの場合は`1)`の形式を認識しないものが多い。BabelMarkで確認するとCommonMarkの流れを汲んでいる実装しか認識していないことが分かる。
+> 順序付きリストの場合は`1)`の形式を認識しないものが多い。Babelmarkで確認するとCommonMarkの流れを汲んでいる実装しか認識していないことが分かる。
 > 
 > ```markdown
 > 1. A
@@ -309,7 +309,7 @@ MarkdownのリストはHTMLの[順序なしリスト](https://developer.mozilla.
 > > <details>
 > > <summary>&#x2714;&#xFE0F; スペース区切り - Markdown実装による動作の違い</summary>
 > > 
-> > 上記コード例のBabelMarkによる互換性チェック結果は次の通り。スペース5個以上を[インデントによるコードブロック]と認識しない実装が多数ある。
+> > 上記コード例のBabelmarkによる互換性チェック結果は次の通り。スペース5個以上を[インデントによるコードブロック]と認識しない実装が多数ある。
 > > 
 > > - [順序なしの場合](https://babelmark.github.io/?text=-NO+SPACE%0A%0A-+SPACE+x+1%0A%0A-++SPACE+x+2%0A%0A-+++SPACE+x+3%0A%0A-++++SPACE+x+4%0A%0A-+++++SPACE+x+5%0A%0A-++++++SPACE+x+6)
 > > - [順序付きの場合](https://babelmark.github.io/?text=1.NO+SPACE%0A%0A1.+SPACE+x+1%0A%0A1.++SPACE+x+2%0A%0A1.+++SPACE+x+3%0A%0A1.++++SPACE+x+4%0A%0A1.+++++SPACE+x+5%0A%0A1.++++++SPACE+x+6)
@@ -383,7 +383,7 @@ MarkdownのリストはHTMLの[順序なしリスト](https://developer.mozilla.
 > > <details>
 > > <summary>&#x2714;&#xFE0F; 行頭インデント - Markdown実装による動作の違い</summary>
 > > 
-> > 上記コード例のBabelMark出力は次の通り。動作は実装によって大きく異なり、少しでも文書の可搬性を考慮するのであれば使うべきでないことがよく分かる。
+> > 上記コード例のBabelmark出力は次の通り。動作は実装によって大きく異なり、少しでも文書の可搬性を考慮するのであれば使うべきでないことがよく分かる。
 > > 
 > > - [順序なしの場合](https://babelmark.github.io/?text=-+NO+INDENT+SPACE%0A%0A+*+SPACE+x+1%0A%0A++-+SPACE+x+2%0A%0A+++*+SPACE+x+3%0A%0A++++-+SPACE+x+4%0A%0A+++++*+SPACE+x+5)
 > > - [順序付きの場合](https://babelmark.github.io/?text=1.+NO+INDENT+SPACE%0A%0A--------%0A%0A+1.+SPACE+x+1%0A%0A--------%0A%0A++1.+SPACE+x+2%0A%0A--------%0A%0A+++1.+SPACE+x+3%0A%0A--------%0A%0A++++1.+SPACE+x+4%0A%0A--------%0A%0A+++++1.+SPACE+x+5)

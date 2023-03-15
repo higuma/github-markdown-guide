@@ -68,7 +68,7 @@ Markdownではスペース(U+0020)とタブ(U+0009)を空白文字として認�
 
 Markdownでは基本的にテキスト文字列はそのままドキュメントとして扱う。そして書式設定([リンク], [画像], [コードスパン], etc.)や各種構文([見出し], [ブロック引用], [リスト], etc.)を表現する場合に**ASCII句読文字**を用いた文法を用いる。
 
-[ASCII句読文字(ASCII puctuation characters)](https://higuma.github.io/github-markdown-guide/gfm/#ascii-punctuation-character)とは[ASCII印字可能文字](https://ja.wikipedia.org/wiki/ASCII#ASCII印字可能文字)(U+0020..U+007E)からスペースと英数字を除外した文字を指す。一覧は次の通り(全32種類)。
+[ASCII句読文字(ASCII puctuation characters)](https://github.github.com/gfm/#ascii-punctuation-character)とは[ASCII印字可能文字](https://ja.wikipedia.org/wiki/ASCII#ASCII印字可能文字)(U+0020..U+007E)からスペースと英数字を除外した文字を指す。一覧は次の通り(全32種類)。
 
 - U+0021..U+002F: `!`, `"`, `#`, `$`, `%`, `&`, `'`, `(`, `)`, `*`, `+`, `,`, `-`, `.`, `/`
 - U+003A..U+0040: `:`, `;`, `<`, `=`, `>`, `?`, `@`

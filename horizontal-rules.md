@@ -161,8 +161,8 @@ bar
 ← [目次] →
 [表]
 
-[Example 28]: https://higuma.github.io/github-markdown-guide/gfm/#example-28
-[Example 29]: https://higuma.github.io/github-markdown-guide/gfm/#example-29
+[Example 28]: https://github.github.com/gfm/#example-28
+[Example 29]: https://github.github.com/gfm/#example-29
 [GFM]: github-flavored-markdown.md
 [Jupyter Notebook]: https://jupyter.org/
 [Pandoc]: https://pandoc.org/
