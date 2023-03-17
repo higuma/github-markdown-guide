@@ -396,7 +396,7 @@ _Italic **and bold ~~and strikeout~~** → back to italic_
 
 テキストではないアイテムも挿入可能だが効果はない。
 
-- [画像]: `_Italic here, ![](img/arrow-right-circle.svg)_` → _Italic here, ![](img/arrow-right-circle.svg)_
+- [画像]: `_Italic here, ![Digit-8](img/8.svg)_` → _Italic here, ![Digit-8](img/8.svg)_
 
 ## 太字と斜体の文法認識
 
