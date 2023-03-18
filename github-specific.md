@@ -54,7 +54,7 @@ https://github.com/higuma/github-emoji-list/blob/main/README.md
 
 ## レスポンシブル画像
 
-GitHubサイトでは [Settings - Appearance](https://github.com/settings/appearance) で画面テーマを設定できる。明色系(Light...)と暗色系(Dark...)の両方があるが、テーマ変更により画像を切り替える場合は`<picture>`を用い、`media`属性を設定する。実例を示す。
+GitHubサイトでは [Settings - Appearance](https://github.com/settings/appearance) で画面テーマを設定できる。テーマは大きく分けて明色系(Light...)と暗色系(Dark...)の2系統があるが、テーマ変更に応じて画像(特に配色)を切り替える場合は`<picture>`を用い、`media`属性を設定する。実例を示す。
 
 ```markdown
 <picture>
@@ -73,6 +73,8 @@ GitHubサイトでは [Settings - Appearance](https://github.com/settings/appear
   <img alt="Responsible 7 segment digit 3" src="img/3.svg">
 </picture>
 ```
+
+出力は次の通り。暖色系背景(Light ...)では数字を暗色系、暗色系背景(Dark ...)では反転して暖色系で表示する。
 
 > <picture>
 >   <source media="(prefers-color-scheme: dark)" srcset="img/1d.svg">
@@ -108,7 +110,7 @@ GitHubサイト内の書き込み機能では[拡張自動リンク]としてURL
 
 ### CSS形式の色表現
 
-Issues, Pull requestsやGISTのコメントなどGitHub Webサイトからの書き込み時に使える機能の一つとして、[コードスパン]中にCSS形式の色表現(例: `rgb(80, 120, 240)`)を記述するとカラーサンプル付きで表示する。ただし対応は完璧ではなく、使える形式とそうでないものがある。
+Issues, Pull requestsやGISTのコメントなどGitHub Webサイトからの書き込み時に使える機能の一つとして、[コードスパン]中にCSS形式の色表現(例: `rgb(80, 120, 240)`)を記述するとカラーサンプル付きで表示する。ただし対応は部分的で、使える形式とそうでないものがある。
 
 この機能はリポジトリ内データに対しては機能しないため、ここに書いても効果を確認できない。そこで結果はIssuesを用いて示す。次のリンク先を参照。
 
