@@ -841,6 +841,7 @@ endsolid
 [空行]: characters.md#空行
 [句読文字]: characters.md#句読文字
 [書式制御文字]: texts.md#書式制御文字
+[数式]: #数式
 [見出し]: thematic-breaks.md
 [目次]: index.md#other-features
 [文字参照]: characters.md#文字参照
