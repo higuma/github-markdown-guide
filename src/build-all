@@ -2,3 +2,4 @@
 ruby named-character-references.rb
 ruby punctuation-characters.rb
 ruby unicode-whitespace-characters.rb
+ruby img-numbers.rb

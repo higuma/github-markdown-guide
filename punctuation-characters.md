@@ -5,7 +5,7 @@
 
 ------------------------------------------------------------------------
 
-> &#x2714;&#xFE0F; <https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt> より生成 (2023-03-14)
+> &#x2714;&#xFE0F; <https://www.unicode.org/Public/UCD/latest/ucd/UnicodeData.txt> より生成 (2023-03-18)
 
 [斜体]及び[太字]の検出判定に用いられる[句読文字]の一覧。[GFM仕様書の定義](https://github.github.com/gfm/#punctuation-character)によれば次のどちらかの条件に当てはまる文字が該当する。
 
