@@ -42,18 +42,25 @@ NUMBERS = [
   [1, 1, 1, 1, 0, 1, 1],  # 9
 ]
 
-STROKES = ['#DDD', '#555']  # [background, foreground]
+STROKES = { # [off-color, on-color]
+  ''  => ['#DDD', '#555'],  # (default)
+  'l' => ['#DDD', '#555'],  # Light
+  'd' => ['#555', '#DDD'],  # Dark
+}
 
-for n in 0..9
-  open "../img/#{n}.svg", "w" do |f|
-    f.puts %!<svg version="1.1" width="#{W}" height="#{H}" xmlns="http://www.w3.org/2000/svg">!
-    for i in 0..6
-      p = SEGMENTS[i][0]
-      q = SEGMENTS[i][1]
-      s = STROKES[NUMBERS[n][i]]
-      f.puts %!  <line x1="#{p[0]}" y1="#{p[1]}" x2="#{q[0]}" y2="#{q[1]}" stroke="#{s}" stroke-width="2" stroke-linecap="round" />!
+for suffix in ['', 'l', 'd']
+  for n in 0..9
+    open "../img/#{n}#{suffix}.svg", "w" do |f|
+      f.puts %!<svg version="1.1" width="#{W}" height="#{H}" xmlns="http://www.w3.org/2000/svg">!
+      f.puts %!  <rect x="0" y="0" width="#{W}" height="#{H}" fill="#FFF" />! if suffix == ''
+      for i in 0..6
+        p = SEGMENTS[i][0]
+        q = SEGMENTS[i][1]
+        s = STROKES[suffix][NUMBERS[n][i]]
+        f.puts %!  <line x1="#{p[0]}" y1="#{p[1]}" x2="#{q[0]}" y2="#{q[1]}" stroke="#{s}" stroke-width="2" stroke-linecap="round" />!
+      end
+      f.puts "</svg>"
     end
-    f.puts "</svg>"
   end
 end
 

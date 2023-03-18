@@ -52,6 +52,44 @@ https://github.com/higuma/github-emoji-list/blob/main/README.md
 > https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#github-custom-emoji
 > </details>
 
+## レスポンシブル画像
+
+GitHubサイトでは [Settings - Appearance](https://github.com/settings/appearance) で画面テーマを設定できる。明色系(Light...)と暗色系(Dark...)の両方があるが、テーマ変更により画像を切り替える場合は`<picture>`を用い、`media`属性を設定する。実例を示す。
+
+```markdown
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="img/1d.svg">
+  <source media="(prefers-color-scheme: light)" srcset="img/1l.svg">
+  <img alt="Responsible 7 segment digit 1" src="img/1.svg">
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="img/2d.svg">
+  <source media="(prefers-color-scheme: light)" srcset="img/2l.svg">
+  <img alt="Responsible 7 segment digit 2" src="img/2.svg">
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="img/3d.svg">
+  <source media="(prefers-color-scheme: light)" srcset="img/3l.svg">
+  <img alt="Responsible 7 segment digit 3" src="img/3.svg">
+</picture>
+```
+
+> <picture>
+>   <source media="(prefers-color-scheme: dark)" srcset="img/1d.svg">
+>   <source media="(prefers-color-scheme: light)" srcset="img/1l.svg">
+>   <img alt="Responsible 7 segment digit 1" src="img/1.svg">
+> </picture>
+> <picture>
+>   <source media="(prefers-color-scheme: dark)" srcset="img/2d.svg">
+>   <source media="(prefers-color-scheme: light)" srcset="img/2l.svg">
+>   <img alt="Responsible 7 segment digit 2" src="img/2.svg">
+> </picture>
+> <picture>
+>   <source media="(prefers-color-scheme: dark)" srcset="img/3d.svg">
+>   <source media="(prefers-color-scheme: light)" srcset="img/3l.svg">
+>   <img alt="Responsible 7 segment digit 3" src="img/3.svg">
+> </picture>
+
 ## GitHubサイト専用の機能
 
 最後にリポジトリではなくGitHubのWebアプリ機能の一部としてのみ使える機能を紹介する。

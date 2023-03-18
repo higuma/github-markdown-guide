@@ -192,6 +192,7 @@
     - [脚注の出力](other-features.md#脚注の出力)
 - <span id="github-specific">[GitHub特有の機能](github-specific.md)</span>
   - [名前付き絵文字](github-specific.md#名前付き絵文字)
+  - [レスポンシブル画像](github-specific.md#レスポンシブル画像)
   - [GitHubサイト専用の機能](github-specific.md#githubサイト専用の機能)
     - [拡張自動リンクの認識](github-specific.md#拡張自動リンクの認識)
     - [CSS形式の色表現](github-specific.md#css形式の色表現)
