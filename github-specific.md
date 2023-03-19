@@ -74,7 +74,7 @@ GitHubサイトでは [Settings - Appearance](https://github.com/settings/appear
 </picture>
 ```
 
-出力は次の通り。暖色系背景(Light ...)では数字を暗色系、暗色系背景(Dark ...)では反転して暖色系で表示する。
+出力は次の通り。明色系背景(Light ...)では数字を暗色系、暗色系背景(Dark ...)では反転して明色系で表示する。
 
 > <picture>
 >   <source media="(prefers-color-scheme: dark)" srcset="img/1d.svg">
